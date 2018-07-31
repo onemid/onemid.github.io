@@ -1,0 +1,501 @@
+
+<!DOCTYPE html>
+<html lang="zh-tw">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Nothing to Do">
+    <title>Nginx, MySQL, PHP Installation(Ubuntu 16.04) - Nothing to Do</title>
+    <meta name="author" content="Gary Gong">
+    
+    
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Gary Gong","sameAs":["https://github.com/onemid/","https://www.facebook.com/yjgong85","https://www.linkedin.com/in/onemid85/","yijhong@hotmail.com.tw"],"image":"https://www.gravatar.com/avatar/b93d499c9197202a5fab6afb8ebe66d1"},"articleBody":"Install the Nginx Web Server12$ sudo apt-get update$ sudo apt-get install nginx\n請確認防火牆開啟埠號 80 / 443\nInstall MySQL12$ sudo apt-get install mysql-server$ mysql_secure_installation\n請遵照指示文字設定\nInstall PHP for Processing1$ sudo apt-get install php-fpm php-mysql\nConfigure the PHP Processor1$ sudo vim /etc/php/7.0/fpm/php.ini\n編輯 php.ini 內部數值，先前請解除註解1cgi.fix_pathinfo=0\n重新啟動 PHP Processor1$ sudo systemctl restart php7.0-fpm\nConfigure Nginx to Use the PHP Processor1$ sudo vim /etc/nginx/sites-available/default\n編輯 default 內部檔案，更動原 server {…}  區塊為下方區塊12345678910111213141516171819202122server &#123;    listen 80 default_server;    listen [::]:80 default_server;    root /var/www/html;    index index.php index.html index.htm index.nginx-debian.html;    server_name server_domain_or_IP;    location / &#123;        try_files $uri $uri/ =404;    &#125;    location ~ \\.php$ &#123;        include snippets/fastcgi-php.conf;        fastcgi_pass unix:/run/php/php7.0-fpm.sock;    &#125;    location ~ /\\.ht &#123;        deny all;    &#125;&#125;\n結束後，利用 nginx -t 檢測是否存在語法錯誤1$ sudo nginx -t\n最後，重新載入 nginx 設定檔案1$ sudo systemctl reload nginx\n","dateCreated":"2018-07-31T23:57:00+08:00","dateModified":"2018-07-31T23:59:41+08:00","datePublished":"2018-07-31T23:57:00+08:00","description":"","headline":"Nginx, MySQL, PHP Installation(Ubuntu 16.04)","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://onemid.github.io/2018/07/31/Nginx-MySQL-PHP-Installation-Ubuntu-16-04/"},"publisher":{"@type":"Organization","name":"Gary Gong","sameAs":["https://github.com/onemid/","https://www.facebook.com/yjgong85","https://www.linkedin.com/in/onemid85/","yijhong@hotmail.com.tw"],"image":"https://www.gravatar.com/avatar/b93d499c9197202a5fab6afb8ebe66d1","logo":{"@type":"ImageObject","url":"https://www.gravatar.com/avatar/b93d499c9197202a5fab6afb8ebe66d1"}},"url":"https://onemid.github.io/2018/07/31/Nginx-MySQL-PHP-Installation-Ubuntu-16-04/"}</script>
+    <meta name="description" content="Install the Nginx Web Server12$ sudo apt-get update$ sudo apt-get install nginx 請確認防火牆開啟埠號 80 / 443 Install MySQL12$ sudo apt-get install mysql-server$ mysql_secure_installation 請遵照指示文字設定 Install PHP">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Nginx, MySQL, PHP Installation(Ubuntu 16.04)">
+<meta property="og:url" content="https://onemid.github.io/2018/07/31/Nginx-MySQL-PHP-Installation-Ubuntu-16-04/index.html">
+<meta property="og:site_name" content="Nothing to Do">
+<meta property="og:description" content="Install the Nginx Web Server12$ sudo apt-get update$ sudo apt-get install nginx 請確認防火牆開啟埠號 80 / 443 Install MySQL12$ sudo apt-get install mysql-server$ mysql_secure_installation 請遵照指示文字設定 Install PHP">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:updated_time" content="2018-07-31T15:59:41.127Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Nginx, MySQL, PHP Installation(Ubuntu 16.04)">
+<meta name="twitter:description" content="Install the Nginx Web Server12$ sudo apt-get update$ sudo apt-get install nginx 請確認防火牆開啟埠號 80 / 443 Install MySQL12$ sudo apt-get install mysql-server$ mysql_secure_installation 請遵照指示文字設定 Install PHP">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="https://www.gravatar.com/avatar/c15bce1aa244179bb7de3768fec5cd1a?s=640"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-do39qdjvpypfbfath0mrmcnooyjedtpmaqbgurcvkqwdiyt2nxjbasyzwng0.min.css">
+    <!--STYLES END-->
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">Nothing to Do</a>
+    </div>
+    
+        
+            <a  class="header-right-picture "
+                href="#about">
+        
+        
+            <img class="header-picture" src="https://www.gravatar.com/avatar/c15bce1aa244179bb7de3768fec5cd1a?s=90" alt="作者的圖片"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+    
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a href="/#about">
+                    <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/c15bce1aa244179bb7de3768fec5cd1a?s=110" alt="作者的圖片"/>
+                </a>
+                <h4 class="sidebar-profile-name">Gary Gong</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>設計、深度學習、氣象三重人格</p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/ "
+                            
+                            title="首頁"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">首頁</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-categories"
+                            
+                            title="分類"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">分類</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-tags"
+                            
+                            title="標籤"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">標籤</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-archives"
+                            
+                            title="所有文章"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">所有文章</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link open-algolia-search"
+                             href="#search"
+                            
+                            title="搜尋"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-search" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">搜尋</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="#about"
+                            
+                            title="關於"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-question" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">關於</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://github.com/onemid/" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://www.facebook.com/yjgong85" target="_blank" rel="noopener" title="Facebook">
+                    
+                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://www.linkedin.com/in/onemid85/" target="_blank" rel="noopener" title="LinkedIn">
+                    
+                        <i class="sidebar-button-icon fab fa-linkedin" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">LinkedIn</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/yijhong@hotmail.com.tw"
+                            title="Email"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Email</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            Nginx, MySQL, PHP Installation(Ubuntu 16.04)
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2018-07-31T23:57:00+08:00">
+	
+		    7月 31, 2018
+    	
+    </time>
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <h3 id="Install-the-Nginx-Web-Server"><a href="#Install-the-Nginx-Web-Server" class="headerlink" title="Install the Nginx Web Server"></a>Install the Nginx Web Server</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install nginx</span><br></pre></td></tr></table></figure>
+<p>請確認防火牆開啟埠號 80 / 443</p>
+<h3 id="Install-MySQL"><a href="#Install-MySQL" class="headerlink" title="Install MySQL"></a>Install MySQL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install mysql-server</span><br><span class="line">$ mysql_secure_installation</span><br></pre></td></tr></table></figure>
+<p>請遵照指示文字設定</p>
+<h3 id="Install-PHP-for-Processing"><a href="#Install-PHP-for-Processing" class="headerlink" title="Install PHP for Processing"></a>Install PHP for Processing</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install php-fpm php-mysql</span><br></pre></td></tr></table></figure>
+<h3 id="Configure-the-PHP-Processor"><a href="#Configure-the-PHP-Processor" class="headerlink" title="Configure the PHP Processor"></a>Configure the PHP Processor</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vim /etc/php/7.0/fpm/php.ini</span><br></pre></td></tr></table></figure>
+<p>編輯 php.ini 內部數值，先前請解除註解<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cgi.fix_pathinfo=0</span><br></pre></td></tr></table></figure></p>
+<p>重新啟動 PHP Processor<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo systemctl restart php7.0-fpm</span><br></pre></td></tr></table></figure></p>
+<h3 id="Configure-Nginx-to-Use-the-PHP-Processor"><a href="#Configure-Nginx-to-Use-the-PHP-Processor" class="headerlink" title="Configure Nginx to Use the PHP Processor"></a>Configure Nginx to Use the PHP Processor</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vim /etc/nginx/sites-available/default</span><br></pre></td></tr></table></figure>
+<p>編輯 default 內部檔案，更動原 server {…}  區塊為下方區塊<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 80 default_server;</span><br><span class="line">    listen [::]:80 default_server;</span><br><span class="line"></span><br><span class="line">    root /var/www/html;</span><br><span class="line">    index index.php index.html index.htm index.nginx-debian.html;</span><br><span class="line"></span><br><span class="line">    server_name server_domain_or_IP;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">        try_files $uri $uri/ =404;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location ~ \.php$ &#123;</span><br><span class="line">        include snippets/fastcgi-php.conf;</span><br><span class="line">        fastcgi_pass unix:/run/php/php7.0-fpm.sock;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location ~ /\.ht &#123;</span><br><span class="line">        deny all;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>結束後，利用 nginx -t 檢測是否存在語法錯誤<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo nginx -t</span><br></pre></td></tr></table></figure></p>
+<p>最後，重新載入 nginx 設定檔案<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo systemctl reload nginx</span><br></pre></td></tr></table></figure></p>
+
+            
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/07/31/cuda-and-tf-install/" data-tooltip="Compiling TensorFlow-GPU on Ubuntu 16.04 with CUDA 9.1(9.2) and Python3" aria-label="下一篇: Compiling TensorFlow-GPU on Ubuntu 16.04 with CUDA 9.1(9.2) and Python3">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Diesen Beitrag teilen">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://onemid.github.io/2018/07/31/Nginx-MySQL-PHP-Installation-Ubuntu-16-04/" title="分享到 Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://onemid.github.io/2018/07/31/Nginx-MySQL-PHP-Installation-Ubuntu-16-04/" title="分享到 Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://onemid.github.io/2018/07/31/Nginx-MySQL-PHP-Installation-Ubuntu-16-04/" title="分享到 Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Nach oben">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2018 Gary Gong. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/07/31/cuda-and-tf-install/" data-tooltip="Compiling TensorFlow-GPU on Ubuntu 16.04 with CUDA 9.1(9.2) and Python3" aria-label="下一篇: Compiling TensorFlow-GPU on Ubuntu 16.04 with CUDA 9.1(9.2) and Python3">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Diesen Beitrag teilen">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://onemid.github.io/2018/07/31/Nginx-MySQL-PHP-Installation-Ubuntu-16-04/" title="分享到 Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://onemid.github.io/2018/07/31/Nginx-MySQL-PHP-Installation-Ubuntu-16-04/" title="分享到 Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://onemid.github.io/2018/07/31/Nginx-MySQL-PHP-Installation-Ubuntu-16-04/" title="分享到 Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Nach oben">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <i id="btn-close-shareoptions" class="fa fa-times"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://onemid.github.io/2018/07/31/Nginx-MySQL-PHP-Installation-Ubuntu-16-04/">
+                    <i class="fab fa-facebook" aria-hidden="true"></i><span>分享到 Facebook</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://onemid.github.io/2018/07/31/Nginx-MySQL-PHP-Installation-Ubuntu-16-04/">
+                    <i class="fab fa-twitter" aria-hidden="true"></i><span>分享到 Twitter</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://onemid.github.io/2018/07/31/Nginx-MySQL-PHP-Installation-Ubuntu-16-04/">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i><span>分享到 Google+</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+            
+        </div>
+        
+
+
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <img id="about-card-picture" src="https://www.gravatar.com/avatar/c15bce1aa244179bb7de3768fec5cd1a?s=110" alt="作者的圖片"/>
+        
+            <h4 id="about-card-name">Gary Gong</h4>
+        
+            <div id="about-card-bio"><p>設計、深度學習、氣象三重人格</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>Currently N/A</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-2viyvycftmfpcli8fzempa1zpcnhhlhoksidxhqwexv6tgvxi9zelhkn3gxh.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+
+
+
+    </body>
+</html>
