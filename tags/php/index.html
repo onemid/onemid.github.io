@@ -3,7 +3,13 @@
 <html lang="zh-tw">
     
 <head>
-    <meta charset="UTF-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+    <link rel="dns-prefetch" href="//cdn.bootcss.com" />
+    <link rel="dns-prefetch" href="//cdn.mathjax.org" />
+    <link href="https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css" rel="stylesheet">
+    <script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Nothing to Do">
     <title>標籤: php - Nothing to Do</title>
@@ -31,14 +37,14 @@
     
     <!--STYLES-->
     <link rel="stylesheet" href="/assets/css/style-f5rl2ftdapwvs2nailovoko2modhd6z7jz1fksrs0xeb6wmll6ilijc8hsao.min.css">
-    <!--STYLES END-->
+    <!--STYLES END--><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 
     
 </head>
 
     <body>
-        <div id="blog">
+        <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="blog">
             <!-- Define author's picture -->
 
 
@@ -206,19 +212,28 @@
             </div>
             
                 <div class="postShorten-content">
-                    <h3 id="Install-the-Nginx-Web-Server"><a href="#Install-the-Nginx-Web-Server" class="headerlink" title="Install the Nginx Web Server"></a>Install the Nginx Web Server</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install nginx</span><br></pre></td></tr></table></figure>
+                    <h3 id="install-the-nginx-web-server"><a class="markdownIt-Anchor" href="#install-the-nginx-web-server"></a> Install the Nginx Web Server</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install nginx</span><br></pre></td></tr></table></figure>
 <p>請確認防火牆開啟埠號 80 / 443</p>
-<h3 id="Install-MySQL"><a href="#Install-MySQL" class="headerlink" title="Install MySQL"></a>Install MySQL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install mysql-server</span><br><span class="line">$ mysql_secure_installation</span><br></pre></td></tr></table></figure>
+<h3 id="install-mysql"><a class="markdownIt-Anchor" href="#install-mysql"></a> Install MySQL</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install mysql-server</span><br><span class="line">$ mysql_secure_installation</span><br></pre></td></tr></table></figure>
 <p>請遵照指示文字設定</p>
-<h3 id="Install-PHP-for-Processing"><a href="#Install-PHP-for-Processing" class="headerlink" title="Install PHP for Processing"></a>Install PHP for Processing</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install php-fpm php-mysql</span><br></pre></td></tr></table></figure>
-<h3 id="Configure-the-PHP-Processor"><a href="#Configure-the-PHP-Processor" class="headerlink" title="Configure the PHP Processor"></a>Configure the PHP Processor</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vim /etc/php/7.0/fpm/php.ini</span><br></pre></td></tr></table></figure>
-<p>編輯 php.ini 內部數值，先前請解除註解<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cgi.fix_pathinfo=0</span><br></pre></td></tr></table></figure></p>
-<p>重新啟動 PHP Processor<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo systemctl restart php7.0-fpm</span><br></pre></td></tr></table></figure></p>
-<h3 id="Configure-Nginx-to-Use-the-PHP-Processor"><a href="#Configure-Nginx-to-Use-the-PHP-Processor" class="headerlink" title="Configure Nginx to Use the PHP Processor"></a>Configure Nginx to Use the PHP Processor</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vim /etc/nginx/sites-available/default</span><br></pre></td></tr></table></figure>
-<p>編輯 default 內部檔案，更動原 server {…}  區塊為下方區塊<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 80 default_server;</span><br><span class="line">    listen [::]:80 default_server;</span><br><span class="line"></span><br><span class="line">    root /var/www/html;</span><br><span class="line">    index index.php index.html index.htm index.nginx-debian.html;</span><br><span class="line"></span><br><span class="line">    server_name server_domain_or_IP;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">        try_files $uri $uri/ =404;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location ~ \.php$ &#123;</span><br><span class="line">        include snippets/fastcgi-php.conf;</span><br><span class="line">        fastcgi_pass unix:/run/php/php7.0-fpm.sock;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location ~ /\.ht &#123;</span><br><span class="line">        deny all;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>結束後，利用 nginx -t 檢測是否存在語法錯誤<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo nginx -t</span><br></pre></td></tr></table></figure></p>
-<p>最後，重新載入 nginx 設定檔案<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo systemctl reload nginx</span><br></pre></td></tr></table></figure></p>
-
+<h3 id="install-php-for-processing"><a class="markdownIt-Anchor" href="#install-php-for-processing"></a> Install PHP for Processing</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install php-fpm php-mysql</span><br></pre></td></tr></table></figure>
+<h3 id="configure-the-php-processor"><a class="markdownIt-Anchor" href="#configure-the-php-processor"></a> Configure the PHP Processor</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vim /etc/php/7.0/fpm/php.ini</span><br></pre></td></tr></table></figure>
+<p>編輯 php.ini 內部數值，先前請解除註解</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cgi.fix_pathinfo=0</span><br></pre></td></tr></table></figure>
+<p>重新啟動 PHP Processor</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo systemctl restart php7.0-fpm</span><br></pre></td></tr></table></figure>
+<h3 id="configure-nginx-to-use-the-php-processor"><a class="markdownIt-Anchor" href="#configure-nginx-to-use-the-php-processor"></a> Configure Nginx to Use the PHP Processor</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vim /etc/nginx/sites-available/default</span><br></pre></td></tr></table></figure>
+<p>編輯 default 內部檔案，更動原 server {…}  區塊為下方區塊</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 80 default_server;</span><br><span class="line">    listen [::]:80 default_server;</span><br><span class="line"></span><br><span class="line">    root /var/www/html;</span><br><span class="line">    index index.php index.html index.htm index.nginx-debian.html;</span><br><span class="line"></span><br><span class="line">    server_name server_domain_or_IP;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">        try_files $uri $uri/ =404;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location ~ \.php$ &#123;</span><br><span class="line">        include snippets/fastcgi-php.conf;</span><br><span class="line">        fastcgi_pass unix:/run/php/php7.0-fpm.sock;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location ~ /\.ht &#123;</span><br><span class="line">        deny all;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>結束後，利用 nginx -t 檢測是否存在語法錯誤</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo nginx -t</span><br></pre></td></tr></table></figure>
+<p>最後，重新載入 nginx 設定檔案</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo systemctl reload nginx</span><br></pre></td></tr></table></figure>
                     
                         
 
@@ -291,7 +306,24 @@
 <div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
         <!--SCRIPTS-->
 <script src="/assets/js/script-ihzqqb9vaa6zbgr6vpavhghvwetivbowvk2spvpvui62cvijqknqtgkypqsl.min.js"></script>
-<!--SCRIPTS END-->
+<!--SCRIPTS END--><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 
 
 
