@@ -11,7 +11,7 @@
     
     
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Gary Gong","sameAs":["https://github.com/onemid/","https://www.facebook.com/yjgong85","https://www.linkedin.com/in/onemid85/","yijhong@hotmail.com.tw"],"image":"https://www.gravatar.com/avatar/b93d499c9197202a5fab6afb8ebe66d1"},"articleBody":"Install the Nginx Web Server12$ sudo apt-get update$ sudo apt-get install nginx\n請確認防火牆開啟埠號 80 / 443\nInstall MySQL12$ sudo apt-get install mysql-server$ mysql_secure_installation\n請遵照指示文字設定\nInstall PHP for Processing1$ sudo apt-get install php-fpm php-mysql\nConfigure the PHP Processor1$ sudo vim /etc/php/7.0/fpm/php.ini\n編輯 php.ini 內部數值，先前請解除註解1cgi.fix_pathinfo=0\n重新啟動 PHP Processor1$ sudo systemctl restart php7.0-fpm\nConfigure Nginx to Use the PHP Processor1$ sudo vim /etc/nginx/sites-available/default\n編輯 default 內部檔案，更動原 server {…}  區塊為下方區塊12345678910111213141516171819202122server &#123;    listen 80 default_server;    listen [::]:80 default_server;    root /var/www/html;    index index.php index.html index.htm index.nginx-debian.html;    server_name server_domain_or_IP;    location / &#123;        try_files $uri $uri/ =404;    &#125;    location ~ \\.php$ &#123;        include snippets/fastcgi-php.conf;        fastcgi_pass unix:/run/php/php7.0-fpm.sock;    &#125;    location ~ /\\.ht &#123;        deny all;    &#125;&#125;\n結束後，利用 nginx -t 檢測是否存在語法錯誤1$ sudo nginx -t\n最後，重新載入 nginx 設定檔案1$ sudo systemctl reload nginx\n","dateCreated":"2018-07-31T23:57:00+08:00","dateModified":"2018-08-01T00:03:51+08:00","datePublished":"2018-07-31T23:57:00+08:00","description":"","headline":"Nginx, MySQL, PHP Installation (Ubuntu 16.04)","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://onemid.github.io/2018/07/31/Nginx-MySQL-PHP-Installation-Ubuntu-16-04/"},"publisher":{"@type":"Organization","name":"Gary Gong","sameAs":["https://github.com/onemid/","https://www.facebook.com/yjgong85","https://www.linkedin.com/in/onemid85/","yijhong@hotmail.com.tw"],"image":"https://www.gravatar.com/avatar/b93d499c9197202a5fab6afb8ebe66d1","logo":{"@type":"ImageObject","url":"https://www.gravatar.com/avatar/b93d499c9197202a5fab6afb8ebe66d1"}},"url":"https://onemid.github.io/2018/07/31/Nginx-MySQL-PHP-Installation-Ubuntu-16-04/","keywords":"nginx, mysql, php"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Gary Gong","sameAs":["https://github.com/onemid/","https://www.linkedin.com/in/onemid85/"],"image":"https://www.gravatar.com/avatar/b93d499c9197202a5fab6afb8ebe66d1"},"articleBody":"Install the Nginx Web Server12$ sudo apt-get update$ sudo apt-get install nginx\n請確認防火牆開啟埠號 80 / 443\nInstall MySQL12$ sudo apt-get install mysql-server$ mysql_secure_installation\n請遵照指示文字設定\nInstall PHP for Processing1$ sudo apt-get install php-fpm php-mysql\nConfigure the PHP Processor1$ sudo vim /etc/php/7.0/fpm/php.ini\n編輯 php.ini 內部數值，先前請解除註解1cgi.fix_pathinfo=0\n重新啟動 PHP Processor1$ sudo systemctl restart php7.0-fpm\nConfigure Nginx to Use the PHP Processor1$ sudo vim /etc/nginx/sites-available/default\n編輯 default 內部檔案，更動原 server {…}  區塊為下方區塊12345678910111213141516171819202122server &#123;    listen 80 default_server;    listen [::]:80 default_server;    root /var/www/html;    index index.php index.html index.htm index.nginx-debian.html;    server_name server_domain_or_IP;    location / &#123;        try_files $uri $uri/ =404;    &#125;    location ~ \\.php$ &#123;        include snippets/fastcgi-php.conf;        fastcgi_pass unix:/run/php/php7.0-fpm.sock;    &#125;    location ~ /\\.ht &#123;        deny all;    &#125;&#125;\n結束後，利用 nginx -t 檢測是否存在語法錯誤1$ sudo nginx -t\n最後，重新載入 nginx 設定檔案1$ sudo systemctl reload nginx\n","dateCreated":"2018-07-31T23:57:00+08:00","dateModified":"2018-08-01T00:03:51+08:00","datePublished":"2018-07-31T23:57:00+08:00","description":"","headline":"Nginx, MySQL, PHP Installation (Ubuntu 16.04)","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://onemid.github.io/2018/07/31/Nginx-MySQL-PHP-Installation-Ubuntu-16-04/"},"publisher":{"@type":"Organization","name":"Gary Gong","sameAs":["https://github.com/onemid/","https://www.linkedin.com/in/onemid85/"],"image":"https://www.gravatar.com/avatar/b93d499c9197202a5fab6afb8ebe66d1","logo":{"@type":"ImageObject","url":"https://www.gravatar.com/avatar/b93d499c9197202a5fab6afb8ebe66d1"}},"url":"https://onemid.github.io/2018/07/31/Nginx-MySQL-PHP-Installation-Ubuntu-16-04/","keywords":"nginx, mysql, php"}</script>
     <meta name="description" content="Install the Nginx Web Server12$ sudo apt-get update$ sudo apt-get install nginx 請確認防火牆開啟埠號 80 / 443 Install MySQL12$ sudo apt-get install mysql-server$ mysql_secure_installation 請遵照指示文字設定 Install PHP">
 <meta name="keywords" content="nginx,mysql,php">
 <meta property="og:type" content="blog">
@@ -157,31 +157,10 @@
             
                 <li class="sidebar-button">
                     
-                        <a  class="sidebar-button-link " href="https://www.facebook.com/yjgong85" target="_blank" rel="noopener" title="Facebook">
-                    
-                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">Facebook</span>
-                    </a>
-            </li>
-            
-                <li class="sidebar-button">
-                    
                         <a  class="sidebar-button-link " href="https://www.linkedin.com/in/onemid85/" target="_blank" rel="noopener" title="LinkedIn">
                     
                         <i class="sidebar-button-icon fab fa-linkedin" aria-hidden="true"></i>
                         <span class="sidebar-button-desc">LinkedIn</span>
-                    </a>
-            </li>
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link "
-                             href="/yijhong@hotmail.com.tw"
-                            title="Email"
-                        >
-                    
-                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">Email</span>
                     </a>
             </li>
             
