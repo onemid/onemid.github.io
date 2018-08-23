@@ -37,12 +37,11 @@
     
     <!--STYLES-->
     <link rel="stylesheet" href="/assets/css/style-f5rl2ftdapwvs2nailovoko2modhd6z7jz1fksrs0xeb6wmll6ilijc8hsao.min.css">
-    <!--STYLES END-->
+    <!--STYLES END--><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 
     
-<link rel="stylesheet" href="/css/prism-atom-dark.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+</head>
 
     <body>
         <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="blog">
@@ -213,10 +212,8 @@
             </div>
             
                 <div class="postShorten-content">
-                    <h3>問題描述</h3>
-<p>在使用 <code>pip3</code> 時，會回應 <code>zlib</code>相關的問題</p>
-<p>###簡單解法</p>
-<p>開 terminal 打</p>
+                    <h3 id="問題描述"><a href="#問題描述" class="headerlink" title="問題描述"></a>問題描述</h3><p>在使用 <code>pip3</code> 時，會回應 <code>zlib</code>相關的問題</p>
+<h3 id="簡單解法"><a href="#簡單解法" class="headerlink" title="簡單解法"></a>簡單解法</h3><p>開 terminal 打</p>
 <p><code>xcode-select --install</code></p>
 <p>之後再裝</p>
 <p><code>brew install python3</code></p>
@@ -275,17 +272,15 @@
 <p>搞到後來我都不知道我在幹嘛</p>
 <p>結果 github 上面跟本機看得不一樣</p>
 <p>這是 inline $ x^2+x-5=y $</p>
-<p>這是隔行
-$$
-x^2+8
-$$
-累死我ㄌ</p>
+<p>這是隔行</p>
+<script type="math/tex; mode=display">
+x^2+8</script><p>累死我ㄌ</p>
 <hr>
 <p>【2018/8/23 更】</p>
 <p>我有試圖用過「hexo-renderer-markdown-it-plus」加「katex」，但是因為又喇了「hexo-math」套件，就形成 inline latex 給 hexo-math 渲染，隔行的 latex 給 katex 渲染。</p>
 <p>但是 katex 在我試的時候 x 二次方的 2 跑版了，不得不放棄 katex；所以又換回「hexo-renderer-markdown-it」渲染，再搭配「hexo-math」。</p>
 <p>然後在<code>_config.yml</code>安插一小段</p>
-<pre class="line-numbers language-language-json"><code class="language-language-json">math:
+<pre class="line-numbers language-lang-json"><code class="language-lang-json">math:
    engine: 'mathjax'
    mathjax:
      src: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
@@ -296,10 +291,9 @@ $$
              processEscapes: true
          TeX:
              equationNumbers:
-				autoNumber: "AMS"
+                autoNumber: "AMS"
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h6>無關緊要的後記</h6>
-<p>話說，我很想把 <code>*.yml</code>那個 yml 念成 やめろ，不覺得很像嗎？ya me ro</p>
+<h6 id="無關緊要的後記"><a href="#無關緊要的後記" class="headerlink" title="無關緊要的後記"></a>無關緊要的後記</h6><p>話說，我很想把 <code>*.yml</code>那個 yml 念成 やめろ，不覺得很像嗎？ya me ro</p>
 
                     
                         
