@@ -12,20 +12,19 @@
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Nothing to Do">
-    <title>all-archives - Nothing to Do</title>
+    <title>標籤: macos - Nothing to Do</title>
     <meta name="author" content="Gary Gong">
     
     
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"Website","@id":"https://onemid.github.io","author":{"@type":"Person","name":"Gary Gong","sameAs":["https://github.com/onemid/","https://www.linkedin.com/in/onemid85/"],"image":"https://www.gravatar.com/avatar/b93d499c9197202a5fab6afb8ebe66d1"},"name":"Nothing to Do","description":null,"url":"https://onemid.github.io"}</script>
+    <script type="application/ld+json">{}</script>
     <meta property="og:type" content="blog">
-<meta property="og:title" content="all-archives">
-<meta property="og:url" content="https://onemid.github.io/all-archives/index.html">
+<meta property="og:title" content="Nothing to Do">
+<meta property="og:url" content="https://onemid.github.io/tags/macos/index.html">
 <meta property="og:site_name" content="Nothing to Do">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2018-07-31T16:18:23.822Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="all-archives">
+<meta name="twitter:title" content="Nothing to Do">
     
     
         
@@ -181,77 +180,74 @@
                         hasCoverMetaIn
                         ">
                 
-<div id="archives" class="main-content-wrap">
-    <form id="filter-form" action="#">
-        <input name="date" type="text" class="form-control input--xlarge" placeholder="搜尋日期（YYYY/MM/DD）" autofocus="autofocus">
-    </form>
-    <h5 class="archive-result text-color-base text-xlarge"
-        data-message-zero="沒有找到文章"
-        data-message-one="找到 1 篇文章"
-        data-message-other="找到 {n} 篇文章"></h5>
-    <section class="boxes">
+    <section class="postShorten-group main-content-wrap">
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a class="link-unstyled" href="/2018/08/23/python3-pip3-zlib-in-macos/">
+                            Cannot Use Pip3 in MacOS (zlib Dependency Problem)
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-08-23T09:32:15+08:00">
+	
+		    8月 23, 2018
+    	
+    </time>
+    
+        <span>分類 </span>
         
-            
-            
-            
-                
-                
-                <div class="archive archive-year box" data-date="2018">
-                    <h4 class="archive-title">
-                        <a class="link-unstyled" href="/archives/2018">2018</a>
-                    </h4>
-            
-            
-                
-                <ul class="archive-posts archive-month" data-date="201808">
-                    <h5 class="archive-title">
-                        <a class="link-unstyled" href="/archives/2018/08">八月</a>
-                    </h5>
-                
-            
-            <li class="archive-post archive-day" data-date="20180823">
-                <a class="archive-post-title" href="/2018/08/23/python3-pip3-zlib-in-macos/">Cannot Use Pip3 in MacOS (zlib Dependency Problem)</a>
-                <span class="archive-post-date"> - 8月 23, 2018</span>
-            </li>
-        
-            
-            
-            
-            
-            <li class="archive-post archive-day" data-date="20180801">
-                <a class="archive-post-title" href="/2018/08/01/testmath/">zzz我終於把 mathjax 弄進去了</a>
-                <span class="archive-post-date"> - 8月 01, 2018</span>
-            </li>
-        
-            
-            
-            
-            
-                
-                    </ul>
-                
-                <ul class="archive-posts archive-month" data-date="201807">
-                    <h5 class="archive-title">
-                        <a class="link-unstyled" href="/archives/2018/07">七月</a>
-                    </h5>
-                
-            
-            <li class="archive-post archive-day" data-date="20180731">
-                <a class="archive-post-title" href="/2018/07/31/Nginx-MySQL-PHP-Installation-Ubuntu-16-04/">Nginx, MySQL, PHP Installation (Ubuntu 16.04)</a>
-                <span class="archive-post-date"> - 7月 31, 2018</span>
-            </li>
-        
-            
-            
-            
-            
-            <li class="archive-post archive-day" data-date="20180731">
-                <a class="archive-post-title" href="/2018/07/31/cuda-and-tf-install/">Compiling TensorFlow-GPU on Ubuntu 16.04 with CUDA 9.1(9.2) and Python3</a>
-                <span class="archive-post-date"> - 7月 31, 2018</span>
-            </li>
-        
-    </section>
+    <a class="category-link" href="/categories/python3/">python3</a>
+
+
+    
 </div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h3 id="問題描述"><a href="#問題描述" class="headerlink" title="問題描述"></a>問題描述</h3><p>在使用 <code>pip3</code> 時，會回應 <code>zlib</code>相關的問題</p>
+<h3 id="簡單解法"><a href="#簡單解法" class="headerlink" title="簡單解法"></a>簡單解法</h3><p>開 terminal 打</p>
+<p><code>xcode-select --install</code></p>
+<p>之後再裝</p>
+<p><code>brew install python3</code></p>
+<p>如果先裝 <code>python3</code> 然後再裝 <code>xcode-select</code> 東西的話</p>
+<p><code>brew reinstall python3</code></p>
+<p>就重裝 <code>python3</code> 吧</p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/08/23/python3-pip3-zlib-in-macos/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
+        
+        
+        <li class="pagination-number">第 1 頁 共 1 頁</li>
+    </ul>
+</div>
+
+</section>
+
 
                 <footer id="footer" class="main-content-wrap">
     <span class="copyrights">
