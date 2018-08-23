@@ -149,14 +149,6 @@ dl dt {
 dl dd {
   margin-left: 0; }
 
-code {
-  font-size: 1.5rem;
-  display: inline-block;
-  font-family: Menlo, Consolas, monospace;
-  font-weight: 400;
-  background-color: #f7f8f8;
-  padding: 0 10px; }
-
 acronym,
 abbr {
   border-bottom: 1px dotted #5d686f; }
@@ -2638,13 +2630,6 @@ a.tag--small,
     position: relative;
     top: 50%;
     transform: translateY(-50%); }
-
-pre > code {
-  background: #f7f8f8;
-  color: #333; }
-
-code {
-  background-color: #f7f8f8; }
 
 .codeblock--tabbed figcaption .tab.active {
   background: #349ef3;
