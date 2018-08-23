@@ -215,28 +215,31 @@
 <p>搞到後來我都不知道我在幹嘛</p>
 <p>結果 github 上面跟本機看得不一樣</p>
 <p>這是 inline $ x^2+x-5=y $</p>
-<p>這是隔行</p>
-<script type="math/tex; mode=display">
-x^2+8</script><p>累死我ㄌ</p>
+<p>這是隔行
+$$
+x^2+8
+$$
+累死我ㄌ</p>
 <hr>
 <p>【2018/8/23 更】</p>
 <p>我有試圖用過「hexo-renderer-markdown-it-plus」加「katex」，但是因為又喇了「hexo-math」套件，就形成 inline latex 給 hexo-math 渲染，隔行的 latex 給 katex 渲染。</p>
 <p>但是 katex 在我試的時候 x 二次方的 2 跑版了，不得不放棄 katex；所以又換回「hexo-renderer-markdown-it」渲染，再搭配「hexo-math」。</p>
 <p>然後在<code>_config.yml</code>安插一小段</p>
-<pre><code class="lang-json">math:
-   engine: &#39;mathjax&#39;
+<pre><code class="language-json">math:
+   engine: 'mathjax'
    mathjax:
      src: &quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;
      config:
          tex2jax:
-             inlineMath: [ [&#39;$&#39;,&#39;$&#39;], [&quot;\\(&quot;,&quot;\\)&quot;] ]
-             skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;, &#39;code&#39;]
+             inlineMath: [ ['$','$'], [&quot;\\(&quot;,&quot;\\)&quot;] ]
+             skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
              processEscapes: true
          TeX:
              equationNumbers:
-                autoNumber: &quot;AMS&quot;
+				autoNumber: &quot;AMS&quot;
 </code></pre>
-<h6 id="無關緊要的後記"><a href="#無關緊要的後記" class="headerlink" title="無關緊要的後記"></a>無關緊要的後記</h6><p>話說，我很想把 <code>*.yml</code>那個 yml 念成 やめろ，不覺得很像嗎？ya me ro</p>
+<h6>無關緊要的後記</h6>
+<p>話說，我很想把 <code>*.yml</code>那個 yml 念成 やめろ，不覺得很像嗎？ya me ro</p>
 
                     
                         
@@ -269,9 +272,10 @@ x^2+8</script><p>累死我ㄌ</p>
 
                 <!-- Highlight.js -->
 <link rel="stylesheet"
-      href="//cdn.bootcss.com/highlight.js/9.2.0/styles/github.min.css">
-<script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js">
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/obsidian.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js">
 </script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/julia.min.js"></script>
 <script>
     hljs.initHighlightingOnLoad();
 </script>

@@ -188,6 +188,70 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
+                        <a class="link-unstyled" href="/2018/08/23/hexo-syntax-highlighting/">
+                            Hexo Syntax Highlighting (Tested under Tranquilpeak)
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-08-23T17:24:27+08:00">
+	
+		    8月 23, 2018
+    	
+    </time>
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <p>把這個主題弄 Syntax Highlighting 又是一番折騰，本來想說用<code>prism.js</code>做做，奈何就是在佈景上跟原始的佈景相衝，該高亮顯示的地方也沒有，索性走回頭路用<code>highlight.js</code></p>
+<p>基本上在 Hexo 佈景機制裡面加上一些 Code 就好，根據官網所述：</p>
+<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;/path/to/styles/default.css&quot;&gt;
+&lt;script src=&quot;/path/to/highlight.pack.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;hljs.initHighlightingOnLoad();&lt;/script&gt;
+</code></pre>
+<p>其中<code>/path/to/styles/default.css</code>基本上就是這個<code>highlight.js</code>的佈景即是， <a href="https://highlightjs.org/static/demo/" target="_blank" rel="noopener">https://highlightjs.org/static/demo/ </a>這裡一票佈景，算是可以輕鬆找到要的。</p>
+<p>如果說要用 CDN 的話，可以來這裡 <a href="https://cdnjs.com/libraries/highlight.js/" target="_blank" rel="noopener">https://cdnjs.com/libraries/highlight.js/</a> 翻翻，但是官網標配只含標準支援的程式碼 Highlighting 的功能，如果要額外的（比如說想用什麼 Julia 之類的），那得要自己去官網選配或是額外加 CDN，例如：</p>
+<pre><code class="language-html">...
+&lt;!-- 標準配備 --&gt;
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js&quot;&gt;&lt;/script&gt;
+&lt;!-- 選配 Julia --&gt;
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/julia.min.js&quot;&gt;&lt;/script&gt;
+...
+</code></pre>
+<p>在 Hexo 佈景機制加上上述的東西，個人是放在 <code>themes/tranquilpeak/layout/_partial/footer.ejs</code>，可以動；比較重要的是，在 Hexo 根目錄下的<code>_config.yml</code>裡面：</p>
+<pre><code class="language-yaml">...
+highlight:
+	enable: false
+...
+</code></pre>
+<p>記得要把 <code>enable</code> 改成 <code>false</code>，不然會打架。</p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/08/23/hexo-syntax-highlighting/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
                         <a class="link-unstyled" href="/2018/08/23/python3-pip3-zlib-in-macos/">
                             Cannot Use Pip3 in MacOS (zlib Dependency Problem)
                         </a>
@@ -211,8 +275,10 @@
             </div>
             
                 <div class="postShorten-content">
-                    <h3 id="問題描述"><a href="#問題描述" class="headerlink" title="問題描述"></a>問題描述</h3><p>在使用 <code>pip3</code> 時，會回應 <code>zlib</code>相關的問題</p>
-<h3 id="簡單解法"><a href="#簡單解法" class="headerlink" title="簡單解法"></a>簡單解法</h3><p>開 terminal 打</p>
+                    <h3>問題描述</h3>
+<p>在使用 <code>pip3</code> 時，會回應 <code>zlib</code>相關的問題</p>
+<p>###簡單解法</p>
+<p>開 terminal 打</p>
 <p><code>xcode-select --install</code></p>
 <p>之後再裝</p>
 <p><code>brew install python3</code></p>
@@ -271,28 +337,31 @@
 <p>搞到後來我都不知道我在幹嘛</p>
 <p>結果 github 上面跟本機看得不一樣</p>
 <p>這是 inline $ x^2+x-5=y $</p>
-<p>這是隔行</p>
-<script type="math/tex; mode=display">
-x^2+8</script><p>累死我ㄌ</p>
+<p>這是隔行
+$$
+x^2+8
+$$
+累死我ㄌ</p>
 <hr>
 <p>【2018/8/23 更】</p>
 <p>我有試圖用過「hexo-renderer-markdown-it-plus」加「katex」，但是因為又喇了「hexo-math」套件，就形成 inline latex 給 hexo-math 渲染，隔行的 latex 給 katex 渲染。</p>
 <p>但是 katex 在我試的時候 x 二次方的 2 跑版了，不得不放棄 katex；所以又換回「hexo-renderer-markdown-it」渲染，再搭配「hexo-math」。</p>
 <p>然後在<code>_config.yml</code>安插一小段</p>
-<pre><code class="lang-json">math:
-   engine: &#39;mathjax&#39;
+<pre><code class="language-json">math:
+   engine: 'mathjax'
    mathjax:
      src: &quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;
      config:
          tex2jax:
-             inlineMath: [ [&#39;$&#39;,&#39;$&#39;], [&quot;\\(&quot;,&quot;\\)&quot;] ]
-             skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;, &#39;code&#39;]
+             inlineMath: [ ['$','$'], [&quot;\\(&quot;,&quot;\\)&quot;] ]
+             skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
              processEscapes: true
          TeX:
              equationNumbers:
-                autoNumber: &quot;AMS&quot;
+				autoNumber: &quot;AMS&quot;
 </code></pre>
-<h6 id="無關緊要的後記"><a href="#無關緊要的後記" class="headerlink" title="無關緊要的後記"></a>無關緊要的後記</h6><p>話說，我很想把 <code>*.yml</code>那個 yml 念成 やめろ，不覺得很像嗎？ya me ro</p>
+<h6>無關緊要的後記</h6>
+<p>話說，我很想把 <code>*.yml</code>那個 yml 念成 やめろ，不覺得很像嗎？ya me ro</p>
 
                     
                         
@@ -325,9 +394,10 @@ x^2+8</script><p>累死我ㄌ</p>
 
                 <!-- Highlight.js -->
 <link rel="stylesheet"
-      href="//cdn.bootcss.com/highlight.js/9.2.0/styles/github.min.css">
-<script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js">
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/obsidian.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js">
 </script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/julia.min.js"></script>
 <script>
     hljs.initHighlightingOnLoad();
 </script>

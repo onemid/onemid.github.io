@@ -211,20 +211,32 @@
             </div>
             
                 <div class="postShorten-content">
-                    <h3 id="Install-the-Nginx-Web-Server"><a href="#Install-the-Nginx-Web-Server" class="headerlink" title="Install the Nginx Web Server"></a>Install the Nginx Web Server</h3><pre><code>$ sudo apt-get update
+                    <h3>Install the Nginx Web Server</h3>
+<pre><code>$ sudo apt-get update
 $ sudo apt-get install nginx
-</code></pre><p>請確認防火牆開啟埠號 80 / 443</p>
-<h3 id="Install-MySQL"><a href="#Install-MySQL" class="headerlink" title="Install MySQL"></a>Install MySQL</h3><pre><code>$ sudo apt-get install mysql-server
+</code></pre>
+<p>請確認防火牆開啟埠號 80 / 443</p>
+<h3>Install MySQL</h3>
+<pre><code>$ sudo apt-get install mysql-server
 $ mysql_secure_installation
-</code></pre><p>請遵照指示文字設定</p>
-<h3 id="Install-PHP-for-Processing"><a href="#Install-PHP-for-Processing" class="headerlink" title="Install PHP for Processing"></a>Install PHP for Processing</h3><pre><code>$ sudo apt-get install php-fpm php-mysql
-</code></pre><h3 id="Configure-the-PHP-Processor"><a href="#Configure-the-PHP-Processor" class="headerlink" title="Configure the PHP Processor"></a>Configure the PHP Processor</h3><pre><code>$ sudo vim /etc/php/7.0/fpm/php.ini
-</code></pre><p>編輯 php.ini 內部數值，先前請解除註解</p>
+</code></pre>
+<p>請遵照指示文字設定</p>
+<h3>Install PHP for Processing</h3>
+<pre><code>$ sudo apt-get install php-fpm php-mysql
+</code></pre>
+<h3>Configure the PHP Processor</h3>
+<pre><code>$ sudo vim /etc/php/7.0/fpm/php.ini
+</code></pre>
+<p>編輯 php.ini 內部數值，先前請解除註解</p>
 <pre><code>cgi.fix_pathinfo=0
-</code></pre><p>重新啟動 PHP Processor</p>
+</code></pre>
+<p>重新啟動 PHP Processor</p>
 <pre><code>$ sudo systemctl restart php7.0-fpm
-</code></pre><h3 id="Configure-Nginx-to-Use-the-PHP-Processor"><a href="#Configure-Nginx-to-Use-the-PHP-Processor" class="headerlink" title="Configure Nginx to Use the PHP Processor"></a>Configure Nginx to Use the PHP Processor</h3><pre><code>$ sudo vim /etc/nginx/sites-available/default
-</code></pre><p>編輯 default 內部檔案，更動原 server {…}  區塊為下方區塊</p>
+</code></pre>
+<h3>Configure Nginx to Use the PHP Processor</h3>
+<pre><code>$ sudo vim /etc/nginx/sites-available/default
+</code></pre>
+<p>編輯 default 內部檔案，更動原 server {...}  區塊為下方區塊</p>
 <pre><code>server {
     listen 80 default_server;
     listen [::]:80 default_server;
@@ -247,11 +259,14 @@ $ mysql_secure_installation
         deny all;
     }
 }
-</code></pre><p>結束後，利用 nginx -t 檢測是否存在語法錯誤</p>
+</code></pre>
+<p>結束後，利用 nginx -t 檢測是否存在語法錯誤</p>
 <pre><code>$ sudo nginx -t
-</code></pre><p>最後，重新載入 nginx 設定檔案</p>
+</code></pre>
+<p>最後，重新載入 nginx 設定檔案</p>
 <pre><code>$ sudo systemctl reload nginx
 </code></pre>
+
                     
                         
 
@@ -282,9 +297,10 @@ $ mysql_secure_installation
 
                 <!-- Highlight.js -->
 <link rel="stylesheet"
-      href="//cdn.bootcss.com/highlight.js/9.2.0/styles/github.min.css">
-<script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js">
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/obsidian.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js">
 </script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/julia.min.js"></script>
 <script>
     hljs.initHighlightingOnLoad();
 </script>
