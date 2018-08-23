@@ -17,19 +17,19 @@
     
     
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Gary Gong","sameAs":["https://github.com/onemid/","https://www.linkedin.com/in/onemid85/"],"image":"https://www.gravatar.com/avatar/b93d499c9197202a5fab6afb8ebe66d1"},"articleBody":"Install CUDA:https://developer.nvidia.com/cuda-downloads?target_os=Linux&amp;target_arch=ppc64le&amp;target_distro=Ubuntu&amp;target_version=1604&amp;target_type=deblocal\n\nHere, we used “Linux” -&gt; “ppc64le”(64-bit) -&gt; “16.04” -&gt; “deb(local)”, and downloaded the “Base Installer” (approx. 1.0GB)\n\nFollowing the guidance which given by the nVidia webpage to install the CUDA.\n\nDuring installation, the installation program will ask you to create a “==symbolic link==” of CUDA library folder; remember to create.\n\nCreate the environment variable to make these work.\nexport LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/ local/cuda/extras/CUPTI/lib64:/usr/lib/nvidia-381\n# Remember that nvidia-381 is the driver version, if you install 390, please modifiy it to nvidia-390\nexport CUDA_HOME=/usr/local/cuda\nexport PATH=$PATH:/usr/local/cuda/bin\n\n\nExecute source ~/.bashrc (source ~/.zshrc if you use zsh instead of bash) to apply the environment variable.\n\n\nInstall cuDNN:https://developer.nvidia.com/rdp/cudnn-download\n==You need have a nVidia developer membership account (free to signup) to coutinue to download the cuDNN package.==\n\nAfter logining to the download webpage, select the corresponding CUDA version.\n\nSelect cuDNN v7.?.? Library for Linux\n\nUnzip the package and copy the file into the system folder by following command:\ntar -zxvf cudnn-9.?-linux-x64-v7.?.tgz\nsudo cp cuda/include/cudnn.h /usr/local/cuda/include/\nsudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64/ -d\nsudo chmod a+r /usr/local/cuda/include/cudnn.h\nsudo chmod a+r /usr/local/cuda/lib64/libcudnn*\n\n\n\nFirst Check:\nCheck your CUDA version by following command:\ncat /usr/local/cuda/version.txt\n\n\nCheck your cuDNN version by following command:\ncat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2\n\n​\n\n\nPreparing Your Dependency:sudo apt-get install python3-numpy python3-dev python3-pip python3-wheel\nsudo apt-get install cuda-command-line-tools \nexport LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64\n\nClone the Tensorflow:git clone https://github.com/tensorflow/tensorflow \ncd tensorflow\ngit checkout Branch # where Branch is the desired branch\n\nConfigure Your Tensorflow:cd tensorflow\n./configure\n\nYou have bazel 0.11.1 installed.\nPlease specify the location of python. [Default is /home/garygone/python-dev/dl/bin/python]:\n\n\nTraceback (most recent call last):\n  File \"\", line 1, in \nAttributeError: module 'site' has no attribute 'getsitepackages'\nFound possible Python library paths:\n  /home/garygone/python-dev/dl/lib/python3.5/site-packages\nPlease input the desired Python library path to use.  Default is [/home/garygone/python-dev/dl/lib/python3.5/site-packages]\n\nDo you wish to build TensorFlow with jemalloc as malloc support? [Y/n]:\njemalloc as malloc support will be enabled for TensorFlow.\n\nDo you wish to build TensorFlow with Google Cloud Platform support? [Y/n]: n\nNo Google Cloud Platform support will be enabled for TensorFlow.\n\nDo you wish to build TensorFlow with Hadoop File System support? [Y/n]:\nHadoop File System support will be enabled for TensorFlow.\n\nDo you wish to build TensorFlow with Amazon S3 File System support? [Y/n]: n\nNo Amazon S3 File System support will be enabled for TensorFlow.\n\nDo you wish to build TensorFlow with Apache Kafka Platform support? [y/N]:\nNo Apache Kafka Platform support will be enabled for TensorFlow.\n\nDo you wish to build TensorFlow with XLA JIT support? [y/N]: Y\nXLA JIT support will be enabled for TensorFlow.\n\nDo you wish to build TensorFlow with GDR support? [y/N]:\nNo GDR support will be enabled for TensorFlow.\n\nDo you wish to build TensorFlow with VERBS support? [y/N]:\nNo VERBS support will be enabled for TensorFlow.\n\nDo you wish to build TensorFlow with OpenCL SYCL support? [y/N]:\nNo OpenCL SYCL support will be enabled for TensorFlow.\n\nDo you wish to build TensorFlow with CUDA support? [y/N]: Y\nCUDA support will be enabled for TensorFlow.\n\nPlease specify the CUDA SDK version you want to use, e.g. 7.0. [Leave empty to default to CUDA 9.0]: 9.1\n\n\nPlease specify the location where CUDA 9.1 toolkit is installed. Refer to README.md for more details. [Default is /usr/local/cuda]:\n\n\nPlease specify the cuDNN version you want to use. [Leave empty to default to cuDNN 7.0]:\n\n\nPlease specify the location where cuDNN 7 library is installed. Refer to README.md for more details. [Default is /usr/local/cuda]:\n\n\nDo you wish to build TensorFlow with TensorRT support? [y/N]:\nNo TensorRT support will be enabled for TensorFlow.\n\nPlease specify a list of comma-separated Cuda compute capabilities you want to build with.\nYou can find the compute capability of your device at: https://developer.nvidia.com/cuda-gpus.\nPlease note that each additional compute capability significantly increases your build time and binary size. [Default is: 6.1,6.1,6.1,6.1,6.1,6.1,6.1,6.1]\n\n\nDo you want to use clang as CUDA compiler? [y/N]:\nnvcc will be used as CUDA compiler.\n\nPlease specify which gcc should be used by nvcc as the host compiler. [Default is /usr/bin/gcc]:\n\n\nDo you wish to build TensorFlow with MPI support? [y/N]:\nNo MPI support will be enabled for TensorFlow.\n\nPlease specify optimization flags to use during compilation when bazel option \"--config=opt\" is specified [Default is -march=native]:\n\n\nWould you like to interactively configure ./WORKSPACE for Android builds? [y/N]:\nNot configuring the WORKSPACE for Android builds.\n\nPreconfigured Bazel build configs. You can use any of the below by adding \"--config=\" to your build command. See tools/bazel.rc for more details.\n        --config=mkl            # Build with MKL support.\n        --config=monolithic     # Config for mostly static monolithic build.\nConfiguration finished\n\nBuild Your Tensorflow with gcc5:bazel build --config=opt --config=cuda --cxxopt=\"-D_GLIBCXX_USE_CXX11_ABI=0\" //tensorflow/tools/pip_package:build_pip_package\n\nIf build sucessfully:\nbazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg\n\nand exec.\npip3 install /tmp/tensorflow_pkg/tensorflow-1.7.0-cp35-cp35m-linux_x86_64.whl\n\n(Please make sure you are in virtualenv if you want to install this in your virtualenv and do not use sudo.)\nWhat I have seen:\nhttps://www.tensorflow.org/install/install_sources : Installing TF from Source\nHow to find which version of TensorFlow is installed in my system?\nhttps://github.com/tensorflow/tensorflow/issues/15604 : ImportError: libcublas.so.9.0: cannot open shared object file: No such file or directory\nHow to get the cuda version?\n[[NV] How to check CUDA and cuDNN version] (https://medium.com/@changrongko/nv-how-to-check-cuda-and-cudnn-version-e05aa21daf6c) : \nhttp://windywinter.cn/2018/03/10/ML/tensorflow-gpu版本的编译/ : tensorflow-gpu版本的编译\n学习Tensorflow(1)\n\n","dateCreated":"2018-07-31T14:04:03+08:00","dateModified":"2018-07-31T14:09:08+08:00","datePublished":"2018-07-31T14:04:03+08:00","description":"","headline":"Compiling TensorFlow-GPU on Ubuntu 16.04 with CUDA 9.1(9.2) and Python3","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://onemid.github.io/2018/07/31/cuda-and-tf-install/"},"publisher":{"@type":"Organization","name":"Gary Gong","sameAs":["https://github.com/onemid/","https://www.linkedin.com/in/onemid85/"],"image":"https://www.gravatar.com/avatar/b93d499c9197202a5fab6afb8ebe66d1","logo":{"@type":"ImageObject","url":"https://www.gravatar.com/avatar/b93d499c9197202a5fab6afb8ebe66d1"}},"url":"https://onemid.github.io/2018/07/31/cuda-and-tf-install/","keywords":"tensorflow, cuda"}</script>
-    <meta name="description" content="Install CUDA:https://developer.nvidia.com/cuda-downloads?target_os=Linux&amp;amp;target_arch=ppc64le&amp;amp;target_distro=Ubuntu&amp;amp;target_version=1604&amp;amp;target_type=deblocal  Here, we used “Linux” -&amp;gt;">
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Gary Gong","sameAs":["https://github.com/onemid/","https://www.linkedin.com/in/onemid85/"],"image":"https://www.gravatar.com/avatar/b93d499c9197202a5fab6afb8ebe66d1"},"articleBody":"Install CUDA:\nhttps://developer.nvidia.com/cuda-downloads?target_os=Linux&amp;target_arch=ppc64le&amp;target_distro=Ubuntu&amp;target_version=1604&amp;target_type=deblocal\n\n\nHere, we used &quot;Linux&quot; -&gt; &quot;ppc64le&quot;(64-bit) -&gt; &quot;16.04&quot; -&gt; &quot;deb(local)&quot;, and downloaded the &quot;Base Installer&quot; (approx. 1.0GB)\n\n\nFollowing the guidance which given by the nVidia webpage to install the CUDA.\n\n\nDuring installation, the installation program will ask you to create a &quot;==symbolic link==&quot; of CUDA library folder; remember to create.\n\n\nCreate the environment variable to make these work.\nexport LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/ local/cuda/extras/CUPTI/lib64:/usr/lib/nvidia-381\n# Remember that nvidia-381 is the driver version, if you install 390, please modifiy it to nvidia-390\nexport CUDA_HOME=/usr/local/cuda\nexport PATH=$PATH:/usr/local/cuda/bin\n\n\n\nExecute source ~/.bashrc (source ~/.zshrc if you use zsh instead of bash) to apply the environment variable.\n\n\nInstall cuDNN:\nhttps://developer.nvidia.com/rdp/cudnn-download\n==You need have a nVidia developer membership account (free to signup) to coutinue to download the cuDNN package.==\n\n\nAfter logining to the download webpage, select the corresponding CUDA version.\n\n\nSelect cuDNN v7.?.? Library for Linux\n\n\nUnzip the package and copy the file into the system folder by following command:\ntar -zxvf cudnn-9.?-linux-x64-v7.?.tgz\nsudo cp cuda/include/cudnn.h /usr/local/cuda/include/\nsudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64/ -d\nsudo chmod a+r /usr/local/cuda/include/cudnn.h\nsudo chmod a+r /usr/local/cuda/lib64/libcudnn*\n\n\n\nFirst Check:\n\n\nCheck your CUDA version by following command:\ncat /usr/local/cuda/version.txt\n\n\n\nCheck your cuDNN version by following command:\ncat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2\n\n​\n\n\nPreparing Your Dependency:\nsudo apt-get install python3-numpy python3-dev python3-pip python3-wheel\nsudo apt-get install cuda-command-line-tools \nexport LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64 \n\nClone the Tensorflow:\ngit clone https://github.com/tensorflow/tensorflow \ncd tensorflow\ngit checkout Branch # where Branch is the desired branch\n\nConfigure Your Tensorflow:\ncd tensorflow\n./configure\n\nYou have bazel 0.11.1 installed.\nPlease specify the location of python. [Default is /home/garygone/python-dev/dl/bin/python]:\n\n\nTraceback (most recent call last):\n  File \"\", line 1, in \nAttributeError: module 'site' has no attribute 'getsitepackages'\nFound possible Python library paths:\n  /home/garygone/python-dev/dl/lib/python3.5/site-packages\nPlease input the desired Python library path to use.  Default is [/home/garygone/python-dev/dl/lib/python3.5/site-packages]\n\nDo you wish to build TensorFlow with jemalloc as malloc support? [Y/n]:\njemalloc as malloc support will be enabled for TensorFlow.\n\nDo you wish to build TensorFlow with Google Cloud Platform support? [Y/n]: n\nNo Google Cloud Platform support will be enabled for TensorFlow.\n\nDo you wish to build TensorFlow with Hadoop File System support? [Y/n]:\nHadoop File System support will be enabled for TensorFlow.\n\nDo you wish to build TensorFlow with Amazon S3 File System support? [Y/n]: n\nNo Amazon S3 File System support will be enabled for TensorFlow.\n\nDo you wish to build TensorFlow with Apache Kafka Platform support? [y/N]:\nNo Apache Kafka Platform support will be enabled for TensorFlow.\n\nDo you wish to build TensorFlow with XLA JIT support? [y/N]: Y\nXLA JIT support will be enabled for TensorFlow.\n\nDo you wish to build TensorFlow with GDR support? [y/N]:\nNo GDR support will be enabled for TensorFlow.\n\nDo you wish to build TensorFlow with VERBS support? [y/N]:\nNo VERBS support will be enabled for TensorFlow.\n\nDo you wish to build TensorFlow with OpenCL SYCL support? [y/N]:\nNo OpenCL SYCL support will be enabled for TensorFlow.\n\nDo you wish to build TensorFlow with CUDA support? [y/N]: Y\nCUDA support will be enabled for TensorFlow.\n\nPlease specify the CUDA SDK version you want to use, e.g. 7.0. [Leave empty to default to CUDA 9.0]: 9.1\n\n\nPlease specify the location where CUDA 9.1 toolkit is installed. Refer to README.md for more details. [Default is /usr/local/cuda]:\n\n\nPlease specify the cuDNN version you want to use. [Leave empty to default to cuDNN 7.0]:\n\n\nPlease specify the location where cuDNN 7 library is installed. Refer to README.md for more details. [Default is /usr/local/cuda]:\n\n\nDo you wish to build TensorFlow with TensorRT support? [y/N]:\nNo TensorRT support will be enabled for TensorFlow.\n\nPlease specify a list of comma-separated Cuda compute capabilities you want to build with.\nYou can find the compute capability of your device at: https://developer.nvidia.com/cuda-gpus.\nPlease note that each additional compute capability significantly increases your build time and binary size. [Default is: 6.1,6.1,6.1,6.1,6.1,6.1,6.1,6.1]\n\n\nDo you want to use clang as CUDA compiler? [y/N]:\nnvcc will be used as CUDA compiler.\n\nPlease specify which gcc should be used by nvcc as the host compiler. [Default is /usr/bin/gcc]:\n\n\nDo you wish to build TensorFlow with MPI support? [y/N]:\nNo MPI support will be enabled for TensorFlow.\n\nPlease specify optimization flags to use during compilation when bazel option \"--config=opt\" is specified [Default is -march=native]:\n\n\nWould you like to interactively configure ./WORKSPACE for Android builds? [y/N]:\nNot configuring the WORKSPACE for Android builds.\n\nPreconfigured Bazel build configs. You can use any of the below by adding \"--config=\" to your build command. See tools/bazel.rc for more details.\n        --config=mkl            # Build with MKL support.\n        --config=monolithic     # Config for mostly static monolithic build.\nConfiguration finished\n\nBuild Your Tensorflow with gcc5:\nbazel build --config=opt --config=cuda --cxxopt=\"-D_GLIBCXX_USE_CXX11_ABI=0\" //tensorflow/tools/pip_package:build_pip_package\n\nIf build sucessfully:\nbazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg\n\nand exec.\npip3 install /tmp/tensorflow_pkg/tensorflow-1.7.0-cp35-cp35m-linux_x86_64.whl\n\n(Please make sure you are in virtualenv if you want to install this in your virtualenv and do not use sudo.)\nWhat I have seen:\n\nhttps://www.tensorflow.org/install/install_sources : Installing TF from Source\nHow to find which version of TensorFlow is installed in my system?\nhttps://github.com/tensorflow/tensorflow/issues/15604 : ImportError: libcublas.so.9.0: cannot open shared object file: No such file or directory\nHow to get the cuda version?\n[[NV] How to check CUDA and cuDNN version] (https://medium.com/@changrongko/nv-how-to-check-cuda-and-cudnn-version-e05aa21daf6c) :\nhttp://windywinter.cn/2018/03/10/ML/tensorflow-gpu版本的编译/ : tensorflow-gpu版本的编译\n学习Tensorflow(1)\n\n","dateCreated":"2018-07-31T14:04:03+08:00","dateModified":"2018-07-31T14:09:08+08:00","datePublished":"2018-07-31T14:04:03+08:00","description":"","headline":"Compiling TensorFlow-GPU on Ubuntu 16.04 with CUDA 9.1(9.2) and Python3","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://onemid.github.io/2018/07/31/cuda-and-tf-install/"},"publisher":{"@type":"Organization","name":"Gary Gong","sameAs":["https://github.com/onemid/","https://www.linkedin.com/in/onemid85/"],"image":"https://www.gravatar.com/avatar/b93d499c9197202a5fab6afb8ebe66d1","logo":{"@type":"ImageObject","url":"https://www.gravatar.com/avatar/b93d499c9197202a5fab6afb8ebe66d1"}},"url":"https://onemid.github.io/2018/07/31/cuda-and-tf-install/","keywords":"tensorflow, cuda"}</script>
+    <meta name="description" content="Install CUDA: https://developer.nvidia.com/cuda-downloads?target_os=Linux&amp;amp;target_arch=ppc64le&amp;amp;target_distro=Ubuntu&amp;amp;target_version=1604&amp;amp;target_type=deblocal   Here, we used &amp;quot;Linux&amp;">
 <meta name="keywords" content="tensorflow,cuda">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Compiling TensorFlow-GPU on Ubuntu 16.04 with CUDA 9.1(9.2) and Python3">
 <meta property="og:url" content="https://onemid.github.io/2018/07/31/cuda-and-tf-install/index.html">
 <meta property="og:site_name" content="Nothing to Do">
-<meta property="og:description" content="Install CUDA:https://developer.nvidia.com/cuda-downloads?target_os=Linux&amp;amp;target_arch=ppc64le&amp;amp;target_distro=Ubuntu&amp;amp;target_version=1604&amp;amp;target_type=deblocal  Here, we used “Linux” -&amp;gt;">
+<meta property="og:description" content="Install CUDA: https://developer.nvidia.com/cuda-downloads?target_os=Linux&amp;amp;target_arch=ppc64le&amp;amp;target_distro=Ubuntu&amp;amp;target_version=1604&amp;amp;target_type=deblocal   Here, we used &amp;quot;Linux&amp;">
 <meta property="og:locale" content="zh-tw">
 <meta property="og:updated_time" content="2018-07-31T06:09:08.958Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Compiling TensorFlow-GPU on Ubuntu 16.04 with CUDA 9.1(9.2) and Python3">
-<meta name="twitter:description" content="Install CUDA:https://developer.nvidia.com/cuda-downloads?target_os=Linux&amp;amp;target_arch=ppc64le&amp;amp;target_distro=Ubuntu&amp;amp;target_version=1604&amp;amp;target_type=deblocal  Here, we used “Linux” -&amp;gt;">
+<meta name="twitter:description" content="Install CUDA: https://developer.nvidia.com/cuda-downloads?target_os=Linux&amp;amp;target_arch=ppc64le&amp;amp;target_distro=Ubuntu&amp;amp;target_version=1604&amp;amp;target_type=deblocal   Here, we used &amp;quot;Linux&amp;">
     
     
         
@@ -41,7 +41,7 @@
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style-zxqg0xj0libtfd0olo5e8balgmqfizpfwb0n7uunxowxoxtlionkl21gvhuh.min.css">
+    <link rel="stylesheet" href="/assets/css/style-ff8orvpg0obr0gj36tcsesyuohqvrmjotj2hs7cinwugmd3rhy6iwzkluvbo.min.css">
     <!--STYLES END-->
     
 
@@ -217,33 +217,43 @@
     
     <div class="post-content markdown">
         <div class="main-content-wrap">
-            <h2 id="Install-CUDA"><a href="#Install-CUDA" class="headerlink" title="Install CUDA:"></a>Install CUDA:</h2><p><a href="https://developer.nvidia.com/cuda-downloads?target_os=Linux&amp;target_arch=ppc64le&amp;target_distro=Ubuntu&amp;target_version=1604&amp;target_type=deblocal" target="_blank" rel="noopener">https://developer.nvidia.com/cuda-downloads?target_os=Linux&amp;target_arch=ppc64le&amp;target_distro=Ubuntu&amp;target_version=1604&amp;target_type=deblocal</a></p>
+            <h2>Install CUDA:</h2>
+<p>https://developer.nvidia.com/cuda-downloads?target_os=Linux&amp;target_arch=ppc64le&amp;target_distro=Ubuntu&amp;target_version=1604&amp;target_type=deblocal</p>
 <ol>
-<li><p>Here, we used “Linux” -&gt; “ppc64le”(64-bit) -&gt; “16.04” -&gt; “deb(local)”, and downloaded the “Base Installer” (approx. 1.0GB)</p>
+<li>
+<p>Here, we used &quot;Linux&quot; -&gt; &quot;ppc64le&quot;(64-bit) -&gt; &quot;16.04&quot; -&gt; &quot;deb(local)&quot;, and downloaded the &quot;Base Installer&quot; (approx. 1.0GB)</p>
 </li>
-<li><p>Following the guidance which given by the nVidia webpage to install the CUDA.</p>
+<li>
+<p>Following the guidance which given by the nVidia webpage to install the CUDA.</p>
 </li>
-<li><p>During installation, the installation program will ask you to create a “==symbolic link==” of CUDA library folder; remember to create.</p>
+<li>
+<p>During installation, the installation program will ask you to create a &quot;==symbolic link==&quot; of CUDA library folder; remember to create.</p>
 </li>
-<li><p>Create the environment variable to make these work.</p>
-<pre class="line-numbers language-lang-sh"><code class="language-lang-sh">export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/ local/cuda/extras/CUPTI/lib64:/usr/lib/nvidia-381
+<li>
+<p>Create the environment variable to make these work.</p>
+<pre class="line-numbers language-language-sh"><code class="language-language-sh">export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/ local/cuda/extras/CUPTI/lib64:/usr/lib/nvidia-381
 # Remember that nvidia-381 is the driver version, if you install 390, please modifiy it to nvidia-390
 export CUDA_HOME=/usr/local/cuda
 export PATH=$PATH:/usr/local/cuda/bin
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>Execute <code>source ~/.bashrc</code> (<code>source ~/.zshrc</code> if you use zsh instead of bash) to apply the environment variable.</p>
+<li>
+<p>Execute <code>source ~/.bashrc</code> (<code>source ~/.zshrc</code> if you use zsh instead of bash) to apply the environment variable.</p>
 </li>
 </ol>
-<h2 id="Install-cuDNN"><a href="#Install-cuDNN" class="headerlink" title="Install cuDNN:"></a>Install cuDNN:</h2><p><a href="https://developer.nvidia.com/rdp/cudnn-download" target="_blank" rel="noopener">https://developer.nvidia.com/rdp/cudnn-download</a></p>
+<h2>Install cuDNN:</h2>
+<p>https://developer.nvidia.com/rdp/cudnn-download</p>
 <p>==You need have a nVidia developer membership account (free to signup) to coutinue to download the cuDNN package.==</p>
 <ol>
-<li><p>After logining to the download webpage, select the corresponding CUDA version.</p>
+<li>
+<p>After logining to the download webpage, select the corresponding CUDA version.</p>
 </li>
-<li><p>Select <code>cuDNN v7.?.? Library for Linux</code></p>
+<li>
+<p>Select <code>cuDNN v7.?.? Library for Linux</code></p>
 </li>
-<li><p>Unzip the package and copy the file into the system folder by following command:</p>
-<pre class="line-numbers language-lang-sh"><code class="language-lang-sh">tar -zxvf cudnn-9.?-linux-x64-v7.?.tgz
+<li>
+<p>Unzip the package and copy the file into the system folder by following command:</p>
+<pre class="line-numbers language-language-sh"><code class="language-language-sh">tar -zxvf cudnn-9.?-linux-x64-v7.?.tgz
 sudo cp cuda/include/cudnn.h /usr/local/cuda/include/
 sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64/ -d
 sudo chmod a+r /usr/local/cuda/include/cudnn.h
@@ -251,26 +261,32 @@ sudo chmod a+r /usr/local/cuda/lib64/libcudnn*
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ol>
-<h2 id="First-Check"><a href="#First-Check" class="headerlink" title="First Check:"></a>First Check:</h2><ol>
-<li><p>Check your CUDA version by following command:</p>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">cat /usr/local/cuda/version.txt
+<h2>First Check:</h2>
+<ol>
+<li>
+<p>Check your CUDA version by following command:</p>
+<pre class="line-numbers language-language-bash"><code class="language-language-bash">cat /usr/local/cuda/version.txt
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
-<li><p>Check your cuDNN version by following command:</p>
-<pre class="line-numbers language-lang-BASH"><code class="language-lang-BASH">cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2
+<li>
+<p>Check your cuDNN version by following command:</p>
+<pre class="line-numbers language-language-BASH"><code class="language-language-BASH">cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>​</p>
 </li>
 </ol>
-<h2 id="Preparing-Your-Dependency"><a href="#Preparing-Your-Dependency" class="headerlink" title="Preparing Your Dependency:"></a>Preparing Your Dependency:</h2><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">sudo apt-get install python3-numpy python3-dev python3-pip python3-wheel
+<h2>Preparing Your Dependency:</h2>
+<pre class="line-numbers language-language-bash"><code class="language-language-bash">sudo apt-get install python3-numpy python3-dev python3-pip python3-wheel
 sudo apt-get install cuda-command-line-tools 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2 id="Clone-the-Tensorflow"><a href="#Clone-the-Tensorflow" class="headerlink" title="Clone the Tensorflow:"></a>Clone the Tensorflow:</h2><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">git clone https://github.com/tensorflow/tensorflow 
+<h2>Clone the Tensorflow:</h2>
+<pre class="line-numbers language-language-bash"><code class="language-language-bash">git clone https://github.com/tensorflow/tensorflow 
 cd tensorflow
 git checkout Branch # where Branch is the desired branch
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2 id="Configure-Your-Tensorflow"><a href="#Configure-Your-Tensorflow" class="headerlink" title="Configure Your Tensorflow:"></a>Configure Your Tensorflow:</h2><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">cd tensorflow
+<h2>Configure Your Tensorflow:</h2>
+<pre class="line-numbers language-language-bash"><code class="language-language-bash">cd tensorflow
 ./configure
 
 You have bazel 0.11.1 installed.
@@ -354,22 +370,24 @@ Preconfigured Bazel build configs. You can use any of the below by adding "--con
         --config=monolithic     # Config for mostly static monolithic build.
 Configuration finished
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Build-Your-Tensorflow-with-gcc5"><a href="#Build-Your-Tensorflow-with-gcc5" class="headerlink" title="Build Your Tensorflow with gcc5:"></a>Build Your Tensorflow with gcc5:</h2><pre class="line-numbers language-lang-bash"><code class="language-lang-bash">bazel build --config=opt --config=cuda --cxxopt="-D_GLIBCXX_USE_CXX11_ABI=0" //tensorflow/tools/pip_package:build_pip_package
+<h2>Build Your Tensorflow with gcc5:</h2>
+<pre class="line-numbers language-language-bash"><code class="language-language-bash">bazel build --config=opt --config=cuda --cxxopt="-D_GLIBCXX_USE_CXX11_ABI=0" //tensorflow/tools/pip_package:build_pip_package
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>If build sucessfully:</p>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
+<pre class="line-numbers language-language-bash"><code class="language-language-bash">bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>and exec.</p>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">pip3 install /tmp/tensorflow_pkg/tensorflow-1.7.0-cp35-cp35m-linux_x86_64.whl
+<pre class="line-numbers language-language-bash"><code class="language-language-bash">pip3 install /tmp/tensorflow_pkg/tensorflow-1.7.0-cp35-cp35m-linux_x86_64.whl
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>(Please make sure you are in virtualenv if you want to install this in your virtualenv and do not use sudo.)</p>
-<h2 id="What-I-have-seen"><a href="#What-I-have-seen" class="headerlink" title="What I have seen:"></a>What I have seen:</h2><ol>
-<li><a href="https://www.tensorflow.org/install/install_sources" target="_blank" rel="noopener">https://www.tensorflow.org/install/install_sources</a> : Installing TF from Source</li>
+<h2>What I have seen:</h2>
+<ol>
+<li>https://www.tensorflow.org/install/install_sources : Installing TF from Source</li>
 <li><a href="https://stackoverflow.com/questions/38549253/how-to-find-which-version-of-tensorflow-is-installed-in-my-system" target="_blank" rel="noopener">How to find which version of TensorFlow is installed in my system?</a></li>
-<li><a href="https://github.com/tensorflow/tensorflow/issues/15604" target="_blank" rel="noopener">https://github.com/tensorflow/tensorflow/issues/15604</a> : ImportError: libcublas.so.9.0: cannot open shared object file: No such file or directory</li>
+<li>https://github.com/tensorflow/tensorflow/issues/15604 : ImportError: libcublas.so.9.0: cannot open shared object file: No such file or directory</li>
 <li><a href="https://stackoverflow.com/questions/9727688/how-to-get-the-cuda-version" target="_blank" rel="noopener">How to get the cuda version?</a></li>
-<li>[[NV] How to check CUDA and cuDNN version] (<a href="https://medium.com/@changrongko/nv-how-to-check-cuda-and-cudnn-version-e05aa21daf6c" target="_blank" rel="noopener">https://medium.com/@changrongko/nv-how-to-check-cuda-and-cudnn-version-e05aa21daf6c</a>) : </li>
-<li><a href="http://windywinter.cn/2018/03/10/ML/tensorflow-gpu版本的编译/" target="_blank" rel="noopener">http://windywinter.cn/2018/03/10/ML/tensorflow-gpu版本的编译/</a> : tensorflow-gpu版本的编译</li>
+<li>[[NV] How to check CUDA and cuDNN version] (https://medium.com/@changrongko/nv-how-to-check-cuda-and-cudnn-version-e05aa21daf6c) :</li>
+<li>http://windywinter.cn/2018/03/10/ML/tensorflow-gpu版本的编译/ : tensorflow-gpu版本的编译</li>
 <li><a href="http://jksoftcn.com/xue-xi-tensorflow1.html" target="_blank" rel="noopener">学习Tensorflow(1)</a></li>
 </ol>
 
@@ -607,7 +625,7 @@ Configuration finished
         
 <div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
         <!--SCRIPTS-->
-<script src="/assets/js/script-cwuf3c9cyxjctoiaduebl3igrgv5wschh28ah5owtgsolz9v0p1fxufgbh0w.min.js"></script>
+<script src="/assets/js/script-yllpa86rfxpzqi364rq29zolvqfaf1mwnxs6ikrbgt8zy4kwm8giljiejv0r.min.js"></script>
 <!--SCRIPTS END--><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});

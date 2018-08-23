@@ -36,7 +36,7 @@
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style-zxqg0xj0libtfd0olo5e8balgmqfizpfwb0n7uunxowxoxtlionkl21gvhuh.min.css">
+    <link rel="stylesheet" href="/assets/css/style-ff8orvpg0obr0gj36tcsesyuohqvrmjotj2hs7cinwugmd3rhy6iwzkluvbo.min.css">
     <!--STYLES END-->
     
 
@@ -217,15 +217,17 @@
 <p>搞到後來我都不知道我在幹嘛</p>
 <p>結果 github 上面跟本機看得不一樣</p>
 <p>這是 inline $ x^2+x-5=y $</p>
-<p>這是隔行</p>
-<script type="math/tex; mode=display">
-x^2+8</script><p>累死我ㄌ</p>
+<p>這是隔行
+$$
+x^2+8
+$$
+累死我ㄌ</p>
 <hr>
 <p>【2018/8/23 更】</p>
 <p>我有試圖用過「hexo-renderer-markdown-it-plus」加「katex」，但是因為又喇了「hexo-math」套件，就形成 inline latex 給 hexo-math 渲染，隔行的 latex 給 katex 渲染。</p>
 <p>但是 katex 在我試的時候 x 二次方的 2 跑版了，不得不放棄 katex；所以又換回「hexo-renderer-markdown-it」渲染，再搭配「hexo-math」。</p>
 <p>然後在<code>_config.yml</code>安插一小段</p>
-<pre class="line-numbers language-lang-json"><code class="language-lang-json">math:
+<pre class="line-numbers language-language-json"><code class="language-language-json">math:
    engine: 'mathjax'
    mathjax:
      src: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
@@ -236,9 +238,10 @@ x^2+8</script><p>累死我ㄌ</p>
              processEscapes: true
          TeX:
              equationNumbers:
-                autoNumber: "AMS"
+				autoNumber: "AMS"
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h6 id="無關緊要的後記"><a href="#無關緊要的後記" class="headerlink" title="無關緊要的後記"></a>無關緊要的後記</h6><p>話說，我很想把 <code>*.yml</code>那個 yml 念成 やめろ，不覺得很像嗎？ya me ro</p>
+<h6>無關緊要的後記</h6>
+<p>話說，我很想把 <code>*.yml</code>那個 yml 念成 やめろ，不覺得很像嗎？ya me ro</p>
 
                     
                         
@@ -312,7 +315,7 @@ x^2+8</script><p>累死我ㄌ</p>
         
 <div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
         <!--SCRIPTS-->
-<script src="/assets/js/script-cwuf3c9cyxjctoiaduebl3igrgv5wschh28ah5owtgsolz9v0p1fxufgbh0w.min.js"></script>
+<script src="/assets/js/script-yllpa86rfxpzqi364rq29zolvqfaf1mwnxs6ikrbgt8zy4kwm8giljiejv0r.min.js"></script>
 <!--SCRIPTS END--><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});

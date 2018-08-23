@@ -17,19 +17,19 @@
     
     
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Gary Gong","sameAs":["https://github.com/onemid/","https://www.linkedin.com/in/onemid85/"],"image":"https://www.gravatar.com/avatar/b93d499c9197202a5fab6afb8ebe66d1"},"articleBody":"Install the Nginx Web Server$ sudo apt-get update\n$ sudo apt-get install nginx\n請確認防火牆開啟埠號 80 / 443\nInstall MySQL$ sudo apt-get install mysql-server\n$ mysql_secure_installation\n請遵照指示文字設定\nInstall PHP for Processing$ sudo apt-get install php-fpm php-mysql\nConfigure the PHP Processor$ sudo vim /etc/php/7.0/fpm/php.ini\n編輯 php.ini 內部數值，先前請解除註解\ncgi.fix_pathinfo=0\n重新啟動 PHP Processor\n$ sudo systemctl restart php7.0-fpm\nConfigure Nginx to Use the PHP Processor$ sudo vim /etc/nginx/sites-available/default\n編輯 default 內部檔案，更動原 server {…}  區塊為下方區塊\nserver {\n    listen 80 default_server;\n    listen [::]:80 default_server;\n\n    root /var/www/html;\n    index index.php index.html index.htm index.nginx-debian.html;\n\n    server_name server_domain_or_IP;\n\n    location / {\n        try_files $uri $uri/ =404;\n    }\n\n    location ~ \\.php$ {\n        include snippets/fastcgi-php.conf;\n        fastcgi_pass unix:/run/php/php7.0-fpm.sock;\n    }\n\n    location ~ /\\.ht {\n        deny all;\n    }\n}\n結束後，利用 nginx -t 檢測是否存在語法錯誤\n$ sudo nginx -t\n最後，重新載入 nginx 設定檔案\n$ sudo systemctl reload nginx\n","dateCreated":"2018-07-31T23:57:00+08:00","dateModified":"2018-08-01T00:03:51+08:00","datePublished":"2018-07-31T23:57:00+08:00","description":"","headline":"Nginx, MySQL, PHP Installation (Ubuntu 16.04)","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://onemid.github.io/2018/07/31/Nginx-MySQL-PHP-Installation-Ubuntu-16-04/"},"publisher":{"@type":"Organization","name":"Gary Gong","sameAs":["https://github.com/onemid/","https://www.linkedin.com/in/onemid85/"],"image":"https://www.gravatar.com/avatar/b93d499c9197202a5fab6afb8ebe66d1","logo":{"@type":"ImageObject","url":"https://www.gravatar.com/avatar/b93d499c9197202a5fab6afb8ebe66d1"}},"url":"https://onemid.github.io/2018/07/31/Nginx-MySQL-PHP-Installation-Ubuntu-16-04/","keywords":"nginx, mysql, php"}</script>
-    <meta name="description" content="Install the Nginx Web Server$ sudo apt-get update $ sudo apt-get install nginx 請確認防火牆開啟埠號 80 / 443 Install MySQL$ sudo apt-get install mysql-server $ mysql_secure_installation 請遵照指示文字設定 Install PHP fo">
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Gary Gong","sameAs":["https://github.com/onemid/","https://www.linkedin.com/in/onemid85/"],"image":"https://www.gravatar.com/avatar/b93d499c9197202a5fab6afb8ebe66d1"},"articleBody":"Install the Nginx Web Server\n$ sudo apt-get update\n$ sudo apt-get install nginx\n\n請確認防火牆開啟埠號 80 / 443\nInstall MySQL\n$ sudo apt-get install mysql-server\n$ mysql_secure_installation\n\n請遵照指示文字設定\nInstall PHP for Processing\n$ sudo apt-get install php-fpm php-mysql\n\nConfigure the PHP Processor\n$ sudo vim /etc/php/7.0/fpm/php.ini\n\n編輯 php.ini 內部數值，先前請解除註解\ncgi.fix_pathinfo=0\n\n重新啟動 PHP Processor\n$ sudo systemctl restart php7.0-fpm\n\nConfigure Nginx to Use the PHP Processor\n$ sudo vim /etc/nginx/sites-available/default\n\n編輯 default 內部檔案，更動原 server {...}  區塊為下方區塊\nserver {\n    listen 80 default_server;\n    listen [::]:80 default_server;\n\n    root /var/www/html;\n    index index.php index.html index.htm index.nginx-debian.html;\n\n    server_name server_domain_or_IP;\n\n    location / {\n        try_files $uri $uri/ =404;\n    }\n\n    location ~ \\.php$ {\n        include snippets/fastcgi-php.conf;\n        fastcgi_pass unix:/run/php/php7.0-fpm.sock;\n    }\n\n    location ~ /\\.ht {\n        deny all;\n    }\n}\n\n結束後，利用 nginx -t 檢測是否存在語法錯誤\n$ sudo nginx -t\n\n最後，重新載入 nginx 設定檔案\n$ sudo systemctl reload nginx\n\n","dateCreated":"2018-07-31T23:57:00+08:00","dateModified":"2018-08-01T00:03:51+08:00","datePublished":"2018-07-31T23:57:00+08:00","description":"","headline":"Nginx, MySQL, PHP Installation (Ubuntu 16.04)","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://onemid.github.io/2018/07/31/Nginx-MySQL-PHP-Installation-Ubuntu-16-04/"},"publisher":{"@type":"Organization","name":"Gary Gong","sameAs":["https://github.com/onemid/","https://www.linkedin.com/in/onemid85/"],"image":"https://www.gravatar.com/avatar/b93d499c9197202a5fab6afb8ebe66d1","logo":{"@type":"ImageObject","url":"https://www.gravatar.com/avatar/b93d499c9197202a5fab6afb8ebe66d1"}},"url":"https://onemid.github.io/2018/07/31/Nginx-MySQL-PHP-Installation-Ubuntu-16-04/","keywords":"nginx, mysql, php"}</script>
+    <meta name="description" content="Install the Nginx Web Server $ sudo apt-get update $ sudo apt-get install nginx  請確認防火牆開啟埠號 80 / 443 Install MySQL $ sudo apt-get install mysql-server $ mysql_secure_installation  請遵照指示文字設定 Install PH">
 <meta name="keywords" content="nginx,mysql,php">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Nginx, MySQL, PHP Installation (Ubuntu 16.04)">
 <meta property="og:url" content="https://onemid.github.io/2018/07/31/Nginx-MySQL-PHP-Installation-Ubuntu-16-04/index.html">
 <meta property="og:site_name" content="Nothing to Do">
-<meta property="og:description" content="Install the Nginx Web Server$ sudo apt-get update $ sudo apt-get install nginx 請確認防火牆開啟埠號 80 / 443 Install MySQL$ sudo apt-get install mysql-server $ mysql_secure_installation 請遵照指示文字設定 Install PHP fo">
+<meta property="og:description" content="Install the Nginx Web Server $ sudo apt-get update $ sudo apt-get install nginx  請確認防火牆開啟埠號 80 / 443 Install MySQL $ sudo apt-get install mysql-server $ mysql_secure_installation  請遵照指示文字設定 Install PH">
 <meta property="og:locale" content="zh-tw">
 <meta property="og:updated_time" content="2018-07-31T16:03:51.580Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx, MySQL, PHP Installation (Ubuntu 16.04)">
-<meta name="twitter:description" content="Install the Nginx Web Server$ sudo apt-get update $ sudo apt-get install nginx 請確認防火牆開啟埠號 80 / 443 Install MySQL$ sudo apt-get install mysql-server $ mysql_secure_installation 請遵照指示文字設定 Install PHP fo">
+<meta name="twitter:description" content="Install the Nginx Web Server $ sudo apt-get update $ sudo apt-get install nginx  請確認防火牆開啟埠號 80 / 443 Install MySQL $ sudo apt-get install mysql-server $ mysql_secure_installation  請遵照指示文字設定 Install PH">
     
     
         
@@ -41,7 +41,7 @@
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style-zxqg0xj0libtfd0olo5e8balgmqfizpfwb0n7uunxowxoxtlionkl21gvhuh.min.css">
+    <link rel="stylesheet" href="/assets/css/style-ff8orvpg0obr0gj36tcsesyuohqvrmjotj2hs7cinwugmd3rhy6iwzkluvbo.min.css">
     <!--STYLES END-->
     
 
@@ -217,20 +217,32 @@
     
     <div class="post-content markdown">
         <div class="main-content-wrap">
-            <h3 id="Install-the-Nginx-Web-Server"><a href="#Install-the-Nginx-Web-Server" class="headerlink" title="Install the Nginx Web Server"></a>Install the Nginx Web Server</h3><pre><code>$ sudo apt-get update
+            <h3>Install the Nginx Web Server</h3>
+<pre><code>$ sudo apt-get update
 $ sudo apt-get install nginx
-</code></pre><p>請確認防火牆開啟埠號 80 / 443</p>
-<h3 id="Install-MySQL"><a href="#Install-MySQL" class="headerlink" title="Install MySQL"></a>Install MySQL</h3><pre><code>$ sudo apt-get install mysql-server
+</code></pre>
+<p>請確認防火牆開啟埠號 80 / 443</p>
+<h3>Install MySQL</h3>
+<pre><code>$ sudo apt-get install mysql-server
 $ mysql_secure_installation
-</code></pre><p>請遵照指示文字設定</p>
-<h3 id="Install-PHP-for-Processing"><a href="#Install-PHP-for-Processing" class="headerlink" title="Install PHP for Processing"></a>Install PHP for Processing</h3><pre><code>$ sudo apt-get install php-fpm php-mysql
-</code></pre><h3 id="Configure-the-PHP-Processor"><a href="#Configure-the-PHP-Processor" class="headerlink" title="Configure the PHP Processor"></a>Configure the PHP Processor</h3><pre><code>$ sudo vim /etc/php/7.0/fpm/php.ini
-</code></pre><p>編輯 php.ini 內部數值，先前請解除註解</p>
+</code></pre>
+<p>請遵照指示文字設定</p>
+<h3>Install PHP for Processing</h3>
+<pre><code>$ sudo apt-get install php-fpm php-mysql
+</code></pre>
+<h3>Configure the PHP Processor</h3>
+<pre><code>$ sudo vim /etc/php/7.0/fpm/php.ini
+</code></pre>
+<p>編輯 php.ini 內部數值，先前請解除註解</p>
 <pre><code>cgi.fix_pathinfo=0
-</code></pre><p>重新啟動 PHP Processor</p>
+</code></pre>
+<p>重新啟動 PHP Processor</p>
 <pre><code>$ sudo systemctl restart php7.0-fpm
-</code></pre><h3 id="Configure-Nginx-to-Use-the-PHP-Processor"><a href="#Configure-Nginx-to-Use-the-PHP-Processor" class="headerlink" title="Configure Nginx to Use the PHP Processor"></a>Configure Nginx to Use the PHP Processor</h3><pre><code>$ sudo vim /etc/nginx/sites-available/default
-</code></pre><p>編輯 default 內部檔案，更動原 server {…}  區塊為下方區塊</p>
+</code></pre>
+<h3>Configure Nginx to Use the PHP Processor</h3>
+<pre><code>$ sudo vim /etc/nginx/sites-available/default
+</code></pre>
+<p>編輯 default 內部檔案，更動原 server {...}  區塊為下方區塊</p>
 <pre><code>server {
     listen 80 default_server;
     listen [::]:80 default_server;
@@ -253,11 +265,14 @@ $ mysql_secure_installation
         deny all;
     }
 }
-</code></pre><p>結束後，利用 nginx -t 檢測是否存在語法錯誤</p>
+</code></pre>
+<p>結束後，利用 nginx -t 檢測是否存在語法錯誤</p>
 <pre><code>$ sudo nginx -t
-</code></pre><p>最後，重新載入 nginx 設定檔案</p>
+</code></pre>
+<p>最後，重新載入 nginx 設定檔案</p>
 <pre><code>$ sudo systemctl reload nginx
 </code></pre>
+
             
 
         </div>
@@ -494,7 +509,7 @@ $ mysql_secure_installation
         
 <div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
         <!--SCRIPTS-->
-<script src="/assets/js/script-cwuf3c9cyxjctoiaduebl3igrgv5wschh28ah5owtgsolz9v0p1fxufgbh0w.min.js"></script>
+<script src="/assets/js/script-yllpa86rfxpzqi364rq29zolvqfaf1mwnxs6ikrbgt8zy4kwm8giljiejv0r.min.js"></script>
 <!--SCRIPTS END--><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
