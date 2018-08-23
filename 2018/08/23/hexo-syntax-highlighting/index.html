@@ -16,15 +16,16 @@
     
     
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Gary Gong","sameAs":["https://github.com/onemid/","https://www.linkedin.com/in/onemid85/"],"image":"https://www.gravatar.com/avatar/b93d499c9197202a5fab6afb8ebe66d1"},"articleBody":"把這個主題弄 Syntax Highlighting 又是一番折騰，本來想說用prism.js做做，奈何就是在佈景上跟原始的佈景相衝，該高亮顯示的地方也沒有，索性走回頭路用highlight.js\n基本上在 Hexo 佈景機制裡面加上一些 Code 就好，根據官網所述：\n&lt;link rel=&quot;stylesheet&quot; href=&quot;/path/to/styles/default.css&quot;&gt;\n&lt;script src=&quot;/path/to/highlight.pack.js&quot;&gt;&lt;/script&gt;\n&lt;script&gt;hljs.initHighlightingOnLoad();&lt;/script&gt;\n\n其中/path/to/styles/default.css基本上就是這個highlight.js的佈景即是， https://highlightjs.org/static/demo/ 這裡一票佈景，算是可以輕鬆找到要的。\n如果說要用 CDN 的話，可以來這裡 https://cdnjs.com/libraries/highlight.js/ 翻翻，但是官網標配只含標準支援的程式碼 Highlighting 的功能，如果要額外的（比如說想用什麼 Julia 之類的），那得要自己去官網選配或是額外加 CDN，例如：\n...\n&lt;!-- 標準配備 --&gt;\n&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js&quot;&gt;&lt;/script&gt;\n&lt;!-- 選配 Julia --&gt;\n&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/julia.min.js&quot;&gt;&lt;/script&gt;\n...\n\n在 Hexo 佈景機制加上上述的東西，個人是放在 themes/tranquilpeak/layout/_partial/footer.ejs，可以動\n比較重要的是，按理改完要在主題目錄下運行npm run prod，讓剛剛編輯的footer.ejs可以產出。\n另外一個是，在 Hexo 根目錄下的_config.yml裡面：\n...\nhighlight:\n\tenable: false\n...\n\n記得要把 enable 改成 false，不然會打架。\n改完之後，\n","dateCreated":"2018-08-23T17:24:27+08:00","dateModified":"2018-08-23T17:52:13+08:00","datePublished":"2018-08-23T17:24:27+08:00","description":"","headline":"Hexo Syntax Highlighting (Tested under Tranquilpeak)","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://onemid.github.io/2018/08/23/hexo-syntax-highlighting/"},"publisher":{"@type":"Organization","name":"Gary Gong","sameAs":["https://github.com/onemid/","https://www.linkedin.com/in/onemid85/"],"image":"https://www.gravatar.com/avatar/b93d499c9197202a5fab6afb8ebe66d1","logo":{"@type":"ImageObject","url":"https://www.gravatar.com/avatar/b93d499c9197202a5fab6afb8ebe66d1"}},"url":"https://onemid.github.io/2018/08/23/hexo-syntax-highlighting/"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Gary Gong","sameAs":["https://github.com/onemid/","https://www.linkedin.com/in/onemid85/"],"image":"https://www.gravatar.com/avatar/b93d499c9197202a5fab6afb8ebe66d1"},"articleBody":"把這個主題弄 Syntax Highlighting 又是一番折騰，本來想說用prism.js做做，奈何就是在佈景上跟原始的佈景相衝，該高亮顯示的地方也沒有，索性走回頭路用highlight.js\n基本上在 Hexo 佈景機制裡面加上一些 Code 就好，根據官網所述：\n&lt;link rel=&quot;stylesheet&quot; href=&quot;/path/to/styles/default.css&quot;&gt;\n&lt;script src=&quot;/path/to/highlight.pack.js&quot;&gt;&lt;/script&gt;\n&lt;script&gt;hljs.initHighlightingOnLoad();&lt;/script&gt;\n\n其中/path/to/styles/default.css基本上就是這個highlight.js的佈景即是， https://highlightjs.org/static/demo/ 這裡一票佈景，算是可以輕鬆找到要的。\n如果說要用 CDN 的話，可以來這裡 https://cdnjs.com/libraries/highlight.js/ 翻翻，但是官網標配只含標準支援的程式碼 Highlighting 的功能，如果要額外的（比如說想用什麼 Julia 之類的），那得要自己去官網選配或是額外加 CDN，例如：\n...\n&lt;!-- 標準配備 --&gt;\n&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js&quot;&gt;&lt;/script&gt;\n&lt;!-- 選配 Julia --&gt;\n&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/julia.min.js&quot;&gt;&lt;/script&gt;\n...\n\n在 Hexo 佈景機制加上上述的東西，個人是放在 themes/tranquilpeak/layout/_partial/footer.ejs，可以動\n比較重要的是，按理改完要在主題目錄下運行npm run prod，讓剛剛編輯的footer.ejs可以產出。\n另外一個是，在 Hexo 根目錄下的_config.yml裡面：\n...\nhighlight:\n\tenable: false\n...\n\n記得要把 enable 改成 false，不然會打架。\n改完之後，hexo clean和 generate以及deploy記得做ㄛ\n後記：使用深色佈景主題時，Tranquilpeak 會讓一些 Token 反白\n我當時看到快傻眼了，怎麼那麼難搞阿Q\n看了 Web Inspector 之後才發現 Tranquilpeak 有寫關於 Tag 的 CSS code，其中寫道：\na.tag,\n.tag {\n  display: inline-block;\n  background: #fff;\n...\n}\n\n由於highlight.js把&lt;script&gt;、&lt;html&gt;等等這些含有「&lt;」和「&gt;」的東西統稱為tag們，在class理所當然理直氣壯的寫上去，然後就被 Tranquilpeak Theme 蓋了過去，所以難怪這些tag們的background都是白色的。\n基本上，我的方案是這樣：\n\n\n先在主題根目錄把 npm run start開起來\n\n\n從主題根目錄往下找找到source/_css/components/_tag.scss\n\n\n把以下的程式碼打上去\npre .tag{\n    background : none;\n}\n\n\n\n開心收工，記得hexo clean和 generate以及deploy\n\n\n無關緊要的後記\nhighlight.js 的官網滿滿的暗紅色看了眼睛好酸..\n","dateCreated":"2018-08-23T17:24:27+08:00","dateModified":"2018-08-23T18:14:33+08:00","datePublished":"2018-08-23T17:24:27+08:00","description":"","headline":"Hexo Syntax Highlighting (Tested under Tranquilpeak)","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://onemid.github.io/2018/08/23/hexo-syntax-highlighting/"},"publisher":{"@type":"Organization","name":"Gary Gong","sameAs":["https://github.com/onemid/","https://www.linkedin.com/in/onemid85/"],"image":"https://www.gravatar.com/avatar/b93d499c9197202a5fab6afb8ebe66d1","logo":{"@type":"ImageObject","url":"https://www.gravatar.com/avatar/b93d499c9197202a5fab6afb8ebe66d1"}},"url":"https://onemid.github.io/2018/08/23/hexo-syntax-highlighting/","keywords":"hexo, highlightjs, prismjs, tranquilpeak, syntaxhighlight"}</script>
     <meta name="description" content="把這個主題弄 Syntax Highlighting 又是一番折騰，本來想說用prism.js做做，奈何就是在佈景上跟原始的佈景相衝，該高亮顯示的地方也沒有，索性走回頭路用highlight.js 基本上在 Hexo 佈景機制裡面加上一些 Code 就好，根據官網所述： &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;/path/to/styles/d">
+<meta name="keywords" content="hexo,highlightjs,prismjs,tranquilpeak,syntaxhighlight">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Hexo Syntax Highlighting (Tested under Tranquilpeak)">
 <meta property="og:url" content="https://onemid.github.io/2018/08/23/hexo-syntax-highlighting/index.html">
 <meta property="og:site_name" content="Nothing to Do">
 <meta property="og:description" content="把這個主題弄 Syntax Highlighting 又是一番折騰，本來想說用prism.js做做，奈何就是在佈景上跟原始的佈景相衝，該高亮顯示的地方也沒有，索性走回頭路用highlight.js 基本上在 Hexo 佈景機制裡面加上一些 Code 就好，根據官網所述： &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;/path/to/styles/d">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2018-08-23T09:52:13.300Z">
+<meta property="og:updated_time" content="2018-08-23T10:14:33.684Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo Syntax Highlighting (Tested under Tranquilpeak)">
 <meta name="twitter:description" content="把這個主題弄 Syntax Highlighting 又是一番折騰，本來想說用prism.js做做，奈何就是在佈景上跟原始的佈景相衝，該高亮顯示的地方也沒有，索性走回頭路用highlight.js 基本上在 Hexo 佈景機制裡面加上一些 Code 就好，根據官網所述： &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;/path/to/styles/d">
@@ -39,10 +40,7 @@
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/all.css">
-    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
-    <link rel="stylesheet" href="/assets/css/thumbs.css">
-    <link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+    <link rel="stylesheet" href="/assets/css/style-nw0ghujpnw6xtlvh85cj4gldpts5lrtvqu3vedt5xoptzviqomnfqauqmgs5.min.css">
     <!--STYLES END--><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 
@@ -203,6 +201,12 @@
     	
     </time>
     
+        <span>分類 </span>
+        
+    <a class="category-link" href="/categories/hexo/">hexo</a>
+
+
+    
 </div>
 
     
@@ -235,13 +239,52 @@ highlight:
 ...
 </code></pre>
 <p>記得要把 <code>enable</code> 改成 <code>false</code>，不然會打架。</p>
-<p>改完之後，</p>
+<p>改完之後，<code>hexo clean</code>和 <code>generate</code>以及<code>deploy</code>記得做ㄛ</p>
+<h4>後記：使用深色佈景主題時，Tranquilpeak 會讓一些 Token 反白</h4>
+<p>我當時看到快傻眼了，怎麼那麼難搞阿Q</p>
+<p>看了 Web Inspector 之後才發現 Tranquilpeak 有寫關於 Tag 的 CSS code，其中寫道：</p>
+<pre><code class="language-css">a.tag,
+.tag {
+  display: inline-block;
+  background: #fff;
+...
+}
+</code></pre>
+<p>由於<code>highlight.js</code>把<code>&lt;script&gt;</code>、<code>&lt;html&gt;</code>等等這些含有「&lt;」和「&gt;」的東西統稱為<code>tag</code>們，在<code>class</code>理所當然理直氣壯的寫上去，然後就被 Tranquilpeak Theme 蓋了過去，所以難怪這些<code>tag</code>們的<code>background</code>都是白色的。</p>
+<p>基本上，我的方案是這樣：</p>
+<ol>
+<li>
+<p>先在主題根目錄把 <code>npm run start</code>開起來</p>
+</li>
+<li>
+<p>從主題根目錄往下找找到<code>source/_css/components/_tag.scss</code></p>
+</li>
+<li>
+<p>把以下的程式碼打上去</p>
+<pre><code class="language-css">pre .tag{
+    background : none;
+}
+</code></pre>
+</li>
+<li>
+<p>開心收工，記得<code>hexo clean</code>和 <code>generate</code>以及<code>deploy</code></p>
+</li>
+</ol>
+<h6>無關緊要的後記</h6>
+<p>highlight.js 的官網滿滿的暗紅色看了眼睛好酸..</p>
 
             
 
         </div>
     </div>
     <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">標籤</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/hexo/">hexo</a> <a class="tag tag--primary tag--small t-link" href="/tags/highlightjs/">highlightjs</a> <a class="tag tag--primary tag--small t-link" href="/tags/prismjs/">prismjs</a> <a class="tag tag--primary tag--small t-link" href="/tags/syntaxhighlight/">syntaxhighlight</a> <a class="tag tag--primary tag--small t-link" href="/tags/tranquilpeak/">tranquilpeak</a>
+
+            </div>
         
         
             <div class="post-actions-wrap">
@@ -326,6 +369,7 @@ highlight:
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js">
 </script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/julia.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
 <script>
     hljs.initHighlightingOnLoad();
 </script>
@@ -473,10 +517,7 @@ highlight:
         
 <div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
         <!--SCRIPTS-->
-<script src="/assets/js/jquery.js"></script>
-<script src="/assets/js/jquery.fancybox.js"></script>
-<script src="/assets/js/thumbs.js"></script>
-<script src="/assets/js/tranquilpeak.js"></script>
+<script src="/assets/js/script-ykzdpcfovakqvhxhhfm5yaybrusfn6bzaxblmzwogu1usxmvi3stdcpqeenr.min.js"></script>
 <!--SCRIPTS END-->
 
     

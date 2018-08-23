@@ -11,7 +11,7 @@
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Nothing to Do">
-    <title>標籤: mysql - Nothing to Do</title>
+    <title>標籤: hexo - Nothing to Do</title>
     <meta name="author" content="Gary Gong">
     
     
@@ -19,7 +19,7 @@
     <script type="application/ld+json">{}</script>
     <meta property="og:type" content="blog">
 <meta property="og:title" content="Nothing to Do">
-<meta property="og:url" content="https://onemid.github.io/tags/mysql/index.html">
+<meta property="og:url" content="https://onemid.github.io/tags/hexo/index.html">
 <meta property="og:site_name" content="Nothing to Do">
 <meta property="og:locale" content="zh-tw">
 <meta name="twitter:card" content="summary">
@@ -188,21 +188,21 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2018/07/31/Nginx-MySQL-PHP-Installation-Ubuntu-16-04/">
-                            Nginx, MySQL, PHP Installation (Ubuntu 16.04)
+                        <a class="link-unstyled" href="/2018/08/23/hexo-syntax-highlighting/">
+                            Hexo Syntax Highlighting (Tested under Tranquilpeak)
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time datetime="2018-07-31T23:57:00+08:00">
+    <time datetime="2018-08-23T17:24:27+08:00">
 	
-		    7月 31, 2018
+		    8月 23, 2018
     	
     </time>
     
         <span>分類 </span>
         
-    <a class="category-link" href="/categories/webprogramming/">webprogramming</a>
+    <a class="category-link" href="/categories/hexo/">hexo</a>
 
 
     
@@ -211,61 +211,63 @@
             </div>
             
                 <div class="postShorten-content">
-                    <h3>Install the Nginx Web Server</h3>
-<pre><code>$ sudo apt-get update
-$ sudo apt-get install nginx
+                    <p>把這個主題弄 Syntax Highlighting 又是一番折騰，本來想說用<code>prism.js</code>做做，奈何就是在佈景上跟原始的佈景相衝，該高亮顯示的地方也沒有，索性走回頭路用<code>highlight.js</code></p>
+<p>基本上在 Hexo 佈景機制裡面加上一些 Code 就好，根據官網所述：</p>
+<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;/path/to/styles/default.css&quot;&gt;
+&lt;script src=&quot;/path/to/highlight.pack.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;hljs.initHighlightingOnLoad();&lt;/script&gt;
 </code></pre>
-<p>請確認防火牆開啟埠號 80 / 443</p>
-<h3>Install MySQL</h3>
-<pre><code>$ sudo apt-get install mysql-server
-$ mysql_secure_installation
+<p>其中<code>/path/to/styles/default.css</code>基本上就是這個<code>highlight.js</code>的佈景即是， <a href="https://highlightjs.org/static/demo/" target="_blank" rel="noopener">https://highlightjs.org/static/demo/ </a>這裡一票佈景，算是可以輕鬆找到要的。</p>
+<p>如果說要用 CDN 的話，可以來這裡 <a href="https://cdnjs.com/libraries/highlight.js/" target="_blank" rel="noopener">https://cdnjs.com/libraries/highlight.js/</a> 翻翻，但是官網標配只含標準支援的程式碼 Highlighting 的功能，如果要額外的（比如說想用什麼 Julia 之類的），那得要自己去官網選配或是額外加 CDN，例如：</p>
+<pre><code class="language-html">...
+&lt;!-- 標準配備 --&gt;
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js&quot;&gt;&lt;/script&gt;
+&lt;!-- 選配 Julia --&gt;
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/julia.min.js&quot;&gt;&lt;/script&gt;
+...
 </code></pre>
-<p>請遵照指示文字設定</p>
-<h3>Install PHP for Processing</h3>
-<pre><code>$ sudo apt-get install php-fpm php-mysql
+<p>在 Hexo 佈景機制加上上述的東西，個人是放在 <code>themes/tranquilpeak/layout/_partial/footer.ejs</code>，可以動</p>
+<p>比較重要的是，按理改完要在主題目錄下運行<code>npm run prod</code>，讓剛剛編輯的<code>footer.ejs</code>可以產出。</p>
+<p>另外一個是，在 Hexo 根目錄下的<code>_config.yml</code>裡面：</p>
+<pre><code class="language-yaml">...
+highlight:
+	enable: false
+...
 </code></pre>
-<h3>Configure the PHP Processor</h3>
-<pre><code>$ sudo vim /etc/php/7.0/fpm/php.ini
-</code></pre>
-<p>編輯 php.ini 內部數值，先前請解除註解</p>
-<pre><code>cgi.fix_pathinfo=0
-</code></pre>
-<p>重新啟動 PHP Processor</p>
-<pre><code>$ sudo systemctl restart php7.0-fpm
-</code></pre>
-<h3>Configure Nginx to Use the PHP Processor</h3>
-<pre><code>$ sudo vim /etc/nginx/sites-available/default
-</code></pre>
-<p>編輯 default 內部檔案，更動原 server {...}  區塊為下方區塊</p>
-<pre><code>server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
-
-    root /var/www/html;
-    index index.php index.html index.htm index.nginx-debian.html;
-
-    server_name server_domain_or_IP;
-
-    location / {
-        try_files $uri $uri/ =404;
-    }
-
-    location ~ \.php$ {
-        include snippets/fastcgi-php.conf;
-        fastcgi_pass unix:/run/php/php7.0-fpm.sock;
-    }
-
-    location ~ /\.ht {
-        deny all;
-    }
+<p>記得要把 <code>enable</code> 改成 <code>false</code>，不然會打架。</p>
+<p>改完之後，<code>hexo clean</code>和 <code>generate</code>以及<code>deploy</code>記得做ㄛ</p>
+<h4>後記：使用深色佈景主題時，Tranquilpeak 會讓一些 Token 反白</h4>
+<p>我當時看到快傻眼了，怎麼那麼難搞阿Q</p>
+<p>看了 Web Inspector 之後才發現 Tranquilpeak 有寫關於 Tag 的 CSS code，其中寫道：</p>
+<pre><code class="language-css">a.tag,
+.tag {
+  display: inline-block;
+  background: #fff;
+...
 }
 </code></pre>
-<p>結束後，利用 nginx -t 檢測是否存在語法錯誤</p>
-<pre><code>$ sudo nginx -t
+<p>由於<code>highlight.js</code>把<code>&lt;script&gt;</code>、<code>&lt;html&gt;</code>等等這些含有「&lt;」和「&gt;」的東西統稱為<code>tag</code>們，在<code>class</code>理所當然理直氣壯的寫上去，然後就被 Tranquilpeak Theme 蓋了過去，所以難怪這些<code>tag</code>們的<code>background</code>都是白色的。</p>
+<p>基本上，我的方案是這樣：</p>
+<ol>
+<li>
+<p>先在主題根目錄把 <code>npm run start</code>開起來</p>
+</li>
+<li>
+<p>從主題根目錄往下找找到<code>source/_css/components/_tag.scss</code></p>
+</li>
+<li>
+<p>把以下的程式碼打上去</p>
+<pre><code class="language-css">pre .tag{
+    background : none;
+}
 </code></pre>
-<p>最後，重新載入 nginx 設定檔案</p>
-<pre><code>$ sudo systemctl reload nginx
-</code></pre>
+</li>
+<li>
+<p>開心收工，記得<code>hexo clean</code>和 <code>generate</code>以及<code>deploy</code></p>
+</li>
+</ol>
+<h6>無關緊要的後記</h6>
+<p>highlight.js 的官網滿滿的暗紅色看了眼睛好酸..</p>
 
                     
                         
@@ -273,7 +275,84 @@ $ mysql_secure_installation
                     
                     
                         <p>
-                            <a href="/2018/07/31/Nginx-MySQL-PHP-Installation-Ubuntu-16-04/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2018/08/23/hexo-syntax-highlighting/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a class="link-unstyled" href="/2018/08/01/testmath/">
+                            zzz我終於把 mathjax 弄進去了
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-08-01T02:01:00+08:00">
+	
+		    8月 01, 2018
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/categories/廢文/">廢文</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <p>我的老天，我花了一個多小時終於東湊西湊把 mathjax 塞進去了</p>
+<p>搞到後來我都不知道我在幹嘛</p>
+<p>結果 github 上面跟本機看得不一樣</p>
+<p>這是 inline $ x^2+x-5=y $</p>
+<p>這是隔行
+$$
+x^2+8
+$$
+累死我ㄌ</p>
+<hr>
+<p>【2018/8/23 更】</p>
+<p>我有試圖用過「hexo-renderer-markdown-it-plus」加「katex」，但是因為又喇了「hexo-math」套件，就形成 inline latex 給 hexo-math 渲染，隔行的 latex 給 katex 渲染。</p>
+<p>但是 katex 在我試的時候 x 二次方的 2 跑版了，不得不放棄 katex；所以又換回「hexo-renderer-markdown-it」渲染，再搭配「hexo-math」。</p>
+<p>然後在<code>_config.yml</code>安插一小段</p>
+<pre><code class="language-json">math:
+   engine: 'mathjax'
+   mathjax:
+     src: &quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;
+     config:
+         tex2jax:
+             inlineMath: [ ['$','$'], [&quot;\\(&quot;,&quot;\\)&quot;] ]
+             skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+             processEscapes: true
+         TeX:
+             equationNumbers:
+				autoNumber: &quot;AMS&quot;
+</code></pre>
+<h6>無關緊要的後記</h6>
+<p>話說，我很想把 <code>*.yml</code>那個 yml 念成 やめろ，不覺得很像嗎？ya me ro</p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/08/01/testmath/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>

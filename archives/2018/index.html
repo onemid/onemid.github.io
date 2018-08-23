@@ -35,10 +35,7 @@
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/all.css">
-    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
-    <link rel="stylesheet" href="/assets/css/thumbs.css">
-    <link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+    <link rel="stylesheet" href="/assets/css/style-nw0ghujpnw6xtlvh85cj4gldpts5lrtvqu3vedt5xoptzviqomnfqauqmgs5.min.css">
     <!--STYLES END--><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 
@@ -203,6 +200,12 @@
     	
     </time>
     
+        <span>分類 </span>
+        
+    <a class="category-link" href="/categories/hexo/">hexo</a>
+
+
+    
 </div>
 
             </div>
@@ -232,7 +235,39 @@ highlight:
 ...
 </code></pre>
 <p>記得要把 <code>enable</code> 改成 <code>false</code>，不然會打架。</p>
-<p>改完之後，</p>
+<p>改完之後，<code>hexo clean</code>和 <code>generate</code>以及<code>deploy</code>記得做ㄛ</p>
+<h4>後記：使用深色佈景主題時，Tranquilpeak 會讓一些 Token 反白</h4>
+<p>我當時看到快傻眼了，怎麼那麼難搞阿Q</p>
+<p>看了 Web Inspector 之後才發現 Tranquilpeak 有寫關於 Tag 的 CSS code，其中寫道：</p>
+<pre><code class="language-css">a.tag,
+.tag {
+  display: inline-block;
+  background: #fff;
+...
+}
+</code></pre>
+<p>由於<code>highlight.js</code>把<code>&lt;script&gt;</code>、<code>&lt;html&gt;</code>等等這些含有「&lt;」和「&gt;」的東西統稱為<code>tag</code>們，在<code>class</code>理所當然理直氣壯的寫上去，然後就被 Tranquilpeak Theme 蓋了過去，所以難怪這些<code>tag</code>們的<code>background</code>都是白色的。</p>
+<p>基本上，我的方案是這樣：</p>
+<ol>
+<li>
+<p>先在主題根目錄把 <code>npm run start</code>開起來</p>
+</li>
+<li>
+<p>從主題根目錄往下找找到<code>source/_css/components/_tag.scss</code></p>
+</li>
+<li>
+<p>把以下的程式碼打上去</p>
+<pre><code class="language-css">pre .tag{
+    background : none;
+}
+</code></pre>
+</li>
+<li>
+<p>開心收工，記得<code>hexo clean</code>和 <code>generate</code>以及<code>deploy</code></p>
+</li>
+</ol>
+<h6>無關緊要的後記</h6>
+<p>highlight.js 的官網滿滿的暗紅色看了眼睛好酸..</p>
 
                     
                         
@@ -728,6 +763,7 @@ Configuration finished
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js">
 </script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/julia.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
 <script>
     hljs.initHighlightingOnLoad();
 </script>
@@ -774,10 +810,7 @@ Configuration finished
         
 <div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
         <!--SCRIPTS-->
-<script src="/assets/js/jquery.js"></script>
-<script src="/assets/js/jquery.fancybox.js"></script>
-<script src="/assets/js/thumbs.js"></script>
-<script src="/assets/js/tranquilpeak.js"></script>
+<script src="/assets/js/script-ykzdpcfovakqvhxhhfm5yaybrusfn6bzaxblmzwogu1usxmvi3stdcpqeenr.min.js"></script>
 <!--SCRIPTS END-->
 
 
