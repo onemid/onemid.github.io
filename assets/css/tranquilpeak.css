@@ -2348,7 +2348,7 @@ a.tag,
   margin-right: 4px;
   margin-bottom: 7px; }
 
-pre tag {
+pre .tag {
   background: none; }
 
 a.tag--default,
