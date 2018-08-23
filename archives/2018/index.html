@@ -279,6 +279,14 @@ $$
 x^2+8
 $$
 累死我ㄌ</p>
+<hr>
+<p>【2018/8/23 更】</p>
+<p>我有試圖用過「hexo-renderer-markdown-it-plus」加「katex」，但是因為又喇了「hexo-math」套件，就形成 inline latex 給 hexo-math 渲染，隔行的 latex 給 katex 渲染。</p>
+<p>但是 katex 在我試的時候 x 二次方的 2 跑版了，不得不放棄 katex；所以又換回「hexo-renderer-markdown-it」渲染，再搭配「hexo-math」。</p>
+<p>然後在<code>_config.yml</code>安插一小段</p>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">math:</span><br><span class="line">   engine: 'mathjax'</span><br><span class="line">   mathjax:</span><br><span class="line">     src: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"</span><br><span class="line">     config:</span><br><span class="line">         tex2jax:</span><br><span class="line">             inlineMath: [ ['$','$'], ["\\(","\\)"] ]</span><br><span class="line">             skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']</span><br><span class="line">             processEscapes: true</span><br><span class="line">         TeX:</span><br><span class="line">             equationNumbers:</span><br><span class="line">				autoNumber: "AMS"</span><br></pre></td></tr></table></figure></p>
+<h6>無關緊要的後記</h6>
+<p>話說，我很想把 <code>*.yml</code>那個 yml 念成 やめろ，不覺得很像嗎？ya me ro</p>
 
                     
                         
