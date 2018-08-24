@@ -16,19 +16,19 @@
     
     
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Gary Gong","sameAs":["https://github.com/onemid/","https://www.linkedin.com/in/onemid85/"],"image":"https://www.gravatar.com/avatar/b93d499c9197202a5fab6afb8ebe66d1"},"articleBody":"我的老天，我花了一個多小時終於東湊西湊把 mathjax 塞進去了\n搞到後來我都不知道我在幹嘛\n結果 github 上面跟本機看得不一樣\n這是 inline $ x^2+x-5=y $\n這是隔行\n$$\nx^2+8\n$$\n累死我ㄌ\n\n【2018/8/23 更】\n我有試圖用過「hexo-renderer-markdown-it-plus」加「katex」，但是因為又喇了「hexo-math」套件，就形成 inline latex 給 hexo-math 渲染，隔行的 latex 給 katex 渲染。\n但是 katex 在我試的時候 x 二次方的 2 跑版了，不得不放棄 katex；所以又換回「hexo-renderer-markdown-it」渲染，再搭配「hexo-math」。\n然後在_config.yml安插一小段\nmath:\n   engine: 'mathjax'\n   mathjax:\n     src: &quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;\n     config:\n         tex2jax:\n             inlineMath: [ ['$','$'], [&quot;\\\\(&quot;,&quot;\\\\)&quot;] ]\n             skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']\n             processEscapes: true\n         TeX:\n             equationNumbers:\n\t\t\t\tautoNumber: &quot;AMS&quot;\n\n無關緊要的後記\n話說，我很想把 *.yml那個 yml 念成 やめろ，不覺得很像嗎？ya me ro\n","dateCreated":"2018-08-01T02:01:00+08:00","dateModified":"2018-08-23T18:14:49+08:00","datePublished":"2018-08-01T02:01:00+08:00","description":"","headline":"zzz我終於把 mathjax 弄進去了","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://onemid.github.io/2018/08/01/testmath/"},"publisher":{"@type":"Organization","name":"Gary Gong","sameAs":["https://github.com/onemid/","https://www.linkedin.com/in/onemid85/"],"image":"https://www.gravatar.com/avatar/b93d499c9197202a5fab6afb8ebe66d1","logo":{"@type":"ImageObject","url":"https://www.gravatar.com/avatar/b93d499c9197202a5fab6afb8ebe66d1"}},"url":"https://onemid.github.io/2018/08/01/testmath/","keywords":"hexo, murmuring, mathjax, katex"}</script>
-    <meta name="description" content="我的老天，我花了一個多小時終於東湊西湊把 mathjax 塞進去了 搞到後來我都不知道我在幹嘛 結果 github 上面跟本機看得不一樣 這是 inline $ x^2+x-5=y $ 這是隔行 $$ x^2+8 $$ 累死我ㄌ  【2018/8/23 更】 我有試圖用過「hexo-renderer-markdown-it-plus」加「katex」，但是因為又喇了「hexo-math」套件，就形">
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Gary Gong","sameAs":["https://github.com/onemid/","https://www.linkedin.com/in/onemid85/"],"image":"https://www.gravatar.com/avatar/b93d499c9197202a5fab6afb8ebe66d1"},"articleBody":"我的老天，我花了一個多小時終於東湊西湊把 mathjax 塞進去了\n搞到後來我都不知道我在幹嘛\n結果 github 上面跟本機看得不一樣\n&lt;!-- more --&gt;\n這是 inline $ x^2+x-5=y $\n這是隔行\n$$\nx^2+8\n$$\n累死我ㄌ\n\n【2018/8/23 更】\n我有試圖用過「hexo-renderer-markdown-it-plus」加「katex」，但是因為又喇了「hexo-math」套件，就形成 inline latex 給 hexo-math 渲染，隔行的 latex 給 katex 渲染。\n但是 katex 在我試的時候 x 二次方的 2 跑版了，不得不放棄 katex；所以又換回「hexo-renderer-markdown-it」渲染，再搭配「hexo-math」。\n然後在_config.yml安插一小段\nmath:\n   engine: 'mathjax'\n   mathjax:\n     src: &quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;\n     config:\n         tex2jax:\n             inlineMath: [ ['$','$'], [&quot;\\\\(&quot;,&quot;\\\\)&quot;] ]\n             skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']\n             processEscapes: true\n         TeX:\n             equationNumbers:\n\t\t\t\tautoNumber: &quot;AMS&quot;\n\n無關緊要的後記\n話說，我很想把 *.yml那個 yml 念成 やめろ，不覺得很像嗎？ya me ro\n","dateCreated":"2018-08-01T02:01:00+08:00","dateModified":"2018-08-25T01:32:52+08:00","datePublished":"2018-08-01T02:01:00+08:00","description":"","headline":"zzz我終於把 mathjax 弄進去了","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://onemid.github.io/2018/08/01/testmath/"},"publisher":{"@type":"Organization","name":"Gary Gong","sameAs":["https://github.com/onemid/","https://www.linkedin.com/in/onemid85/"],"image":"https://www.gravatar.com/avatar/b93d499c9197202a5fab6afb8ebe66d1","logo":{"@type":"ImageObject","url":"https://www.gravatar.com/avatar/b93d499c9197202a5fab6afb8ebe66d1"}},"url":"https://onemid.github.io/2018/08/01/testmath/","keywords":"hexo, murmuring, mathjax, katex"}</script>
+    <meta name="description" content="我的老天，我花了一個多小時終於東湊西湊把 mathjax 塞進去了 搞到後來我都不知道我在幹嘛 結果 github 上面跟本機看得不一樣 &amp;lt;!-- more --&amp;gt; 這是 inline $ x^2+x-5=y $ 這是隔行 $$ x^2+8 $$ 累死我ㄌ  【2018/8/23 更】 我有試圖用過「hexo-renderer-markdown-it-plus」加「katex」，但是因">
 <meta name="keywords" content="hexo,murmuring,mathjax,katex">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="zzz我終於把 mathjax 弄進去了">
 <meta property="og:url" content="https://onemid.github.io/2018/08/01/testmath/index.html">
 <meta property="og:site_name" content="Nothing to Do">
-<meta property="og:description" content="我的老天，我花了一個多小時終於東湊西湊把 mathjax 塞進去了 搞到後來我都不知道我在幹嘛 結果 github 上面跟本機看得不一樣 這是 inline $ x^2+x-5=y $ 這是隔行 $$ x^2+8 $$ 累死我ㄌ  【2018/8/23 更】 我有試圖用過「hexo-renderer-markdown-it-plus」加「katex」，但是因為又喇了「hexo-math」套件，就形">
+<meta property="og:description" content="我的老天，我花了一個多小時終於東湊西湊把 mathjax 塞進去了 搞到後來我都不知道我在幹嘛 結果 github 上面跟本機看得不一樣 &amp;lt;!-- more --&amp;gt; 這是 inline $ x^2+x-5=y $ 這是隔行 $$ x^2+8 $$ 累死我ㄌ  【2018/8/23 更】 我有試圖用過「hexo-renderer-markdown-it-plus」加「katex」，但是因">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2018-08-23T10:14:49.485Z">
+<meta property="og:updated_time" content="2018-08-24T17:32:52.808Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="zzz我終於把 mathjax 弄進去了">
-<meta name="twitter:description" content="我的老天，我花了一個多小時終於東湊西湊把 mathjax 塞進去了 搞到後來我都不知道我在幹嘛 結果 github 上面跟本機看得不一樣 這是 inline $ x^2+x-5=y $ 這是隔行 $$ x^2+8 $$ 累死我ㄌ  【2018/8/23 更】 我有試圖用過「hexo-renderer-markdown-it-plus」加「katex」，但是因為又喇了「hexo-math」套件，就形">
+<meta name="twitter:description" content="我的老天，我花了一個多小時終於東湊西湊把 mathjax 塞進去了 搞到後來我都不知道我在幹嘛 結果 github 上面跟本機看得不一樣 &amp;lt;!-- more --&amp;gt; 這是 inline $ x^2+x-5=y $ 這是隔行 $$ x^2+8 $$ 累死我ㄌ  【2018/8/23 更】 我有試圖用過「hexo-renderer-markdown-it-plus」加「katex」，但是因">
     
     
         
@@ -217,7 +217,8 @@
         <div class="main-content-wrap">
             <p>我的老天，我花了一個多小時終於東湊西湊把 mathjax 塞進去了</p>
 <p>搞到後來我都不知道我在幹嘛</p>
-<p>結果 github 上面跟本機看得不一樣</p>
+<p>結果 github 上面跟本機看得不一樣
+&lt;!-- more --&gt;</p>
 <p>這是 inline $ x^2+x-5=y $</p>
 <p>這是隔行
 $$
@@ -284,7 +285,7 @@ $$
     </nav>
     <ul class="post-actions post-action-share">
         <li class="post-action hide-lg hide-md hide-sm">
-            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Diesen Beitrag teilen">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
                 <i class="fa fa-share-alt" aria-hidden="true"></i>
             </a>
         </li>
@@ -324,7 +325,7 @@ $$
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#" aria-label="Nach oben">
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
             
                 <i class="fa fa-list" aria-hidden="true"></i>
             </a>
@@ -390,7 +391,7 @@ $$
     </nav>
     <ul class="post-actions post-action-share">
         <li class="post-action hide-lg hide-md hide-sm">
-            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Diesen Beitrag teilen">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
                 <i class="fa fa-share-alt" aria-hidden="true"></i>
             </a>
         </li>
@@ -430,7 +431,7 @@ $$
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#" aria-label="Nach oben">
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
             
                 <i class="fa fa-list" aria-hidden="true"></i>
             </a>
