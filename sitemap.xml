@@ -33,6 +33,11 @@
   </url>
   
   <url>
+    <loc>https://onemid.github.io/blog/creating-a-new-theme/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://onemid.github.io/tags/</loc>
     <lastmod>2018-08-23T09:32:15+08:00</lastmod>
     <priority>0</priority>
@@ -80,6 +85,12 @@
   <url>
     <loc>https://onemid.github.io/tags/highlightjs/</loc>
     <lastmod>2018-08-23T17:24:27+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://onemid.github.io/categories/hugo/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -176,6 +187,12 @@
   <url>
     <loc>https://onemid.github.io/tags/tranquilpeak/</loc>
     <lastmod>2018-08-23T17:24:27+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://onemid.github.io/tags/tutorial/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

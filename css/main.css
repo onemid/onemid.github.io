@@ -923,17 +923,26 @@
 				vertical-align: middle;
 			}
 
+			ul.actions li a{
+				color: #595959;
+			}
+
 				ul.actions li:last-child {
 					padding-right: 0;
 				}
 
 			ul.actions.pagination .button {
-			    /* background: white; */
+				/* background: white; */
+					/* color: #ffffff; */
 					line-height: 2.5em;
 	        height: auto;
 	        white-space: normal;
 	        padding-top: 1em;
 	        padding-bottom: 1em;
+			}
+
+			ul.actions.pagination li a {
+				color: #ffffff;
 			}
 
 			ul.actions.pagination .next {
