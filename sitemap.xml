@@ -28,11 +28,6 @@
   </url>
   
   <url>
-    <loc>https://onemid.github.io/blog/creating-a-new-theme/</loc>
-    <lastmod>2018-08-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://onemid.github.io/blog/testmath/</loc>
     <lastmod>2018-08-01T02:01:00+08:00</lastmod>
   </url>
@@ -88,13 +83,13 @@
   </url>
   
   <url>
-    <loc>https://onemid.github.io/tags/hexo/</loc>
+    <loc>https://onemid.github.io/categories/hexo/</loc>
     <lastmod>2018-08-23T17:24:27+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://onemid.github.io/categories/hexo/</loc>
+    <loc>https://onemid.github.io/tags/hexo/</loc>
     <lastmod>2018-08-23T17:24:27+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -106,25 +101,19 @@
   </url>
   
   <url>
-    <loc>https://onemid.github.io/categories/hugo/</loc>
-    <lastmod>2018-08-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://onemid.github.io/tags/isequal/</loc>
     <lastmod>2018-08-25T18:01:37+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://onemid.github.io/tags/julia/</loc>
+    <loc>https://onemid.github.io/categories/julia/</loc>
     <lastmod>2018-08-25T18:01:37+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://onemid.github.io/categories/julia/</loc>
+    <loc>https://onemid.github.io/tags/julia/</loc>
     <lastmod>2018-08-25T18:01:37+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -234,12 +223,6 @@
   <url>
     <loc>https://onemid.github.io/tags/tranquilpeak/</loc>
     <lastmod>2018-08-23T17:24:27+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://onemid.github.io/tags/tutorial/</loc>
-    <lastmod>2018-08-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

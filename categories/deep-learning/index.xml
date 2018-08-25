@@ -19,7 +19,7 @@
       <guid>https://onemid.github.io/blog/cuda-and-tf-install/</guid>
       <description>Install CUDA: https://developer.nvidia.com/cuda-downloads?target_os=Linux&amp;amp;target_arch=ppc64le&amp;amp;target_distro=Ubuntu&amp;amp;target_version=1604&amp;amp;target_type=deblocal
  Here, we used &amp;ldquo;Linux&amp;rdquo; -&amp;gt; &amp;ldquo;ppc64le&amp;rdquo;(64-bit) -&amp;gt; &amp;ldquo;16.04&amp;rdquo; -&amp;gt; &amp;ldquo;deb(local)&amp;rdquo;, and downloaded the &amp;ldquo;Base Installer&amp;rdquo; (approx. 1.0GB)  Following the guidance which given by the nVidia webpage to install the CUDA.
- During installation, the installation program will ask you to create a &amp;ldquo;==symbolic link==&amp;rdquo; of CUDA library folder; remember to create.
+ During installation, the installation program will ask you to create a &amp;ldquo;symbolic link&amp;rdquo; of CUDA library folder; remember to create.
  Create the environment variable to make these work.
   export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/ local/cuda/extras/CUPTI/lib64:/usr/lib/nvidia-381 # Remember that nvidia-381 is the driver version, if you install 390, please modifiy it to nvidia-390 export CUDA_HOME=/usr/local/cuda export PATH=$PATH:/usr/local/cuda/bin   Execute source ~/.</description>
     </item>
