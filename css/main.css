@@ -96,7 +96,7 @@
 	}
 
 	body {
-		background: #f4f4f4;
+		background: #333333;
 	}
 
 		body.is-loading *,
@@ -115,7 +115,7 @@
 /* Type */
 
 	body, input, select, textarea {
-		color: #333333;
+		color: #f4f4f4;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 14pt;
 		font-weight: 400;
@@ -181,7 +181,7 @@
 			}
 
 	strong, b {
-		color: #333333;
+		color: #f4f4f4;
 		font-weight: 700;
 	}
 
@@ -194,7 +194,7 @@
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #3c3b3b;
+		color: #f4f4f4;
 		font-family: "Raleway", Helvetica, sans-serif;
 		font-weight: 800;
 		letter-spacing: 0.25em;
@@ -395,8 +395,8 @@
 		-ms-transition: background-color 0.2s ease, border 0.2s ease, color 0.2s ease;
 		transition: background-color 0.2s ease, border 0.2s ease, color 0.2s ease;
 		background-color: transparent;
-		border: solid 1px rgba(160, 160, 160, 0.3);
-		color: #3c3b3b;
+		border: dotted 2px rgba(160, 160, 160, 0.3);
+		color: #ffffff;
 		cursor: pointer;
 		display: inline-block;
 		font-family: "Raleway", Helvetica, sans-serif;
@@ -416,7 +416,7 @@
 		input[type="reset"]:hover,
 		input[type="button"]:hover,
 		.button:hover {
-			border: solid 1px #2ebaae;
+			border: solid 3px #2ebaae;
 			color: #2ebaae !important;
 		}
 
@@ -928,7 +928,7 @@
 				}
 
 			ul.actions.pagination .button {
-			    background: white;
+			    /* background: white; */
 					line-height: 2.5em;
 	        height: auto;
 	        white-space: normal;
@@ -1170,8 +1170,8 @@
 		-webkit-flex-direction: column-reverse;
 		-ms-flex-direction: column-reverse;
 		flex-direction: column-reverse;
-		background: #ffffff;
-		border: solid 1px rgba(160, 160, 160, 0.3);
+		/* background: #ffffff; */
+		border: solid 1.5px rgba(160, 160, 160, 0.3);
 		margin: 0 0 2em 0;
 	}
 
@@ -1312,7 +1312,7 @@
 				}
 
 				.post > header .title h2 {
-					font-weight: 900;
+					font-weight: 600;
 					font-size: 1.5em;
 				}
 
@@ -1337,6 +1337,18 @@
 				}
 
 				.post > header .meta .published {
+					color: #3c3b3b;
+					display: block;
+					font-family: "Raleway", Helvetica, sans-serif;
+					font-size: 0.7em;
+					font-weight: 800;
+					letter-spacing: 0.25em;
+					margin-top: 0.5em;
+					text-transform: uppercase;
+					white-space: nowrap;
+				}
+
+				.post>header .meta .author {
 					color: #3c3b3b;
 					display: block;
 					font-family: "Raleway", Helvetica, sans-serif;
@@ -1407,6 +1419,7 @@
 				cursor: default;
 				list-style: none;
 				padding: 0;
+				color: #000;
 			}
 
         .post > footer .stats li,
@@ -2199,7 +2212,7 @@
 		-webkit-justify-content: space-between;
 		-ms-justify-content: space-between;
 		justify-content: space-between;
-		background-color: #ffffff;
+		background-color: #262626;
 		border-bottom: solid 1px rgba(160, 160, 160, 0.3);
 		height: 3.5em;
 		left: 0;
@@ -2331,12 +2344,12 @@
 					#header .main ul li > a {
 						text-decoration: none;
 						border-bottom: 0;
-						color: #aaaaaa;
+						color: #ffffff;
 						overflow: hidden;
 						position: relative;
 						text-indent: 4em;
 						width: 4em;
-						color: #333333;
+						/* color: #333333; */
 						/* Theoretically for IE 8 & 9 (more valid) */
 						/* ...but not required as filter works too */
 						/* should come BEFORE filter */
@@ -2712,7 +2725,7 @@
 		-ms-transition: -ms-transform 0.5s ease, visibility 0.5s;
 		transition: transform 0.5s ease, visibility 0.5s;
 		-webkit-overflow-scrolling: touch;
-		background: #ffffff;
+		background: #333333;
 		border-left: solid 1px rgba(160, 160, 160, 0.3);
 		box-shadow: none;
 		height: 100%;
