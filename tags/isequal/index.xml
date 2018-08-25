@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Isequal on Nothing to Do</title>
+    <link>https://onemid.github.io/tags/isequal/</link>
+    <description>Recent content in Isequal on Nothing to Do</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Sat, 25 Aug 2018 18:01:37 +0800</lastBuildDate>
+    
+	<atom:link href="https://onemid.github.io/tags/isequal/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Julia isequal() 和 ==</title>
+      <link>https://onemid.github.io/blog/julia-equal-comparison/</link>
+      <pubDate>Sat, 25 Aug 2018 18:01:37 +0800</pubDate>
+      
+      <guid>https://onemid.github.io/blog/julia-equal-comparison/</guid>
+      <description>isequal() 和 == 在 Julia 裡面，isequal()和==表面上看起來都是比較兩者是否相等；但其實裡面還是有些微的差距：isequal(a, b)隱含著hash(a)及hash(b)是否相等。在浮點數（包含NaN）、遺失值（Missing）中，兩者處理狀況有差距。根據文件所述，isequal會視0.0與-0.0為不同，NaN永遠與其他NaN相同，missing也是。
+isequal() 文件：https://docs.julialang.org/en/v1/base/base/#Base.isequal
+== 文件：https://docs.julialang.org/en/v1/base/math/#Base.:==
+比較 正零與負零    指令 結果？ 指令 結果？     isequal(0.0, -0.0) false 0.0 == -0.0 true   isequal(0, -0) true 0 == -0 true   isequal(0.0, -0) true 0.0 == -0 true    julia&amp;gt; hash(0) 0x77cfa1eef01bca90 julia&amp;gt; hash(-0) 0x77cfa1eef01bca90 julia&amp;gt; hash(0.0) 0x77cfa1eef01bca90 julia&amp;gt; hash(-0.0) 0x3be7d0f7780de548  ###Missing 們
+   指令 結果？ 指令 結果？     isequal(missing, missing) true missing == missing missing   isequal(Missing, Missing) true Missing == Missing true   isequal(missing, Missing) false missing == Missing missing   isequal(missing, 3) false missing == 3 missing    julia&amp;gt; typeof(missing) Missing julia&amp;gt; typeof(Missing) DataType  ###NaN 們</description>
+    </item>
+    
+  </channel>
+</rss>
