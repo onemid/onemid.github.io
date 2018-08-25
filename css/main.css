@@ -1194,10 +1194,10 @@
 				-ms-transition: -ms-transform 0.2s ease-out;
 				transition: transform 0.2s ease-out;
 				width: 100%;
-				border-left: solid 1px rgba(160, 160, 160, 0.3);
-				border-top: solid 1px rgba(160, 160, 160, 0.3);
-				border-right: solid 1px rgba(160, 160, 160, 0.3);
-				border-bottom: solid 1px rgba(160, 160, 160, 0.3);
+				border-left: solid 5px #cccccc;
+				border-top: solid 1px #cccccc;
+				border-right: solid 1px #cccccc;
+				border-bottom: solid 1px #cccccc;
 			}
 
 			.mini-post .image:hover img {
@@ -1219,11 +1219,24 @@
 			-webkit-flex-grow: 1;
 			-ms-flex-grow: 1;
 			flex-grow: 1;
-			border-left: solid 5px rgba(160, 160, 160, 0.3);
-			border-top: solid 1px rgba(160, 160, 160, 0.3);
-			border-right: solid 1px rgba(160, 160, 160, 0.3);
-			border-bottom: solid 1px rgba(160, 160, 160, 0.3);
+			border-left: solid 5px #cccccc;
+			border-top: solid 1px #cccccc;
+			border-right: solid 1px #cccccc;
+			border-bottom: solid 1px #cccccc;
 		}
+			/* .mini-post header h3 {
+				-moz-transition: -moz-transform 0.2s ease-out;
+				-webkit-transition: -webkit-transform 0.2s ease-out;
+				-ms-transition: -ms-transform 0.2s ease-out;
+				transition: transform 0.2s ease-out;
+			}
+
+			.mini-post header h3:hover{
+				-moz-transform: scale(1.05);
+				-webkit-transform: scale(1.05);
+				-ms-transform: scale(1.05);
+				transform: scale(1.05);
+			} */
 
 			.mini-post header h3 {
 				font-size: 0.7em;
