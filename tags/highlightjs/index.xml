@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Highlightjs on Nothing to Do</title>
+    <link>http://onemid.github.io/tags/highlightjs/</link>
+    <description>Recent content in Highlightjs on Nothing to Do</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Thu, 23 Aug 2018 17:24:27 +0000</lastBuildDate>
+    
+	<atom:link href="http://onemid.github.io/tags/highlightjs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hexo Syntax Highlighting (Tested under Tranquilpeak)</title>
+      <link>http://onemid.github.io/blog/hexo-syntax-highlighting/</link>
+      <pubDate>Thu, 23 Aug 2018 17:24:27 +0000</pubDate>
+      
+      <guid>http://onemid.github.io/blog/hexo-syntax-highlighting/</guid>
+      <description>把這個主題弄 Syntax Highlighting 又是一番折騰，本來想說用prism.js做做，奈何就是在佈景上跟原始的佈景相衝，該高亮顯示的地方也沒有，索性走回頭路用highlight.js 基本上在 Hexo 佈景機制裡面加上一些 Code 就好，根據官網所述：
+&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;/path/to/styles/default.css&amp;quot;&amp;gt; &amp;lt;script src=&amp;quot;/path/to/highlight.pack.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt;hljs.initHighlightingOnLoad();&amp;lt;/script&amp;gt;  其中/path/to/styles/default.css基本上就是這個highlight.js的佈景即是， https://highlightjs.org/static/demo/ 這裡一票佈景，算是可以輕鬆找到要的。
+如果說要用 CDN 的話，可以來這裡 https://cdnjs.com/libraries/highlight.js/ 翻翻，但是官網標配只含標準支援的程式碼 Highlighting 的功能，如果要額外的（比如說想用什麼 Julia 之類的），那得要自己去官網選配或是額外加 CDN，例如：
+... &amp;lt;!-- 標準配備 --&amp;gt; &amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;!-- 選配 Julia --&amp;gt; &amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/julia.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; ...  在 Hexo 佈景機制加上上述的東西，個人是放在 themes/tranquilpeak/layout/_partial/footer.ejs，可以動
+比較重要的是，按理改完要在主題目錄下運行npm run prod，讓剛剛編輯的footer.ejs可以產出。
+另外一個是，在 Hexo 根目錄下的_config.yml裡面：
+... highlight: enable: false ...  記得要把 enable 改成 false，不然會打架。
+改完之後，hexo clean和 generate以及deploy記得做ㄛ
+後記：使用深色佈景主題時，Tranquilpeak 會讓一些 Token 反白 我當時看到快傻眼了，怎麼那麼難搞阿Q</description>
+    </item>
+    
+  </channel>
+</rss>

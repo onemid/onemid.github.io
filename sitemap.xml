@@ -3,196 +3,196 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>http://onemid.github.io/about/</loc>
     <lastmod>2018-08-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/cuda-and-tf-install/</loc>
+    <loc>http://onemid.github.io/blog/cuda-and-tf-install/</loc>
     <lastmod>2018-08-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/hexo-syntax-highlighting/</loc>
+    <loc>http://onemid.github.io/blog/hexo-syntax-highlighting/</loc>
     <lastmod>2018-08-23T17:24:27+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/python3-pip3-zlib-in-macos/</loc>
+    <loc>http://onemid.github.io/blog/python3-pip3-zlib-in-macos/</loc>
     <lastmod>2018-08-23T09:32:15+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/testmath/</loc>
+    <loc>http://onemid.github.io/blog/testmath/</loc>
     <lastmod>2018-08-01T02:01:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/nginx-mysql-php-installation-ubuntu-16-04/</loc>
+    <loc>http://onemid.github.io/blog/nginx-mysql-php-installation-ubuntu-16-04/</loc>
     <lastmod>2018-07-31T23:57:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>http://onemid.github.io/tags/</loc>
     <lastmod>2018-08-23T09:32:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/</loc>
+    <loc>http://onemid.github.io/blog/</loc>
     <lastmod>2018-08-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>http://onemid.github.io/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/contact/</loc>
+    <loc>http://onemid.github.io/contact/</loc>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/cuda/</loc>
+    <loc>http://onemid.github.io/tags/cuda/</loc>
     <lastmod>2018-08-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/deeplearning/</loc>
+    <loc>http://onemid.github.io/categories/deeplearning/</loc>
     <lastmod>2018-08-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/hexo/</loc>
+    <loc>http://onemid.github.io/tags/hexo/</loc>
     <lastmod>2018-08-23T17:24:27+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/hexo/</loc>
+    <loc>http://onemid.github.io/categories/hexo/</loc>
     <lastmod>2018-08-23T17:24:27+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/highlightjs/</loc>
+    <loc>http://onemid.github.io/tags/highlightjs/</loc>
     <lastmod>2018-08-23T17:24:27+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/katex/</loc>
-    <lastmod>2018-08-01T02:01:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/macos/</loc>
-    <lastmod>2018-08-23T09:32:15+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/mathjax/</loc>
+    <loc>http://onemid.github.io/tags/katex/</loc>
     <lastmod>2018-08-01T02:01:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/murmuring/</loc>
+    <loc>http://onemid.github.io/tags/macos/</loc>
+    <lastmod>2018-08-23T09:32:15+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://onemid.github.io/tags/mathjax/</loc>
     <lastmod>2018-08-01T02:01:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/mysql/</loc>
+    <loc>http://onemid.github.io/tags/murmuring/</loc>
+    <lastmod>2018-08-01T02:01:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://onemid.github.io/tags/mysql/</loc>
     <lastmod>2018-07-31T23:57:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/nginx/</loc>
+    <loc>http://onemid.github.io/tags/nginx/</loc>
     <lastmod>2018-07-31T23:57:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>http://onemid.github.io/</loc>
     <lastmod>2018-08-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/php/</loc>
+    <loc>http://onemid.github.io/tags/php/</loc>
     <lastmod>2018-07-31T23:57:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/pip3/</loc>
+    <loc>http://onemid.github.io/tags/pip3/</loc>
     <lastmod>2018-08-23T09:32:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/prismjs/</loc>
+    <loc>http://onemid.github.io/tags/prismjs/</loc>
     <lastmod>2018-08-23T17:24:27+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/python3/</loc>
+    <loc>http://onemid.github.io/tags/python3/</loc>
     <lastmod>2018-08-23T09:32:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/python3/</loc>
+    <loc>http://onemid.github.io/categories/python3/</loc>
     <lastmod>2018-08-23T09:32:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/syntaxhighlight/</loc>
+    <loc>http://onemid.github.io/tags/syntaxhighlight/</loc>
     <lastmod>2018-08-23T17:24:27+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>http://onemid.github.io/tags/</loc>
     <lastmod>2018-08-23T09:32:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/tensorflow/</loc>
+    <loc>http://onemid.github.io/tags/tensorflow/</loc>
     <lastmod>2018-08-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/tranquilpeak/</loc>
+    <loc>http://onemid.github.io/tags/tranquilpeak/</loc>
     <lastmod>2018-08-23T17:24:27+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/webprogramming/</loc>
+    <loc>http://onemid.github.io/categories/webprogramming/</loc>
     <lastmod>2018-07-31T23:57:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/zlib/</loc>
+    <loc>http://onemid.github.io/tags/zlib/</loc>
     <lastmod>2018-08-23T09:32:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/%E5%BB%A2%E6%96%87/</loc>
+    <loc>http://onemid.github.io/categories/%E5%BB%A2%E6%96%87/</loc>
     <lastmod>2018-08-01T02:01:00+08:00</lastmod>
     <priority>0</priority>
   </url>

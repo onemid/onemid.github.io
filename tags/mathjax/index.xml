@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mathjax on Nothing to Do</title>
+    <link>http://onemid.github.io/tags/mathjax/</link>
+    <description>Recent content in Mathjax on Nothing to Do</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Wed, 01 Aug 2018 02:01:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://onemid.github.io/tags/mathjax/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>zzz我終於把 mathjax 弄進去了</title>
+      <link>http://onemid.github.io/blog/testmath/</link>
+      <pubDate>Wed, 01 Aug 2018 02:01:00 +0800</pubDate>
+      
+      <guid>http://onemid.github.io/blog/testmath/</guid>
+      <description>無關緊要的後記        我的老天，我花了一個多小時終於東湊西湊把 mathjax 塞進去了
+搞到後來我都不知道我在幹嘛
+結果 github 上面跟本機看得不一樣 這是 inline $ x^2+x-5=y $
+這是隔行 $$ x^2+8 $$ 累死我ㄌ
+【2018/8/23 更】
+我有試圖用過「hexo-renderer-markdown-it-plus」加「katex」，但是因為又喇了「hexo-math」套件，就形成 inline latex 給 hexo-math 渲染，隔行的 latex 給 katex 渲染。
+但是 katex 在我試的時候 x 二次方的 2 跑版了，不得不放棄 katex；所以又換回「hexo-renderer-markdown-it」渲染，再搭配「hexo-math」。
+然後在_config.yml安插一小段
+math: engine: &#39;mathjax&#39; mathjax: src: &amp;quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;quot; config: tex2jax: inlineMath: [ [&#39;$&#39;,&#39;$&#39;], [&amp;quot;\\(&amp;quot;,&amp;quot;\\)&amp;quot;] ] skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;, &#39;code&#39;] processEscapes: true TeX: equationNumbers: autoNumber: &amp;quot;AMS&amp;quot;  無關緊要的後記 話說，我很想把 *.</description>
+    </item>
+    
+  </channel>
+</rss>
