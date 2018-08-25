@@ -330,7 +330,7 @@
   
 
   
-  <p>在 Julia 裡面，<code>isequal()</code>和<code>==</code>表面上看起來都是比較兩者是否相等；但其實裡面還是有些微的差距：<code>isequal(a, b)</code>隱含著<code>hash(a)</code>及<code>hash(b)</code>是否相等。在浮點數（包含<code>NaN</code>）、遺失值（<code>Missing</code>）中，兩者處理狀況有差距。根據文件所述，<code>isequal</code>會視<code>0.0</code>與<code>-0.0</code>為不同，<code>NaN</code>永遠與其他<code>NaN</code>相同，<code>missing</code>也是。</p>
+  <p>本執行環境：Julia 1.0</p>
   <footer>
     <ul class="actions">
       <li><a href="https://onemid.github.io/blog/julia-equal-comparison/" class="button big">Continue Reading</a></li>

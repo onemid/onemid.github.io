@@ -13,7 +13,8 @@
         "articleSection" : "blog",
         "name" : "Julia isequal() 和 ==",
         "headline" : "Julia isequal() 和 ==",
-        "description" : "isequal() 和 == 在 Julia 裡面，isequal()和==表面上看起來都是比較兩者是否相等；但其實裡面還是有些微的差距：isequal(a, b)隱含著hash(a)及hash(b)是否相等。在浮點數（包含NaN）、遺失值（Missing）中，兩者處理狀況有差距。根據文件所述，isequal會視0.0與-0.0為不同，NaN永遠與其他NaN相同，missing也是。
+        "description" : "isequal() 和 == 本執行環境：Julia 1.0
+在 Julia 裡面，isequal()和==表面上看起來都是比較兩者是否相等；但其實裡面還是有些微的差距：isequal(a, b)隱含著hash(a)及hash(b)是否相等。在浮點數（包含NaN）、遺失值（Missing）中，兩者處理狀況有差距。根據文件所述，isequal會視0.0與-0.0為不同，NaN永遠與其他NaN相同，missing也是。
 isequal() 文件：https://docs.julialang.org/en/v1/base/base/#Base.isequal
 == 文件：https://docs.julialang.org/en/v1/base/math/#Base.:==
 比較 正零與負零    指令 結果？ 指令 結果？     isequal(0.0, -0.0) false 0.0 == -0.0 true   isequal(0, -0) true 0 == -0 true   isequal(0.0, -0) true 0.0 == -0 true    julia&gt; hash(0) 0x77cfa1eef01bca90 julia&gt; hash(-0) 0x77cfa1eef01bca90 julia&gt; hash(0.0) 0x77cfa1eef01bca90 julia&gt; hash(-0.0) 0x3be7d0f7780de548  Missing 們    指令 結果？ 指令 結果？     isequal(missing, missing) true missing == missing missing   isequal(Missing, Missing) true Missing == Missing true   isequal(missing, Missing) false missing == Missing missing   isequal(missing, 3) false missing == 3 missing    julia&gt; typeof(missing) Missing julia&gt; typeof(Missing) DataType  NaN 們    指令 結果？ 指令 結果？     isequal(NaN, NaN) true NaN == NaN false   isequal([1 NaN], [1 NaN]) true [1 NaN] == [1 NaN] false   isequal(NaN, NaN32) true NaN == NaN32 false    julia&gt; hash(NaN) 0x15d7d083d04ecb90 julia&gt; hash(NaN16) 0x15d7d083d04ecb90 julia&gt; hash(NaN32) 0x15d7d083d04ecb90 julia&gt; hash(NaN64) 0x15d7d083d04ecb90  不管哪一種NaNhash 值都一樣；同樣出現在Inf中，不管是Inf16、Inf32、Inf64皆為0x807bb202c9cbfc6f，而負無限大者皆為0x96e782fc7639e1bc。",
@@ -27,7 +28,7 @@ isequal() 文件：https://docs.julialang.org/en/v1/base/base/#Base.isequal
         "datePublished": "2018-08-25 18:01:37 &#43;0800 CST",
         "dateModified" : "2018-08-25 18:01:37 &#43;0800 CST",
         "url" : "https://onemid.github.io/blog/julia-equal-comparison/",
-        "wordCount" : "362",
+        "wordCount" : "364",
         "keywords" : [ "julia","isequal","comparison","NaN","Missing","==","","Blog" ]
     }
     </script>
@@ -54,13 +55,15 @@ isequal() 文件：https://docs.julialang.org/en/v1/base/base/#Base.isequal
 
         <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Julia isequal() 和 =="/>
-<meta name="twitter:description" content="isequal() 和 == 在 Julia 裡面，isequal()和==表面上看起來都是比較兩者是否相等；但其實裡面還是有些微的差距：isequal(a, b)隱含著hash(a)及hash(b)是否相等。在浮點數（包含NaN）、遺失值（Missing）中，兩者處理狀況有差距。根據文件所述，isequal會視0.0與-0.0為不同，NaN永遠與其他NaN相同，missing也是。
+<meta name="twitter:description" content="isequal() 和 == 本執行環境：Julia 1.0
+在 Julia 裡面，isequal()和==表面上看起來都是比較兩者是否相等；但其實裡面還是有些微的差距：isequal(a, b)隱含著hash(a)及hash(b)是否相等。在浮點數（包含NaN）、遺失值（Missing）中，兩者處理狀況有差距。根據文件所述，isequal會視0.0與-0.0為不同，NaN永遠與其他NaN相同，missing也是。
 isequal() 文件：https://docs.julialang.org/en/v1/base/base/#Base.isequal
 == 文件：https://docs.julialang.org/en/v1/base/math/#Base.:==
 比較 正零與負零    指令 結果？ 指令 結果？     isequal(0.0, -0.0) false 0.0 == -0.0 true   isequal(0, -0) true 0 == -0 true   isequal(0.0, -0) true 0.0 == -0 true    julia&gt; hash(0) 0x77cfa1eef01bca90 julia&gt; hash(-0) 0x77cfa1eef01bca90 julia&gt; hash(0.0) 0x77cfa1eef01bca90 julia&gt; hash(-0.0) 0x3be7d0f7780de548  Missing 們    指令 結果？ 指令 結果？     isequal(missing, missing) true missing == missing missing   isequal(Missing, Missing) true Missing == Missing true   isequal(missing, Missing) false missing == Missing missing   isequal(missing, 3) false missing == 3 missing    julia&gt; typeof(missing) Missing julia&gt; typeof(Missing) DataType  NaN 們    指令 結果？ 指令 結果？     isequal(NaN, NaN) true NaN == NaN false   isequal([1 NaN], [1 NaN]) true [1 NaN] == [1 NaN] false   isequal(NaN, NaN32) true NaN == NaN32 false    julia&gt; hash(NaN) 0x15d7d083d04ecb90 julia&gt; hash(NaN16) 0x15d7d083d04ecb90 julia&gt; hash(NaN32) 0x15d7d083d04ecb90 julia&gt; hash(NaN64) 0x15d7d083d04ecb90  不管哪一種NaNhash 值都一樣；同樣出現在Inf中，不管是Inf16、Inf32、Inf64皆為0x807bb202c9cbfc6f，而負無限大者皆為0x96e782fc7639e1bc。"/>
 
         <meta property="og:title" content="Julia isequal() 和 ==" />
-<meta property="og:description" content="isequal() 和 == 在 Julia 裡面，isequal()和==表面上看起來都是比較兩者是否相等；但其實裡面還是有些微的差距：isequal(a, b)隱含著hash(a)及hash(b)是否相等。在浮點數（包含NaN）、遺失值（Missing）中，兩者處理狀況有差距。根據文件所述，isequal會視0.0與-0.0為不同，NaN永遠與其他NaN相同，missing也是。
+<meta property="og:description" content="isequal() 和 == 本執行環境：Julia 1.0
+在 Julia 裡面，isequal()和==表面上看起來都是比較兩者是否相等；但其實裡面還是有些微的差距：isequal(a, b)隱含著hash(a)及hash(b)是否相等。在浮點數（包含NaN）、遺失值（Missing）中，兩者處理狀況有差距。根據文件所述，isequal會視0.0與-0.0為不同，NaN永遠與其他NaN相同，missing也是。
 isequal() 文件：https://docs.julialang.org/en/v1/base/base/#Base.isequal
 == 文件：https://docs.julialang.org/en/v1/base/math/#Base.:==
 比較 正零與負零    指令 結果？ 指令 結果？     isequal(0.0, -0.0) false 0.0 == -0.0 true   isequal(0, -0) true 0 == -0 true   isequal(0.0, -0) true 0.0 == -0 true    julia&gt; hash(0) 0x77cfa1eef01bca90 julia&gt; hash(-0) 0x77cfa1eef01bca90 julia&gt; hash(0.0) 0x77cfa1eef01bca90 julia&gt; hash(-0.0) 0x3be7d0f7780de548  Missing 們    指令 結果？ 指令 結果？     isequal(missing, missing) true missing == missing missing   isequal(Missing, Missing) true Missing == Missing true   isequal(missing, Missing) false missing == Missing missing   isequal(missing, 3) false missing == 3 missing    julia&gt; typeof(missing) Missing julia&gt; typeof(Missing) DataType  NaN 們    指令 結果？ 指令 結果？     isequal(NaN, NaN) true NaN == NaN false   isequal([1 NaN], [1 NaN]) true [1 NaN] == [1 NaN] false   isequal(NaN, NaN32) true NaN == NaN32 false    julia&gt; hash(NaN) 0x15d7d083d04ecb90 julia&gt; hash(NaN16) 0x15d7d083d04ecb90 julia&gt; hash(NaN32) 0x15d7d083d04ecb90 julia&gt; hash(NaN64) 0x15d7d083d04ecb90  不管哪一種NaNhash 值都一樣；同樣出現在Inf中，不管是Inf16、Inf32、Inf64皆為0x807bb202c9cbfc6f，而負無限大者皆為0x96e782fc7639e1bc。" />
@@ -73,7 +76,8 @@ isequal() 文件：https://docs.julialang.org/en/v1/base/base/#Base.isequal
         <meta property="og:image:height" content="512">
         
 <meta itemprop="name" content="Julia isequal() 和 ==">
-<meta itemprop="description" content="isequal() 和 == 在 Julia 裡面，isequal()和==表面上看起來都是比較兩者是否相等；但其實裡面還是有些微的差距：isequal(a, b)隱含著hash(a)及hash(b)是否相等。在浮點數（包含NaN）、遺失值（Missing）中，兩者處理狀況有差距。根據文件所述，isequal會視0.0與-0.0為不同，NaN永遠與其他NaN相同，missing也是。
+<meta itemprop="description" content="isequal() 和 == 本執行環境：Julia 1.0
+在 Julia 裡面，isequal()和==表面上看起來都是比較兩者是否相等；但其實裡面還是有些微的差距：isequal(a, b)隱含著hash(a)及hash(b)是否相等。在浮點數（包含NaN）、遺失值（Missing）中，兩者處理狀況有差距。根據文件所述，isequal會視0.0與-0.0為不同，NaN永遠與其他NaN相同，missing也是。
 isequal() 文件：https://docs.julialang.org/en/v1/base/base/#Base.isequal
 == 文件：https://docs.julialang.org/en/v1/base/math/#Base.:==
 比較 正零與負零    指令 結果？ 指令 結果？     isequal(0.0, -0.0) false 0.0 == -0.0 true   isequal(0, -0) true 0 == -0 true   isequal(0.0, -0) true 0.0 == -0 true    julia&gt; hash(0) 0x77cfa1eef01bca90 julia&gt; hash(-0) 0x77cfa1eef01bca90 julia&gt; hash(0.0) 0x77cfa1eef01bca90 julia&gt; hash(-0.0) 0x3be7d0f7780de548  Missing 們    指令 結果？ 指令 結果？     isequal(missing, missing) true missing == missing missing   isequal(Missing, Missing) true Missing == Missing true   isequal(missing, Missing) false missing == Missing missing   isequal(missing, 3) false missing == 3 missing    julia&gt; typeof(missing) Missing julia&gt; typeof(Missing) DataType  NaN 們    指令 結果？ 指令 結果？     isequal(NaN, NaN) true NaN == NaN false   isequal([1 NaN], [1 NaN]) true [1 NaN] == [1 NaN] false   isequal(NaN, NaN32) true NaN == NaN32 false    julia&gt; hash(NaN) 0x15d7d083d04ecb90 julia&gt; hash(NaN16) 0x15d7d083d04ecb90 julia&gt; hash(NaN32) 0x15d7d083d04ecb90 julia&gt; hash(NaN64) 0x15d7d083d04ecb90  不管哪一種NaNhash 值都一樣；同樣出現在Inf中，不管是Inf16、Inf32、Inf64皆為0x807bb202c9cbfc6f，而負無限大者皆為0x96e782fc7639e1bc。">
@@ -81,7 +85,7 @@ isequal() 文件：https://docs.julialang.org/en/v1/base/base/#Base.isequal
 
 <meta itemprop="datePublished" content="2018-08-25T18:01:37&#43;08:00" />
 <meta itemprop="dateModified" content="2018-08-25T18:01:37&#43;08:00" />
-<meta itemprop="wordCount" content="362">
+<meta itemprop="wordCount" content="364">
 
 
 
@@ -420,6 +424,8 @@ isequal() 文件：https://docs.julialang.org/en/v1/base/base/#Base.isequal
     
 
 <h1 id="isequal-和"><code>isequal()</code> 和 <code>==</code></h1>
+
+<p>本執行環境：Julia 1.0</p>
 
 <p>在 Julia 裡面，<code>isequal()</code>和<code>==</code>表面上看起來都是比較兩者是否相等；但其實裡面還是有些微的差距：<code>isequal(a, b)</code>隱含著<code>hash(a)</code>及<code>hash(b)</code>是否相等。在浮點數（包含<code>NaN</code>）、遺失值（<code>Missing</code>）中，兩者處理狀況有差距。根據文件所述，<code>isequal</code>會視<code>0.0</code>與<code>-0.0</code>為不同，<code>NaN</code>永遠與其他<code>NaN</code>相同，<code>missing</code>也是。</p>
 
