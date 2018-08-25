@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hexo on Nothing to Do</title>
-    <link>http://onemid.github.io/tags/hexo/</link>
+    <link>https://onemid.github.io/tags/hexo/</link>
     <description>Recent content in Hexo on Nothing to Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Thu, 23 Aug 2018 17:24:27 +0000</lastBuildDate>
     
-	<atom:link href="http://onemid.github.io/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://onemid.github.io/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hexo Syntax Highlighting (Tested under Tranquilpeak)</title>
-      <link>http://onemid.github.io/blog/hexo-syntax-highlighting/</link>
+      <link>https://onemid.github.io/blog/hexo-syntax-highlighting/</link>
       <pubDate>Thu, 23 Aug 2018 17:24:27 +0000</pubDate>
       
-      <guid>http://onemid.github.io/blog/hexo-syntax-highlighting/</guid>
+      <guid>https://onemid.github.io/blog/hexo-syntax-highlighting/</guid>
       <description>把這個主題弄 Syntax Highlighting 又是一番折騰，本來想說用prism.js做做，奈何就是在佈景上跟原始的佈景相衝，該高亮顯示的地方也沒有，索性走回頭路用highlight.js 基本上在 Hexo 佈景機制裡面加上一些 Code 就好，根據官網所述：
 &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;/path/to/styles/default.css&amp;quot;&amp;gt; &amp;lt;script src=&amp;quot;/path/to/highlight.pack.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt;hljs.initHighlightingOnLoad();&amp;lt;/script&amp;gt;  其中/path/to/styles/default.css基本上就是這個highlight.js的佈景即是， https://highlightjs.org/static/demo/ 這裡一票佈景，算是可以輕鬆找到要的。
 如果說要用 CDN 的話，可以來這裡 https://cdnjs.com/libraries/highlight.js/ 翻翻，但是官網標配只含標準支援的程式碼 Highlighting 的功能，如果要額外的（比如說想用什麼 Julia 之類的），那得要自己去官網選配或是額外加 CDN，例如：
@@ -30,10 +30,10 @@
     
     <item>
       <title>zzz我終於把 mathjax 弄進去了</title>
-      <link>http://onemid.github.io/blog/testmath/</link>
+      <link>https://onemid.github.io/blog/testmath/</link>
       <pubDate>Wed, 01 Aug 2018 02:01:00 +0800</pubDate>
       
-      <guid>http://onemid.github.io/blog/testmath/</guid>
+      <guid>https://onemid.github.io/blog/testmath/</guid>
       <description>無關緊要的後記        我的老天，我花了一個多小時終於東湊西湊把 mathjax 塞進去了
 搞到後來我都不知道我在幹嘛
 結果 github 上面跟本機看得不一樣 這是 inline $ x^2+x-5=y $

@@ -3,196 +3,196 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://onemid.github.io/about/</loc>
+    <loc>https://onemid.github.io/about/</loc>
     <lastmod>2018-08-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://onemid.github.io/blog/cuda-and-tf-install/</loc>
+    <loc>https://onemid.github.io/blog/cuda-and-tf-install/</loc>
     <lastmod>2018-08-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://onemid.github.io/blog/hexo-syntax-highlighting/</loc>
+    <loc>https://onemid.github.io/blog/hexo-syntax-highlighting/</loc>
     <lastmod>2018-08-23T17:24:27+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://onemid.github.io/blog/python3-pip3-zlib-in-macos/</loc>
+    <loc>https://onemid.github.io/blog/python3-pip3-zlib-in-macos/</loc>
     <lastmod>2018-08-23T09:32:15+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://onemid.github.io/blog/testmath/</loc>
+    <loc>https://onemid.github.io/blog/testmath/</loc>
     <lastmod>2018-08-01T02:01:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://onemid.github.io/blog/nginx-mysql-php-installation-ubuntu-16-04/</loc>
+    <loc>https://onemid.github.io/blog/nginx-mysql-php-installation-ubuntu-16-04/</loc>
     <lastmod>2018-07-31T23:57:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://onemid.github.io/tags/</loc>
+    <loc>https://onemid.github.io/tags/</loc>
     <lastmod>2018-08-23T09:32:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://onemid.github.io/blog/</loc>
+    <loc>https://onemid.github.io/blog/</loc>
     <lastmod>2018-08-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://onemid.github.io/categories/</loc>
+    <loc>https://onemid.github.io/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://onemid.github.io/contact/</loc>
+    <loc>https://onemid.github.io/contact/</loc>
   </url>
   
   <url>
-    <loc>http://onemid.github.io/tags/cuda/</loc>
+    <loc>https://onemid.github.io/tags/cuda/</loc>
     <lastmod>2018-08-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://onemid.github.io/categories/deeplearning/</loc>
+    <loc>https://onemid.github.io/categories/deeplearning/</loc>
     <lastmod>2018-08-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://onemid.github.io/tags/hexo/</loc>
+    <loc>https://onemid.github.io/categories/hexo/</loc>
     <lastmod>2018-08-23T17:24:27+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://onemid.github.io/categories/hexo/</loc>
+    <loc>https://onemid.github.io/tags/hexo/</loc>
     <lastmod>2018-08-23T17:24:27+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://onemid.github.io/tags/highlightjs/</loc>
+    <loc>https://onemid.github.io/tags/highlightjs/</loc>
     <lastmod>2018-08-23T17:24:27+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://onemid.github.io/tags/katex/</loc>
-    <lastmod>2018-08-01T02:01:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://onemid.github.io/tags/macos/</loc>
-    <lastmod>2018-08-23T09:32:15+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://onemid.github.io/tags/mathjax/</loc>
+    <loc>https://onemid.github.io/tags/katex/</loc>
     <lastmod>2018-08-01T02:01:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://onemid.github.io/tags/murmuring/</loc>
+    <loc>https://onemid.github.io/tags/macos/</loc>
+    <lastmod>2018-08-23T09:32:15+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://onemid.github.io/tags/mathjax/</loc>
     <lastmod>2018-08-01T02:01:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://onemid.github.io/tags/mysql/</loc>
+    <loc>https://onemid.github.io/tags/murmuring/</loc>
+    <lastmod>2018-08-01T02:01:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://onemid.github.io/tags/mysql/</loc>
     <lastmod>2018-07-31T23:57:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://onemid.github.io/tags/nginx/</loc>
+    <loc>https://onemid.github.io/tags/nginx/</loc>
     <lastmod>2018-07-31T23:57:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://onemid.github.io/</loc>
+    <loc>https://onemid.github.io/</loc>
     <lastmod>2018-08-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://onemid.github.io/tags/php/</loc>
+    <loc>https://onemid.github.io/tags/php/</loc>
     <lastmod>2018-07-31T23:57:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://onemid.github.io/tags/pip3/</loc>
+    <loc>https://onemid.github.io/tags/pip3/</loc>
     <lastmod>2018-08-23T09:32:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://onemid.github.io/tags/prismjs/</loc>
+    <loc>https://onemid.github.io/tags/prismjs/</loc>
     <lastmod>2018-08-23T17:24:27+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://onemid.github.io/tags/python3/</loc>
+    <loc>https://onemid.github.io/categories/python3/</loc>
     <lastmod>2018-08-23T09:32:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://onemid.github.io/categories/python3/</loc>
+    <loc>https://onemid.github.io/tags/python3/</loc>
     <lastmod>2018-08-23T09:32:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://onemid.github.io/tags/syntaxhighlight/</loc>
+    <loc>https://onemid.github.io/tags/syntaxhighlight/</loc>
     <lastmod>2018-08-23T17:24:27+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://onemid.github.io/tags/</loc>
+    <loc>https://onemid.github.io/tags/</loc>
     <lastmod>2018-08-23T09:32:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://onemid.github.io/tags/tensorflow/</loc>
+    <loc>https://onemid.github.io/tags/tensorflow/</loc>
     <lastmod>2018-08-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://onemid.github.io/tags/tranquilpeak/</loc>
+    <loc>https://onemid.github.io/tags/tranquilpeak/</loc>
     <lastmod>2018-08-23T17:24:27+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://onemid.github.io/categories/webprogramming/</loc>
+    <loc>https://onemid.github.io/categories/webprogramming/</loc>
     <lastmod>2018-07-31T23:57:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://onemid.github.io/tags/zlib/</loc>
+    <loc>https://onemid.github.io/tags/zlib/</loc>
     <lastmod>2018-08-23T09:32:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://onemid.github.io/categories/%E5%BB%A2%E6%96%87/</loc>
+    <loc>https://onemid.github.io/categories/%E5%BB%A2%E6%96%87/</loc>
     <lastmod>2018-08-01T02:01:00+08:00</lastmod>
     <priority>0</priority>
   </url>

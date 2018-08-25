@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cuda on Nothing to Do</title>
-    <link>http://onemid.github.io/tags/cuda/</link>
+    <link>https://onemid.github.io/tags/cuda/</link>
     <description>Recent content in Cuda on Nothing to Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Sat, 25 Aug 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://onemid.github.io/tags/cuda/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://onemid.github.io/tags/cuda/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Compiling TensorFlow-GPU on Ubuntu 16.04 with CUDA 9.1(9.2) and Python3</title>
-      <link>http://onemid.github.io/blog/cuda-and-tf-install/</link>
+      <link>https://onemid.github.io/blog/cuda-and-tf-install/</link>
       <pubDate>Sat, 25 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://onemid.github.io/blog/cuda-and-tf-install/</guid>
+      <guid>https://onemid.github.io/blog/cuda-and-tf-install/</guid>
       <description>Install CUDA: https://developer.nvidia.com/cuda-downloads?target_os=Linux&amp;amp;target_arch=ppc64le&amp;amp;target_distro=Ubuntu&amp;amp;target_version=1604&amp;amp;target_type=deblocal
  Here, we used &amp;ldquo;Linux&amp;rdquo; -&amp;gt; &amp;ldquo;ppc64le&amp;rdquo;(64-bit) -&amp;gt; &amp;ldquo;16.04&amp;rdquo; -&amp;gt; &amp;ldquo;deb(local)&amp;rdquo;, and downloaded the &amp;ldquo;Base Installer&amp;rdquo; (approx. 1.0GB)  Following the guidance which given by the nVidia webpage to install the CUDA.
  During installation, the installation program will ask you to create a &amp;ldquo;==symbolic link==&amp;rdquo; of CUDA library folder; remember to create.

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python3 on Nothing to Do</title>
-    <link>http://onemid.github.io/categories/python3/</link>
+    <link>https://onemid.github.io/categories/python3/</link>
     <description>Recent content in Python3 on Nothing to Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Thu, 23 Aug 2018 09:32:15 +0800</lastBuildDate>
     
-	<atom:link href="http://onemid.github.io/categories/python3/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://onemid.github.io/categories/python3/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Cannot Use Pip3 in MacOS (zlib Dependency Problem)</title>
-      <link>http://onemid.github.io/blog/python3-pip3-zlib-in-macos/</link>
+      <link>https://onemid.github.io/blog/python3-pip3-zlib-in-macos/</link>
       <pubDate>Thu, 23 Aug 2018 09:32:15 +0800</pubDate>
       
-      <guid>http://onemid.github.io/blog/python3-pip3-zlib-in-macos/</guid>
+      <guid>https://onemid.github.io/blog/python3-pip3-zlib-in-macos/</guid>
       <description>問題描述 在使用 pip3 時，會回應 zlib相關套件的錯誤訊息
 簡單解法 開 terminal 打
 xcode-select --install
