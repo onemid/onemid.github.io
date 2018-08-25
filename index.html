@@ -357,7 +357,7 @@
   <div id="content">
     
 
-<h2 id="isequal-和"><code>isequal()</code> 和 <code>==</code></h2>
+<h1 id="isequal-和"><code>isequal()</code> 和 <code>==</code></h1>
 
 <p>在 Julia 裡面，<code>isequal()</code>和<code>==</code>表面上看起來都是比較兩者是否相等；但其實裡面還是有些微的差距：<code>isequal(a, b)</code>隱含著<code>hash(a)</code>及<code>hash(b)</code>是否相等。在浮點數（包含<code>NaN</code>）、遺失值（<code>Missing</code>）中，兩者處理狀況有差距。根據文件所述，<code>isequal</code>會視<code>0.0</code>與<code>-0.0</code>為不同，<code>NaN</code>永遠與其他<code>NaN</code>相同，<code>missing</code>也是。</p>
 
@@ -365,9 +365,9 @@
 
 <p><a href="https://docs.julialang.org/en/v1/base/math/#Base.:==">== 文件：https://docs.julialang.org/en/v1/base/math/#Base.:==</a></p>
 
-<h2 id="比較">比較</h2>
+<h1 id="比較">比較</h1>
 
-<h3 id="正零與負零">正零與負零</h3>
+<h2 id="正零與負零">正零與負零</h2>
 
 <table>
 <thead>
@@ -413,7 +413,7 @@ julia&gt; hash(-0.0)
 0x3be7d0f7780de548
 </code></pre>
 
-<p>###Missing 們</p>
+<h2 id="missing-們">Missing 們</h2>
 
 <table>
 <thead>
@@ -462,7 +462,7 @@ julia&gt; typeof(Missing)
 DataType
 </code></pre>
 
-<p>###NaN 們</p>
+<h2 id="nan-們">NaN 們</h2>
 
 <table>
 <thead>
@@ -512,7 +512,7 @@ julia&gt; hash(NaN64)
 
 <p>由於系統是 64 位元，<code>NaN</code>的<code>DataType</code>為<code>Float64</code></p>
 
-<p>###複數（Complex Number）們</p>
+<h2 id="複數-complex-number-們">複數（Complex Number）們</h2>
 
 <table>
 <thead>
@@ -603,7 +603,7 @@ $$
 
 <p>這個<code>*</code>一擺上去 $i$ 與分數從此天人永隔。</p>
 
-<p>###有理數（Rational Number）們</p>
+<h2 id="有理數-rational-number-們">有理數（Rational Number）們</h2>
 
 <table>
 <thead>
@@ -1079,7 +1079,7 @@ julia&gt; -float(0//3)
         
 
         <a href="https://onemid.github.io/blog/creating-a-new-theme/" class="image featured">
-            <img src="https://onemid.github.io/img/2018/082018/08/pic03.jpg" alt="">
+            <img src="https://onemid.github.io/img/2018/08/pic03.jpg" alt="">
         </a>
     
 
@@ -1331,6 +1331,8 @@ julia&gt; -float(0//3)
         <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
         <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
         <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/julia.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/go.min.js"></script>
         <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
       
     
