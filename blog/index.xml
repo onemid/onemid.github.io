@@ -58,6 +58,16 @@ brew reinstall python3
     </item>
     
     <item>
+      <title>Creating a New Theme</title>
+      <link>https://onemid.github.io/blog/creating-a-new-theme/</link>
+      <pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://onemid.github.io/blog/creating-a-new-theme/</guid>
+      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
+We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
+    </item>
+    
+    <item>
       <title>zzz我終於把 mathjax 弄進去了</title>
       <link>https://onemid.github.io/blog/testmath/</link>
       <pubDate>Wed, 01 Aug 2018 02:01:00 +0800</pubDate>
@@ -85,16 +95,6 @@ Install MySQL $ sudo apt-get install mysql-server $ mysql_secure_installation  �
 Install PHP for Processing $ sudo apt-get install php-fpm php-mysql  Configure the PHP Processor $ sudo vim /etc/php/7.0/fpm/php.ini  編輯 php.ini 內部數值，先前請解除註解
 cgi.fix_pathinfo=0  重新啟動 PHP Processor
 $ sudo systemctl restart php7.0-fpm  Configure Nginx to Use the PHP Processor $ sudo vim /etc/nginx/sites-available/default  編輯 default 內部檔案，更動原 server {&amp;hellip;} 區塊為下方區塊</description>
-    </item>
-    
-    <item>
-      <title>Creating a New Theme</title>
-      <link>https://onemid.github.io/blog/creating-a-new-theme/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://onemid.github.io/blog/creating-a-new-theme/</guid>
-      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
-We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
     </item>
     
   </channel>

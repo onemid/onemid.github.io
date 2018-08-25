@@ -23,6 +23,11 @@
   </url>
   
   <url>
+    <loc>https://onemid.github.io/blog/creating-a-new-theme/</loc>
+    <lastmod>2018-08-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://onemid.github.io/blog/testmath/</loc>
     <lastmod>2018-08-01T02:01:00+08:00</lastmod>
   </url>
@@ -30,11 +35,6 @@
   <url>
     <loc>https://onemid.github.io/blog/nginx-mysql-php-installation-ubuntu-16-04/</loc>
     <lastmod>2018-07-31T23:57:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://onemid.github.io/blog/creating-a-new-theme/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -90,7 +90,7 @@
   
   <url>
     <loc>https://onemid.github.io/categories/hugo/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+    <lastmod>2018-08-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -192,7 +192,7 @@
   
   <url>
     <loc>https://onemid.github.io/tags/tutorial/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+    <lastmod>2018-08-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
