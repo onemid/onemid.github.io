@@ -1307,11 +1307,13 @@
 			}
 
 				.post > header .title h1 {
-						font-weight: 900;
-						font-size: 1.5em;
+					color: #333333;
+					font-weight: 800;
+					font-size: 1.5em;
 				}
 
 				.post > header .title h2 {
+					color: #333333;
 					font-weight: 600;
 					font-size: 1.5em;
 				}

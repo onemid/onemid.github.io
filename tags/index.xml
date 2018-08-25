@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Nothing to Do</title>
+    <title>Tags on Nothing to Do</title>
     <link>https://onemid.github.io/tags/</link>
-    <description>Recent content on Nothing to Do</description>
+    <description>Recent content in Tags on Nothing to Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Thu, 23 Aug 2018 09:32:15 +0800</lastBuildDate>
@@ -12,87 +12,165 @@
     
     
     <item>
-      <title>Cannot Use Pip3 in MacOS (zlib Dependency Problem)</title>
-      <link>https://onemid.github.io/blog/python3-pip3-zlib-in-macos/</link>
+      <title></title>
+      <link>https://onemid.github.io/tags/</link>
       <pubDate>Thu, 23 Aug 2018 09:32:15 +0800</pubDate>
       
-      <guid>https://onemid.github.io/blog/python3-pip3-zlib-in-macos/</guid>
-      <description>問題描述 在使用 pip3 時，會回應 zlib相關套件的錯誤訊息
-簡單解法 開 terminal 打
-xcode-select --install
-之後再裝
-brew install python3
-如果先裝 python3 然後再裝 xcode-select 東西的話
-brew reinstall python3
-就重裝 python3 吧</description>
+      <guid>https://onemid.github.io/tags/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>Cannot Use Pip3 in MacOS (zlib Dependency Problem)</title>
-      <link>https://onemid.github.io/blog/python3-pip3-zlib-in-macos/</link>
+      <title>Cuda</title>
+      <link>https://onemid.github.io/tags/cuda/</link>
+      <pubDate>Sat, 25 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://onemid.github.io/tags/cuda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hexo</title>
+      <link>https://onemid.github.io/tags/hexo/</link>
+      <pubDate>Thu, 23 Aug 2018 17:24:27 +0000</pubDate>
+      
+      <guid>https://onemid.github.io/tags/hexo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Highlightjs</title>
+      <link>https://onemid.github.io/tags/highlightjs/</link>
+      <pubDate>Thu, 23 Aug 2018 17:24:27 +0000</pubDate>
+      
+      <guid>https://onemid.github.io/tags/highlightjs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Katex</title>
+      <link>https://onemid.github.io/tags/katex/</link>
+      <pubDate>Wed, 01 Aug 2018 02:01:00 +0800</pubDate>
+      
+      <guid>https://onemid.github.io/tags/katex/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Macos</title>
+      <link>https://onemid.github.io/tags/macos/</link>
       <pubDate>Thu, 23 Aug 2018 09:32:15 +0800</pubDate>
       
-      <guid>https://onemid.github.io/blog/python3-pip3-zlib-in-macos/</guid>
-      <description>問題描述 在使用 pip3 時，會回應 zlib相關套件的錯誤訊息
-簡單解法 開 terminal 打
-xcode-select --install
-之後再裝
-brew install python3
-如果先裝 python3 然後再裝 xcode-select 東西的話
-brew reinstall python3
-就重裝 python3 吧</description>
+      <guid>https://onemid.github.io/tags/macos/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>Nginx, MySQL, PHP Installation (Ubuntu 16.04)</title>
-      <link>https://onemid.github.io/blog/nginx-mysql-php-installation-ubuntu-16-04/</link>
-      <pubDate>Tue, 31 Jul 2018 23:57:00 +0800</pubDate>
+      <title>Mathjax</title>
+      <link>https://onemid.github.io/tags/mathjax/</link>
+      <pubDate>Wed, 01 Aug 2018 02:01:00 +0800</pubDate>
       
-      <guid>https://onemid.github.io/blog/nginx-mysql-php-installation-ubuntu-16-04/</guid>
-      <description>Install the Nginx Web Server $ sudo apt-get update $ sudo apt-get install nginx  請確認防火牆開啟埠號 80 / 443
-Install MySQL $ sudo apt-get install mysql-server $ mysql_secure_installation  請遵照指示文字設定
-Install PHP for Processing $ sudo apt-get install php-fpm php-mysql  Configure the PHP Processor $ sudo vim /etc/php/7.0/fpm/php.ini  編輯 php.ini 內部數值，先前請解除註解
-cgi.fix_pathinfo=0  重新啟動 PHP Processor
-$ sudo systemctl restart php7.0-fpm  Configure Nginx to Use the PHP Processor $ sudo vim /etc/nginx/sites-available/default  編輯 default 內部檔案，更動原 server {&amp;hellip;} 區塊為下方區塊</description>
+      <guid>https://onemid.github.io/tags/mathjax/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>Nginx, MySQL, PHP Installation (Ubuntu 16.04)</title>
-      <link>https://onemid.github.io/blog/nginx-mysql-php-installation-ubuntu-16-04/</link>
-      <pubDate>Tue, 31 Jul 2018 23:57:00 +0800</pubDate>
+      <title>Murmuring</title>
+      <link>https://onemid.github.io/tags/murmuring/</link>
+      <pubDate>Wed, 01 Aug 2018 02:01:00 +0800</pubDate>
       
-      <guid>https://onemid.github.io/blog/nginx-mysql-php-installation-ubuntu-16-04/</guid>
-      <description>Install the Nginx Web Server $ sudo apt-get update $ sudo apt-get install nginx  請確認防火牆開啟埠號 80 / 443
-Install MySQL $ sudo apt-get install mysql-server $ mysql_secure_installation  請遵照指示文字設定
-Install PHP for Processing $ sudo apt-get install php-fpm php-mysql  Configure the PHP Processor $ sudo vim /etc/php/7.0/fpm/php.ini  編輯 php.ini 內部數值，先前請解除註解
-cgi.fix_pathinfo=0  重新啟動 PHP Processor
-$ sudo systemctl restart php7.0-fpm  Configure Nginx to Use the PHP Processor $ sudo vim /etc/nginx/sites-available/default  編輯 default 內部檔案，更動原 server {&amp;hellip;} 區塊為下方區塊</description>
+      <guid>https://onemid.github.io/tags/murmuring/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>Nginx, MySQL, PHP Installation (Ubuntu 16.04)</title>
-      <link>https://onemid.github.io/blog/nginx-mysql-php-installation-ubuntu-16-04/</link>
+      <title>Mysql</title>
+      <link>https://onemid.github.io/tags/mysql/</link>
       <pubDate>Tue, 31 Jul 2018 23:57:00 +0800</pubDate>
       
-      <guid>https://onemid.github.io/blog/nginx-mysql-php-installation-ubuntu-16-04/</guid>
-      <description>Install the Nginx Web Server $ sudo apt-get update $ sudo apt-get install nginx  請確認防火牆開啟埠號 80 / 443
-Install MySQL $ sudo apt-get install mysql-server $ mysql_secure_installation  請遵照指示文字設定
-Install PHP for Processing $ sudo apt-get install php-fpm php-mysql  Configure the PHP Processor $ sudo vim /etc/php/7.0/fpm/php.ini  編輯 php.ini 內部數值，先前請解除註解
-cgi.fix_pathinfo=0  重新啟動 PHP Processor
-$ sudo systemctl restart php7.0-fpm  Configure Nginx to Use the PHP Processor $ sudo vim /etc/nginx/sites-available/default  編輯 default 內部檔案，更動原 server {&amp;hellip;} 區塊為下方區塊</description>
+      <guid>https://onemid.github.io/tags/mysql/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>Nginx, MySQL, PHP Installation (Ubuntu 16.04)</title>
-      <link>https://onemid.github.io/blog/nginx-mysql-php-installation-ubuntu-16-04/</link>
+      <title>Nginx</title>
+      <link>https://onemid.github.io/tags/nginx/</link>
       <pubDate>Tue, 31 Jul 2018 23:57:00 +0800</pubDate>
       
-      <guid>https://onemid.github.io/blog/nginx-mysql-php-installation-ubuntu-16-04/</guid>
-      <description>Install the Nginx Web Server $ sudo apt-get update $ sudo apt-get install nginx  請確認防火牆開啟埠號 80 / 443
-Install MySQL $ sudo apt-get install mysql-server $ mysql_secure_installation  請遵照指示文字設定
-Install PHP for Processing $ sudo apt-get install php-fpm php-mysql  Configure the PHP Processor $ sudo vim /etc/php/7.0/fpm/php.ini  編輯 php.ini 內部數值，先前請解除註解
-cgi.fix_pathinfo=0  重新啟動 PHP Processor
-$ sudo systemctl restart php7.0-fpm  Configure Nginx to Use the PHP Processor $ sudo vim /etc/nginx/sites-available/default  編輯 default 內部檔案，更動原 server {&amp;hellip;} 區塊為下方區塊</description>
+      <guid>https://onemid.github.io/tags/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Php</title>
+      <link>https://onemid.github.io/tags/php/</link>
+      <pubDate>Tue, 31 Jul 2018 23:57:00 +0800</pubDate>
+      
+      <guid>https://onemid.github.io/tags/php/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pip3</title>
+      <link>https://onemid.github.io/tags/pip3/</link>
+      <pubDate>Thu, 23 Aug 2018 09:32:15 +0800</pubDate>
+      
+      <guid>https://onemid.github.io/tags/pip3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Prismjs</title>
+      <link>https://onemid.github.io/tags/prismjs/</link>
+      <pubDate>Thu, 23 Aug 2018 17:24:27 +0000</pubDate>
+      
+      <guid>https://onemid.github.io/tags/prismjs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python3</title>
+      <link>https://onemid.github.io/tags/python3/</link>
+      <pubDate>Thu, 23 Aug 2018 09:32:15 +0800</pubDate>
+      
+      <guid>https://onemid.github.io/tags/python3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Syntaxhighlight</title>
+      <link>https://onemid.github.io/tags/syntaxhighlight/</link>
+      <pubDate>Thu, 23 Aug 2018 17:24:27 +0000</pubDate>
+      
+      <guid>https://onemid.github.io/tags/syntaxhighlight/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tensorflow</title>
+      <link>https://onemid.github.io/tags/tensorflow/</link>
+      <pubDate>Sat, 25 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://onemid.github.io/tags/tensorflow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tranquilpeak</title>
+      <link>https://onemid.github.io/tags/tranquilpeak/</link>
+      <pubDate>Thu, 23 Aug 2018 17:24:27 +0000</pubDate>
+      
+      <guid>https://onemid.github.io/tags/tranquilpeak/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Zlib</title>
+      <link>https://onemid.github.io/tags/zlib/</link>
+      <pubDate>Thu, 23 Aug 2018 09:32:15 +0800</pubDate>
+      
+      <guid>https://onemid.github.io/tags/zlib/</guid>
+      <description></description>
     </item>
     
   </channel>
