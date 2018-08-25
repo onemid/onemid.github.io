@@ -19,7 +19,8 @@
       <guid>https://onemid.github.io/blog/testmath/</guid>
       <description>無關緊要的後記        我的老天，我花了一個多小時終於東湊西湊把 mathjax 塞進去了
 搞到後來我都不知道我在幹嘛
-結果 github 上面跟本機看得不一樣 這是 inline $ x^2+x-5=y $
+結果 github 上面跟本機看得不一樣
+這是 inline $ x^2+x-5=y $
 這是隔行 $$ x^2+8 $$ 累死我ㄌ
 【2018/8/23 更】
 我有試圖用過「hexo-renderer-markdown-it-plus」加「katex」，但是因為又喇了「hexo-math」套件，就形成 inline latex 給 hexo-math 渲染，隔行的 latex 給 katex 渲染。
