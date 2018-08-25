@@ -1,0 +1,1116 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "http://localhost:1313/"
+        },
+        "articleSection" : "blog",
+        "name" : "Hexo Syntax Highlighting (Tested under Tranquilpeak)",
+        "headline" : "Hexo Syntax Highlighting (Tested under Tranquilpeak)",
+        "description" : "把這個主題弄 Syntax Highlighting 又是一番折騰，本來想說用prism.js做做，奈何就是在佈景上跟原始的佈景相衝，該高亮顯示的地方也沒有，索性走回頭路用highlight.js 基本上在 Hexo 佈景機制裡面加上一些 Code 就好，根據官網所述：
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/path/to/styles/default.css&quot;&gt; &lt;script src=&quot;/path/to/highlight.pack.js&quot;&gt;&lt;/script&gt; &lt;script&gt;hljs.initHighlightingOnLoad();&lt;/script&gt;  其中/path/to/styles/default.css基本上就是這個highlight.js的佈景即是， https://highlightjs.org/static/demo/ 這裡一票佈景，算是可以輕鬆找到要的。
+如果說要用 CDN 的話，可以來這裡 https://cdnjs.com/libraries/highlight.js/ 翻翻，但是官網標配只含標準支援的程式碼 Highlighting 的功能，如果要額外的（比如說想用什麼 Julia 之類的），那得要自己去官網選配或是額外加 CDN，例如：
+... &lt;!-- 標準配備 --&gt; &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js&quot;&gt;&lt;/script&gt; &lt;!-- 選配 Julia --&gt; &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/julia.min.js&quot;&gt;&lt;/script&gt; ...  在 Hexo 佈景機制加上上述的東西，個人是放在 themes/tranquilpeak/layout/_partial/footer.ejs，可以動
+比較重要的是，按理改完要在主題目錄下運行npm run prod，讓剛剛編輯的footer.ejs可以產出。
+另外一個是，在 Hexo 根目錄下的_config.yml裡面：
+... highlight: enable: false ...  記得要把 enable 改成 false，不然會打架。
+改完之後，hexo clean和 generate以及deploy記得做ㄛ
+後記：使用深色佈景主題時，Tranquilpeak 會讓一些 Token 反白 我當時看到快傻眼了，怎麼那麼難搞阿Q",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2018",
+        "datePublished": "2018-08-23 17:24:27 &#43;0000 UTC",
+        "dateModified" : "2018-08-23 17:24:27 &#43;0000 UTC",
+        "url" : "http://localhost:1313/blog/hexo-syntax-highlighting/",
+        "wordCount" : "110",
+        "keywords" : [ "hexo","highlightjs","prismjs","tranquilpeak","syntaxhighlight","Blog" ]
+    }
+    </script>
+        
+            
+                <title>Hexo Syntax Highlighting (Tested under Tranquilpeak)</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.47.1" />
+        
+
+
+        
+            <meta name="author" content="Gary Gong">
+        
+        
+            
+                <meta name="description" content="HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo">
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hexo Syntax Highlighting (Tested under Tranquilpeak)"/>
+<meta name="twitter:description" content="把這個主題弄 Syntax Highlighting 又是一番折騰，本來想說用prism.js做做，奈何就是在佈景上跟原始的佈景相衝，該高亮顯示的地方也沒有，索性走回頭路用highlight.js 基本上在 Hexo 佈景機制裡面加上一些 Code 就好，根據官網所述：
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/path/to/styles/default.css&quot;&gt; &lt;script src=&quot;/path/to/highlight.pack.js&quot;&gt;&lt;/script&gt; &lt;script&gt;hljs.initHighlightingOnLoad();&lt;/script&gt;  其中/path/to/styles/default.css基本上就是這個highlight.js的佈景即是， https://highlightjs.org/static/demo/ 這裡一票佈景，算是可以輕鬆找到要的。
+如果說要用 CDN 的話，可以來這裡 https://cdnjs.com/libraries/highlight.js/ 翻翻，但是官網標配只含標準支援的程式碼 Highlighting 的功能，如果要額外的（比如說想用什麼 Julia 之類的），那得要自己去官網選配或是額外加 CDN，例如：
+... &lt;!-- 標準配備 --&gt; &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js&quot;&gt;&lt;/script&gt; &lt;!-- 選配 Julia --&gt; &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/julia.min.js&quot;&gt;&lt;/script&gt; ...  在 Hexo 佈景機制加上上述的東西，個人是放在 themes/tranquilpeak/layout/_partial/footer.ejs，可以動
+比較重要的是，按理改完要在主題目錄下運行npm run prod，讓剛剛編輯的footer.ejs可以產出。
+另外一個是，在 Hexo 根目錄下的_config.yml裡面：
+... highlight: enable: false ...  記得要把 enable 改成 false，不然會打架。
+改完之後，hexo clean和 generate以及deploy記得做ㄛ
+後記：使用深色佈景主題時，Tranquilpeak 會讓一些 Token 反白 我當時看到快傻眼了，怎麼那麼難搞阿Q"/>
+
+        <meta property="og:title" content="Hexo Syntax Highlighting (Tested under Tranquilpeak)" />
+<meta property="og:description" content="把這個主題弄 Syntax Highlighting 又是一番折騰，本來想說用prism.js做做，奈何就是在佈景上跟原始的佈景相衝，該高亮顯示的地方也沒有，索性走回頭路用highlight.js 基本上在 Hexo 佈景機制裡面加上一些 Code 就好，根據官網所述：
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/path/to/styles/default.css&quot;&gt; &lt;script src=&quot;/path/to/highlight.pack.js&quot;&gt;&lt;/script&gt; &lt;script&gt;hljs.initHighlightingOnLoad();&lt;/script&gt;  其中/path/to/styles/default.css基本上就是這個highlight.js的佈景即是， https://highlightjs.org/static/demo/ 這裡一票佈景，算是可以輕鬆找到要的。
+如果說要用 CDN 的話，可以來這裡 https://cdnjs.com/libraries/highlight.js/ 翻翻，但是官網標配只含標準支援的程式碼 Highlighting 的功能，如果要額外的（比如說想用什麼 Julia 之類的），那得要自己去官網選配或是額外加 CDN，例如：
+... &lt;!-- 標準配備 --&gt; &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js&quot;&gt;&lt;/script&gt; &lt;!-- 選配 Julia --&gt; &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/julia.min.js&quot;&gt;&lt;/script&gt; ...  在 Hexo 佈景機制加上上述的東西，個人是放在 themes/tranquilpeak/layout/_partial/footer.ejs，可以動
+比較重要的是，按理改完要在主題目錄下運行npm run prod，讓剛剛編輯的footer.ejs可以產出。
+另外一個是，在 Hexo 根目錄下的_config.yml裡面：
+... highlight: enable: false ...  記得要把 enable 改成 false，不然會打架。
+改完之後，hexo clean和 generate以及deploy記得做ㄛ
+後記：使用深色佈景主題時，Tranquilpeak 會讓一些 Token 反白 我當時看到快傻眼了，怎麼那麼難搞阿Q" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/blog/hexo-syntax-highlighting/" /><meta property="article:published_time" content="2018-08-23T17:24:27&#43;00:00"/>
+<meta property="article:modified_time" content="2018-08-23T17:24:27&#43;00:00"/>
+        <meta property="og:image" content="http://localhost:1313//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        
+<meta itemprop="name" content="Hexo Syntax Highlighting (Tested under Tranquilpeak)">
+<meta itemprop="description" content="把這個主題弄 Syntax Highlighting 又是一番折騰，本來想說用prism.js做做，奈何就是在佈景上跟原始的佈景相衝，該高亮顯示的地方也沒有，索性走回頭路用highlight.js 基本上在 Hexo 佈景機制裡面加上一些 Code 就好，根據官網所述：
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/path/to/styles/default.css&quot;&gt; &lt;script src=&quot;/path/to/highlight.pack.js&quot;&gt;&lt;/script&gt; &lt;script&gt;hljs.initHighlightingOnLoad();&lt;/script&gt;  其中/path/to/styles/default.css基本上就是這個highlight.js的佈景即是， https://highlightjs.org/static/demo/ 這裡一票佈景，算是可以輕鬆找到要的。
+如果說要用 CDN 的話，可以來這裡 https://cdnjs.com/libraries/highlight.js/ 翻翻，但是官網標配只含標準支援的程式碼 Highlighting 的功能，如果要額外的（比如說想用什麼 Julia 之類的），那得要自己去官網選配或是額外加 CDN，例如：
+... &lt;!-- 標準配備 --&gt; &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js&quot;&gt;&lt;/script&gt; &lt;!-- 選配 Julia --&gt; &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/julia.min.js&quot;&gt;&lt;/script&gt; ...  在 Hexo 佈景機制加上上述的東西，個人是放在 themes/tranquilpeak/layout/_partial/footer.ejs，可以動
+比較重要的是，按理改完要在主題目錄下運行npm run prod，讓剛剛編輯的footer.ejs可以產出。
+另外一個是，在 Hexo 根目錄下的_config.yml裡面：
+... highlight: enable: false ...  記得要把 enable 改成 false，不然會打架。
+改完之後，hexo clean和 generate以及deploy記得做ㄛ
+後記：使用深色佈景主題時，Tranquilpeak 會讓一些 Token 反白 我當時看到快傻眼了，怎麼那麼難搞阿Q">
+
+
+<meta itemprop="datePublished" content="2018-08-23T17:24:27&#43;00:00" />
+<meta itemprop="dateModified" content="2018-08-23T17:24:27&#43;00:00" />
+<meta itemprop="wordCount" content="110">
+
+
+
+<meta itemprop="keywords" content="hexo,highlightjs,prismjs,tranquilpeak,syntaxhighlight," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="http://localhost:1313/css/main.css">
+            <link rel="stylesheet" href="http://localhost:1313/css/add-on.css">
+            <link rel="stylesheet" href="http://localhost:1313/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/dracula.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="http://localhost:1313/">blog</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="http://localhost:1313/">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="http://localhost:1313/about/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="http://localhost:1313/blog/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="http://localhost:1313/categories/">
+                            <i class="fa fa-sitemap">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="http://localhost:1313/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="http://localhost:1313/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="http://localhost:1313/">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/about/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/blog/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/categories/">
+                            <h3>
+                                <i class="fa fa-sitemap">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="http://localhost:1313/blog/cuda-and-tf-install/">Compiling TensorFlow-GPU on Ubuntu 16.04 with CUDA 9.1(9.2) and Python3</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-08-25'>
+                                    August 25, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="http://localhost:1313/blog/hexo-syntax-highlighting/">Hexo Syntax Highlighting (Tested under Tranquilpeak)</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-08-23'>
+                                    August 23, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="http://localhost:1313/blog/python3-pip3-zlib-in-macos/">Cannot Use Pip3 in MacOS (zlib Dependency Problem)</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-08-23'>
+                                    August 23, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="http://localhost:1313/blog/testmath/">zzz我終於把 mathjax 弄進去了</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-08-01'>
+                                    August 1, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="http://localhost:1313/blog/nginx-mysql-php-installation-ubuntu-16-04/">Nginx, MySQL, PHP Installation (Ubuntu 16.04)</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-31'>
+                                    July 31, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fhexo-syntax-highlighting%2f&amp;text=Hexo%20Syntax%20Highlighting%20%28Tested%20under%20Tranquilpeak%29&amp;via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fhexo-syntax-highlighting%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fblog%2fhexo-syntax-highlighting%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by Gary%20Gong&amp;body=http%3a%2f%2flocalhost%3a1313%2fblog%2fhexo-syntax-highlighting%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="http://localhost:1313/blog/hexo-syntax-highlighting/">Hexo Syntax Highlighting (Tested under Tranquilpeak)</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2018-08-23'>
+            August 23, 2018</time>
+        <span class="author">Gary Gong</span>
+        
+            <p>1 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+  
+    <section id="social-share">
+      <ul class="icons">
+        
+
+
+
+<li>
+  <a href="//twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fhexo-syntax-highlighting%2f&amp;text=Hexo%20Syntax%20Highlighting%20%28Tested%20under%20Tranquilpeak%29&amp;via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fhexo-syntax-highlighting%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fblog%2fhexo-syntax-highlighting%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by Gary%20Gong&amp;body=http%3a%2f%2flocalhost%3a1313%2fblog%2fhexo-syntax-highlighting%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+      </ul>
+    </section>
+  
+
+  
+
+  <div id="content">
+    
+
+<p>把這個主題弄 Syntax Highlighting 又是一番折騰，本來想說用<code>prism.js</code>做做，奈何就是在佈景上跟原始的佈景相衝，該高亮顯示的地方也沒有，索性走回頭路用<code>highlight.js</code>
+<!-- more --></p>
+
+<p>基本上在 Hexo 佈景機制裡面加上一些 Code 就好，根據官網所述：</p>
+
+<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;/path/to/styles/default.css&quot;&gt;
+&lt;script src=&quot;/path/to/highlight.pack.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;hljs.initHighlightingOnLoad();&lt;/script&gt;
+</code></pre>
+
+<p>其中<code>/path/to/styles/default.css</code>基本上就是這個<code>highlight.js</code>的佈景即是， <a href="https://highlightjs.org/static/demo/">https://highlightjs.org/static/demo/ </a>這裡一票佈景，算是可以輕鬆找到要的。</p>
+
+<p>如果說要用 CDN 的話，可以來這裡 <a href="https://cdnjs.com/libraries/highlight.js/">https://cdnjs.com/libraries/highlight.js/</a> 翻翻，但是官網標配只含標準支援的程式碼 Highlighting 的功能，如果要額外的（比如說想用什麼 Julia 之類的），那得要自己去官網選配或是額外加 CDN，例如：</p>
+
+<pre><code class="language-html">...
+&lt;!-- 標準配備 --&gt;
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js&quot;&gt;&lt;/script&gt;
+&lt;!-- 選配 Julia --&gt;
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/julia.min.js&quot;&gt;&lt;/script&gt;
+...
+</code></pre>
+
+<p>在 Hexo 佈景機制加上上述的東西，個人是放在 <code>themes/tranquilpeak/layout/_partial/footer.ejs</code>，可以動</p>
+
+<p>比較重要的是，按理改完要在主題目錄下運行<code>npm run prod</code>，讓剛剛編輯的<code>footer.ejs</code>可以產出。</p>
+
+<p>另外一個是，在 Hexo 根目錄下的<code>_config.yml</code>裡面：</p>
+
+<pre><code class="language-yaml">...
+highlight:
+	enable: false
+...
+</code></pre>
+
+<p>記得要把 <code>enable</code> 改成 <code>false</code>，不然會打架。</p>
+
+<p>改完之後，<code>hexo clean</code>和 <code>generate</code>以及<code>deploy</code>記得做ㄛ</p>
+
+<h4 id="後記-使用深色佈景主題時-tranquilpeak-會讓一些-token-反白">後記：使用深色佈景主題時，Tranquilpeak 會讓一些 Token 反白</h4>
+
+<p>我當時看到快傻眼了，怎麼那麼難搞阿Q</p>
+
+<p>看了 Web Inspector 之後才發現 Tranquilpeak 有寫關於 Tag 的 CSS code，其中寫道：</p>
+
+<pre><code class="language-css">a.tag,
+.tag {
+  display: inline-block;
+  background: #fff;
+...
+}
+</code></pre>
+
+<p>由於<code>highlight.js</code>把<code>&lt;script&gt;</code>、<code>&lt;html&gt;</code>等等這些含有「&lt;」和「&gt;」的東西統稱為<code>tag</code>們，在<code>class</code>理所當然理直氣壯的寫上去，然後就被 Tranquilpeak Theme 蓋了過去，所以難怪這些<code>tag</code>們的<code>background</code>都是白色的。</p>
+
+<p>基本上，我的方案是這樣：</p>
+
+<ol>
+<li><p>先在主題根目錄把 <code>npm run start</code>開起來</p></li>
+
+<li><p>從主題根目錄往下找找到<code>source/_css/components/_tag.scss</code></p></li>
+
+<li><p>把以下的程式碼打上去</p></li>
+</ol>
+
+<pre><code class="language-css">   pre .tag{
+       background : none;
+   }
+</code></pre>
+
+<ol>
+<li>開心收工，記得<code>hexo clean</code>和 <code>generate</code>以及<code>deploy</code></li>
+</ol>
+
+<h6 id="無關緊要的後記">無關緊要的後記</h6>
+
+<p>highlight.js 的官網滿滿的暗紅色看了眼睛好酸..</p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="http://localhost:1313/categories/hexo">hexo</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="http://localhost:1313/tags/hexo">hexo</a></li>
+                
+                
+                <li><a class="article-category-link" href="http://localhost:1313/tags/highlightjs">highlightjs</a></li>
+                
+                
+                <li><a class="article-category-link" href="http://localhost:1313/tags/prismjs">prismjs</a></li>
+                
+                
+                <li><a class="article-category-link" href="http://localhost:1313/tags/tranquilpeak">tranquilpeak</a></li>
+                
+                
+                <li><a class="article-category-link" href="http://localhost:1313/tags/syntaxhighlight">syntaxhighlight</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "onemid-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="http://localhost:1313/blog/python3-pip3-zlib-in-macos/"
+                class="button big previous">Cannot Use Pip3 in MacOS (zlib Dependency Problem)</a></li>
+    
+
+    
+        <li><a href="http://localhost:1313/blog/cuda-and-tf-install/"
+                class="button big next">Compiling TensorFlow-GPU on Ubuntu 16.04 with CUDA 9.1(9.2) and Python3</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='http://localhost:1313/' class="logo"><img src="http://localhost:1313/img/main/logo.jpg" alt="Gary Gong" /></a>
+      
+    
+    
+      <header>
+        <h2>Nothing to Do</h2>
+        <p>設計、深度學習、氣象三重人格</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="http://localhost:1313/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/onemid" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/onemid85" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:yijhong@hotmail.com.tw" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="http://localhost:1313/blog/cuda-and-tf-install/">Compiling TensorFlow-GPU on Ubuntu 16.04 with CUDA 9.1(9.2) and Python3</a>
+              </h3>
+              
+              <time class="published" datetime='2018-08-25'>
+                August 25, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="http://localhost:1313/blog/hexo-syntax-highlighting/">Hexo Syntax Highlighting (Tested under Tranquilpeak)</a>
+              </h3>
+              
+              <time class="published" datetime='2018-08-23'>
+                August 23, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="http://localhost:1313/blog/python3-pip3-zlib-in-macos/">Cannot Use Pip3 in MacOS (zlib Dependency Problem)</a>
+              </h3>
+              
+              <time class="published" datetime='2018-08-23'>
+                August 23, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="http://localhost:1313/blog/testmath/">zzz我終於把 mathjax 弄進去了</a>
+              </h3>
+              
+              <time class="published" datetime='2018-08-01'>
+                August 1, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="http://localhost:1313/blog/nginx-mysql-php-installation-ubuntu-16-04/">Nginx, MySQL, PHP Installation (Ubuntu 16.04)</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-31'>
+                July 31, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="http://localhost:1313/categories/">Categories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="http://localhost:1313/categories/deeplearning/">deeplearning</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="http://localhost:1313/categories/hexo/">hexo</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="http://localhost:1313/categories/python3/">python3</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="http://localhost:1313/categories/webprogramming/">webprogramming</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="http://localhost:1313/categories/%E5%BB%A2%E6%96%87/">廢文</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+    <section id="mini-bio">
+      <h3>About</h3>
+      <p>設計、深度學習、氣象三重人格</p>
+      <a href="http://localhost:1313/about/" class="button">Learn More</a>
+    </section>
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="http://localhost:1313/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/onemid" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/onemid85" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:yijhong@hotmail.com.tw" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2018
+        
+          Nothing to Do
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="http://localhost:1313/js/util.js"></script>
+      <script src="http://localhost:1313/js/main.js"></script>
+      <script src="http://localhost:1313/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  <script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10"></' + 'script>')</script></body>
+</html>
+

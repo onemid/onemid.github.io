@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://localhost:1313/about/</loc>
+    <lastmod>2018-08-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/blog/cuda-and-tf-install/</loc>
+    <lastmod>2018-08-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/blog/hexo-syntax-highlighting/</loc>
+    <lastmod>2018-08-23T17:24:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/blog/python3-pip3-zlib-in-macos/</loc>
+    <lastmod>2018-08-23T09:32:15+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/blog/testmath/</loc>
+    <lastmod>2018-08-01T02:01:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/blog/nginx-mysql-php-installation-ubuntu-16-04/</loc>
+    <lastmod>2018-07-31T23:57:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2018-08-23T09:32:15+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/blog/</loc>
+    <lastmod>2018-08-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/contact/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/cuda/</loc>
+    <lastmod>2018-08-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/deeplearning/</loc>
+    <lastmod>2018-08-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/hexo/</loc>
+    <lastmod>2018-08-23T17:24:27+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/hexo/</loc>
+    <lastmod>2018-08-23T17:24:27+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/highlightjs/</loc>
+    <lastmod>2018-08-23T17:24:27+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/katex/</loc>
+    <lastmod>2018-08-01T02:01:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/macos/</loc>
+    <lastmod>2018-08-23T09:32:15+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/mathjax/</loc>
+    <lastmod>2018-08-01T02:01:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/murmuring/</loc>
+    <lastmod>2018-08-01T02:01:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/mysql/</loc>
+    <lastmod>2018-07-31T23:57:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/nginx/</loc>
+    <lastmod>2018-07-31T23:57:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2018-08-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/php/</loc>
+    <lastmod>2018-07-31T23:57:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/pip3/</loc>
+    <lastmod>2018-08-23T09:32:15+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/prismjs/</loc>
+    <lastmod>2018-08-23T17:24:27+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/python3/</loc>
+    <lastmod>2018-08-23T09:32:15+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/python3/</loc>
+    <lastmod>2018-08-23T09:32:15+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/syntaxhighlight/</loc>
+    <lastmod>2018-08-23T17:24:27+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2018-08-23T09:32:15+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/tensorflow/</loc>
+    <lastmod>2018-08-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/tranquilpeak/</loc>
+    <lastmod>2018-08-23T17:24:27+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/webprogramming/</loc>
+    <lastmod>2018-07-31T23:57:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/zlib/</loc>
+    <lastmod>2018-08-23T09:32:15+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/%E5%BB%A2%E6%96%87/</loc>
+    <lastmod>2018-08-01T02:01:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
