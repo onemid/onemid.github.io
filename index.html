@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-08-26 12:50:53 &#43;0800 CST",
-        "dateModified" : "2018-08-26 12:50:53 &#43;0800 CST",
+        "datePublished": "2018-08-26 22:52:23 &#43;0800 CST",
+        "dateModified" : "2018-08-26 22:52:23 &#43;0800 CST",
         "url" : "https://onemid.github.io/",
         "wordCount" : "0",
         "keywords" : [ "Blog" ]
@@ -53,7 +53,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://onemid.github.io/" />
-<meta property="og:updated_time" content="2018-08-26T12:50:53&#43;08:00"/>
+<meta property="og:updated_time" content="2018-08-26T22:52:23&#43;08:00"/>
         <meta property="og:image" content="https://onemid.github.io/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
@@ -223,6 +223,18 @@
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="https://onemid.github.io/blog/wrf-install/">(Draft) Weather Research and Forecasting Model (WRF) Installation Guide on Ubuntu 16.04</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-08-26'>
+                                    August 26, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="https://onemid.github.io/blog/julia-triple-quote-string-literals-alignment/">Julia Triple-Quoted String Literals Alignment</a></h3>
                                 
                                 <time class="published" datetime=
@@ -230,6 +242,30 @@
                                     August 26, 2018</time>
                             </header>
                             
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="https://onemid.github.io/blog/julia-triple-quote-string-literals-alignment/" class="image featured">
+            <img src="https://onemid.github.io/img/typhoon.jpg" alt="">
+        </a>
+    
+
 
                         </article>
                 
@@ -293,18 +329,6 @@
 
                         </article>
                 
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="https://onemid.github.io/blog/hexo-syntax-highlighting/">Hexo Syntax Highlighting (Tested under Tranquilpeak)</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2018-08-23'>
-                                    August 23, 2018</time>
-                            </header>
-                            
-
-                        </article>
-                
 
                 
                     <a href=
@@ -327,7 +351,7 @@
   <header>
     <div class="title">
         
-            <h2><a href="https://onemid.github.io/blog/julia-triple-quote-string-literals-alignment/">Julia Triple-Quoted String Literals Alignment</a></h2>
+            <h2><a href="https://onemid.github.io/blog/wrf-install/">(Draft) Weather Research and Forecasting Model (WRF) Installation Guide on Ubuntu 16.04</a></h2>
         
         
     </div>
@@ -339,7 +363,7 @@
             August 26, 2018</time>
         <span class="author">Gary Gong</span>
         
-            <p>3 minute read</p>
+            <p>1 minute read</p>
         
         
     </div>
@@ -353,266 +377,35 @@
   <div id="content">
     
 
-<p>很多程式語言基本上都會提供三個單或雙引號來支援區塊（block）字串，例如 <a href="https://docs.python.org/3/tutorial/introduction.html#strings">Python 就有提供相關功能</a>。然而在 Parsing 上，Julia 卻是有一套規則在運行（部分測試也與 Python 有不同的結果），以下舉一些測試範例，以及大略推測 Julia 是如何解析：</p>
+<p><em><a href="https://upload.wikimedia.org/wikipedia/commons/f/f6/Typhoon_Nina_25_nov_1987_0702Z.jpg">By NOAA / Satellite and Information Service [Public domain], via Wikimedia Commons</a></em></p>
 
-<p>Ref:</p>
+<h1 id="前言">前言</h1>
 
-<p><a href="https://docs.julialang.org/en/v1/manual/strings/#Triple-Quoted-String-Literals-1">Julia v1.0 Docs - Triple-Quoted String Literals</a></p>
+<p>WRF，對於天氣預報研究從業人員來說一定是一個非常熟悉的詞彙，WRF 是一個天氣數值預報（Numerical Weather Prediction, NWP）模型，大體上使用 Fortran 撰寫，因為涉及多個數值求解（例如 Runge-Kutta 法求常微分方程），費力耗時，實務上使用超級電腦運算；隨著 GPU 運算興起，WRF 也一度改寫為 CUDA 版本加速運算。</p>
 
-<p>我是看了文件了，但是不知道是不是自己資質駑鈍看不懂他的英文在寫啥。</p>
+<h1 id="安裝前言">安裝前言</h1>
 
-<p><a href="https://stackoverflow.com/questions/48288817/does-the-first-line-of-triple-quoted-string-impact-indentation">Stackoverflow - Does the first line of triple-quoted string impact identation?</a></p>
+<p>安裝真的非常非常的麻煩，有些東西不可以裝太新，有些東西不可以裝太舊（很生氣），看到網路上也沒什麼太多的教學，而我又常常忘記，就來寫這一篇 Guide。</p>
 
-<p><a href="https://github.com/JuliaLang/julia/issues/25592">Github Issue - Julia - Problem with parsing triple quoted strings</a></p>
+<p>此次使用的系統為 Ubuntu 16.04；CPU 為何，RAM 多少，其實都不會妨害安裝，但是會妨礙你算資料；你會發現為了預報下三個小時的資料花了半天去算，預報都不預報了，而且事後校驗還不準，真的想哭。</p>
 
-<h1 id="排版歸依">排版歸依</h1>
+<h1 id="安裝">安裝</h1>
 
-<h2 id="例-a">例 A：</h2>
+<h2 id="申請-wrf-官網的帳號">申請 WRF 官網的帳號</h2>
 
-<pre><code class="language-julia">julia&gt; str = &quot;&quot;&quot;
-           Hello,
-           world.
-         &quot;&quot;&quot;
-&quot;  Hello,\n  world.\n&quot;
-</code></pre>
+<p>說是申請帳號，也只是讓你填填 E-mail 一些資料驗驗證，就行的</p>
 
-<p>推測行為：</p>
+<p><a href="http://www2.mmm.ucar.edu/wrf/users/download/get_source.html">WRF Download Page</a></p>
 
-<pre><code class="language-julia"># 原始
-str = &quot;&quot;&quot;
-    Hello,
-    world.
-  &quot;&quot;&quot;
-# 斷第一行
-&quot;&quot;&quot;
-    Hello,
-    world.
-  &quot;&quot;&quot;
-# 去除第一個新行字元 (Leading Newline)
-&quot;&quot;&quot;    Hello,
-    world.
-  &quot;&quot;&quot;
-# 去除縮排，補上新行字元 (Newline)
-&quot;&quot;&quot;    Hello,\n    world.\n  &quot;&quot;&quot;
-    (4)         (4)        (2)
-# 縮共同最長起始空白 (2格)
-&quot;&quot;&quot;  Hello,\n  world.\n&quot;&quot;&quot;
-#最後變成
-&quot;  Hello,\n  world.\n&quot;
-</code></pre>
+<p>進入到 Download Page，若是新使用者，點按 New Users；若是先前已申請過，填寫先前的 E-mail 即可驗證進入到下載頁面。</p>
 
-<h2 id="例-b">例 B：</h2>
+<h2 id="下載頁面">下載頁面</h2>
 
-<pre><code class="language-julia">julia&gt; str = &quot;&quot;&quot;
-           Hello,
-           world.
-          &quot;&quot;&quot;
-&quot; Hello,\n world.\n&quot;
-</code></pre>
+<p>他有提到如果你是第一次使用 WRF 的使用者的話，可以看看他的線上教學（<strong>If you are a first-time WRF user, learn how to run the programs via the online tutorial.</strong>）根據官網所述，自 WRF 4.0 開始，WRF 安裝包裡面就含有 ARW、NMM、Chemistry、WRFDA 和 WRFPLUS 的原始碼了。我們這次以 WRF 4.0 為主。</p>
 
-<p>推測行為：</p>
-
-<pre><code class="language-julia"># 原始
-str = &quot;&quot;&quot;
-    Hello,
-    world.
-   &quot;&quot;&quot;
-# 斷第一行
-str = 
-&quot;&quot;&quot;
-    Hello,
-    world.
-   &quot;&quot;&quot;
-# 去除第一個新行字元(Leading Newline)
-&quot;&quot;&quot;    Hello,
-    world.
-   &quot;&quot;&quot;
-# 去除縮排，補上新行字元(Newline)
-&quot;&quot;&quot;    Hello,\n    world.\n   &quot;&quot;&quot;
-    (4)         (4)        （3)
-# 縮共同最長起始空白(3格)
-&quot;&quot;&quot; Hello,\n world.\n&quot;&quot;&quot;
-#最後變成
-&quot; Hello,\n world.\n&quot;
-</code></pre>
-
-<h2 id="例-c">例 C：</h2>
-
-<pre><code class="language-julia">julia&gt; str = &quot;&quot;&quot;
-           Hello,
-           world.
-           &quot;&quot;&quot;
-&quot;Hello,\nworld.\n&quot;
-</code></pre>
-
-<p>推測行為：</p>
-
-<pre><code class="language-julia"># 原始
-str = &quot;&quot;&quot;
-    Hello,
-    world.
-    &quot;&quot;&quot;
-# 斷第一行
-&quot;&quot;&quot;
-    Hello,
-    world.
-    &quot;&quot;&quot;
-# 去除第一個新行字元(Leading Newline)
-&quot;&quot;&quot;    Hello,
-    world.
-    &quot;&quot;&quot;
-# 去除縮排，補上新行字元(Newline)
-&quot;&quot;&quot;    Hello,\n    world.\n    &quot;&quot;&quot;
-    (4)         (4)         (4)
-# 縮共同最長起始空白(4格)
-&quot;&quot;&quot;Hello,\nworld.\n&quot;&quot;&quot;
-#最後變成
-&quot;Hello,\nworld.\n&quot;
-</code></pre>
-
-<h2 id="例-d">例 D：</h2>
-
-<pre><code class="language-Julia">julia&gt; str =   &quot;&quot;&quot;
-                  Hello,
-                 world.
-                &quot;&quot;&quot;
-&quot;  Hello,\n world.\n&quot;
-</code></pre>
-
-<p>推測行為：</p>
-
-<pre><code class="language-julia"># 原始
-str =   &quot;&quot;&quot;
-           Hello,
-          world.
-         &quot;&quot;&quot;
-# 斷第一行
-&quot;&quot;&quot;
-           Hello,
-          world.
-         &quot;&quot;&quot;
-# 去除第一個新行字元(Leading Newline)
-&quot;&quot;&quot;           Hello,
-          world.
-         &quot;&quot;&quot;
-# 去除縮排，補上新行字元(Newline)
-&quot;&quot;&quot;           Hello,\n          world.\n         &quot;&quot;&quot;
-空白:  (11)              (10)              (9)
-# 縮共同最長起始空白(9格)
-&quot;&quot;&quot;  Hello,\n world.\n&quot;&quot;&quot;
-#最後變成
-&quot;  Hello,\n world.\n&quot;
-</code></pre>
-
-<h2 id="例-e">例 E：</h2>
-
-<pre><code class="language-julia">julia&gt; str =   &quot;&quot;&quot;
-                  Hello,
-                 world.
-           aa&quot;&quot;&quot;
-&quot;       Hello,\n      world.\naa&quot;
-</code></pre>
-
-<p>推測行為：</p>
-
-<pre><code class="language-julia"># 原始
-str =   &quot;&quot;&quot;
-           Hello,
-          world.
-    aa&quot;&quot;&quot;
-# 斷第一行   
-&quot;&quot;&quot;
-           Hello,
-          world.
-    aa&quot;&quot;&quot;
-# 去除第一個新行字元(Leading Newline)
-&quot;&quot;&quot;           Hello,
-          world.
-    aa&quot;&quot;&quot;
-# 去除縮排，補上新行字元(Newline)
-&quot;&quot;&quot;           Hello,\n          world.\n    aa&quot;&quot;&quot;
-空白:  (11)               (10)            (4)
-# 縮共同最長起始空白(4格)
-&quot;&quot;&quot;       Hello,\n      world.\naa&quot;&quot;&quot;
-#最後變成
-&quot;       Hello,\n      world.\naa&quot;
-</code></pre>
-
-<h2 id="例-f">例 F：</h2>
-
-<pre><code class="language-julia">julia&gt; str =   &quot;&quot;&quot;
-       Hello,
-        world.
-            aa  &quot;&quot;&quot;
-&quot;Hello,\n world.\n     aa  &quot;
-</code></pre>
-
-<p>推測行為：</p>
-
-<pre><code class="language-julia"># 原始
-str =   &quot;&quot;&quot;
-       Hello,
-        world.
-            aa  &quot;&quot;&quot;
-# 斷第一行   
-&quot;&quot;&quot;
-       Hello,
-        world.
-            aa  &quot;&quot;&quot;
-# 去除第一個新行字元(Leading Newline)
-&quot;&quot;&quot;       Hello,
-        world.
-            aa  &quot;&quot;&quot;
-# 去除縮排，補上新行字元(Newline)
-&quot;&quot;&quot;       Hello,\n        world.\n            aa  &quot;&quot;&quot;
-空白: (7)             (8)              (12)      ^(非起始空白)
-# 縮共同最長起始空白(7格)
-&quot;&quot;&quot;Hello,\n world.\n     aa  &quot;&quot;&quot;
-#最後變成
-&quot;Hello,\n world.\n     aa  &quot;
-</code></pre>
-
-<h2 id="例-g">例 G：</h2>
-
-<pre><code class="language-julia">julia&gt; str =   &quot;&quot;&quot;
-       Hello,
-        world.
-            aa
-         &quot;&quot;&quot;
-&quot;Hello,\n world.\n     aa\n  &quot;
-</code></pre>
-
-<p>推測行為：</p>
-
-<pre><code class="language-julia"># 原始
-str =   &quot;&quot;&quot;
-       Hello,
-        world.
-            aa
-         &quot;&quot;&quot;
-# 斷第一行   
-&quot;&quot;&quot;
-       Hello,
-        world.
-            aa
-         &quot;&quot;&quot;
-# 去除第一個新行字元(Leading Newline)
-&quot;&quot;&quot;       Hello,
-        world.
-            aa
-         &quot;&quot;&quot;
-# 去除縮排，補上新行字元(Newline)
-&quot;&quot;&quot;       Hello,\n        world.\n            aa\n         &quot;&quot;&quot;
-空白: (7)             (8)               (12)          (9)
-# 縮共同最長起始空白(7格)
-&quot;&quot;&quot;Hello,\n world.\n     aa\n  &quot;&quot;&quot;
-#最後變成
-&quot;Hello,\n world.\n     aa\n  &quot;
-</code></pre>
-
-<h3 id="後記">後記：</h3>
-
-<p>Julia 只接受 <code>&quot;&quot;&quot;...&quot;&quot;&quot;</code>，不理你的<code>'''...'''</code>。</p>
+<blockquote>
+<p>08/24 待續，遠端電腦掛掉沒辦法裝</p>
+</blockquote>
 
   </div>
 
@@ -626,7 +419,7 @@ str =   &quot;&quot;&quot;
                 <i class="fa fa-folder"></i>
                 
                 
-                <li><a class="article-category-link" href="https://onemid.github.io/categories/julia">Julia</a></li>
+                <li><a class="article-category-link" href="https://onemid.github.io/categories/weather">Weather</a></li>
                 
             
         
@@ -640,13 +433,10 @@ str =   &quot;&quot;&quot;
                 <i class="fa fa-tags"></i>
                 
                 
-                <li><a class="article-category-link" href="https://onemid.github.io/tags/julia">julia</a></li>
+                <li><a class="article-category-link" href="https://onemid.github.io/tags/wrf">WRF</a></li>
                 
                 
-                <li><a class="article-category-link" href="https://onemid.github.io/tags/triple-quoted-string">triple-quoted string</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://onemid.github.io/tags/parsing">parsing</a></li>
+                <li><a class="article-category-link" href="https://onemid.github.io/tags/install">install</a></li>
                 
             
         
@@ -684,8 +474,8 @@ str =   &quot;&quot;&quot;
 
 <ul class="actions pagination">
     
-        <li><a href="https://onemid.github.io/blog/math-3-double-slashes/"
-                class="button big previous">MathJax Newline Alignment Problems in Hugo</a></li>
+        <li><a href="https://onemid.github.io/blog/julia-triple-quote-string-literals-alignment/"
+                class="button big previous">Julia Triple-Quoted String Literals Alignment</a></li>
     
 
     
@@ -704,7 +494,7 @@ str =   &quot;&quot;&quot;
 
 
 <li>
-  <a href="//twitter.com/share?url=https%3a%2f%2fonemid.github.io%2fblog%2fjulia-triple-quote-string-literals-alignment%2f&amp;text=Julia%20Triple-Quoted%20String%20Literals%20Alignment&amp;via=" target="_blank" class="share-btn twitter">
+  <a href="//twitter.com/share?url=https%3a%2f%2fonemid.github.io%2fblog%2fwrf-install%2f&amp;text=%28Draft%29%20Weather%20Research%20and%20Forecasting%20Model%20%28WRF%29%20Installation%20Guide%20on%20Ubuntu%2016.04&amp;via=" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
     </a>
@@ -714,7 +504,7 @@ str =   &quot;&quot;&quot;
 
 
 <li>
-  <a href="//plus.google.com/share?url=https%3a%2f%2fonemid.github.io%2fblog%2fjulia-triple-quote-string-literals-alignment%2f" target="_blank" class="share-btn google-plus">
+  <a href="//plus.google.com/share?url=https%3a%2f%2fonemid.github.io%2fblog%2fwrf-install%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
   </a>
@@ -725,7 +515,7 @@ str =   &quot;&quot;&quot;
 
 
 <li>
-  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fonemid.github.io%2fblog%2fjulia-triple-quote-string-literals-alignment%2f" target="_blank" class="share-btn facebook">
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fonemid.github.io%2fblog%2fwrf-install%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
     </a>
@@ -747,7 +537,7 @@ str =   &quot;&quot;&quot;
 
 
 <li>
-  <a href="mailto:?subject=Check out this post by Gary%20Gong&amp;body=https%3a%2f%2fonemid.github.io%2fblog%2fjulia-triple-quote-string-literals-alignment%2f" target="_blank" class="share-btn email">
+  <a href="mailto:?subject=Check out this post by Gary%20Gong&amp;body=https%3a%2f%2fonemid.github.io%2fblog%2fwrf-install%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
   </a>
@@ -890,6 +680,20 @@ str =   &quot;&quot;&quot;
           <article class="mini-post">
             <header>
               <h3>
+                <a href="https://onemid.github.io/blog/wrf-install/">(Draft) Weather Research and Forecasting Model (WRF) Installation Guide on Ubuntu 16.04</a>
+              </h3>
+              
+              <time class="published" datetime='2018-08-26'>
+                August 26, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
                 <a href="https://onemid.github.io/blog/julia-triple-quote-string-literals-alignment/">Julia Triple-Quoted String Literals Alignment</a>
               </h3>
               
@@ -898,6 +702,30 @@ str =   &quot;&quot;&quot;
               </time>
             </header>
             
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="https://onemid.github.io/blog/julia-triple-quote-string-literals-alignment/" class="image featured">
+            <img src="https://onemid.github.io/img/typhoon.jpg" alt="">
+        </a>
+    
+
 
           </article>
         
@@ -961,20 +789,6 @@ str =   &quot;&quot;&quot;
               
               <time class="published" datetime='2018-08-25'>
                 August 25, 2018
-              </time>
-            </header>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="https://onemid.github.io/blog/hexo-syntax-highlighting/">Hexo Syntax Highlighting (Tested under Tranquilpeak)</a>
-              </h3>
-              
-              <time class="published" datetime='2018-08-23'>
-                August 23, 2018
               </time>
             </header>
             
@@ -1080,6 +894,17 @@ str =   &quot;&quot;&quot;
             <header>
               
                 <a href="https://onemid.github.io/categories/tex/">TeX</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://onemid.github.io/categories/weather/">Weather</a>
                 <span style="float:right;">1</span>
               
             </header>

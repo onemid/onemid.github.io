@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://onemid.github.io/blog/wrf-install/</loc>
+    <lastmod>2018-08-26T22:52:23+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://onemid.github.io/blog/julia-triple-quote-string-literals-alignment/</loc>
     <lastmod>2018-08-26T12:50:53+08:00</lastmod>
   </url>
@@ -67,7 +72,7 @@
   
   <url>
     <loc>https://onemid.github.io/blog/</loc>
-    <lastmod>2018-08-26T12:50:53+08:00</lastmod>
+    <lastmod>2018-08-26T22:52:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -125,6 +130,12 @@
   <url>
     <loc>https://onemid.github.io/categories/hugo/</loc>
     <lastmod>2018-08-26T11:11:49+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://onemid.github.io/tags/install/</loc>
+    <lastmod>2018-08-26T22:52:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -208,7 +219,7 @@
   
   <url>
     <loc>https://onemid.github.io/</loc>
-    <lastmod>2018-08-26T12:50:53+08:00</lastmod>
+    <lastmod>2018-08-26T22:52:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -287,6 +298,18 @@
   <url>
     <loc>https://onemid.github.io/tags/triple-quoted-string/</loc>
     <lastmod>2018-08-26T12:50:53+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://onemid.github.io/tags/wrf/</loc>
+    <lastmod>2018-08-26T22:52:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://onemid.github.io/categories/weather/</loc>
+    <lastmod>2018-08-26T22:52:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   

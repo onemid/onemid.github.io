@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WRF on Nothing to Do</title>
+    <link>https://onemid.github.io/tags/wrf/</link>
+    <description>Recent content in WRF on Nothing to Do</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Sun, 26 Aug 2018 22:52:23 +0800</lastBuildDate>
+    
+	<atom:link href="https://onemid.github.io/tags/wrf/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>(Draft) Weather Research and Forecasting Model (WRF) Installation Guide on Ubuntu 16.04</title>
+      <link>https://onemid.github.io/blog/wrf-install/</link>
+      <pubDate>Sun, 26 Aug 2018 22:52:23 +0800</pubDate>
+      
+      <guid>https://onemid.github.io/blog/wrf-install/</guid>
+      <description>By NOAA / Satellite and Information Service [Public domain], via Wikimedia Commons
+前言 WRF，對於天氣預報研究從業人員來說一定是一個非常熟悉的詞彙，WRF 是一個天氣數值預報（Numerical Weather Prediction, NWP）模型，大體上使用 Fortran 撰寫，因為涉及多個數值求解（例如 Runge-Kutta 法求常微分方程），費力耗時，實務上使用超級電腦運算；隨著 GPU 運算興起，WRF 也一度改寫為 CUDA 版本加速運算。
+安裝前言 安裝真的非常非常的麻煩，有些東西不可以裝太新，有些東西不可以裝太舊（很生氣），看到網路上也沒什麼太多的教學，而我又常常忘記，就來寫這一篇 Guide。
+此次使用的系統為 Ubuntu 16.04；CPU 為何，RAM 多少，其實都不會妨害安裝，但是會妨礙你算資料；你會發現為了預報下三個小時的資料花了半天去算，預報都不預報了，而且事後校驗還不準，真的想哭。
+安裝 申請 WRF 官網的帳號 說是申請帳號，也只是讓你填填 E-mail 一些資料驗驗證，就行的
+WRF Download Page
+進入到 Download Page，若是新使用者，點按 New Users；若是先前已申請過，填寫先前的 E-mail 即可驗證進入到下載頁面。
+下載頁面 他有提到如果你是第一次使用 WRF 的使用者的話，可以看看他的線上教學（If you are a first-time WRF user, learn how to run the programs via the online tutorial.</description>
+    </item>
+    
+  </channel>
+</rss>
