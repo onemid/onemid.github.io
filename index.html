@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-08-26 11:11:49 &#43;0800 CST",
-        "dateModified" : "2018-08-26 11:11:49 &#43;0800 CST",
+        "datePublished": "2018-08-26 12:50:53 &#43;0800 CST",
+        "dateModified" : "2018-08-26 12:50:53 &#43;0800 CST",
         "url" : "https://onemid.github.io/",
         "wordCount" : "0",
         "keywords" : [ "Blog" ]
@@ -53,7 +53,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://onemid.github.io/" />
-<meta property="og:updated_time" content="2018-08-26T11:11:49&#43;08:00"/>
+<meta property="og:updated_time" content="2018-08-26T12:50:53&#43;08:00"/>
         <meta property="og:image" content="https://onemid.github.io/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
@@ -223,6 +223,18 @@
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="https://onemid.github.io/blog/julia-triple-quote-string-literals-alignment/">Julia Triple-Quoted String Literals Alignment</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-08-26'>
+                                    August 26, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="https://onemid.github.io/blog/math-3-double-slashes/">MathJax Newline Alignment Problems in Hugo</a></h3>
                                 
                                 <time class="published" datetime=
@@ -293,18 +305,6 @@
 
                         </article>
                 
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="https://onemid.github.io/blog/python3-pip3-zlib-in-macos/">Cannot Use Pip3 in MacOS (zlib Dependency Problem)</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2018-08-23'>
-                                    August 23, 2018</time>
-                            </header>
-                            
-
-                        </article>
-                
 
                 
                     <a href=
@@ -327,7 +327,7 @@
   <header>
     <div class="title">
         
-            <h2><a href="https://onemid.github.io/blog/math-3-double-slashes/">MathJax Newline Alignment Problems in Hugo</a></h2>
+            <h2><a href="https://onemid.github.io/blog/julia-triple-quote-string-literals-alignment/">Julia Triple-Quoted String Literals Alignment</a></h2>
         
         
     </div>
@@ -339,7 +339,7 @@
             August 26, 2018</time>
         <span class="author">Gary Gong</span>
         
-            <p>1 minute read</p>
+            <p>3 minute read</p>
         
         
     </div>
@@ -349,82 +349,268 @@
   
 
   
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="https://onemid.github.io/blog/math-3-double-slashes/" class="image featured">
-            <img src="https://onemid.github.io/img/640px-Pure-mathematics-formula-blackboard.jpg" alt="">
-        </a>
-    
-
 
   <div id="content">
     
 
-<p><em><a href="https://commons.wikimedia.org/wiki/File:Pure-mathematics-formul%C3%A6-blackboard.jpg">By Wallpoper [Public domain or Public domain], via Wikimedia Commons</a></em></p>
+<p>很多程式語言基本上都會提供三個單或雙引號來支援區塊（block）字串，例如 <a href="https://docs.python.org/3/tutorial/introduction.html#strings">Python 就有提供相關功能</a>。然而在 Parsing 上，Julia 卻是有一套規則在運行（部分測試也與 Python 有不同的結果），以下舉一些測試範例，以及大略推測 Julia 是如何解析：</p>
 
-<h1 id="一般來說">一般來說</h1>
+<p>Ref:</p>
 
-<p>打 TeX 相關指令的時候，基本上要對齊會使用上<code>\begin{aligned}</code>和<code>\end{aligned}</code>，中間對齊的基準點用<code>&amp;</code>，換行用<code>\\</code>。如下所示範例 TeX Command 為：</p>
+<p><a href="https://docs.julialang.org/en/v1/manual/strings/#Triple-Quoted-String-Literals-1">Julia v1.0 Docs - Triple-Quoted String Literals</a></p>
 
-<pre><code class="language-tex">\begin{aligned}
-&amp; x^2+4x+4 \\
-=&amp; (x+2)(x+2) \\
-=&amp; (x+2)^2 
-\end{aligned}
+<p><a href="https://stackoverflow.com/questions/48288817/does-the-first-line-of-triple-quoted-string-impact-indentation">Stackoverflow - Does the first line of triple-quoted string impact identation?</a></p>
+
+<p><a href="https://github.com/JuliaLang/julia/issues/25592">Github Issue - Julia - Problem with parsing triple quoted strings</a></p>
+
+<h1 id="排版歸依">排版歸依</h1>
+
+<h2 id="例-a">例 A：</h2>
+
+<pre><code class="language-julia">julia&gt; str = &quot;&quot;&quot;
+           Hello,
+           world.
+         &quot;&quot;&quot;
+&quot;  Hello,\n  world.\n&quot;
 </code></pre>
 
-<p>顯示結果應該要像這樣：</p>
+<p>推測行為：</p>
 
-<p><img src="https://onemid.github.io/img/original_render_tex.png" alt="應該長這樣" /></p>
-
-<p>結果長這樣：
-$$
-\begin{aligned}
-&amp; x^2+4x+4 <br />
-=&amp;(x+2)(x+2) <br />
-=&amp;(x+2)^2
-\end{aligned}
-$$</p>
-
-<p>原來是 Hugo Markdown Parser 會把 <code>\\</code>吃掉一些，變成單反斜（<code>\</code>），這個會造成好大一個空白；所以有人說要用 <a href="https://stackoverflow.com/questions/42228504/how-do-i-escape-double-backslashes-for-mathjax">4 個雙反斜線（但是沒明講是 Hugo 僅說是 Markdown Parsing 問題）</a>，有人說<a href="https://github.com/gcushen/hugo-academic/issues/291">用 6 個雙反斜線</a>，在這邊我 6 個雙反斜線（看起來是 Hugo 要用 6 雙反斜）才有用。</p>
-
-<h1 id="方案">方案？</h1>
-
-<p>那上面的 Tex Command 就變成</p>
-
-<pre><code class="language-tex">\begin{aligned}
-&amp; x^2+4x+4 \\\\\\
-=&amp; (x+2)(x+2) \\\\\\
-=&amp; (x+2)^2 
-\end{aligned}
+<pre><code class="language-julia"># 原始
+str = &quot;&quot;&quot;
+    Hello,
+    world.
+  &quot;&quot;&quot;
+# 斷第一行
+&quot;&quot;&quot;
+    Hello,
+    world.
+  &quot;&quot;&quot;
+# 去除第一個新行字元 (Leading Newline)
+&quot;&quot;&quot;    Hello,
+    world.
+  &quot;&quot;&quot;
+# 去除縮排，補上新行字元 (Newline)
+&quot;&quot;&quot;    Hello,\n    world.\n  &quot;&quot;&quot;
+    (4)         (4)        (2)
+# 縮共同最長起始空白 (2格)
+&quot;&quot;&quot;  Hello,\n  world.\n&quot;&quot;&quot;
+#最後變成
+&quot;  Hello,\n  world.\n&quot;
 </code></pre>
 
-<p>再看一次 Render 的情形：
-$$
-\begin{aligned}
-&amp; x^2+4x+4 \\<br />
-=&amp;(x+2)(x+2) \\<br />
-=&amp;(x+2)^2
-\end{aligned}
-$$
-真棒</p>
+<h2 id="例-b">例 B：</h2>
+
+<pre><code class="language-julia">julia&gt; str = &quot;&quot;&quot;
+           Hello,
+           world.
+          &quot;&quot;&quot;
+&quot; Hello,\n world.\n&quot;
+</code></pre>
+
+<p>推測行為：</p>
+
+<pre><code class="language-julia"># 原始
+str = &quot;&quot;&quot;
+    Hello,
+    world.
+   &quot;&quot;&quot;
+# 斷第一行
+str = 
+&quot;&quot;&quot;
+    Hello,
+    world.
+   &quot;&quot;&quot;
+# 去除第一個新行字元(Leading Newline)
+&quot;&quot;&quot;    Hello,
+    world.
+   &quot;&quot;&quot;
+# 去除縮排，補上新行字元(Newline)
+&quot;&quot;&quot;    Hello,\n    world.\n   &quot;&quot;&quot;
+    (4)         (4)        （3)
+# 縮共同最長起始空白(3格)
+&quot;&quot;&quot; Hello,\n world.\n&quot;&quot;&quot;
+#最後變成
+&quot; Hello,\n world.\n&quot;
+</code></pre>
+
+<h2 id="例-c">例 C：</h2>
+
+<pre><code class="language-julia">julia&gt; str = &quot;&quot;&quot;
+           Hello,
+           world.
+           &quot;&quot;&quot;
+&quot;Hello,\nworld.\n&quot;
+</code></pre>
+
+<p>推測行為：</p>
+
+<pre><code class="language-julia"># 原始
+str = &quot;&quot;&quot;
+    Hello,
+    world.
+    &quot;&quot;&quot;
+# 斷第一行
+&quot;&quot;&quot;
+    Hello,
+    world.
+    &quot;&quot;&quot;
+# 去除第一個新行字元(Leading Newline)
+&quot;&quot;&quot;    Hello,
+    world.
+    &quot;&quot;&quot;
+# 去除縮排，補上新行字元(Newline)
+&quot;&quot;&quot;    Hello,\n    world.\n    &quot;&quot;&quot;
+    (4)         (4)         (4)
+# 縮共同最長起始空白(4格)
+&quot;&quot;&quot;Hello,\nworld.\n&quot;&quot;&quot;
+#最後變成
+&quot;Hello,\nworld.\n&quot;
+</code></pre>
+
+<h2 id="例-d">例 D：</h2>
+
+<pre><code class="language-Julia">julia&gt; str =   &quot;&quot;&quot;
+                  Hello,
+                 world.
+                &quot;&quot;&quot;
+&quot;  Hello,\n world.\n&quot;
+</code></pre>
+
+<p>推測行為：</p>
+
+<pre><code class="language-julia"># 原始
+str =   &quot;&quot;&quot;
+           Hello,
+          world.
+         &quot;&quot;&quot;
+# 斷第一行
+&quot;&quot;&quot;
+           Hello,
+          world.
+         &quot;&quot;&quot;
+# 去除第一個新行字元(Leading Newline)
+&quot;&quot;&quot;           Hello,
+          world.
+         &quot;&quot;&quot;
+# 去除縮排，補上新行字元(Newline)
+&quot;&quot;&quot;           Hello,\n          world.\n         &quot;&quot;&quot;
+空白:  (11)              (10)              (9)
+# 縮共同最長起始空白(9格)
+&quot;&quot;&quot;  Hello,\n world.\n&quot;&quot;&quot;
+#最後變成
+&quot;  Hello,\n world.\n&quot;
+</code></pre>
+
+<h2 id="例-e">例 E：</h2>
+
+<pre><code class="language-julia">julia&gt; str =   &quot;&quot;&quot;
+                  Hello,
+                 world.
+           aa&quot;&quot;&quot;
+&quot;       Hello,\n      world.\naa&quot;
+</code></pre>
+
+<p>推測行為：</p>
+
+<pre><code class="language-julia"># 原始
+str =   &quot;&quot;&quot;
+           Hello,
+          world.
+    aa&quot;&quot;&quot;
+# 斷第一行   
+&quot;&quot;&quot;
+           Hello,
+          world.
+    aa&quot;&quot;&quot;
+# 去除第一個新行字元(Leading Newline)
+&quot;&quot;&quot;           Hello,
+          world.
+    aa&quot;&quot;&quot;
+# 去除縮排，補上新行字元(Newline)
+&quot;&quot;&quot;           Hello,\n          world.\n    aa&quot;&quot;&quot;
+空白:  (11)               (10)            (4)
+# 縮共同最長起始空白(4格)
+&quot;&quot;&quot;       Hello,\n      world.\naa&quot;&quot;&quot;
+#最後變成
+&quot;       Hello,\n      world.\naa&quot;
+</code></pre>
+
+<h2 id="例-f">例 F：</h2>
+
+<pre><code class="language-julia">julia&gt; str =   &quot;&quot;&quot;
+       Hello,
+        world.
+            aa  &quot;&quot;&quot;
+&quot;Hello,\n world.\n     aa  &quot;
+</code></pre>
+
+<p>推測行為：</p>
+
+<pre><code class="language-julia"># 原始
+str =   &quot;&quot;&quot;
+       Hello,
+        world.
+            aa  &quot;&quot;&quot;
+# 斷第一行   
+&quot;&quot;&quot;
+       Hello,
+        world.
+            aa  &quot;&quot;&quot;
+# 去除第一個新行字元(Leading Newline)
+&quot;&quot;&quot;       Hello,
+        world.
+            aa  &quot;&quot;&quot;
+# 去除縮排，補上新行字元(Newline)
+&quot;&quot;&quot;       Hello,\n        world.\n            aa  &quot;&quot;&quot;
+空白: (7)             (8)              (12)      ^(非起始空白)
+# 縮共同最長起始空白(7格)
+&quot;&quot;&quot;Hello,\n world.\n     aa  &quot;&quot;&quot;
+#最後變成
+&quot;Hello,\n world.\n     aa  &quot;
+</code></pre>
+
+<h2 id="例-g">例 G：</h2>
+
+<pre><code class="language-julia">julia&gt; str =   &quot;&quot;&quot;
+       Hello,
+        world.
+            aa
+         &quot;&quot;&quot;
+&quot;Hello,\n world.\n     aa\n  &quot;
+</code></pre>
+
+<p>推測行為：</p>
+
+<pre><code class="language-julia"># 原始
+str =   &quot;&quot;&quot;
+       Hello,
+        world.
+            aa
+         &quot;&quot;&quot;
+# 斷第一行   
+&quot;&quot;&quot;
+       Hello,
+        world.
+            aa
+         &quot;&quot;&quot;
+# 去除第一個新行字元(Leading Newline)
+&quot;&quot;&quot;       Hello,
+        world.
+            aa
+         &quot;&quot;&quot;
+# 去除縮排，補上新行字元(Newline)
+&quot;&quot;&quot;       Hello,\n        world.\n            aa\n         &quot;&quot;&quot;
+空白: (7)             (8)               (12)          (9)
+# 縮共同最長起始空白(7格)
+&quot;&quot;&quot;Hello,\n world.\n     aa\n  &quot;&quot;&quot;
+#最後變成
+&quot;Hello,\n world.\n     aa\n  &quot;
+</code></pre>
+
+<h3 id="後記">後記：</h3>
+
+<p>Julia 只接受 <code>&quot;&quot;&quot;...&quot;&quot;&quot;</code>，不理你的<code>'''...'''</code>。</p>
 
   </div>
 
@@ -438,13 +624,7 @@ $$
                 <i class="fa fa-folder"></i>
                 
                 
-                <li><a class="article-category-link" href="https://onemid.github.io/categories/hugo">Hugo</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://onemid.github.io/categories/tex">TeX</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://onemid.github.io/categories/mathjax">MathJax</a></li>
+                <li><a class="article-category-link" href="https://onemid.github.io/categories/julia">Julia</a></li>
                 
             
         
@@ -458,19 +638,13 @@ $$
                 <i class="fa fa-tags"></i>
                 
                 
-                <li><a class="article-category-link" href="https://onemid.github.io/tags/hugo">hugo</a></li>
+                <li><a class="article-category-link" href="https://onemid.github.io/tags/julia">julia</a></li>
                 
                 
-                <li><a class="article-category-link" href="https://onemid.github.io/tags/tex">tex</a></li>
+                <li><a class="article-category-link" href="https://onemid.github.io/tags/triple-quoted-string">triple-quoted string</a></li>
                 
                 
-                <li><a class="article-category-link" href="https://onemid.github.io/tags/mathjax">mathjax</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://onemid.github.io/tags/alignment">alignment</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://onemid.github.io/tags/newline">newline</a></li>
+                <li><a class="article-category-link" href="https://onemid.github.io/tags/parsing">parsing</a></li>
                 
             
         
@@ -508,8 +682,8 @@ $$
 
 <ul class="actions pagination">
     
-        <li><a href="https://onemid.github.io/blog/julia-equal-comparison/"
-                class="button big previous">Julia isequal() 和 ==</a></li>
+        <li><a href="https://onemid.github.io/blog/math-3-double-slashes/"
+                class="button big previous">MathJax Newline Alignment Problems in Hugo</a></li>
     
 
     
@@ -528,7 +702,7 @@ $$
 
 
 <li>
-  <a href="//twitter.com/share?url=https%3a%2f%2fonemid.github.io%2fblog%2fmath-3-double-slashes%2f&amp;text=MathJax%20Newline%20Alignment%20Problems%20in%20Hugo&amp;via=" target="_blank" class="share-btn twitter">
+  <a href="//twitter.com/share?url=https%3a%2f%2fonemid.github.io%2fblog%2fjulia-triple-quote-string-literals-alignment%2f&amp;text=Julia%20Triple-Quoted%20String%20Literals%20Alignment&amp;via=" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
     </a>
@@ -538,7 +712,7 @@ $$
 
 
 <li>
-  <a href="//plus.google.com/share?url=https%3a%2f%2fonemid.github.io%2fblog%2fmath-3-double-slashes%2f" target="_blank" class="share-btn google-plus">
+  <a href="//plus.google.com/share?url=https%3a%2f%2fonemid.github.io%2fblog%2fjulia-triple-quote-string-literals-alignment%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
   </a>
@@ -549,7 +723,7 @@ $$
 
 
 <li>
-  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fonemid.github.io%2fblog%2fmath-3-double-slashes%2f" target="_blank" class="share-btn facebook">
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fonemid.github.io%2fblog%2fjulia-triple-quote-string-literals-alignment%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
     </a>
@@ -571,7 +745,7 @@ $$
 
 
 <li>
-  <a href="mailto:?subject=Check out this post by Gary%20Gong&amp;body=https%3a%2f%2fonemid.github.io%2fblog%2fmath-3-double-slashes%2f" target="_blank" class="share-btn email">
+  <a href="mailto:?subject=Check out this post by Gary%20Gong&amp;body=https%3a%2f%2fonemid.github.io%2fblog%2fjulia-triple-quote-string-literals-alignment%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
   </a>
@@ -714,6 +888,20 @@ $$
           <article class="mini-post">
             <header>
               <h3>
+                <a href="https://onemid.github.io/blog/julia-triple-quote-string-literals-alignment/">Julia Triple-Quoted String Literals Alignment</a>
+              </h3>
+              
+              <time class="published" datetime='2018-08-26'>
+                August 26, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
                 <a href="https://onemid.github.io/blog/math-3-double-slashes/">MathJax Newline Alignment Problems in Hugo</a>
               </h3>
               
@@ -791,20 +979,6 @@ $$
 
           </article>
         
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="https://onemid.github.io/blog/python3-pip3-zlib-in-macos/">Cannot Use Pip3 in MacOS (zlib Dependency Problem)</a>
-              </h3>
-              
-              <time class="published" datetime='2018-08-23'>
-                August 23, 2018
-              </time>
-            </header>
-            
-
-          </article>
-        
       </div>
 
       
@@ -837,6 +1011,17 @@ $$
           <article>
             <header>
               
+                <a href="https://onemid.github.io/categories/julia/">Julia</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
                 <a href="https://onemid.github.io/categories/deep-learning/">Deep Learning</a>
                 <span style="float:right;">1</span>
               
@@ -860,17 +1045,6 @@ $$
             <header>
               
                 <a href="https://onemid.github.io/categories/hugo/">Hugo</a>
-                <span style="float:right;">1</span>
-              
-            </header>
-          </article>
-        </p>
-        
-        <p>
-          <article>
-            <header>
-              
-                <a href="https://onemid.github.io/categories/julia/">Julia</a>
                 <span style="float:right;">1</span>
               
             </header>

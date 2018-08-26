@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://onemid.github.io/blog/julia-triple-quote-string-literals-alignment/</loc>
+    <lastmod>2018-08-26T12:50:53+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://onemid.github.io/blog/math-3-double-slashes/</loc>
     <lastmod>2018-08-26T11:11:49+08:00</lastmod>
   </url>
@@ -62,7 +67,7 @@
   
   <url>
     <loc>https://onemid.github.io/blog/</loc>
-    <lastmod>2018-08-26T11:11:49+08:00</lastmod>
+    <lastmod>2018-08-26T12:50:53+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -94,13 +99,13 @@
   </url>
   
   <url>
-    <loc>https://onemid.github.io/categories/hexo/</loc>
+    <loc>https://onemid.github.io/tags/hexo/</loc>
     <lastmod>2018-08-23T17:24:27+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://onemid.github.io/tags/hexo/</loc>
+    <loc>https://onemid.github.io/categories/hexo/</loc>
     <lastmod>2018-08-23T17:24:27+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -112,13 +117,13 @@
   </url>
   
   <url>
-    <loc>https://onemid.github.io/categories/hugo/</loc>
+    <loc>https://onemid.github.io/tags/hugo/</loc>
     <lastmod>2018-08-26T11:11:49+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://onemid.github.io/tags/hugo/</loc>
+    <loc>https://onemid.github.io/categories/hugo/</loc>
     <lastmod>2018-08-26T11:11:49+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -130,14 +135,14 @@
   </url>
   
   <url>
-    <loc>https://onemid.github.io/categories/julia/</loc>
-    <lastmod>2018-08-25T18:01:37+08:00</lastmod>
+    <loc>https://onemid.github.io/tags/julia/</loc>
+    <lastmod>2018-08-26T12:50:53+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://onemid.github.io/tags/julia/</loc>
-    <lastmod>2018-08-25T18:01:37+08:00</lastmod>
+    <loc>https://onemid.github.io/categories/julia/</loc>
+    <lastmod>2018-08-26T12:50:53+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -203,7 +208,13 @@
   
   <url>
     <loc>https://onemid.github.io/</loc>
-    <lastmod>2018-08-26T11:11:49+08:00</lastmod>
+    <lastmod>2018-08-26T12:50:53+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://onemid.github.io/tags/parsing/</loc>
+    <lastmod>2018-08-26T12:50:53+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -270,6 +281,12 @@
   <url>
     <loc>https://onemid.github.io/tags/tranquilpeak/</loc>
     <lastmod>2018-08-23T17:24:27+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://onemid.github.io/tags/triple-quoted-string/</loc>
+    <lastmod>2018-08-26T12:50:53+08:00</lastmod>
     <priority>0</priority>
   </url>
   

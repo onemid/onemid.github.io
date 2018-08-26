@@ -6,10 +6,25 @@
     <description>Recent content in Julia on Nothing to Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 25 Aug 2018 18:01:37 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 26 Aug 2018 12:50:53 +0800</lastBuildDate>
     
 	<atom:link href="https://onemid.github.io/tags/julia/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Julia Triple-Quoted String Literals Alignment</title>
+      <link>https://onemid.github.io/blog/julia-triple-quote-string-literals-alignment/</link>
+      <pubDate>Sun, 26 Aug 2018 12:50:53 +0800</pubDate>
+      
+      <guid>https://onemid.github.io/blog/julia-triple-quote-string-literals-alignment/</guid>
+      <description>很多程式語言基本上都會提供三個單或雙引號來支援區塊（block）字串，例如 Python 就有提供相關功能。然而在 Parsing 上，Julia 卻是有一套規則在運行（部分測試也與 Python 有不同的結果），以下舉一些測試範例，以及大略推測 Julia 是如何解析：
+Ref:
+Julia v1.0 Docs - Triple-Quoted String Literals
+Stackoverflow - Does the first line of triple-quoted string impact identation?
+Github Issue - Julia - Problem with parsing triple quoted strings
+排版歸依 例 A： julia&amp;gt; str = &amp;quot;&amp;quot;&amp;quot; Hello, world. &amp;quot;&amp;quot;&amp;quot; &amp;quot; Hello,\n world.\n&amp;quot;  推測行為：
+# 原始 str = &amp;quot;&amp;quot;&amp;quot; Hello, world. &amp;quot;&amp;quot;&amp;quot; # 斷第一行 &amp;quot;&amp;quot;&amp;quot; Hello, world. &amp;quot;&amp;quot;&amp;quot; # 去除第一個新行字元 (Leading Newline) &amp;quot;&amp;quot;&amp;quot; Hello, world.</description>
+    </item>
     
     <item>
       <title>Julia isequal() 和 ==</title>

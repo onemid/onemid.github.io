@@ -1,11 +1,3 @@
-
-
-
-    
-
-
-
-
 <!DOCTYPE HTML>
 
 <html>
@@ -18,10 +10,16 @@
              "@type": "WebPage",
              "@id": "https://onemid.github.io"
         },
-        "articleSection" : "tags",
-        "name" : "Julia",
-        "headline" : "Julia",
-        "description" : "",
+        "articleSection" : "blog",
+        "name" : "Julia Triple-Quoted String Literals Alignment",
+        "headline" : "Julia Triple-Quoted String Literals Alignment",
+        "description" : "很多程式語言基本上都會提供三個單或雙引號來支援區塊（block）字串，例如 Python 就有提供相關功能。然而在 Parsing 上，Julia 卻是有一套規則在運行（部分測試也與 Python 有不同的結果），以下舉一些測試範例，以及大略推測 Julia 是如何解析：
+Ref:
+Julia v1.0 Docs - Triple-Quoted String Literals
+Stackoverflow - Does the first line of triple-quoted string impact identation?
+Github Issue - Julia - Problem with parsing triple quoted strings
+排版歸依 例 A： julia&gt; str = &quot;&quot;&quot; Hello, world. &quot;&quot;&quot; &quot; Hello,\n world.\n&quot;  推測行為：
+# 原始 str = &quot;&quot;&quot; Hello, world. &quot;&quot;&quot; # 斷第一行 &quot;&quot;&quot; Hello, world. &quot;&quot;&quot; # 去除第一個新行字元 (Leading Newline) &quot;&quot;&quot; Hello, world.",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -31,13 +29,15 @@
         "copyrightYear" : "2018",
         "datePublished": "2018-08-26 12:50:53 &#43;0800 CST",
         "dateModified" : "2018-08-26 12:50:53 &#43;0800 CST",
-        "url" : "https://onemid.github.io/tags/julia/",
-        "wordCount" : "0",
-        "keywords" : [ "Blog" ]
+        "url" : "https://onemid.github.io/blog/julia-triple-quote-string-literals-alignment/",
+        "wordCount" : "430",
+        "keywords" : [ "julia","triple-quoted string","parsing","Blog" ]
     }
     </script>
         
-            <title>Julia - Nothing to Do</title>
+            
+                <title>Julia Triple-Quoted String Literals Alignment</title>
+            
         
 
         <meta charset="utf-8" />
@@ -47,27 +47,55 @@
 
 
         
+            <meta name="author" content="Gary Gong">
+        
         
             
         
 
         <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Julia"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Julia Triple-Quoted String Literals Alignment"/>
+<meta name="twitter:description" content="很多程式語言基本上都會提供三個單或雙引號來支援區塊（block）字串，例如 Python 就有提供相關功能。然而在 Parsing 上，Julia 卻是有一套規則在運行（部分測試也與 Python 有不同的結果），以下舉一些測試範例，以及大略推測 Julia 是如何解析：
+Ref:
+Julia v1.0 Docs - Triple-Quoted String Literals
+Stackoverflow - Does the first line of triple-quoted string impact identation?
+Github Issue - Julia - Problem with parsing triple quoted strings
+排版歸依 例 A： julia&gt; str = &quot;&quot;&quot; Hello, world. &quot;&quot;&quot; &quot; Hello,\n world.\n&quot;  推測行為：
+# 原始 str = &quot;&quot;&quot; Hello, world. &quot;&quot;&quot; # 斷第一行 &quot;&quot;&quot; Hello, world. &quot;&quot;&quot; # 去除第一個新行字元 (Leading Newline) &quot;&quot;&quot; Hello, world."/>
 
-        <meta property="og:title" content="Julia" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://onemid.github.io/tags/julia/" />
-<meta property="og:updated_time" content="2018-08-26T12:50:53&#43;08:00"/>
+        <meta property="og:title" content="Julia Triple-Quoted String Literals Alignment" />
+<meta property="og:description" content="很多程式語言基本上都會提供三個單或雙引號來支援區塊（block）字串，例如 Python 就有提供相關功能。然而在 Parsing 上，Julia 卻是有一套規則在運行（部分測試也與 Python 有不同的結果），以下舉一些測試範例，以及大略推測 Julia 是如何解析：
+Ref:
+Julia v1.0 Docs - Triple-Quoted String Literals
+Stackoverflow - Does the first line of triple-quoted string impact identation?
+Github Issue - Julia - Problem with parsing triple quoted strings
+排版歸依 例 A： julia&gt; str = &quot;&quot;&quot; Hello, world. &quot;&quot;&quot; &quot; Hello,\n world.\n&quot;  推測行為：
+# 原始 str = &quot;&quot;&quot; Hello, world. &quot;&quot;&quot; # 斷第一行 &quot;&quot;&quot; Hello, world. &quot;&quot;&quot; # 去除第一個新行字元 (Leading Newline) &quot;&quot;&quot; Hello, world." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://onemid.github.io/blog/julia-triple-quote-string-literals-alignment/" /><meta property="article:published_time" content="2018-08-26T12:50:53&#43;08:00"/>
+<meta property="article:modified_time" content="2018-08-26T12:50:53&#43;08:00"/>
         <meta property="og:image" content="https://onemid.github.io/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
         
-<meta itemprop="name" content="Julia">
-<meta itemprop="description" content="">
+<meta itemprop="name" content="Julia Triple-Quoted String Literals Alignment">
+<meta itemprop="description" content="很多程式語言基本上都會提供三個單或雙引號來支援區塊（block）字串，例如 Python 就有提供相關功能。然而在 Parsing 上，Julia 卻是有一套規則在運行（部分測試也與 Python 有不同的結果），以下舉一些測試範例，以及大略推測 Julia 是如何解析：
+Ref:
+Julia v1.0 Docs - Triple-Quoted String Literals
+Stackoverflow - Does the first line of triple-quoted string impact identation?
+Github Issue - Julia - Problem with parsing triple quoted strings
+排版歸依 例 A： julia&gt; str = &quot;&quot;&quot; Hello, world. &quot;&quot;&quot; &quot; Hello,\n world.\n&quot;  推測行為：
+# 原始 str = &quot;&quot;&quot; Hello, world. &quot;&quot;&quot; # 斷第一行 &quot;&quot;&quot; Hello, world. &quot;&quot;&quot; # 去除第一個新行字元 (Leading Newline) &quot;&quot;&quot; Hello, world.">
 
+
+<meta itemprop="datePublished" content="2018-08-26T12:50:53&#43;08:00" />
+<meta itemprop="dateModified" content="2018-08-26T12:50:53&#43;08:00" />
+<meta itemprop="wordCount" content="430">
+
+
+
+<meta itemprop="keywords" content="julia,triple-quoted string,parsing," />
 
         
 
@@ -108,9 +136,10 @@
       <div id="wrapper">
 
     
+    
 <header id="header">
     
-      <h1><a href="https://onemid.github.io/">tags</a></h1>
+      <h1><a href="https://onemid.github.io/">blog</a></h1>
     
 
     <nav class="links">
@@ -144,6 +173,10 @@
     </nav>
     <nav class="main">
         <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
             
             <li class="search">
                 <a class="fa-search" href="#search">Search</a>
@@ -321,16 +354,81 @@
         
 </section>
 
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=https%3a%2f%2fonemid.github.io%2fblog%2fjulia-triple-quote-string-literals-alignment%2f&amp;text=Julia%20Triple-Quoted%20String%20Literals%20Alignment&amp;via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=https%3a%2f%2fonemid.github.io%2fblog%2fjulia-triple-quote-string-literals-alignment%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fonemid.github.io%2fblog%2fjulia-triple-quote-string-literals-alignment%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by Gary%20Gong&amp;body=https%3a%2f%2fonemid.github.io%2fblog%2fjulia-triple-quote-string-literals-alignment%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
     
     <div id="main">
-        <h1>Julia</h1>
         
         
-            <article class="post">
+        <article class="post">
   <header>
     <div class="title">
         
-            <h2><a href="https://onemid.github.io/blog/julia-triple-quote-string-literals-alignment/">Julia Triple-Quoted String Literals Alignment</a></h2>
+            <h1><a href="https://onemid.github.io/blog/julia-triple-quote-string-literals-alignment/">Julia Triple-Quoted String Literals Alignment</a></h1>
+            
         
         
     </div>
@@ -348,15 +446,277 @@
     </div>
 </header>
 
+
   
 
   
-  <p>很多程式語言基本上都會提供三個單或雙引號來支援區塊（block）字串，例如 <a href="https://docs.python.org/3/tutorial/introduction.html#strings">Python 就有提供相關功能</a>。然而在 Parsing 上，Julia 卻是有一套規則在運行（部分測試也與 Python 有不同的結果），以下舉一些測試範例，以及大略推測 Julia 是如何解析：</p>
+
+  <div id="content">
+    
+
+<p>很多程式語言基本上都會提供三個單或雙引號來支援區塊（block）字串，例如 <a href="https://docs.python.org/3/tutorial/introduction.html#strings">Python 就有提供相關功能</a>。然而在 Parsing 上，Julia 卻是有一套規則在運行（部分測試也與 Python 有不同的結果），以下舉一些測試範例，以及大略推測 Julia 是如何解析：</p>
+
+<p>Ref:</p>
+
+<p><a href="https://docs.julialang.org/en/v1/manual/strings/#Triple-Quoted-String-Literals-1">Julia v1.0 Docs - Triple-Quoted String Literals</a></p>
+
+<p><a href="https://stackoverflow.com/questions/48288817/does-the-first-line-of-triple-quoted-string-impact-indentation">Stackoverflow - Does the first line of triple-quoted string impact identation?</a></p>
+
+<p><a href="https://github.com/JuliaLang/julia/issues/25592">Github Issue - Julia - Problem with parsing triple quoted strings</a></p>
+
+<h1 id="排版歸依">排版歸依</h1>
+
+<h2 id="例-a">例 A：</h2>
+
+<pre><code class="language-julia">julia&gt; str = &quot;&quot;&quot;
+           Hello,
+           world.
+         &quot;&quot;&quot;
+&quot;  Hello,\n  world.\n&quot;
+</code></pre>
+
+<p>推測行為：</p>
+
+<pre><code class="language-julia"># 原始
+str = &quot;&quot;&quot;
+    Hello,
+    world.
+  &quot;&quot;&quot;
+# 斷第一行
+&quot;&quot;&quot;
+    Hello,
+    world.
+  &quot;&quot;&quot;
+# 去除第一個新行字元 (Leading Newline)
+&quot;&quot;&quot;    Hello,
+    world.
+  &quot;&quot;&quot;
+# 去除縮排，補上新行字元 (Newline)
+&quot;&quot;&quot;    Hello,\n    world.\n  &quot;&quot;&quot;
+    (4)         (4)        (2)
+# 縮共同最長起始空白 (2格)
+&quot;&quot;&quot;  Hello,\n  world.\n&quot;&quot;&quot;
+#最後變成
+&quot;  Hello,\n  world.\n&quot;
+</code></pre>
+
+<h2 id="例-b">例 B：</h2>
+
+<pre><code class="language-julia">julia&gt; str = &quot;&quot;&quot;
+           Hello,
+           world.
+          &quot;&quot;&quot;
+&quot; Hello,\n world.\n&quot;
+</code></pre>
+
+<p>推測行為：</p>
+
+<pre><code class="language-julia"># 原始
+str = &quot;&quot;&quot;
+    Hello,
+    world.
+   &quot;&quot;&quot;
+# 斷第一行
+str = 
+&quot;&quot;&quot;
+    Hello,
+    world.
+   &quot;&quot;&quot;
+# 去除第一個新行字元(Leading Newline)
+&quot;&quot;&quot;    Hello,
+    world.
+   &quot;&quot;&quot;
+# 去除縮排，補上新行字元(Newline)
+&quot;&quot;&quot;    Hello,\n    world.\n   &quot;&quot;&quot;
+    (4)         (4)        （3)
+# 縮共同最長起始空白(3格)
+&quot;&quot;&quot; Hello,\n world.\n&quot;&quot;&quot;
+#最後變成
+&quot; Hello,\n world.\n&quot;
+</code></pre>
+
+<h2 id="例-c">例 C：</h2>
+
+<pre><code class="language-julia">julia&gt; str = &quot;&quot;&quot;
+           Hello,
+           world.
+           &quot;&quot;&quot;
+&quot;Hello,\nworld.\n&quot;
+</code></pre>
+
+<p>推測行為：</p>
+
+<pre><code class="language-julia"># 原始
+str = &quot;&quot;&quot;
+    Hello,
+    world.
+    &quot;&quot;&quot;
+# 斷第一行
+&quot;&quot;&quot;
+    Hello,
+    world.
+    &quot;&quot;&quot;
+# 去除第一個新行字元(Leading Newline)
+&quot;&quot;&quot;    Hello,
+    world.
+    &quot;&quot;&quot;
+# 去除縮排，補上新行字元(Newline)
+&quot;&quot;&quot;    Hello,\n    world.\n    &quot;&quot;&quot;
+    (4)         (4)         (4)
+# 縮共同最長起始空白(4格)
+&quot;&quot;&quot;Hello,\nworld.\n&quot;&quot;&quot;
+#最後變成
+&quot;Hello,\nworld.\n&quot;
+</code></pre>
+
+<h2 id="例-d">例 D：</h2>
+
+<pre><code class="language-Julia">julia&gt; str =   &quot;&quot;&quot;
+                  Hello,
+                 world.
+                &quot;&quot;&quot;
+&quot;  Hello,\n world.\n&quot;
+</code></pre>
+
+<p>推測行為：</p>
+
+<pre><code class="language-julia"># 原始
+str =   &quot;&quot;&quot;
+           Hello,
+          world.
+         &quot;&quot;&quot;
+# 斷第一行
+&quot;&quot;&quot;
+           Hello,
+          world.
+         &quot;&quot;&quot;
+# 去除第一個新行字元(Leading Newline)
+&quot;&quot;&quot;           Hello,
+          world.
+         &quot;&quot;&quot;
+# 去除縮排，補上新行字元(Newline)
+&quot;&quot;&quot;           Hello,\n          world.\n         &quot;&quot;&quot;
+空白:  (11)              (10)              (9)
+# 縮共同最長起始空白(9格)
+&quot;&quot;&quot;  Hello,\n world.\n&quot;&quot;&quot;
+#最後變成
+&quot;  Hello,\n world.\n&quot;
+</code></pre>
+
+<h2 id="例-e">例 E：</h2>
+
+<pre><code class="language-julia">julia&gt; str =   &quot;&quot;&quot;
+                  Hello,
+                 world.
+           aa&quot;&quot;&quot;
+&quot;       Hello,\n      world.\naa&quot;
+</code></pre>
+
+<p>推測行為：</p>
+
+<pre><code class="language-julia"># 原始
+str =   &quot;&quot;&quot;
+           Hello,
+          world.
+    aa&quot;&quot;&quot;
+# 斷第一行   
+&quot;&quot;&quot;
+           Hello,
+          world.
+    aa&quot;&quot;&quot;
+# 去除第一個新行字元(Leading Newline)
+&quot;&quot;&quot;           Hello,
+          world.
+    aa&quot;&quot;&quot;
+# 去除縮排，補上新行字元(Newline)
+&quot;&quot;&quot;           Hello,\n          world.\n    aa&quot;&quot;&quot;
+空白:  (11)               (10)            (4)
+# 縮共同最長起始空白(4格)
+&quot;&quot;&quot;       Hello,\n      world.\naa&quot;&quot;&quot;
+#最後變成
+&quot;       Hello,\n      world.\naa&quot;
+</code></pre>
+
+<h2 id="例-f">例 F：</h2>
+
+<pre><code class="language-julia">julia&gt; str =   &quot;&quot;&quot;
+       Hello,
+        world.
+            aa  &quot;&quot;&quot;
+&quot;Hello,\n world.\n     aa  &quot;
+</code></pre>
+
+<p>推測行為：</p>
+
+<pre><code class="language-julia"># 原始
+str =   &quot;&quot;&quot;
+       Hello,
+        world.
+            aa  &quot;&quot;&quot;
+# 斷第一行   
+&quot;&quot;&quot;
+       Hello,
+        world.
+            aa  &quot;&quot;&quot;
+# 去除第一個新行字元(Leading Newline)
+&quot;&quot;&quot;       Hello,
+        world.
+            aa  &quot;&quot;&quot;
+# 去除縮排，補上新行字元(Newline)
+&quot;&quot;&quot;       Hello,\n        world.\n            aa  &quot;&quot;&quot;
+空白: (7)             (8)              (12)      ^(非起始空白)
+# 縮共同最長起始空白(7格)
+&quot;&quot;&quot;Hello,\n world.\n     aa  &quot;&quot;&quot;
+#最後變成
+&quot;Hello,\n world.\n     aa  &quot;
+</code></pre>
+
+<h2 id="例-g">例 G：</h2>
+
+<pre><code class="language-julia">julia&gt; str =   &quot;&quot;&quot;
+       Hello,
+        world.
+            aa
+         &quot;&quot;&quot;
+&quot;Hello,\n world.\n     aa\n  &quot;
+</code></pre>
+
+<p>推測行為：</p>
+
+<pre><code class="language-julia"># 原始
+str =   &quot;&quot;&quot;
+       Hello,
+        world.
+            aa
+         &quot;&quot;&quot;
+# 斷第一行   
+&quot;&quot;&quot;
+       Hello,
+        world.
+            aa
+         &quot;&quot;&quot;
+# 去除第一個新行字元(Leading Newline)
+&quot;&quot;&quot;       Hello,
+        world.
+            aa
+         &quot;&quot;&quot;
+# 去除縮排，補上新行字元(Newline)
+&quot;&quot;&quot;       Hello,\n        world.\n            aa\n         &quot;&quot;&quot;
+空白: (7)             (8)               (12)          (9)
+# 縮共同最長起始空白(7格)
+&quot;&quot;&quot;Hello,\n world.\n     aa\n  &quot;&quot;&quot;
+#最後變成
+&quot;Hello,\n world.\n     aa\n  &quot;
+</code></pre>
+
+<h3 id="後記">後記：</h3>
+
+<p>Julia 只接受 <code>&quot;&quot;&quot;...&quot;&quot;&quot;</code>，不理你的<code>'''...'''</code>。</p>
+
+  </div>
+
   <footer>
-    <ul class="actions">
-      <li><a href="https://onemid.github.io/blog/julia-triple-quote-string-literals-alignment/" class="button big">Continue Reading</a></li>
-    </ul>
-  <ul class="stats">
+    <ul class="stats">
   <li class="categories">
     <ul>
         
@@ -394,103 +754,42 @@
 </ul>
 
   </footer>
+
 </article>
 
-        
-            <article class="post">
-  <header>
-    <div class="title">
-        
-            <h2><a href="https://onemid.github.io/blog/julia-equal-comparison/">Julia isequal() 和 ==</a></h2>
-        
-        
-    </div>
-    <div class="meta">
-        
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "onemid-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
 
-        <time class="published"
-            datetime='2018-08-25'>
-            August 25, 2018</time>
-        <span class="author">Gary Gong</span>
-        
-            <p>2 minute read</p>
-        
-        
-    </div>
-</header>
 
-  
-
-  
-  <p>本執行環境：Julia 1.0</p>
-  <footer>
-    <ul class="actions">
-      <li><a href="https://onemid.github.io/blog/julia-equal-comparison/" class="button big">Continue Reading</a></li>
-    </ul>
-  <ul class="stats">
-  <li class="categories">
-    <ul>
-        
-            
-            
-                <i class="fa fa-folder"></i>
-                
-                
-                <li><a class="article-category-link" href="https://onemid.github.io/categories/julia">Julia</a></li>
-                
-            
-        
-    </ul>
-  </li>
-  <li class="tags">
-    <ul>
-        
-            
-            
-                <i class="fa fa-tags"></i>
-                
-                
-                <li><a class="article-category-link" href="https://onemid.github.io/tags/julia">julia</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://onemid.github.io/tags/isequal">isequal</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://onemid.github.io/tags/comparison">comparison</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://onemid.github.io/tags/nan">NaN</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://onemid.github.io/tags/missing">Missing</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://onemid.github.io/tags/">==</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://onemid.github.io/tags/"></a></li>
-                
-            
-        
-    </ul>
-  </li>
-</ul>
-
-  </footer>
-</article>
-
-        
-
-        
 <ul class="actions pagination">
     
-        <li><a href="#" class="disabled button big previous">Previous Page</a></li>
+        <li><a href="https://onemid.github.io/blog/math-3-double-slashes/"
+                class="button big previous">MathJax Newline Alignment Problems in Hugo</a></li>
     
 
     
-        <li><a href="#" class="disabled button big next">Next Page</a></li>
-    
 </ul>
+
 
     </div>
     
@@ -514,7 +813,7 @@
       <ul class="icons">
         
           
-    <li><a href="https://onemid.github.io/tags/julia/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+    <li><a href="https://onemid.github.io/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
 
 
         
@@ -860,7 +1159,7 @@
       <ul class="icons">
         
           
-    <li><a href="https://onemid.github.io/tags/julia/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+    <li><a href="https://onemid.github.io/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
 
 
         
