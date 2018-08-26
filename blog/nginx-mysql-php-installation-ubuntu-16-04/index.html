@@ -1052,11 +1052,11 @@ $ mysql_secure_installation
 
     
     <script>hljs.initHighlightingOnLoad();</script>
-      
+      <script src="//yihui.name/js/math-code.js"></script>
 
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/default.js">
-MathJax.Hub.Config({
+<script
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    MathJax.Hub.Config({
         tex2jax: {
             inlineMath: [
                 ['$', '$'],
@@ -1086,7 +1086,18 @@ MathJax.Hub.Config({
             all[i].SourceElement().parentNode.className += ' has-jax';
         }
     });
+
+    MathJax.Hub.Config({
+        
+        TeX: {
+            equationNumbers: {
+                autoNumber: "AMS"
+            }
+        }
+    });
 </script>
+
+
 
   </body>
 </html>
