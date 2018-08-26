@@ -1199,6 +1199,7 @@
 				border-top: solid 1px #cccccc;
 				border-right: solid 1px #cccccc;
 				border-bottom: solid 1px #cccccc;
+				margin:-25% 0;
 			}
 
 			.mini-post .image:hover img {
@@ -1428,6 +1429,7 @@
 				-webkit-transition: -webkit-transform 0.2s ease-out;
 				-ms-transition: -ms-transform 0.2s ease-out;
 				transition: transform 0.2s ease-out;
+				margin:-30.875% 0;
 			}
 
 			.post > .image.featured:hover img {
