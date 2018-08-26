@@ -6,19 +6,23 @@
     <description>Recent content in Hugo on Nothing to Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 20 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 26 Aug 2018 11:11:49 +0800</lastBuildDate>
     
 	<atom:link href="https://onemid.github.io/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Creating a New Theme</title>
-      <link>https://onemid.github.io/blog/creating-a-new-theme/</link>
-      <pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate>
+      <title>MathJax Newline Alignment Problems in Hugo</title>
+      <link>https://onemid.github.io/blog/math-3-double-slashes/</link>
+      <pubDate>Sun, 26 Aug 2018 11:11:49 +0800</pubDate>
       
-      <guid>https://onemid.github.io/blog/creating-a-new-theme/</guid>
-      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
-We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
+      <guid>https://onemid.github.io/blog/math-3-double-slashes/</guid>
+      <description>一般來說 打 TeX 相關指令的時候，基本上要對齊會使用上\begin{aligned}和\end{aligned}，中間對齊的基準點用&amp;amp;，換行用\\。如下所示範例 TeX Command 為：
+\begin{aligned} &amp;amp; x^2+4x+4 \\ =&amp;amp; (x+2)(x+2) \\ =&amp;amp; (x+2)^2 \end{aligned}  顯示結果應該要像這樣：
+結果長這樣： $$ \begin{aligned} &amp;amp; x^2+4x+4 =&amp;amp;(x+2)(x+2) =&amp;amp;(x+2)^2 \end{aligned} $$
+原來是 Hugo Markdown Parser 會把 \\吃掉一些，變成單反斜（\），這個會造成好大一個空白；所以有人說要用 4 個雙反斜線（但是沒明講是 Hugo 僅說是 Markdown Parsing 問題），有人說用 6 個雙反斜線，在這邊我 6 個雙反斜線（看起來是 Hugo 要用 6 雙反斜）才有用。
+方案？ 那上面的 Tex Command 就變成
+\begin{aligned} &amp;amp; x^2+4x+4 \\\\\\ =&amp;amp; (x+2)(x+2) \\\\\\ =&amp;amp; (x+2)^2 \end{aligned}  再看一次 Render 的情形： $$ \begin{aligned} &amp;amp; x^2+4x+4 \\</description>
     </item>
     
   </channel>

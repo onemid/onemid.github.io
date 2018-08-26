@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-08-25 18:01:37 &#43;0800 CST",
-        "dateModified" : "2018-08-25 18:01:37 &#43;0800 CST",
+        "datePublished": "2018-08-26 11:11:49 &#43;0800 CST",
+        "dateModified" : "2018-08-26 11:11:49 &#43;0800 CST",
         "url" : "https://onemid.github.io/",
         "wordCount" : "0",
         "keywords" : [ "Blog" ]
@@ -55,7 +55,7 @@
 <meta property="og:description" content="HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://onemid.github.io/" />
-<meta property="og:updated_time" content="2018-08-25T18:01:37&#43;08:00"/>
+<meta property="og:updated_time" content="2018-08-26T11:11:49&#43;08:00"/>
         <meta property="og:image" content="https://onemid.github.io/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
@@ -224,6 +224,18 @@
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="https://onemid.github.io/blog/math-3-double-slashes/">MathJax Newline Alignment Problems in Hugo</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-08-26'>
+                                    August 26, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="https://onemid.github.io/blog/julia-equal-comparison/">Julia isequal() 和 ==</a></h3>
                                 
                                 <time class="published" datetime=
@@ -270,18 +282,6 @@
 
                         </article>
                 
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="https://onemid.github.io/blog/testmath/">zzz我終於把 mathjax 弄進去了</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2018-08-01'>
-                                    August 1, 2018</time>
-                            </header>
-                            
-
-                        </article>
-                
 
                 
                     <a href=
@@ -304,7 +304,7 @@
   <header>
     <div class="title">
         
-            <h2><a href="https://onemid.github.io/blog/julia-equal-comparison/">Julia isequal() 和 ==</a></h2>
+            <h2><a href="https://onemid.github.io/blog/math-3-double-slashes/">MathJax Newline Alignment Problems in Hugo</a></h2>
         
         
     </div>
@@ -312,11 +312,11 @@
         
 
         <time class="published"
-            datetime='2018-08-25'>
-            August 25, 2018</time>
+            datetime='2018-08-26'>
+            August 26, 2018</time>
         <span class="author">Gary Gong</span>
         
-            <p>2 minute read</p>
+            <p>1 minute read</p>
         
         
     </div>
@@ -330,356 +330,52 @@
   <div id="content">
     
 
-<h1 id="isequal-和"><code>isequal()</code> 和 <code>==</code></h1>
+<h1 id="一般來說">一般來說</h1>
 
-<p>本執行環境：Julia 1.0</p>
+<p>打 TeX 相關指令的時候，基本上要對齊會使用上<code>\begin{aligned}</code>和<code>\end{aligned}</code>，中間對齊的基準點用<code>&amp;</code>，換行用<code>\\</code>。如下所示範例 TeX Command 為：</p>
 
-<p>在 Julia 裡面，<code>isequal()</code>和<code>==</code>表面上看起來都是比較兩者是否相等；但其實裡面還是有些微的差距：<code>isequal(a, b)</code>隱含著<code>hash(a)</code>及<code>hash(b)</code>是否相等。在浮點數（包含<code>NaN</code>）、遺失值（<code>Missing</code>）中，兩者處理狀況有差距。根據文件所述，<code>isequal</code>會視<code>0.0</code>與<code>-0.0</code>為不同，<code>NaN</code>永遠與其他<code>NaN</code>相同，<code>missing</code>也是。</p>
-
-<p><a href="https://docs.julialang.org/en/v1/base/base/#Base.isequal">isequal() 文件：https://docs.julialang.org/en/v1/base/base/#Base.isequal</a></p>
-
-<p><a href="https://docs.julialang.org/en/v1/base/math/#Base.:==">== 文件：https://docs.julialang.org/en/v1/base/math/#Base.:==</a></p>
-
-<!-- more -->
-
-<h1 id="比較">比較</h1>
-
-<h2 id="正零與負零">正零與負零</h2>
-
-<table>
-<thead>
-<tr>
-<th>指令</th>
-<th>結果？</th>
-<th>指令</th>
-<th>結果？</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>isequal(0.0, -0.0)</code></td>
-<td><code>false</code></td>
-<td><code>0.0 == -0.0</code></td>
-<td><code>true</code></td>
-</tr>
-
-<tr>
-<td><code>isequal(0, -0)</code></td>
-<td><code>true</code></td>
-<td><code>0 == -0</code></td>
-<td><code>true</code></td>
-</tr>
-
-<tr>
-<td><code>isequal(0.0, -0)</code></td>
-<td><code>true</code></td>
-<td><code>0.0 == -0</code></td>
-<td><code>true</code></td>
-</tr>
-</tbody>
-</table>
-
-<pre><code class="language-julia">julia&gt; hash(0)
-0x77cfa1eef01bca90
-julia&gt; hash(-0)
-0x77cfa1eef01bca90
-julia&gt; hash(0.0)
-0x77cfa1eef01bca90
-julia&gt; hash(-0.0)
-0x3be7d0f7780de548
-</code></pre>
-
-<h2 id="missing-們">Missing 們</h2>
-
-<table>
-<thead>
-<tr>
-<th>指令</th>
-<th>結果？</th>
-<th>指令</th>
-<th>結果？</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>isequal(missing, missing)</code></td>
-<td><code>true</code></td>
-<td><code>missing == missing</code></td>
-<td><code>missing</code></td>
-</tr>
-
-<tr>
-<td><code>isequal(Missing, Missing)</code></td>
-<td><code>true</code></td>
-<td><code>Missing == Missing</code></td>
-<td><code>true</code></td>
-</tr>
-
-<tr>
-<td><code>isequal(missing, Missing)</code></td>
-<td><code>false</code></td>
-<td><code>missing == Missing</code></td>
-<td><code>missing</code></td>
-</tr>
-
-<tr>
-<td><code>isequal(missing, 3)</code></td>
-<td><code>false</code></td>
-<td><code>missing == 3</code></td>
-<td><code>missing</code></td>
-</tr>
-</tbody>
-</table>
-
-<pre><code class="language-julia">julia&gt; typeof(missing)
-Missing
-julia&gt; typeof(Missing)
-DataType
-</code></pre>
-
-<h2 id="nan-們">NaN 們</h2>
-
-<table>
-<thead>
-<tr>
-<th>指令</th>
-<th>結果？</th>
-<th>指令</th>
-<th>結果？</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>isequal(NaN, NaN)</code></td>
-<td><code>true</code></td>
-<td><code>NaN == NaN</code></td>
-<td><code>false</code></td>
-</tr>
-
-<tr>
-<td><code>isequal([1 NaN], [1 NaN])</code></td>
-<td><code>true</code></td>
-<td><code>[1 NaN] == [1 NaN]</code></td>
-<td><code>false</code></td>
-</tr>
-
-<tr>
-<td><code>isequal(NaN, NaN32)</code></td>
-<td><code>true</code></td>
-<td><code>NaN == NaN32</code></td>
-<td><code>false</code></td>
-</tr>
-</tbody>
-</table>
-
-<pre><code class="language-julia">julia&gt; hash(NaN)
-0x15d7d083d04ecb90
-julia&gt; hash(NaN16)
-0x15d7d083d04ecb90
-julia&gt; hash(NaN32)
-0x15d7d083d04ecb90
-julia&gt; hash(NaN64)
-0x15d7d083d04ecb90
-</code></pre>
-
-<p>不管哪一種<code>NaN</code>hash 值都一樣；同樣出現在<code>Inf</code>中，不管是<code>Inf16</code>、<code>Inf32</code>、<code>Inf64</code>皆為<code>0x807bb202c9cbfc6f</code>，而負無限大者皆為<code>0x96e782fc7639e1bc</code>。</p>
-
-<p>由於系統是 64 位元，<code>NaN</code>的<code>DataType</code>為<code>Float64</code></p>
-
-<h2 id="複數-complex-number-們">複數（Complex Number）們</h2>
-
-<table>
-<thead>
-<tr>
-<th>指令</th>
-<th>結果？</th>
-<th>指令</th>
-<th>結果？</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>isequal(3/(4*im), 3/4im)</code></td>
-<td><code>true</code></td>
-<td><code>3/(4*im) == 3/4im</code></td>
-<td><code>true</code></td>
-</tr>
-
-<tr>
-<td><code>isequal(-(3/4*im), 3/4im)</code></td>
-<td><code>false</code></td>
-<td><code>-(3/4*im) == 3/4im</code></td>
-<td><code>true</code></td>
-</tr>
-
-<tr>
-<td><code>isequal(-(3/4im), 3/4*im)</code></td>
-<td><code>false</code></td>
-<td><code>-(3/4im) == 3/4*im</code></td>
-<td><code>true</code></td>
-</tr>
-
-<tr>
-<td><code>isequal(-1+0im, -1)</code></td>
-<td><code>true</code></td>
-<td><code>-1+0im == -1</code></td>
-<td><code>true</code></td>
-</tr>
-</tbody>
-</table>
-
-<pre><code class="language-julia">julia&gt; 3/(4*im)
-0.0 - 0.75im
-julia&gt; 3/4im
-0.0 - 0.75im
-julia&gt; -(3/4*im)
--0.0 - 0.75im
-julia&gt; -(3/4im)
--0.0 + 0.75im
-</code></pre>
-
-<p>很明顯的因為 <code>-0.0</code> 的出現，導致第二個 row 前者為 <code>false</code> 後者為 <code>true</code>。</p>
-
-<p>前兩者<code>3/(4*im)</code>和<code>3/4im</code>表現像為
-$$
-\begin{aligned}
-\frac{3}{(4i)} = \frac{3}{4i}
-&amp;=\frac{3i}{4i*i}\\<br />
-&amp;=-\frac{3i}{4}\\<br />
-&amp;=0-0.75i
+<pre><code class="language-tex">\begin{aligned}
+&amp; x^2+4x+4 \\
+=&amp; (x+2)(x+2) \\
+=&amp; (x+2)^2 
 \end{aligned}
-$$
-雖然<code>-(3/4im)</code>表現像是：
+</code></pre>
+
+<p>顯示結果應該要像這樣：</p>
+
+<p><img src="https://onemid.github.io/static/img/original_render_tex.png" alt="應該長這樣" /></p>
+
+<p>結果長這樣：
 $$
 \begin{aligned}
--(\frac{3}{4i})
-&amp;=-(\frac{3i}{4i*i})\\<br />
-&amp;=-(-\frac{3i}{4})\\<br />
-&amp;=0.75i
+&amp; x^2+4x+4 <br />
+=&amp;(x+2)(x+2) <br />
+=&amp;(x+2)^2
 \end{aligned}
 $$</p>
 
-<p><code>-(3/4*im)</code>的表現卻像是：
+<p>原來是 Hugo Markdown Parser 會把 <code>\\</code>吃掉一些，變成單反斜（<code>\</code>），這個會造成好大一個空白；所以有人說要用 <a href="https://stackoverflow.com/questions/42228504/how-do-i-escape-double-backslashes-for-mathjax">4 個雙反斜線（但是沒明講是 Hugo 僅說是 Markdown Parsing 問題）</a>，有人說<a href="https://github.com/gcushen/hugo-academic/issues/291">用 6 個雙反斜線</a>，在這邊我 6 個雙反斜線（看起來是 Hugo 要用 6 雙反斜）才有用。</p>
+
+<h1 id="方案">方案？</h1>
+
+<p>那上面的 Tex Command 就變成</p>
+
+<pre><code class="language-tex">\begin{aligned}
+&amp; x^2+4x+4 \\\\\\
+=&amp; (x+2)(x+2) \\\\\\
+=&amp; (x+2)^2 
+\end{aligned}
+</code></pre>
+
+<p>再看一次 Render 的情形：
 $$
 \begin{aligned}
--(\frac{3}{4}i)
-&amp;=-0.75i
+&amp; x^2+4x+4 \\<br />
+=&amp;(x+2)(x+2) \\<br />
+=&amp;(x+2)^2
 \end{aligned}
 $$
-根據文件指出，這是因為係數卡重要啦（Note that <code>3/4im == 3/(4*im) == -(3/4*im)</code>, since a literal coefficient binds more tightly than division.）</p>
-
-<p>所以說，<code>3/4*im</code>就會像是：</p>
-
-<pre><code class="language-julia">julia&gt; 3/4*im
-0.0 + 0.75im
-</code></pre>
-
-<p>這個<code>*</code>一擺上去 $i$ 與分數從此天人永隔。</p>
-
-<h2 id="有理數-rational-number-們">有理數（Rational Number）們</h2>
-
-<table>
-<thead>
-<tr>
-<th>指令</th>
-<th>結果？</th>
-<th>指令</th>
-<th>結果？</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>isequal(1/2, 1//2)</code></td>
-<td><code>true</code></td>
-<td><code>1/2 == 1//2</code></td>
-<td><code>true</code></td>
-</tr>
-
-<tr>
-<td><code>isequal(1/3, 1//3)</code></td>
-<td><code>false</code></td>
-<td><code>1/3 == 1//3</code></td>
-<td><code>false</code></td>
-</tr>
-
-<tr>
-<td><code>isequal(1/4, 1//4)</code></td>
-<td><code>true</code></td>
-<td><code>1/4 == 1//4</code></td>
-<td><code>true</code></td>
-</tr>
-
-<tr>
-<td><code>isequal(1/5, 1//5)</code></td>
-<td><code>false</code></td>
-<td><code>1/5 == 1//5</code></td>
-<td><code>false</code></td>
-</tr>
-
-<tr>
-<td><code>isequal(1/6, 1//6)</code></td>
-<td><code>false</code></td>
-<td><code>1/6 == 1//6</code></td>
-<td><code>false</code></td>
-</tr>
-
-<tr>
-<td><code>isequal(1/7, 1//7)</code></td>
-<td><code>false</code></td>
-<td><code>1/7 == 1//7</code></td>
-<td><code>false</code></td>
-</tr>
-
-<tr>
-<td><code>isequal(1/8, 1//8)</code></td>
-<td><code>true</code></td>
-<td><code>1/8 == 1//8</code></td>
-<td><code>true</code></td>
-</tr>
-
-<tr>
-<td><code>isequal(1/16, 1//16)</code></td>
-<td><code>true</code></td>
-<td><code>1/16 == 1//16</code></td>
-<td><code>true</code></td>
-</tr>
-</tbody>
-</table>
-
-<p>這似乎是分母為 $2$ 的次方就會使得兩者相等</p>
-
-<p>那當然如果說在<code>Rational Number</code>（也就是說這個東西：<code>//</code>）的地方加上<code>float()</code>就會使此兩者相等，這就沒有問題，例如：</p>
-
-<pre><code class="language-julia">julia&gt; isequal(1/5, float(1//5))
-true
-julia&gt; 1/5 == float(1//5)
-true
-julia&gt; isequal(1/3, float(1//3))
-true
-julia&gt; 1/3 == float(1//3)
-true
-</code></pre>
-
-<p>當然，零的部分要按上面的規則來：</p>
-
-<pre><code class="language-julia">julia&gt; isequal(0/3, -float(0//3))
-false
-julia&gt; 0/3 == -float(0//3)
-true
-julia&gt; isequal(float(0/3), -float(0//3))
-false
-julia&gt; float(0/3) == -float(0//3)
-true
-julia&gt; float(0/3)
-0.0
-julia&gt; -float(0//3)
--0.0
-</code></pre>
+真棒</p>
 
   </div>
 
@@ -693,7 +389,13 @@ julia&gt; -float(0//3)
                 <i class="fa fa-folder"></i>
                 
                 
-                <li><a class="article-category-link" href="https://onemid.github.io/categories/julia">Julia</a></li>
+                <li><a class="article-category-link" href="https://onemid.github.io/categories/hugo">Hugo</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://onemid.github.io/categories/tex">TeX</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://onemid.github.io/categories/mathjax">MathJax</a></li>
                 
             
         
@@ -707,25 +409,19 @@ julia&gt; -float(0//3)
                 <i class="fa fa-tags"></i>
                 
                 
-                <li><a class="article-category-link" href="https://onemid.github.io/tags/julia">julia</a></li>
+                <li><a class="article-category-link" href="https://onemid.github.io/tags/hugo">hugo</a></li>
                 
                 
-                <li><a class="article-category-link" href="https://onemid.github.io/tags/isequal">isequal</a></li>
+                <li><a class="article-category-link" href="https://onemid.github.io/tags/tex">tex</a></li>
                 
                 
-                <li><a class="article-category-link" href="https://onemid.github.io/tags/comparison">comparison</a></li>
+                <li><a class="article-category-link" href="https://onemid.github.io/tags/mathjax">mathjax</a></li>
                 
                 
-                <li><a class="article-category-link" href="https://onemid.github.io/tags/nan">NaN</a></li>
+                <li><a class="article-category-link" href="https://onemid.github.io/tags/alignment">alignment</a></li>
                 
                 
-                <li><a class="article-category-link" href="https://onemid.github.io/tags/missing">Missing</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://onemid.github.io/tags/">==</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://onemid.github.io/tags/"></a></li>
+                <li><a class="article-category-link" href="https://onemid.github.io/tags/newline">newline</a></li>
                 
             
         
@@ -763,8 +459,8 @@ julia&gt; -float(0//3)
 
 <ul class="actions pagination">
     
-        <li><a href="https://onemid.github.io/blog/cuda-and-tf-install/"
-                class="button big previous">Compiling TensorFlow-GPU on Ubuntu 16.04 with CUDA 9.1(9.2) and Python3</a></li>
+        <li><a href="https://onemid.github.io/blog/julia-equal-comparison/"
+                class="button big previous">Julia isequal() 和 ==</a></li>
     
 
     
@@ -783,7 +479,7 @@ julia&gt; -float(0//3)
 
 
 <li>
-  <a href="//twitter.com/share?url=https%3a%2f%2fonemid.github.io%2fblog%2fjulia-equal-comparison%2f&amp;text=Julia%20isequal%28%29%20%e5%92%8c%20%3d%3d&amp;via=" target="_blank" class="share-btn twitter">
+  <a href="//twitter.com/share?url=https%3a%2f%2fonemid.github.io%2fblog%2fmath-3-double-slashes%2f&amp;text=MathJax%20Newline%20Alignment%20Problems%20in%20Hugo&amp;via=" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
     </a>
@@ -793,7 +489,7 @@ julia&gt; -float(0//3)
 
 
 <li>
-  <a href="//plus.google.com/share?url=https%3a%2f%2fonemid.github.io%2fblog%2fjulia-equal-comparison%2f" target="_blank" class="share-btn google-plus">
+  <a href="//plus.google.com/share?url=https%3a%2f%2fonemid.github.io%2fblog%2fmath-3-double-slashes%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
   </a>
@@ -804,7 +500,7 @@ julia&gt; -float(0//3)
 
 
 <li>
-  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fonemid.github.io%2fblog%2fjulia-equal-comparison%2f" target="_blank" class="share-btn facebook">
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fonemid.github.io%2fblog%2fmath-3-double-slashes%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
     </a>
@@ -826,7 +522,7 @@ julia&gt; -float(0//3)
 
 
 <li>
-  <a href="mailto:?subject=Check out this post by Gary%20Gong&amp;body=https%3a%2f%2fonemid.github.io%2fblog%2fjulia-equal-comparison%2f" target="_blank" class="share-btn email">
+  <a href="mailto:?subject=Check out this post by Gary%20Gong&amp;body=https%3a%2f%2fonemid.github.io%2fblog%2fmath-3-double-slashes%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
   </a>
@@ -969,6 +665,20 @@ julia&gt; -float(0//3)
           <article class="mini-post">
             <header>
               <h3>
+                <a href="https://onemid.github.io/blog/math-3-double-slashes/">MathJax Newline Alignment Problems in Hugo</a>
+              </h3>
+              
+              <time class="published" datetime='2018-08-26'>
+                August 26, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
                 <a href="https://onemid.github.io/blog/julia-equal-comparison/">Julia isequal() 和 ==</a>
               </h3>
               
@@ -1016,20 +726,6 @@ julia&gt; -float(0//3)
               
               <time class="published" datetime='2018-08-23'>
                 August 23, 2018
-              </time>
-            </header>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="https://onemid.github.io/blog/testmath/">zzz我終於把 mathjax 弄進去了</a>
-              </h3>
-              
-              <time class="published" datetime='2018-08-01'>
-                August 1, 2018
               </time>
             </header>
             
@@ -1090,6 +786,17 @@ julia&gt; -float(0//3)
           <article>
             <header>
               
+                <a href="https://onemid.github.io/categories/hugo/">Hugo</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
                 <a href="https://onemid.github.io/categories/julia/">Julia</a>
                 <span style="float:right;">1</span>
               
@@ -1101,7 +808,29 @@ julia&gt; -float(0//3)
           <article>
             <header>
               
+                <a href="https://onemid.github.io/categories/mathjax/">MathJax</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
                 <a href="https://onemid.github.io/categories/python/">Python</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://onemid.github.io/categories/tex/">TeX</a>
                 <span style="float:right;">1</span>
               
             </header>
@@ -1267,7 +996,7 @@ julia&gt; -float(0//3)
         
         
         
-        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/tex.min.js"></script>
         
         <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
         
