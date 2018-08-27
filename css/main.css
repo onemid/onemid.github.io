@@ -820,7 +820,7 @@
 			@media screen and (max-width: 736px) {
 
 				.image.featured {
-					margin: 0 0 1.5em 0;
+					margin: -3.05em -3.07em 3em -3.05em;
 				}
 
 			}
