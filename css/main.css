@@ -130,7 +130,7 @@
 
 		}
 
-		@media screen and (max-width: 980px) {
+		@media screen and (max-width: 1120px) {
 
 			body, input, select, textarea {
 				font-size: 12pt;
@@ -985,7 +985,7 @@
 					content: '\f053';
 				}
 
-			@media screen and (max-width: 980px) {
+			@media screen and (max-width: 1120px) {
 
 				ul.actions.pagination {
 					text-align: center;
@@ -1266,7 +1266,7 @@
 		margin: 0 0 2em 0;
 	}
 
-		@media screen and (max-width: 980px) {
+		@media screen and (max-width: 1120px) {
 
 			.mini-posts .posts-container {
 				display: -moz-flex;
@@ -1501,7 +1501,7 @@
 							margin-right: 0.75em;
 						}
 
-		@media screen and (max-width: 980px) {
+		@media screen and (max-width: 1120px) {
 
 			.post {
 				border-left: 0;
@@ -1803,7 +1803,7 @@
 								margin-right: 0.75em;
 							}
 
-			@media screen and (max-width: 980px) {
+			@media screen and (max-width: 1120px) {
 
 				.itemized {
 					border-left: 0;
@@ -2466,7 +2466,7 @@
 				padding: 0 0.5em 0 0;
 			}
 
-		@media screen and (min-width: 980px) {
+		@media screen and (min-width: 1120px) {
 
 				#header .menu {
 					display: none;
@@ -2474,7 +2474,7 @@
 
 			}
 
-		@media screen and (max-width: 980px) {
+		@media screen and (max-width: 1120px) {
 
 			#header .links {
 				display: none;
@@ -2541,7 +2541,7 @@
 
 		}
 
-		@media screen and (max-width: 980px) {
+		@media screen and (max-width: 1120px) {
 
 			#wrapper {
 				display: block;
@@ -2604,7 +2604,7 @@
 				padding: 0;
 		}
 
-		@media screen and (max-width: 980px) {
+		@media screen and (max-width: 1120px) {
 
 			#sidebar {
 				border-top: solid 1px rgba(160, 160, 160, 0.3);
@@ -2684,7 +2684,7 @@
 			font-size: 0.8em;
 		}
 
-	@media screen and (max-width: 980px) {
+	@media screen and (max-width: 1120px) {
 
 		#intro {
 			margin: 0 0 3em 0;
