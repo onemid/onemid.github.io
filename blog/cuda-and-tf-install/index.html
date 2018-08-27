@@ -488,7 +488,7 @@
 <li><p>Create the environment variable to make these work.</p></li>
 </ol>
 
-<pre><code class="language-sh">   export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/ local/cuda/extras/CUPTI/lib64:/usr/lib/nvidia-381
+<pre><code class="language-shell">   export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/ local/cuda/extras/CUPTI/lib64:/usr/lib/nvidia-381
    # Remember that nvidia-381 is the driver version, if you install 390, please modifiy it to nvidia-390
    export CUDA_HOME=/usr/local/cuda
    export PATH=$PATH:/usr/local/cuda/bin
@@ -527,7 +527,7 @@
 <li>Check your CUDA version by following command:</li>
 </ol>
 
-<pre><code class="language-bash">   cat /usr/local/cuda/version.txt
+<pre><code class="language-shell">   cat /usr/local/cuda/version.txt
 </code></pre>
 
 <ol>
@@ -652,7 +652,7 @@ Configuration finished
 
 <p>and exec.</p>
 
-<pre><code class="language-bash">pip3 install /tmp/tensorflow_pkg/tensorflow-1.7.0-cp35-cp35m-linux_x86_64.whl
+<pre><code class="language-shell">pip3 install /tmp/tensorflow_pkg/tensorflow-1.7.0-cp35-cp35m-linux_x86_64.whl
 </code></pre>
 
 <p>(Please make sure you are in virtualenv if you want to install this in your virtualenv and do not use sudo.)</p>

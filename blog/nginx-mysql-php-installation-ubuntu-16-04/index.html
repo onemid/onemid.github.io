@@ -472,7 +472,7 @@ $ sudo systemctl restart php7.0-fpm  Configure Nginx to Use the PHP Processor $ 
 
 <h3 id="install-the-nginx-web-server">Install the Nginx Web Server</h3>
 
-<pre><code>$ sudo apt-get update
+<pre><code class="language-shell">$ sudo apt-get update
 $ sudo apt-get install nginx
 </code></pre>
 
@@ -480,7 +480,7 @@ $ sudo apt-get install nginx
 
 <h3 id="install-mysql">Install MySQL</h3>
 
-<pre><code>$ sudo apt-get install mysql-server
+<pre><code class="language-shell">$ sudo apt-get install mysql-server
 $ mysql_secure_installation
 </code></pre>
 
@@ -488,34 +488,34 @@ $ mysql_secure_installation
 
 <h3 id="install-php-for-processing">Install PHP for Processing</h3>
 
-<pre><code>$ sudo apt-get install php-fpm php-mysql
+<pre><code class="language-shell">$ sudo apt-get install php-fpm php-mysql
 </code></pre>
 
 <!-- more -->
 
 <h3 id="configure-the-php-processor">Configure the PHP Processor</h3>
 
-<pre><code>$ sudo vim /etc/php/7.0/fpm/php.ini
+<pre><code class="language-shell">$ sudo vim /etc/php/7.0/fpm/php.ini
 </code></pre>
 
 <p>編輯 php.ini 內部數值，先前請解除註解</p>
 
-<pre><code>cgi.fix_pathinfo=0
+<pre><code class="language-php">cgi.fix_pathinfo=0
 </code></pre>
 
 <p>重新啟動 PHP Processor</p>
 
-<pre><code>$ sudo systemctl restart php7.0-fpm
+<pre><code class="language-shell">$ sudo systemctl restart php7.0-fpm
 </code></pre>
 
 <h3 id="configure-nginx-to-use-the-php-processor">Configure Nginx to Use the PHP Processor</h3>
 
-<pre><code>$ sudo vim /etc/nginx/sites-available/default
+<pre><code class="language-shell">$ sudo vim /etc/nginx/sites-available/default
 </code></pre>
 
 <p>編輯 default 內部檔案，更動原 server {&hellip;}  區塊為下方區塊</p>
 
-<pre><code>server {
+<pre><code class="language-nginx">server {
     listen 80 default_server;
     listen [::]:80 default_server;
 
@@ -541,12 +541,12 @@ $ mysql_secure_installation
 
 <p>結束後，利用 nginx -t 檢測是否存在語法錯誤</p>
 
-<pre><code>$ sudo nginx -t
+<pre><code class="language-shell">$ sudo nginx -t
 </code></pre>
 
 <p>最後，重新載入 nginx 設定檔案</p>
 
-<pre><code>$ sudo systemctl reload nginx
+<pre><code class="language-shell">$ sudo systemctl reload nginx
 </code></pre>
 
   </div>

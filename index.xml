@@ -111,12 +111,9 @@ isequal() 文件：https://docs.julialang.org/en/v1/base/base/#Base.isequal
       <guid>https://onemid.github.io/blog/python3-pip3-zlib-in-macos/</guid>
       <description>問題描述 在使用 pip3 時，會回應 zlib相關套件的錯誤訊息
 簡單解法 開 terminal 打
-xcode-select --install
-之後再裝
-brew install python3
-如果先裝 python3 然後再裝 xcode-select 東西的話
-brew reinstall python3
-就重裝 python3 吧</description>
+xcode-select --install  之後再裝
+brew install python3  如果先裝 python3 然後再裝 xcode-select 東西的話
+brew reinstall python3  就重裝 python3 吧</description>
     </item>
     
     <item>
