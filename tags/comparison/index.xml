@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Comparison on Nothing to Do</title>
-    <link>https://onemid.github.io/tags/comparison/</link>
+    <link>https://blog.onemid.net/tags/comparison/</link>
     <description>Recent content in Comparison on Nothing to Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Sat, 25 Aug 2018 18:01:37 +0800</lastBuildDate>
     
-	<atom:link href="https://onemid.github.io/tags/comparison/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.onemid.net/tags/comparison/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Julia isequal() 和 ==</title>
-      <link>https://onemid.github.io/blog/julia-equal-comparison/</link>
+      <link>https://blog.onemid.net/blog/julia-equal-comparison/</link>
       <pubDate>Sat, 25 Aug 2018 18:01:37 +0800</pubDate>
       
-      <guid>https://onemid.github.io/blog/julia-equal-comparison/</guid>
+      <guid>https://blog.onemid.net/blog/julia-equal-comparison/</guid>
       <description>isequal() 和 == 本執行環境：Julia 1.0
 在 Julia 裡面，isequal()和==表面上看起來都是比較兩者是否相等；但其實裡面還是有些微的差距：isequal(a, b)隱含著hash(a)及hash(b)是否相等。在浮點數（包含NaN）、遺失值（Missing）中，兩者處理狀況有差距。根據文件所述，isequal會視0.0與-0.0為不同，NaN永遠與其他NaN相同，missing也是。
 isequal() 文件：https://docs.julialang.org/en/v1/base/base/#Base.isequal

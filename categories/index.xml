@@ -2,101 +2,101 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Nothing to Do</title>
-    <link>https://onemid.github.io/categories/</link>
+    <link>https://blog.onemid.net/categories/</link>
     <description>Recent content in Categories on Nothing to Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     
-	<atom:link href="https://onemid.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.onemid.net/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Deep Learning</title>
-      <link>https://onemid.github.io/categories/deep-learning/</link>
+      <link>https://blog.onemid.net/categories/deep-learning/</link>
       <pubDate>Sat, 25 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://onemid.github.io/categories/deep-learning/</guid>
+      <guid>https://blog.onemid.net/categories/deep-learning/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hexo</title>
-      <link>https://onemid.github.io/categories/hexo/</link>
+      <link>https://blog.onemid.net/categories/hexo/</link>
       <pubDate>Thu, 23 Aug 2018 17:24:27 +0000</pubDate>
       
-      <guid>https://onemid.github.io/categories/hexo/</guid>
+      <guid>https://blog.onemid.net/categories/hexo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hugo</title>
-      <link>https://onemid.github.io/categories/hugo/</link>
+      <link>https://blog.onemid.net/categories/hugo/</link>
       <pubDate>Sun, 26 Aug 2018 11:11:49 +0800</pubDate>
       
-      <guid>https://onemid.github.io/categories/hugo/</guid>
+      <guid>https://blog.onemid.net/categories/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Julia</title>
-      <link>https://onemid.github.io/categories/julia/</link>
+      <link>https://blog.onemid.net/categories/julia/</link>
       <pubDate>Sun, 26 Aug 2018 12:50:53 +0800</pubDate>
       
-      <guid>https://onemid.github.io/categories/julia/</guid>
+      <guid>https://blog.onemid.net/categories/julia/</guid>
       <description></description>
     </item>
     
     <item>
       <title>MathJax</title>
-      <link>https://onemid.github.io/categories/mathjax/</link>
+      <link>https://blog.onemid.net/categories/mathjax/</link>
       <pubDate>Sun, 26 Aug 2018 11:11:49 +0800</pubDate>
       
-      <guid>https://onemid.github.io/categories/mathjax/</guid>
+      <guid>https://blog.onemid.net/categories/mathjax/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>https://onemid.github.io/categories/python/</link>
+      <link>https://blog.onemid.net/categories/python/</link>
       <pubDate>Thu, 23 Aug 2018 09:32:15 +0800</pubDate>
       
-      <guid>https://onemid.github.io/categories/python/</guid>
+      <guid>https://blog.onemid.net/categories/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>TeX</title>
-      <link>https://onemid.github.io/categories/tex/</link>
+      <link>https://blog.onemid.net/categories/tex/</link>
       <pubDate>Sun, 26 Aug 2018 11:11:49 +0800</pubDate>
       
-      <guid>https://onemid.github.io/categories/tex/</guid>
+      <guid>https://blog.onemid.net/categories/tex/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Weather</title>
-      <link>https://onemid.github.io/categories/weather/</link>
+      <link>https://blog.onemid.net/categories/weather/</link>
       <pubDate>Sun, 26 Aug 2018 22:52:23 +0800</pubDate>
       
-      <guid>https://onemid.github.io/categories/weather/</guid>
+      <guid>https://blog.onemid.net/categories/weather/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Web Programming</title>
-      <link>https://onemid.github.io/categories/web-programming/</link>
+      <link>https://blog.onemid.net/categories/web-programming/</link>
       <pubDate>Tue, 31 Jul 2018 23:57:00 +0800</pubDate>
       
-      <guid>https://onemid.github.io/categories/web-programming/</guid>
+      <guid>https://blog.onemid.net/categories/web-programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>廢文</title>
-      <link>https://onemid.github.io/categories/%E5%BB%A2%E6%96%87/</link>
+      <link>https://blog.onemid.net/categories/%E5%BB%A2%E6%96%87/</link>
       <pubDate>Wed, 01 Aug 2018 02:01:00 +0800</pubDate>
       
-      <guid>https://onemid.github.io/categories/%E5%BB%A2%E6%96%87/</guid>
+      <guid>https://blog.onemid.net/categories/%E5%BB%A2%E6%96%87/</guid>
       <description></description>
     </item>
     

@@ -2,300 +2,300 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Nothing to Do</title>
-    <link>https://onemid.github.io/tags/</link>
+    <link>https://blog.onemid.net/tags/</link>
     <description>Recent content in Tags on Nothing to Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Sat, 25 Aug 2018 18:01:37 +0800</lastBuildDate>
     
-	<atom:link href="https://onemid.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.onemid.net/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>https://onemid.github.io/tags/</link>
+      <link>https://blog.onemid.net/tags/</link>
       <pubDate>Sat, 25 Aug 2018 18:01:37 +0800</pubDate>
       
-      <guid>https://onemid.github.io/tags/</guid>
+      <guid>https://blog.onemid.net/tags/</guid>
       <description></description>
     </item>
     
     <item>
       <title>==</title>
-      <link>https://onemid.github.io/tags//</link>
+      <link>https://blog.onemid.net/tags//</link>
       <pubDate>Sat, 25 Aug 2018 18:01:37 +0800</pubDate>
       
-      <guid>https://onemid.github.io/tags//</guid>
+      <guid>https://blog.onemid.net/tags//</guid>
       <description></description>
     </item>
     
     <item>
       <title>Alignment</title>
-      <link>https://onemid.github.io/tags/alignment/</link>
+      <link>https://blog.onemid.net/tags/alignment/</link>
       <pubDate>Sun, 26 Aug 2018 11:11:49 +0800</pubDate>
       
-      <guid>https://onemid.github.io/tags/alignment/</guid>
+      <guid>https://blog.onemid.net/tags/alignment/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Comparison</title>
-      <link>https://onemid.github.io/tags/comparison/</link>
+      <link>https://blog.onemid.net/tags/comparison/</link>
       <pubDate>Sat, 25 Aug 2018 18:01:37 +0800</pubDate>
       
-      <guid>https://onemid.github.io/tags/comparison/</guid>
+      <guid>https://blog.onemid.net/tags/comparison/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Cuda</title>
-      <link>https://onemid.github.io/tags/cuda/</link>
+      <link>https://blog.onemid.net/tags/cuda/</link>
       <pubDate>Sat, 25 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://onemid.github.io/tags/cuda/</guid>
+      <guid>https://blog.onemid.net/tags/cuda/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hexo</title>
-      <link>https://onemid.github.io/tags/hexo/</link>
+      <link>https://blog.onemid.net/tags/hexo/</link>
       <pubDate>Thu, 23 Aug 2018 17:24:27 +0000</pubDate>
       
-      <guid>https://onemid.github.io/tags/hexo/</guid>
+      <guid>https://blog.onemid.net/tags/hexo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Highlightjs</title>
-      <link>https://onemid.github.io/tags/highlightjs/</link>
+      <link>https://blog.onemid.net/tags/highlightjs/</link>
       <pubDate>Thu, 23 Aug 2018 17:24:27 +0000</pubDate>
       
-      <guid>https://onemid.github.io/tags/highlightjs/</guid>
+      <guid>https://blog.onemid.net/tags/highlightjs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hugo</title>
-      <link>https://onemid.github.io/tags/hugo/</link>
+      <link>https://blog.onemid.net/tags/hugo/</link>
       <pubDate>Sun, 26 Aug 2018 11:11:49 +0800</pubDate>
       
-      <guid>https://onemid.github.io/tags/hugo/</guid>
+      <guid>https://blog.onemid.net/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Install</title>
-      <link>https://onemid.github.io/tags/install/</link>
+      <link>https://blog.onemid.net/tags/install/</link>
       <pubDate>Sun, 26 Aug 2018 22:52:23 +0800</pubDate>
       
-      <guid>https://onemid.github.io/tags/install/</guid>
+      <guid>https://blog.onemid.net/tags/install/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Isequal</title>
-      <link>https://onemid.github.io/tags/isequal/</link>
+      <link>https://blog.onemid.net/tags/isequal/</link>
       <pubDate>Sat, 25 Aug 2018 18:01:37 +0800</pubDate>
       
-      <guid>https://onemid.github.io/tags/isequal/</guid>
+      <guid>https://blog.onemid.net/tags/isequal/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Julia</title>
-      <link>https://onemid.github.io/tags/julia/</link>
+      <link>https://blog.onemid.net/tags/julia/</link>
       <pubDate>Sun, 26 Aug 2018 12:50:53 +0800</pubDate>
       
-      <guid>https://onemid.github.io/tags/julia/</guid>
+      <guid>https://blog.onemid.net/tags/julia/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Katex</title>
-      <link>https://onemid.github.io/tags/katex/</link>
+      <link>https://blog.onemid.net/tags/katex/</link>
       <pubDate>Wed, 01 Aug 2018 02:01:00 +0800</pubDate>
       
-      <guid>https://onemid.github.io/tags/katex/</guid>
+      <guid>https://blog.onemid.net/tags/katex/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Macos</title>
-      <link>https://onemid.github.io/tags/macos/</link>
+      <link>https://blog.onemid.net/tags/macos/</link>
       <pubDate>Thu, 23 Aug 2018 09:32:15 +0800</pubDate>
       
-      <guid>https://onemid.github.io/tags/macos/</guid>
+      <guid>https://blog.onemid.net/tags/macos/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Mathjax</title>
-      <link>https://onemid.github.io/tags/mathjax/</link>
+      <link>https://blog.onemid.net/tags/mathjax/</link>
       <pubDate>Sun, 26 Aug 2018 11:11:49 +0800</pubDate>
       
-      <guid>https://onemid.github.io/tags/mathjax/</guid>
+      <guid>https://blog.onemid.net/tags/mathjax/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Missing</title>
-      <link>https://onemid.github.io/tags/missing/</link>
+      <link>https://blog.onemid.net/tags/missing/</link>
       <pubDate>Sat, 25 Aug 2018 18:01:37 +0800</pubDate>
       
-      <guid>https://onemid.github.io/tags/missing/</guid>
+      <guid>https://blog.onemid.net/tags/missing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Murmuring</title>
-      <link>https://onemid.github.io/tags/murmuring/</link>
+      <link>https://blog.onemid.net/tags/murmuring/</link>
       <pubDate>Wed, 01 Aug 2018 02:01:00 +0800</pubDate>
       
-      <guid>https://onemid.github.io/tags/murmuring/</guid>
+      <guid>https://blog.onemid.net/tags/murmuring/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Mysql</title>
-      <link>https://onemid.github.io/tags/mysql/</link>
+      <link>https://blog.onemid.net/tags/mysql/</link>
       <pubDate>Tue, 31 Jul 2018 23:57:00 +0800</pubDate>
       
-      <guid>https://onemid.github.io/tags/mysql/</guid>
+      <guid>https://blog.onemid.net/tags/mysql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>NaN</title>
-      <link>https://onemid.github.io/tags/nan/</link>
+      <link>https://blog.onemid.net/tags/nan/</link>
       <pubDate>Sat, 25 Aug 2018 18:01:37 +0800</pubDate>
       
-      <guid>https://onemid.github.io/tags/nan/</guid>
+      <guid>https://blog.onemid.net/tags/nan/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Newline</title>
-      <link>https://onemid.github.io/tags/newline/</link>
+      <link>https://blog.onemid.net/tags/newline/</link>
       <pubDate>Sun, 26 Aug 2018 11:11:49 +0800</pubDate>
       
-      <guid>https://onemid.github.io/tags/newline/</guid>
+      <guid>https://blog.onemid.net/tags/newline/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Nginx</title>
-      <link>https://onemid.github.io/tags/nginx/</link>
+      <link>https://blog.onemid.net/tags/nginx/</link>
       <pubDate>Tue, 31 Jul 2018 23:57:00 +0800</pubDate>
       
-      <guid>https://onemid.github.io/tags/nginx/</guid>
+      <guid>https://blog.onemid.net/tags/nginx/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Parsing</title>
-      <link>https://onemid.github.io/tags/parsing/</link>
+      <link>https://blog.onemid.net/tags/parsing/</link>
       <pubDate>Sun, 26 Aug 2018 12:50:53 +0800</pubDate>
       
-      <guid>https://onemid.github.io/tags/parsing/</guid>
+      <guid>https://blog.onemid.net/tags/parsing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Php</title>
-      <link>https://onemid.github.io/tags/php/</link>
+      <link>https://blog.onemid.net/tags/php/</link>
       <pubDate>Tue, 31 Jul 2018 23:57:00 +0800</pubDate>
       
-      <guid>https://onemid.github.io/tags/php/</guid>
+      <guid>https://blog.onemid.net/tags/php/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Pip3</title>
-      <link>https://onemid.github.io/tags/pip3/</link>
+      <link>https://blog.onemid.net/tags/pip3/</link>
       <pubDate>Thu, 23 Aug 2018 09:32:15 +0800</pubDate>
       
-      <guid>https://onemid.github.io/tags/pip3/</guid>
+      <guid>https://blog.onemid.net/tags/pip3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Prismjs</title>
-      <link>https://onemid.github.io/tags/prismjs/</link>
+      <link>https://blog.onemid.net/tags/prismjs/</link>
       <pubDate>Thu, 23 Aug 2018 17:24:27 +0000</pubDate>
       
-      <guid>https://onemid.github.io/tags/prismjs/</guid>
+      <guid>https://blog.onemid.net/tags/prismjs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python3</title>
-      <link>https://onemid.github.io/tags/python3/</link>
+      <link>https://blog.onemid.net/tags/python3/</link>
       <pubDate>Thu, 23 Aug 2018 09:32:15 +0800</pubDate>
       
-      <guid>https://onemid.github.io/tags/python3/</guid>
+      <guid>https://blog.onemid.net/tags/python3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Syntaxhighlight</title>
-      <link>https://onemid.github.io/tags/syntaxhighlight/</link>
+      <link>https://blog.onemid.net/tags/syntaxhighlight/</link>
       <pubDate>Thu, 23 Aug 2018 17:24:27 +0000</pubDate>
       
-      <guid>https://onemid.github.io/tags/syntaxhighlight/</guid>
+      <guid>https://blog.onemid.net/tags/syntaxhighlight/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tensorflow</title>
-      <link>https://onemid.github.io/tags/tensorflow/</link>
+      <link>https://blog.onemid.net/tags/tensorflow/</link>
       <pubDate>Sat, 25 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://onemid.github.io/tags/tensorflow/</guid>
+      <guid>https://blog.onemid.net/tags/tensorflow/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tex</title>
-      <link>https://onemid.github.io/tags/tex/</link>
+      <link>https://blog.onemid.net/tags/tex/</link>
       <pubDate>Sun, 26 Aug 2018 11:11:49 +0800</pubDate>
       
-      <guid>https://onemid.github.io/tags/tex/</guid>
+      <guid>https://blog.onemid.net/tags/tex/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tranquilpeak</title>
-      <link>https://onemid.github.io/tags/tranquilpeak/</link>
+      <link>https://blog.onemid.net/tags/tranquilpeak/</link>
       <pubDate>Thu, 23 Aug 2018 17:24:27 +0000</pubDate>
       
-      <guid>https://onemid.github.io/tags/tranquilpeak/</guid>
+      <guid>https://blog.onemid.net/tags/tranquilpeak/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Triple-quoted string</title>
-      <link>https://onemid.github.io/tags/triple-quoted-string/</link>
+      <link>https://blog.onemid.net/tags/triple-quoted-string/</link>
       <pubDate>Sun, 26 Aug 2018 12:50:53 +0800</pubDate>
       
-      <guid>https://onemid.github.io/tags/triple-quoted-string/</guid>
+      <guid>https://blog.onemid.net/tags/triple-quoted-string/</guid>
       <description></description>
     </item>
     
     <item>
       <title>WRF</title>
-      <link>https://onemid.github.io/tags/wrf/</link>
+      <link>https://blog.onemid.net/tags/wrf/</link>
       <pubDate>Sun, 26 Aug 2018 22:52:23 +0800</pubDate>
       
-      <guid>https://onemid.github.io/tags/wrf/</guid>
+      <guid>https://blog.onemid.net/tags/wrf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Zlib</title>
-      <link>https://onemid.github.io/tags/zlib/</link>
+      <link>https://blog.onemid.net/tags/zlib/</link>
       <pubDate>Thu, 23 Aug 2018 09:32:15 +0800</pubDate>
       
-      <guid>https://onemid.github.io/tags/zlib/</guid>
+      <guid>https://blog.onemid.net/tags/zlib/</guid>
       <description></description>
     </item>
     

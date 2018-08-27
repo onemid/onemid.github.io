@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog on Nothing to Do</title>
-    <link>https://onemid.github.io/blog/</link>
+    <link>https://blog.onemid.net/blog/</link>
     <description>Recent content in Blog on Nothing to Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Sun, 26 Aug 2018 22:52:23 +0800</lastBuildDate>
     
-	<atom:link href="https://onemid.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.onemid.net/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Weather Research and Forecasting Model (WRF) Installation Guide on Ubuntu 16.04</title>
-      <link>https://onemid.github.io/blog/wrf-install/</link>
+      <link>https://blog.onemid.net/blog/wrf-install/</link>
       <pubDate>Sun, 26 Aug 2018 22:52:23 +0800</pubDate>
       
-      <guid>https://onemid.github.io/blog/wrf-install/</guid>
+      <guid>https://blog.onemid.net/blog/wrf-install/</guid>
       <description>By NOAA / Satellite and Information Service [Public domain], via Wikimedia Commons
 前言 WRF，對於天氣預報研究從業人員來說一定是一個非常熟悉的詞彙，WRF 是一個天氣數值預報（Numerical Weather Prediction, NWP）模型，大體上使用 Fortran 撰寫，因為涉及多個數值求解（例如 Runge-Kutta 法求常微分方程），費力耗時，實務上使用超級電腦運算；隨著 GPU 運算興起，WRF 也一度改寫為 CUDA 版本加速運算。
 安裝前言 安裝真的非常非常的麻煩，有些東西不可以裝太新，有些東西不可以裝太舊（很生氣），看到網路上也沒什麼太多的教學，而我又常常忘記，就來寫這一篇 Guide。
@@ -29,10 +29,10 @@ WRF Download Page
     
     <item>
       <title>Julia Triple-Quoted String Literals Alignment</title>
-      <link>https://onemid.github.io/blog/julia-triple-quote-string-literals-alignment/</link>
+      <link>https://blog.onemid.net/blog/julia-triple-quote-string-literals-alignment/</link>
       <pubDate>Sun, 26 Aug 2018 12:50:53 +0800</pubDate>
       
-      <guid>https://onemid.github.io/blog/julia-triple-quote-string-literals-alignment/</guid>
+      <guid>https://blog.onemid.net/blog/julia-triple-quote-string-literals-alignment/</guid>
       <description>很多程式語言基本上都會提供三個單或雙引號來支援區塊（block）字串，例如 Python 就有提供相關功能。然而在 Parsing 上，Julia 卻是有一套規則在運行（部分測試也與 Python 有不同的結果），以下舉一些測試範例，以及大略推測 Julia 是如何解析：
 Ref:
 Julia v1.0 Docs - Triple-Quoted String Literals
@@ -45,10 +45,10 @@ Github Issue - Julia - Problem with parsing triple quoted strings
     
     <item>
       <title>MathJax Newline Alignment Problems in Hugo</title>
-      <link>https://onemid.github.io/blog/math-3-double-slashes/</link>
+      <link>https://blog.onemid.net/blog/math-3-double-slashes/</link>
       <pubDate>Sun, 26 Aug 2018 11:11:49 +0800</pubDate>
       
-      <guid>https://onemid.github.io/blog/math-3-double-slashes/</guid>
+      <guid>https://blog.onemid.net/blog/math-3-double-slashes/</guid>
       <description>By Wallpoper [Public domain or Public domain], via Wikimedia Commons
 一般來說 打 TeX 相關指令的時候，基本上要對齊會使用上\begin{aligned}和\end{aligned}，中間對齊的基準點用&amp;amp;，換行用\\。如下所示範例 TeX Command 為：
 \begin{aligned} &amp;amp; x^2+4x+4 \\ =&amp;amp; (x+2)(x+2) \\ =&amp;amp; (x+2)^2 \end{aligned}  顯示結果應該要像這樣：
@@ -60,10 +60,10 @@ Github Issue - Julia - Problem with parsing triple quoted strings
     
     <item>
       <title>Julia isequal() 和 ==</title>
-      <link>https://onemid.github.io/blog/julia-equal-comparison/</link>
+      <link>https://blog.onemid.net/blog/julia-equal-comparison/</link>
       <pubDate>Sat, 25 Aug 2018 18:01:37 +0800</pubDate>
       
-      <guid>https://onemid.github.io/blog/julia-equal-comparison/</guid>
+      <guid>https://blog.onemid.net/blog/julia-equal-comparison/</guid>
       <description>isequal() 和 == 本執行環境：Julia 1.0
 在 Julia 裡面，isequal()和==表面上看起來都是比較兩者是否相等；但其實裡面還是有些微的差距：isequal(a, b)隱含著hash(a)及hash(b)是否相等。在浮點數（包含NaN）、遺失值（Missing）中，兩者處理狀況有差距。根據文件所述，isequal會視0.0與-0.0為不同，NaN永遠與其他NaN相同，missing也是。
 isequal() 文件：https://docs.julialang.org/en/v1/base/base/#Base.isequal
@@ -73,10 +73,10 @@ isequal() 文件：https://docs.julialang.org/en/v1/base/base/#Base.isequal
     
     <item>
       <title>Compiling TensorFlow-GPU on Ubuntu 16.04 with CUDA 9.1(9.2) and Python3</title>
-      <link>https://onemid.github.io/blog/cuda-and-tf-install/</link>
+      <link>https://blog.onemid.net/blog/cuda-and-tf-install/</link>
       <pubDate>Sat, 25 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://onemid.github.io/blog/cuda-and-tf-install/</guid>
+      <guid>https://blog.onemid.net/blog/cuda-and-tf-install/</guid>
       <description>Install CUDA: https://developer.nvidia.com/cuda-downloads?target_os=Linux&amp;amp;target_arch=ppc64le&amp;amp;target_distro=Ubuntu&amp;amp;target_version=1604&amp;amp;target_type=deblocal
  Here, we used &amp;ldquo;Linux&amp;rdquo; -&amp;gt; &amp;ldquo;ppc64le&amp;rdquo;(64-bit) -&amp;gt; &amp;ldquo;16.04&amp;rdquo; -&amp;gt; &amp;ldquo;deb(local)&amp;rdquo;, and downloaded the &amp;ldquo;Base Installer&amp;rdquo; (approx. 1.0GB)
  Following the guidance which given by the nVidia webpage to install the CUDA.
@@ -87,10 +87,10 @@ isequal() 文件：https://docs.julialang.org/en/v1/base/base/#Base.isequal
     
     <item>
       <title>Hexo Syntax Highlighting (Tested under Tranquilpeak)</title>
-      <link>https://onemid.github.io/blog/hexo-syntax-highlighting/</link>
+      <link>https://blog.onemid.net/blog/hexo-syntax-highlighting/</link>
       <pubDate>Thu, 23 Aug 2018 17:24:27 +0000</pubDate>
       
-      <guid>https://onemid.github.io/blog/hexo-syntax-highlighting/</guid>
+      <guid>https://blog.onemid.net/blog/hexo-syntax-highlighting/</guid>
       <description>把這個主題弄 Syntax Highlighting 又是一番折騰，本來想說用prism.js做做，奈何就是在佈景上跟原始的佈景相衝，該高亮顯示的地方也沒有，索性走回頭路用highlight.js
 基本上在 Hexo 佈景機制裡面加上一些 Code 就好，根據官網所述：
 &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;/path/to/styles/default.css&amp;quot;&amp;gt; &amp;lt;script src=&amp;quot;/path/to/highlight.pack.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt;hljs.initHighlightingOnLoad();&amp;lt;/script&amp;gt;  其中/path/to/styles/default.css基本上就是這個highlight.js的佈景即是， https://highlightjs.org/static/demo/ 這裡一票佈景，算是可以輕鬆找到要的。
@@ -105,10 +105,10 @@ isequal() 文件：https://docs.julialang.org/en/v1/base/base/#Base.isequal
     
     <item>
       <title>Cannot Use Pip3 in MacOS (zlib Dependency Problem)</title>
-      <link>https://onemid.github.io/blog/python3-pip3-zlib-in-macos/</link>
+      <link>https://blog.onemid.net/blog/python3-pip3-zlib-in-macos/</link>
       <pubDate>Thu, 23 Aug 2018 09:32:15 +0800</pubDate>
       
-      <guid>https://onemid.github.io/blog/python3-pip3-zlib-in-macos/</guid>
+      <guid>https://blog.onemid.net/blog/python3-pip3-zlib-in-macos/</guid>
       <description>問題描述 在使用 pip3 時，會回應 zlib相關套件的錯誤訊息
 簡單解法 開 terminal 打
 xcode-select --install  之後再裝
@@ -118,10 +118,10 @@ brew reinstall python3  就重裝 python3 吧</description>
     
     <item>
       <title>zzz我終於把 mathjax 弄進去了</title>
-      <link>https://onemid.github.io/blog/testmath/</link>
+      <link>https://blog.onemid.net/blog/testmath/</link>
       <pubDate>Wed, 01 Aug 2018 02:01:00 +0800</pubDate>
       
-      <guid>https://onemid.github.io/blog/testmath/</guid>
+      <guid>https://blog.onemid.net/blog/testmath/</guid>
       <description>無關緊要的後記        我的老天，我花了一個多小時終於東湊西湊把 mathjax 塞進去了
 搞到後來我都不知道我在幹嘛
 結果 github 上面跟本機看得不一樣
@@ -136,10 +136,10 @@ math: engine: &#39;mathjax&#39; mathjax: src: &amp;quot;https://cdnjs.cloudflare
     
     <item>
       <title>Nginx, MySQL, PHP Installation (Ubuntu 16.04)</title>
-      <link>https://onemid.github.io/blog/nginx-mysql-php-installation-ubuntu-16-04/</link>
+      <link>https://blog.onemid.net/blog/nginx-mysql-php-installation-ubuntu-16-04/</link>
       <pubDate>Tue, 31 Jul 2018 23:57:00 +0800</pubDate>
       
-      <guid>https://onemid.github.io/blog/nginx-mysql-php-installation-ubuntu-16-04/</guid>
+      <guid>https://blog.onemid.net/blog/nginx-mysql-php-installation-ubuntu-16-04/</guid>
       <description>Install the Nginx Web Server $ sudo apt-get update $ sudo apt-get install nginx  請確認防火牆開啟埠號 80 / 443
 Install MySQL $ sudo apt-get install mysql-server $ mysql_secure_installation  請遵照指示文字設定
 Install PHP for Processing $ sudo apt-get install php-fpm php-mysql  Configure the PHP Processor $ sudo vim /etc/php/7.0/fpm/php.ini  編輯 php.ini 內部數值，先前請解除註解
