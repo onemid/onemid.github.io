@@ -3049,7 +3049,8 @@
 ::-webkit-scrollbar-track {
 	-webkit-border-radius: 20px;
 	border-radius: 20px;
-	margin: 80px 0 5px 0;
+	background: #3c3b3b;
+	margin: 45px 0 5px 0;
 }
 
 ::-webkit-scrollbar-thumb {
