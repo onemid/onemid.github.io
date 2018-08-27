@@ -808,8 +808,9 @@
 
 		.image.featured {
 			display: block;
-			margin: 0 0 3em 0;
-			width: 100%;
+			/* margin: 0 0 3em 0; */
+			margin: -3.05em -3.07em 3em -3.05em;
+			/* width: 100%; */
 		}
 
 			.image.featured img {
