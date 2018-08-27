@@ -1316,7 +1316,7 @@
 		/* border: solid 1px rgba(160, 160, 160, 0.3); */
 		margin: 0 0 2em 0;
 		position: relative;
-		/* border-radius: 5px; */
+		border-radius: 5px;
 	}
 
 		.post > header {
@@ -1326,7 +1326,7 @@
 			display: flex;
 			border-bottom: solid 1px rgba(160, 160, 160, 0.3);
 			left: -3em;
-			margin: -6em 0 3em 0;
+			margin: -6em 0 1.5em 0;
 			position: relative;
 			width: calc(100% + 6em);
 			background-color: #333333;
@@ -1425,6 +1425,7 @@
     }
 
 		.post > .image.featured {
+			border-radius: 5px 5px 0 0;
 			overflow: hidden;
 		}
 
