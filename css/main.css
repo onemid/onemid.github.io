@@ -1184,7 +1184,7 @@
 		-ms-flex-direction: column-reverse;
 		flex-direction: column-reverse;
 		/* background: #ffffff; */
-		margin: 0 0 2em 0;
+		margin: 3em 0 2em 0;
 	}
 		.mini-post .image {
 			overflow: hidden;
