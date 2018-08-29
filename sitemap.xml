@@ -103,6 +103,12 @@
   </url>
   
   <url>
+    <loc>https://blog.onemid.net/tags/ds/</loc>
+    <lastmod>2018-08-29T14:08:17+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.onemid.net/categories/ds/</loc>
     <lastmod>2018-08-29T14:08:17+08:00</lastmod>
     <priority>0</priority>
@@ -271,6 +277,12 @@
   </url>
   
   <url>
+    <loc>https://blog.onemid.net/tags/sparsematrix/</loc>
+    <lastmod>2018-08-29T14:08:17+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.onemid.net/tags/syntaxhighlight/</loc>
     <lastmod>2018-08-23T17:24:27+00:00</lastmod>
     <priority>0</priority>
@@ -303,6 +315,12 @@
   <url>
     <loc>https://blog.onemid.net/tags/tranquilpeak/</loc>
     <lastmod>2018-08-23T17:24:27+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.onemid.net/tags/transpose/</loc>
+    <lastmod>2018-08-29T14:08:17+08:00</lastmod>
     <priority>0</priority>
   </url>
   
