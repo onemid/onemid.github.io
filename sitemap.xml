@@ -103,13 +103,13 @@
   </url>
   
   <url>
-    <loc>https://blog.onemid.net/tags/ds/</loc>
+    <loc>https://blog.onemid.net/categories/ds/</loc>
     <lastmod>2018-08-29T14:08:17+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.onemid.net/categories/ds/</loc>
+    <loc>https://blog.onemid.net/tags/ds/</loc>
     <lastmod>2018-08-29T14:08:17+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -121,13 +121,13 @@
   </url>
   
   <url>
-    <loc>https://blog.onemid.net/tags/hexo/</loc>
+    <loc>https://blog.onemid.net/categories/hexo/</loc>
     <lastmod>2018-08-23T17:24:27+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.onemid.net/categories/hexo/</loc>
+    <loc>https://blog.onemid.net/tags/hexo/</loc>
     <lastmod>2018-08-23T17:24:27+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -139,13 +139,13 @@
   </url>
   
   <url>
-    <loc>https://blog.onemid.net/tags/hugo/</loc>
+    <loc>https://blog.onemid.net/categories/hugo/</loc>
     <lastmod>2018-08-26T11:11:49+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.onemid.net/categories/hugo/</loc>
+    <loc>https://blog.onemid.net/tags/hugo/</loc>
     <lastmod>2018-08-26T11:11:49+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -163,13 +163,13 @@
   </url>
   
   <url>
-    <loc>https://blog.onemid.net/tags/julia/</loc>
+    <loc>https://blog.onemid.net/categories/julia/</loc>
     <lastmod>2018-08-26T12:50:53+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.onemid.net/categories/julia/</loc>
+    <loc>https://blog.onemid.net/tags/julia/</loc>
     <lastmod>2018-08-26T12:50:53+08:00</lastmod>
     <priority>0</priority>
   </url>
