@@ -580,11 +580,13 @@ $$
     15  &amp;   0   &amp;   0   &amp;   0   &amp;   0   &amp;   0   \newline
 \end{bmatrix}
 $$
-我們用最基礎的數學註記法，其中：
-$$
+我們用最基礎的數學註記法，其中：</p>
+
+<p>$$
 \ [{\boldsymbol{M}^T}<em>{ij}] = [\boldsymbol{M}]</em>{ji}
-$$
-亦即，比如說我們有一個「4」這個值，放在矩陣 $i=5$，$j=8$的位置，那他的轉置後的位置就在$i=8$，$j=5$。但是在稀疏矩陣記法內，我們要保證每一筆資料在 row index 保持遞增的情形，在數筆資料有相同 row index 時，要保持著 column index 遞增情形，而非單純的 i 、 j 值交換；據此，我們有一套流程：</p>
+$$</p>
+
+<p>亦即，比如說我們有一個「4」這個值，放在矩陣 $i=5$，$j=8$的位置，那他的轉置後的位置就在$i=8$，$j=5$。但是在稀疏矩陣記法內，我們要保證每一筆資料在 row index 保持遞增的情形，在數筆資料有相同 row index 時，要保持著 column index 遞增情形，而非單純的 i 、 j 值交換；據此，我們有一套流程：</p>
 
 <pre><code class="language-c">void transpose(term a[], term b[]){
     b[0].row = a[0].col;
