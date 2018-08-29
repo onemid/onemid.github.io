@@ -25,7 +25,7 @@
         "datePublished": "2018-08-29 14:08:17 &#43;0800 CST",
         "dateModified" : "2018-08-29 14:08:17 &#43;0800 CST",
         "url" : "https://blog.onemid.net/blog/ds_fast_transpose/",
-        "wordCount" : "3789",
+        "wordCount" : "3791",
         "keywords" : [ "SparseMatrix","Transpose","DS","","","","","Blog" ]
     }
     </script>
@@ -71,7 +71,7 @@
 
 <meta itemprop="datePublished" content="2018-08-29T14:08:17&#43;08:00" />
 <meta itemprop="dateModified" content="2018-08-29T14:08:17&#43;08:00" />
-<meta itemprop="wordCount" content="3789">
+<meta itemprop="wordCount" content="3791">
 
 
 
@@ -647,7 +647,7 @@ if (a[j].col == i)	{
 }
 </code></pre>
 
-<p>就是說，因為我要保證我轉置出來的 <code>b</code>的資料 row 都是以遞增形式增長，所以我要特別挑過我要寫的東西，我<code>a[j].col</code>剛剛好是我鎖定的第 i 個 row，然後逐一檢查每筆資料的 col 是不是我目前所鎖定的。</p>
+<p>就是說，因為我要保證我轉置出來的 <code>b</code>的資料 row 都是以遞增形式增長，所以我要特別挑過我要寫的東西，我<code>a[j].col</code>剛剛好是我鎖定的第 i 個 row，然後逐一檢查每筆資料的 col 是不是剛好我目前所想要的 col 值。</p>
 
 <p>比如說我現在要用<code>a</code>第 0 (<code>i</code>為<code>0</code>時) 個 column 進行轉置成<code>b</code>的 row，那我就只看 <code>a[j].col == 0</code> 的部分（也就是這裡<code>if</code>的用處），我也不先看 col 為<code>1</code>還是<code>4</code>還是怎樣，我就只看<code>0</code>。</p>
 
