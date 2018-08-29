@@ -25,7 +25,7 @@
         "datePublished": "2018-08-29 14:08:17 &#43;0800 CST",
         "dateModified" : "2018-08-29 14:08:17 &#43;0800 CST",
         "url" : "https://blog.onemid.net/blog/ds_fast_transpose/",
-        "wordCount" : "3791",
+        "wordCount" : "3873",
         "keywords" : [ "SparseMatrix","Transpose","DS","","","","","Blog" ]
     }
     </script>
@@ -71,7 +71,7 @@
 
 <meta itemprop="datePublished" content="2018-08-29T14:08:17&#43;08:00" />
 <meta itemprop="dateModified" content="2018-08-29T14:08:17&#43;08:00" />
-<meta itemprop="wordCount" content="3791">
+<meta itemprop="wordCount" content="3873">
 
 
 
@@ -444,7 +444,7 @@
             August 29, 2018</time>
         <span class="author">Gary Gong</span>
         
-            <p>18 minute read</p>
+            <p>19 minute read</p>
         
         
     </div>
@@ -565,6 +565,22 @@ $$
 
 <p>這樣的話，<code>a[6].row</code>為 <code>2</code>、 <code>a[6].col</code>為 <code>3</code> ，以此類推。</p>
 
+<h1 id="稱呼">稱呼</h1>
+
+<p>因為我實在搞不懂 row column 到底誰是行誰是列，所以我們以下都是 row column 這樣叫，其中有幾點需要注意：</p>
+
+<p>我們在稱 a.row 時，代表在 a 稀疏矩陣裡面的某一條 row。</p>
+
+<p>我們在稱 a.col 時，代表在 a 稀疏矩陣裡面的某一條 column。</p>
+
+<p>我們在稱 b.row 時，代表在 b 稀疏矩陣裡面的某一條 row。</p>
+
+<p>我們在稱 b.col 時，代表在 b 稀疏矩陣裡面的某一條 column。</p>
+
+<p>稱呼 data row 時，代表是稀疏矩陣記法內某一條的資料，每一條 data row 應包含 <code>&lt;row, col, val&gt;</code> 這三項資訊。</p>
+
+<p>單純稱呼 row 與 column，代表矩陣的 row 及 column。</p>
+
 <h1 id="typical-sparse-matrix-transpose">Typical Sparse Matrix Transpose</h1>
 
 <p>最基礎的矩陣轉置其實就是 row 與 column 之間的 value 交換，也是我們在手寫矩陣轉置運算時，最為直覺的方法，我們重用矩陣 $\boldsymbol{M}$ ，我們註記轉置後的矩陣為 $\boldsymbol{M}^T$：</p>
@@ -584,7 +600,7 @@ $$
 $$
 [\boldsymbol{M}^T]_{ij} = [\boldsymbol{M}]_{ji}
 $$
-亦即，比如說我們有一個「4」這個值，放在矩陣 $i=5$，$j=8$的位置，那他的轉置後的位置就在$i=8$，$j=5$。但是在稀疏矩陣記法內，我們要保證每一筆資料在 row index 保持遞增的情形，在數筆資料有相同 row index 時，要保持著 column index 遞增情形，而非單純的 i 、 j 值交換；據此，我們有一套流程：</p>
+亦即，比如說我們有一個「4」這個值，放在矩陣 $i=5$，$j=8$的位置，那他的轉置後的位置就在$i=8$，$j=5$。但是在稀疏矩陣記法內，我們要保證每一筆 data row 裡面的 row 值保持遞增的情形，在數筆 data row 有相同 row 值時，要保持著 column 值遞增情形，而非單純的 i 、 j 值交換；據此，我們有一套流程：</p>
 
 <pre><code class="language-c">void transpose(term a[], term b[]){
     b[0].row = a[0].col;
@@ -604,7 +620,7 @@ $$
 }
 </code></pre>
 
-<p>這個程式大概是這樣跑的：</p>
+<p>這個程式大概是這樣跑的，先放上 a 稀疏矩陣內容：</p>
 
 <pre><code class="language-c">     | row            | col               | val              |
 a[0] | 6              | 6                 | 8                |
@@ -618,7 +634,7 @@ a[7] | 4              | 0                 | 91               |
 a[8] | 5              | 2                 | 28               |
 </code></pre>
 
-<p>那個<code>i</code></p>
+<p>關於第一層迴圈：</p>
 
 <pre><code class="language-c">/* 第一層迴圈，我們記作 first_loop */
 for  (int i = 0; i &lt; a[0].col; i++) {
@@ -626,9 +642,9 @@ for  (int i = 0; i &lt; a[0].col; i++) {
 }
 </code></pre>
 
-<p>其實就是我現在要讀取哪一個 column 當成我的 row；比如說 i 就是我現在要瞄準 $\boldsymbol{M}$ 第 i 個 row 要寫進 $\boldsymbol{M}^T$ 的第 i 個 column。</p>
+<p>其實就是我現在要讀取哪一個原始矩陣 column 當成我的轉置後矩陣的 row；比如說<code>i</code>就是我現在要瞄準 a 第<code>i</code>個 column 要寫進 b 的第 <code>i</code> 個 row。</p>
 
-<p>那個<code>j</code></p>
+<p>關於第二層迴圈：</p>
 
 <pre><code class="language-c">/* 第二層迴圈，我們記作 second_loop */
 for  (int j = 1; j &lt;= a[0].val; i++) {
@@ -647,11 +663,9 @@ if (a[j].col == i)	{
 }
 </code></pre>
 
-<p>就是說，因為我要保證我轉置出來的 <code>b</code>的資料 row 都是以遞增形式增長，所以我要特別挑過我要寫的東西，我<code>a[j].col</code>剛剛好是我鎖定的第 i 個 row，然後逐一檢查每筆資料的 col 是不是剛好我目前所想要的 col 值。</p>
+<p>就是說，因為我要保證我轉置出來的 <code>b</code>的資料 b.row 都是以遞增形式增長，所以我必須要從 <code>b.row == 0</code> 的時候開始看起，而 b.row 又是 a.col 轉置後的結果，所以會先去看 a data row 裡面所有（第二層迴圈的功用） a.col 等於 0 的情況（也就是 <code>if (a[j].col == i)</code>的功用了）先寫進去 b 裡面，隨時記錄 b 寫到哪一條了（也就是<code>current_record</code>的功用），以此類推。</p>
 
-<p>比如說我現在要用<code>a</code>第 0 (<code>i</code>為<code>0</code>時) 個 column 進行轉置成<code>b</code>的 row，那我就只看 <code>a[j].col == 0</code> 的部分（也就是這裡<code>if</code>的用處），我也不先看 col 為<code>1</code>還是<code>4</code>還是怎樣，我就只看<code>0</code>。</p>
-
-<p>那我就進行交換寫入到<code>b[current_record]</code>裡面，這裡保證我轉置出來的 <code>b</code>的資料 row 都是以遞增形式增長。</p>
+<p>就好比說，我今天有五種水果，香蕉、鳳梨、芭樂、蘋果和西瓜，全部混在一起要做分類，香蕉要放在香蕉區、鳳梨要放在鳳梨區等等，典型的方法就好像是我今天先分香蕉，水果一顆一顆挑起來看，是香蕉的就挑出來放在香蕉區，其他不是香蕉的先不要管。</p>
 
 <p>我們實際跑幾輪看看：</p>
 
@@ -926,7 +940,7 @@ a[8] | 5              | 2                 | 28               | X
 <tr>
 <td>Typical</td>
 <td>按照順序寫</td>
-<td>鎖定第 i 個 col，逐條挑出 a[].col == i 者，轉置，寫入 b[] 內。</td>
+<td>鎖定第 i 個 a.col，逐條挑出 a[].col == i 者，轉置，寫入 b[] 內。</td>
 </tr>
 
 <tr>
@@ -939,7 +953,7 @@ a[8] | 5              | 2                 | 28               | X
 
 <p>在 Fast 演算法時，我看完 a[] 其實就已經寫完 b[] 了；而 Typical 我還不知道要看幾遍 a[] 才能寫完 b[]。</p>
 
-<p>就好比說，我今天有五種水果，香蕉、鳳梨、芭樂、蘋果和西瓜，全部混在一起要做分類，香蕉要放在香蕉區、鳳梨要放在鳳梨區等等，典型的方法就好像是我今天先分香蕉，水果一顆一顆挑起來看，是香蕉的就挑出來放在香蕉區，其他不是香蕉的先不要管；而快速的方法就是我今天挑到啥水果就放到對應的區域裡就行了；當然綜觀的方法可以這樣比喻，但是實際上要實作需要考量到一些問題才能進行這樣有效的方法。</p>
+<p>再以水果的例子說明，我今天也是有五種水果，香蕉、鳳梨、芭樂、蘋果和西瓜，全部混在一起要做分類，香蕉要放在香蕉區、鳳梨要放在鳳梨區等等，快速的方法就是我今天挑到啥水果就放到對應的區域裡就行了；當然綜觀的方法可以這樣比喻，但是實際上要實作需要考量到一些問題才能進行這樣有效的方法。</p>
 
 <p>要如何實現「跳著寫」這個問題，我們就必須額外開一張表去註記「我們這個東西究竟要寫去哪裡」。</p>
 
@@ -964,7 +978,7 @@ a[8] | 5              | 2                 | 28               | X
         startingPos[i] = startingPos[i-1] + nonZeroRow[i-1];
     }
     for (int i = 1; i &lt;= a[0].val; i++) {
-        j = startingPos[a[i].col]++;
+        int j = startingPos[a[i].col]++;
         b[j].row = a[i].col;
         b[j].col = a[i].row;
         b[j].val = a[i].val;
@@ -979,26 +993,28 @@ a[8] | 5              | 2                 | 28               | X
 }
 </code></pre>
 
-<p>我們是要計算，在這個 col 底下有幾個 row 是非零值。</p>
+<p>我們是要計算固定一個矩陣 col，該 col 有多少非 0 值；由於稀疏矩陣記法已經撇除登記 0 值，所以計算每條 a.col 出現的次數，即可得到該矩陣各 col 所擁有的非 0 值。</p>
 
 <p>而 <code>staringPos[0] = 1</code>代表，我從<code>b[1]</code>開始寫起（<code>b[0]</code>是註記稀疏矩陣資訊，不能寫的）</p>
 
 <pre><code class="language-c">startingPos[0] = 1;
 </code></pre>
 
-<p>第二隻迴圈，是要註記每一個 col 個別要寫到哪一個 b 的位置</p>
+<p>第二隻迴圈，是要註記每一條矩陣 col 個別要寫到哪一個 b 的 data row 位置</p>
 
 <pre><code class="language-c">for (int i = 1; i &lt;= a[0].col; i++) {
     startingPos[i] = startingPos[i-1] + nonZeroRow[i-1];
 }
 </code></pre>
 
-<p>每一個 <code>startingPos</code> 都是由上一個 <code>startingPos</code>位置 和 上一個<code>nonZeroRow</code>的個數加總起來的新位置；也就是，假若上一個<code>startingPos</code>位置為<code>3</code>那我上一個 col 的<code>nonZeroRow</code>有<code>4</code>個，此時，上一次的寫入就是已經被占用<code>3</code>、<code>4</code>、<code>5</code>、<code>6</code>的位置，基本上你的新位置就是起始點<code>3</code>再跳<code>4</code>格，所以是<code>7</code>。</p>
+<p>每一個 <code>startingPos</code> 都是由上一個 <code>startingPos</code>位置 和 上一個<code>nonZeroRow</code>的個數加總起來的新位置；因為我們有記錄每一條 col 所擁有的非 0 值元素個數，每一條 col 起始第一個非 0 元素值都會有一個 <code>startingPos</code>再加上該 col 擁有的非 0 值元素個數就是下一個 col 的<code>startingPos</code>位置。</p>
+
+<p>也就是，假若上一條 col<code>startingPos</code>位置為<code>3</code>那我上一個條 col 的<code>nonZeroRow</code>有<code>4</code>個，此時，上一次的寫入就是已經被占用 b data row <code>3</code>、<code>4</code>、<code>5</code>、<code>6</code>的位置，基本上你的 b data row 新位置就是起始點<code>3</code>再跳<code>4</code>格，所以是<code>7</code>。</p>
 
 <p>接下來，第三隻迴圈：</p>
 
 <pre><code class="language-c">for (int i = 1; i &lt;= a[0].val; i++) {
-    j = startingPos[a[i].col];
+    int j = startingPos[a[i].col];
     b[j].row = a[i].col;
     b[j].col = a[i].row;
     b[j].val = a[i].val;
@@ -1006,11 +1022,9 @@ a[8] | 5              | 2                 | 28               | X
 }
 </code></pre>
 
-<p>[A Note about i++ and ++i]</p>
+<p>首先取出目前這個 a.col 應該寫在 b 的哪一條 data row，然後進行轉置寫入。</p>
 
-<p>首先取出，目前這個 col 應該寫在 b 的哪裡，然後進行轉置寫入。</p>
-
-<p>接下來根據這個 col 的 startingPos 再往前加 1 上去（也就是我們日後要寫到相同的 col 時，新的位置應該在哪）。</p>
+<p>接下來根據這個 a.col 的 <code>startingPos</code> 再往前加 1 上去（也就是我們日後要寫到相同的矩陣 col 時，新的位置應該在哪）。</p>
 
 <p>就結束了，一樣我們跑個幾輪看看：</p>
 
@@ -1028,7 +1042,7 @@ a[7] | 4              | 0                 | 91               |
 a[8] | 5              | 2                 | 28               |
 </code></pre>
 
-<p>第一隻迴圈發生的事：註記 a.col 每個 col 有幾個非零 row</p>
+<p>第一隻迴圈發生的事：</p>
 
 <pre><code class="language-c">/* i = 1 時 */
 /* a[1].col 為 0，所以 nonZeroRow[0]++ */
@@ -1103,7 +1117,7 @@ nonZeroRow[4] | 0
 nonZeroRow[5] | 1
 </code></pre>
 
-<p>第二隻迴圈發生的事：註記每一個 col 轉置到新矩陣（變成新矩陣的 row）時候該擺在 b 的哪裡。</p>
+<p>第二隻迴圈發生的事：註記每一條矩陣 col 轉置到新矩陣（變成新矩陣的 row）時候該擺在 b 的哪裡。</p>
 
 <pre><code class="language-c">/* i = 1 時，startPos[1] 為上一次起始點 (startPos[0] == 1) 以及上一次被填了多少非零值 (nonZeroRow[0] == 2) 的總和 */
 startingPos[0] | 1 // 在迴圈之前已經設定好了
