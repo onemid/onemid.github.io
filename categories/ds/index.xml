@@ -18,7 +18,7 @@
       
       <guid>https://blog.onemid.net/blog/ds_fast_transpose/</guid>
       <description>Overview Sparse Matrix 又名稀疏矩陣，意思是一個矩陣超多零；使用一般的矩陣註記方法，有浪費空間之虞，所以產生了列表式的註記法，如以下舉例：
-我們給定一個稀疏矩陣$ \bold{M}$，其中矩陣內容為： $$ \bold{M} = \begin{bmatrix} 15 &amp;amp; 0 &amp;amp; 0 &amp;amp; 22 &amp;amp; 0 &amp;amp; -15 \newline 0 &amp;amp; 11 &amp;amp; 3 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \newline 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; -6 &amp;amp; 0 &amp;amp; 0 \newline 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \newline 91 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \newline 0 &amp;amp; 0 &amp;amp; 28 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \newline \end{bmatrix} $$ 轉化為稀疏矩陣記法為：</description>
+我們給定一個稀疏矩陣 \boldsymbol{M}，其中矩陣內容為： $$ \boldsymbol{M} = \begin{bmatrix} 15 &amp;amp; 0 &amp;amp; 0 &amp;amp; 22 &amp;amp; 0 &amp;amp; -15 \newline 0 &amp;amp; 11 &amp;amp; 3 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \newline 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; -6 &amp;amp; 0 &amp;amp; 0 \newline 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \newline 91 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \newline 0 &amp;amp; 0 &amp;amp; 28 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \newline \end{bmatrix} $$ 轉化為稀疏矩陣記法為：</description>
     </item>
     
   </channel>

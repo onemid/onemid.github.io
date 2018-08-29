@@ -14,7 +14,7 @@
         "name" : "Sparse Matrix Fast Transpose",
         "headline" : "Sparse Matrix Fast Transpose",
         "description" : "Overview Sparse Matrix 又名稀疏矩陣，意思是一個矩陣超多零；使用一般的矩陣註記方法，有浪費空間之虞，所以產生了列表式的註記法，如以下舉例：
-我們給定一個稀疏矩陣$ \bold{M}$，其中矩陣內容為： $$ \bold{M} = \begin{bmatrix} 15 &amp; 0 &amp; 0 &amp; 22 &amp; 0 &amp; -15 \newline 0 &amp; 11 &amp; 3 &amp; 0 &amp; 0 &amp; 0 \newline 0 &amp; 0 &amp; 0 &amp; -6 &amp; 0 &amp; 0 \newline 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \newline 91 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \newline 0 &amp; 0 &amp; 28 &amp; 0 &amp; 0 &amp; 0 \newline \end{bmatrix} $$ 轉化為稀疏矩陣記法為：",
+我們給定一個稀疏矩陣 \boldsymbol{M}，其中矩陣內容為： $$ \boldsymbol{M} = \begin{bmatrix} 15 &amp; 0 &amp; 0 &amp; 22 &amp; 0 &amp; -15 \newline 0 &amp; 11 &amp; 3 &amp; 0 &amp; 0 &amp; 0 \newline 0 &amp; 0 &amp; 0 &amp; -6 &amp; 0 &amp; 0 \newline 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \newline 91 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \newline 0 &amp; 0 &amp; 28 &amp; 0 &amp; 0 &amp; 0 \newline \end{bmatrix} $$ 轉化為稀疏矩陣記法為：",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -51,11 +51,11 @@
         <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Sparse Matrix Fast Transpose"/>
 <meta name="twitter:description" content="Overview Sparse Matrix 又名稀疏矩陣，意思是一個矩陣超多零；使用一般的矩陣註記方法，有浪費空間之虞，所以產生了列表式的註記法，如以下舉例：
-我們給定一個稀疏矩陣$ \bold{M}$，其中矩陣內容為： $$ \bold{M} = \begin{bmatrix} 15 &amp; 0 &amp; 0 &amp; 22 &amp; 0 &amp; -15 \newline 0 &amp; 11 &amp; 3 &amp; 0 &amp; 0 &amp; 0 \newline 0 &amp; 0 &amp; 0 &amp; -6 &amp; 0 &amp; 0 \newline 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \newline 91 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \newline 0 &amp; 0 &amp; 28 &amp; 0 &amp; 0 &amp; 0 \newline \end{bmatrix} $$ 轉化為稀疏矩陣記法為："/>
+我們給定一個稀疏矩陣 \boldsymbol{M}，其中矩陣內容為： $$ \boldsymbol{M} = \begin{bmatrix} 15 &amp; 0 &amp; 0 &amp; 22 &amp; 0 &amp; -15 \newline 0 &amp; 11 &amp; 3 &amp; 0 &amp; 0 &amp; 0 \newline 0 &amp; 0 &amp; 0 &amp; -6 &amp; 0 &amp; 0 \newline 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \newline 91 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \newline 0 &amp; 0 &amp; 28 &amp; 0 &amp; 0 &amp; 0 \newline \end{bmatrix} $$ 轉化為稀疏矩陣記法為："/>
 
         <meta property="og:title" content="Sparse Matrix Fast Transpose" />
 <meta property="og:description" content="Overview Sparse Matrix 又名稀疏矩陣，意思是一個矩陣超多零；使用一般的矩陣註記方法，有浪費空間之虞，所以產生了列表式的註記法，如以下舉例：
-我們給定一個稀疏矩陣$ \bold{M}$，其中矩陣內容為： $$ \bold{M} = \begin{bmatrix} 15 &amp; 0 &amp; 0 &amp; 22 &amp; 0 &amp; -15 \newline 0 &amp; 11 &amp; 3 &amp; 0 &amp; 0 &amp; 0 \newline 0 &amp; 0 &amp; 0 &amp; -6 &amp; 0 &amp; 0 \newline 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \newline 91 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \newline 0 &amp; 0 &amp; 28 &amp; 0 &amp; 0 &amp; 0 \newline \end{bmatrix} $$ 轉化為稀疏矩陣記法為：" />
+我們給定一個稀疏矩陣 \boldsymbol{M}，其中矩陣內容為： $$ \boldsymbol{M} = \begin{bmatrix} 15 &amp; 0 &amp; 0 &amp; 22 &amp; 0 &amp; -15 \newline 0 &amp; 11 &amp; 3 &amp; 0 &amp; 0 &amp; 0 \newline 0 &amp; 0 &amp; 0 &amp; -6 &amp; 0 &amp; 0 \newline 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \newline 91 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \newline 0 &amp; 0 &amp; 28 &amp; 0 &amp; 0 &amp; 0 \newline \end{bmatrix} $$ 轉化為稀疏矩陣記法為：" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.onemid.net/blog/ds_fast_transpose/" /><meta property="article:published_time" content="2018-08-29T14:08:17&#43;08:00"/>
 <meta property="article:modified_time" content="2018-08-29T14:08:17&#43;08:00"/>
@@ -66,7 +66,7 @@
         
 <meta itemprop="name" content="Sparse Matrix Fast Transpose">
 <meta itemprop="description" content="Overview Sparse Matrix 又名稀疏矩陣，意思是一個矩陣超多零；使用一般的矩陣註記方法，有浪費空間之虞，所以產生了列表式的註記法，如以下舉例：
-我們給定一個稀疏矩陣$ \bold{M}$，其中矩陣內容為： $$ \bold{M} = \begin{bmatrix} 15 &amp; 0 &amp; 0 &amp; 22 &amp; 0 &amp; -15 \newline 0 &amp; 11 &amp; 3 &amp; 0 &amp; 0 &amp; 0 \newline 0 &amp; 0 &amp; 0 &amp; -6 &amp; 0 &amp; 0 \newline 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \newline 91 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \newline 0 &amp; 0 &amp; 28 &amp; 0 &amp; 0 &amp; 0 \newline \end{bmatrix} $$ 轉化為稀疏矩陣記法為：">
+我們給定一個稀疏矩陣 \boldsymbol{M}，其中矩陣內容為： $$ \boldsymbol{M} = \begin{bmatrix} 15 &amp; 0 &amp; 0 &amp; 22 &amp; 0 &amp; -15 \newline 0 &amp; 11 &amp; 3 &amp; 0 &amp; 0 &amp; 0 \newline 0 &amp; 0 &amp; 0 &amp; -6 &amp; 0 &amp; 0 \newline 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \newline 91 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \newline 0 &amp; 0 &amp; 28 &amp; 0 &amp; 0 &amp; 0 \newline \end{bmatrix} $$ 轉化為稀疏矩陣記法為：">
 
 
 <meta itemprop="datePublished" content="2018-08-29T14:08:17&#43;08:00" />
@@ -462,9 +462,9 @@
 
 <p>Sparse Matrix 又名稀疏矩陣，意思是一個矩陣超多零；使用一般的矩陣註記方法，有浪費空間之虞，所以產生了列表式的註記法，如以下舉例：</p>
 
-<p>我們給定一個稀疏矩陣$ \bold{M}$，其中矩陣內容為：
+<p>我們給定一個稀疏矩陣 \boldsymbol{M}，其中矩陣內容為：
 $$
-\bold{M} =
+\boldsymbol{M} =
 \begin{bmatrix}
     15  &amp;   0   &amp;   0   &amp;   22  &amp;   0   &amp;   -15 \newline
     0   &amp;   11  &amp;   3   &amp;   0   &amp;   0   &amp;   0   \newline
@@ -480,9 +480,9 @@ $$
 <thead>
 <tr>
 <th>#</th>
-<th>$\bold{M}$ Row</th>
-<th>$\bold{M}$ Col</th>
-<th>$\bold{M}$ Val</th>
+<th>$\boldsymbol{M}$ Row</th>
+<th>$\boldsymbol{M}$ Col</th>
+<th>$\boldsymbol{M}$ Val</th>
 </tr>
 </thead>
 
@@ -552,7 +552,7 @@ $$
 </tbody>
 </table>
 
-<p>其中 <code>a[0]</code> 記錄著 $\bold{M}$ 矩陣有幾個 row 幾個 column 和非零 value 的總數；所以，解釋下來為：此 $\bold{M}$ 為 $6*6$ 的矩陣，其中非零值有 $8$ 個；而事實上這種註記方法可以節省掉不少的空間。</p>
+<p>其中 <code>a[0]</code> 記錄著 $\boldsymbol{M}$ 矩陣有幾個 row 幾個 column 和非零 value 的總數；所以，解釋下來為：此 $\boldsymbol{M}$ 為 $6*6$ 的矩陣，其中非零值有 $8$ 個；而事實上這種註記方法可以節省掉不少的空間。</p>
 
 <p>在此我們用<code>C</code>的<code>struct</code>去註記這個稀疏矩陣記法：</p>
 
@@ -567,10 +567,10 @@ $$
 
 <h1 id="typical-sparse-matrix-transpose">Typical Sparse Matrix Transpose</h1>
 
-<p>最基礎的矩陣轉置其實就是 row 與 column 之間的 value 交換，也是我們在手寫矩陣轉置運算時，最為直覺的方法，我們重用矩陣 $\bold{M}$ ，我們註記轉置後的矩陣為 $\bold{M}^T$：</p>
+<p>最基礎的矩陣轉置其實就是 row 與 column 之間的 value 交換，也是我們在手寫矩陣轉置運算時，最為直覺的方法，我們重用矩陣 $\bold{M}$ ，我們註記轉置後的矩陣為 $\boldsymbol{M}^T$：</p>
 
 <p>$$
-\bold{M}^T =
+\boldsymbol{M}^T =
 \begin{bmatrix}
     15  &amp;   0   &amp;   0   &amp;   0   &amp;   91  &amp;   0 \newline
     0   &amp;   11  &amp;   0   &amp;   0   &amp;   0   &amp;   0   \newline
@@ -582,7 +582,7 @@ $$
 $$
 我們用最基礎的數學註記法，其中：
 $$
-[\bold{M}^T]<em>{ij} = [\bold{M}]</em>{ji}
+[\boldsymbol{M}^T]<em>{ij} = [\boldsymbol{M}]</em>{ji}
 $$
 亦即，比如說我們有一個「4」這個值，放在矩陣 $i=5$，$j=8$的位置，那他的轉置後的位置就在$i=8$，$j=5$。但是在稀疏矩陣記法內，我們要保證每一筆資料在 row index 保持遞增的情形，在數筆資料有相同 row index 時，要保持著 column index 遞增情形，而非單純的 i 、 j 值交換；據此，我們有一套流程：</p>
 
@@ -626,7 +626,7 @@ for  (int i = 0; i &lt; a[0].col; i++) {
 }
 </code></pre>
 
-<p>其實就是我現在要讀取哪一個 column 當成我的 row；比如說 i 就是我現在要瞄準 $\bold{M}$ 第 i 個 row 要寫進 $\bold{M}^T$ 的第 i 個 column。</p>
+<p>其實就是我現在要讀取哪一個 column 當成我的 row；比如說 i 就是我現在要瞄準 $\boldsymbol{M}$ 第 i 個 row 要寫進 $\boldsymbol{M}^T$ 的第 i 個 column。</p>
 
 <p>那個<code>j</code></p>
 
@@ -660,7 +660,7 @@ if (a[j].col == i)	{
 <pre><code class="language-c">/* first_loop i = 0: 所以我只看 col 為 0 的時候 */
 /* second_loop j = 1: 所以先看 a[j] 也就是 a[1] 的時候 */
 /* second_loop_inside: 看看 a[1].col 是否為 i 也就是 0 */
-	 | row			  | col				  | val				 | 符合 if? 
+     | row            | col               | val              | 符合 if?
 a[0] | 6              | 6                 | 8                |
 a[1] | 0              | 0                 | 15               | O
 a[2] | 0              | 3                 | 22               |
@@ -671,14 +671,14 @@ a[6] | 2              | 3                 | -6               |
 a[7] | 4              | 0                 | 91               |
 a[8] | 5              | 2                 | 28               |
 /* 此時，current_record 為 1，轉置，寫進 b[current_record] 裡 */
-	 | row			  | col				  | val				 |
+     | row            | col               | val              |
 b[0] | 6              | 6                 | 8                |
 b[1] | 0              | 0                 | 15               |
 /* current_record++，current_record 變成 2 */
 
 /* second_loop j = 2: 所以先看 a[j] 也就是 a[2] 的時候 */
 /* second_loop_inside: 看看 a[2].col 是否為 i 也就是 0 */
-	 | row			  | col				  | val				 | 符合 if? 
+     | row            | col               | val              | 符合 if? 
 a[0] | 6              | 6                 | 8                | 不比對
 a[1] | 0              | 0                 | 15               | O
 a[2] | 0              | 3                 | 22               | X
@@ -692,7 +692,7 @@ a[8] | 5              | 2                 | 28               |
 
 /* second_loop j = 3: 所以先看 a[j] 也就是 a[3] 的時候 */
 /* second_loop_inside: 看看 a[3].col 是否為 i 也就是 0 */
-	 | row			  | col				  | val				 | 符合 if? 
+     | row            | col               | val              | 符合 if?
 a[0] | 6              | 6                 | 8                | 不比對
 a[1] | 0              | 0                 | 15               | O
 a[2] | 0              | 3                 | 22               | X
@@ -706,7 +706,7 @@ a[8] | 5              | 2                 | 28               |
 
 /* second_loop j = 4: 所以先看 a[j] 也就是 a[4] 的時候 */
 /* second_loop_inside: 看看 a[4].col 是否為 i 也就是 0 */
-	 | row			  | col				  | val				 | 符合 if? 
+     | row            | col               | val              | 符合 if? 
 a[0] | 6              | 6                 | 8                | 不比對
 a[1] | 0              | 0                 | 15               | O
 a[2] | 0              | 3                 | 22               | X
@@ -720,7 +720,7 @@ a[8] | 5              | 2                 | 28               |
 
 /* second_loop j = 5: 所以先看 a[j] 也就是 a[5] 的時候 */
 /* second_loop_inside: 看看 a[5].col 是否為 i 也就是 0 */
-	 | row			  | col				  | val				 | 符合 if? 
+     | row            | col               | val              | 符合 if?
 a[0] | 6              | 6                 | 8                | 不比對
 a[1] | 0              | 0                 | 15               | O
 a[2] | 0              | 3                 | 22               | X
@@ -734,7 +734,7 @@ a[8] | 5              | 2                 | 28               |
 
 /* second_loop j = 6: 所以先看 a[j] 也就是 a[6] 的時候 */
 /* second_loop_inside: 看看 a[6].col 是否為 i 也就是 0 */
-	 | row			  | col				  | val				 | 符合 if? 
+     | row            | col               | val              | 符合 if? 
 a[0] | 6              | 6                 | 8                | 不比對
 a[1] | 0              | 0                 | 15               | O
 a[2] | 0              | 3                 | 22               | X
@@ -748,7 +748,7 @@ a[8] | 5              | 2                 | 28               |
 
 /* second_loop j = 7: 所以先看 a[j] 也就是 a[7] 的時候 */
 /* second_loop_inside: 看看 a[7].col 是否為 i 也就是 0 */
-	 | row			  | col				  | val				 | 符合 if? 
+     | row            | col               | val              | 符合 if? 
 a[0] | 6              | 6                 | 8                | 不比對
 a[1] | 0              | 0                 | 15               | O
 a[2] | 0              | 3                 | 22               | X
@@ -759,7 +759,7 @@ a[6] | 2              | 3                 | -6               | X
 a[7] | 4              | 0                 | 91               | O
 a[8] | 5              | 2                 | 28               |
 /* 此時，current_record 為 2，轉置，寫進 b[current_record] 裡 */
-	 | row			  | col				  | val				 |
+     | row            | col               | val              |
 b[0] | 6              | 6                 | 8                |
 b[1] | 0              | 0                 | 15               |
 b[2] | 0              | 4                 | 91               |
@@ -767,7 +767,7 @@ b[2] | 0              | 4                 | 91               |
 
 /* second_loop j = 8: 所以先看 a[j] 也就是 a[8] 的時候 */
 /* second_loop_inside: 看看 a[8].col 是否為 i 也就是 0 */
-	 | row			  | col				  | val				 | 符合 if? 
+     | row            | col               | val              | 符合 if?
 a[0] | 6              | 6                 | 8                | 不比對
 a[1] | 0              | 0                 | 15               | O
 a[2] | 0              | 3                 | 22               | X
@@ -787,7 +787,7 @@ a[8] | 5              | 2                 | 28               | X
 <pre><code class="language-c">/* first_loop i = 1: 所以我只看 col 為 1 的時候 */
 /* second_loop j = 1: 所以先看 a[j] 也就是 a[1] 的時候 */
 /* second_loop_inside: 看看 a[1].col 是否為 i 也就是 1 */
-	 | row			  | col				  | val				 | 符合 if? 
+     | row            | col               | val              | 符合 if? 
 a[0] | 6              | 6                 | 8                |
 a[1] | 0              | 0                 | 15               | X
 a[2] | 0              | 3                 | 22               |
@@ -801,7 +801,7 @@ a[8] | 5              | 2                 | 28               |
 
 /* second_loop j = 2: 所以先看 a[j] 也就是 a[2] 的時候 */
 /* second_loop_inside: 看看 a[2].col 是否為 i 也就是 1 */
-	 | row			  | col				  | val				 | 符合 if? 
+     | row            | col               | val              | 符合 if? 
 a[0] | 6              | 6                 | 8                | 不比對
 a[1] | 0              | 0                 | 15               | X
 a[2] | 0              | 3                 | 22               | X
@@ -815,7 +815,7 @@ a[8] | 5              | 2                 | 28               |
 
 /* second_loop j = 3: 所以先看 a[j] 也就是 a[3] 的時候 */
 /* second_loop_inside: 看看 a[3].col 是否為 i 也就是 1 */
-	 | row			  | col				  | val				 | 符合 if? 
+     | row            | col               | val              | 符合 if? 
 a[0] | 6              | 6                 | 8                | 不比對
 a[1] | 0              | 0                 | 15               | X
 a[2] | 0              | 3                 | 22               | X
@@ -829,7 +829,7 @@ a[8] | 5              | 2                 | 28               |
 
 /* second_loop j = 4: 所以先看 a[j] 也就是 a[4] 的時候 */
 /* second_loop_inside: 看看 a[4].col 是否為 i 也就是 1 */
-	 | row			  | col				  | val				 | 符合 if? 
+     | row            | col               | val              | 符合 if? 
 a[0] | 6              | 6                 | 8                | 不比對
 a[1] | 0              | 0                 | 15               | X
 a[2] | 0              | 3                 | 22               | X
@@ -840,7 +840,7 @@ a[6] | 2              | 3                 | -6               |
 a[7] | 4              | 0                 | 91               |
 a[8] | 5              | 2                 | 28               |
 /* 此時，current_record 為 3，轉置，寫進 b[current_record] 裡 */
-	 | row			  | col				  | val				 |
+     | row            | col               | val              |
 b[0] | 6              | 6                 | 8                |
 b[1] | 0              | 0                 | 15               |
 b[2] | 0              | 4                 | 91               |
@@ -849,7 +849,7 @@ b[3] | 1              | 1                 | 11               |
 
 /* second_loop j = 5: 所以先看 a[j] 也就是 a[5] 的時候 */
 /* second_loop_inside: 看看 a[5].col 是否為 i 也就是 1 */
-	 | row			  | col				  | val				 | 符合 if? 
+     | row            | col               | val              | 符合 if? 
 a[0] | 6              | 6                 | 8                | 不比對
 a[1] | 0              | 0                 | 15               | X
 a[2] | 0              | 3                 | 22               | X
@@ -863,7 +863,7 @@ a[8] | 5              | 2                 | 28               |
 
 /* second_loop j = 6: 所以先看 a[j] 也就是 a[6] 的時候 */
 /* second_loop_inside: 看看 a[6].col 是否為 i 也就是 1 */
-	 | row			  | col				  | val				 | 符合 if? 
+     | row            | col               | val              | 符合 if? 
 a[0] | 6              | 6                 | 8                | 不比對
 a[1] | 0              | 0                 | 15               | X
 a[2] | 0              | 3                 | 22               | X
@@ -877,7 +877,7 @@ a[8] | 5              | 2                 | 28               | X
 
 /* second_loop j = 7: 所以先看 a[j] 也就是 a[7] 的時候 */
 /* second_loop_inside: 看看 a[7].col 是否為 i 也就是 1 */
-	 | row			  | col				  | val				 | 符合 if? 
+     | row            | col               | val              | 符合 if?
 a[0] | 6              | 6                 | 8                | 不比對
 a[1] | 0              | 0                 | 15               | X
 a[2] | 0              | 3                 | 22               | X
@@ -891,7 +891,7 @@ a[8] | 5              | 2                 | 28               |
 
 /* second_loop j = 8: 所以先看 a[j] 也就是 a[8] 的時候 */
 /* second_loop_inside: 看看 a[8].col 是否為 i 也就是 0 */
-	 | row			  | col				  | val				 | 符合 if? 
+     | row            | col               | val              | 符合 if?
 a[0] | 6              | 6                 | 8                | 不比對
 a[1] | 0              | 0                 | 15               | X
 a[2] | 0              | 3                 | 22               | X
@@ -1014,7 +1014,7 @@ a[8] | 5              | 2                 | 28               | X
 
 <p>我們也把 a 矩陣放在這裡：</p>
 
-<pre><code class="language-c">	 | row			  | col				  | val				 |
+<pre><code class="language-c">     | row            | col               | val              |
 a[0] | 6              | 6                 | 8                |
 a[1] | 0              | 0                 | 15               |
 a[2] | 0              | 3                 | 22               |
@@ -1147,13 +1147,13 @@ startingPos[5] | 8
 <p>第三隻迴圈：開始依照<code>startingPos</code>填資料：</p>
 
 <pre><code class="language-c">/* i = 1 時，a[1].col == 0，此時 startingPos[0] 為 1，b 從 1 寫起 */
-	 | row			  | col				  | val				 |
+     | row            | col               | val              |
 b[0] | 6              | 6                 | 8                |
 b[1] | 0              | 0                 | 15               |
 /* startingPos[0]++，以備下一次遇到 col == 0 時使用 */
 
 /* i = 2 時，a[2].col == 3，此時 startingPos[3] 為 6，b 從 6 寫起 */
-	 | row			  | col				  | val				 |
+     | row            | col               | val              |
 b[0] | 6              | 6                 | 8                |
 b[1] | 0              | 0                 | 15               |
 ...
@@ -1161,7 +1161,7 @@ b[6] | 3              | 0                 | 22               |
 /* startingPos[3]++，以備下一次遇到 col == 3 時使用 */
 
 /* i = 3 時，a[3].col == 5，此時 startingPos[5] 為 8，b 從 8 寫起 */
-	 | row			  | col				  | val				 |
+     | row            | col               | val              |
 b[0] | 6              | 6                 | 8                |
 b[1] | 0              | 0                 | 15               |
 ...
@@ -1171,7 +1171,7 @@ b[8] | 5              | 0                 | -15              |
 /* startingPos[5]++，以備下一次遇到 col == 5 時使用 */
 
 /* i = 4 時，a[4].col == 1，此時 startingPos[1] 為 3，b 從 3 寫起 */
-	 | row			  | col				  | val				 |
+     | row            | col               | val              |
 b[0] | 6              | 6                 | 8                |
 b[1] | 0              | 0                 | 15               |
 ...
@@ -1183,7 +1183,7 @@ b[8] | 5              | 0                 | -15              |
 /* startingPos[1]++，以備下一次遇到 col == 1 時使用 */
 
 /* i = 5 時，a[5].col == 2，此時 startingPos[2] 為 4，b 從 4 寫起 */
-	 | row			  | col				  | val				 |
+     | row            | col               | val              |
 b[0] | 6              | 6                 | 8                |
 b[1] | 0              | 0                 | 15               |
 ...
@@ -1196,7 +1196,7 @@ b[8] | 5              | 0                 | -15              |
 /* startingPos[2]++，以備下一次遇到 col == 2 時使用 */
 
 /* i = 6 時，a[6].col == 3，此時 startingPos[3] 為 7，b 從 4 寫起 */
-	 | row			  | col				  | val				 |
+     | row            | col               | val              |
 b[0] | 6              | 6                 | 8                |
 b[1] | 0              | 0                 | 15               |
 ...
@@ -1209,7 +1209,7 @@ b[8] | 5              | 0                 | -15              |
 /* startingPos[3]++，以備下一次遇到 col == 3 時使用 */
 
 /* i = 7 時，a[7].col == 0，此時 startingPos[0] 為 2，b 從 2 寫起 */
-	 | row			  | col				  | val				 |
+     | row            | col               | val              |
 b[0] | 6              | 6                 | 8                |
 b[1] | 0              | 0                 | 15               |
 b[2] | 0              | 4                 | 91               |
@@ -1222,7 +1222,7 @@ b[8] | 5              | 0                 | -15              |
 /* startingPos[0]++，以備下一次遇到 col == 0 時使用 */
 
 /* i = 8 時，a[8].col == 2，此時 startingPos[2] 為 5，b 從 5 寫起 */
-	 | row			  | col				  | val				 |
+     | row            | col               | val              |
 b[0] | 6              | 6                 | 8                |
 b[1] | 0              | 0                 | 15               |
 b[2] | 0              | 4                 | 91               |
