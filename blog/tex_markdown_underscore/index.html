@@ -1,0 +1,1085 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https://blog.onemid.net"
+        },
+        "articleSection" : "blog",
+        "name" : "TeX Underscore Problem in Markdown",
+        "headline" : "TeX Underscore Problem in Markdown",
+        "description" : "一般來說 我們在打 TeX 指令時，弄下標應該會是這樣打的：
+某個符號_{某個下標值} % 中間放個 underscore  也理應會長這樣 $$ x_{5} $$ 但是問題來了，Markdown 若是要做 emphasis，語法是：
+_某個要強調的字串_  所以說，今天如果你要標兩個 underscore 在 TeX 裡面，舉例來說：
+x_{5} = y_{6}  理論上會出現： $$ x_{5} = y_{6} $$ 但是很詭異在某些 Markdown（像在 Hugo）就是出不來： $$ x{5} = y{6} $$
+方案？ 基本上就單純只是 Parsing 有了衝突（不過有人不會啦），善用\會 escape 的概念，所以可以長這樣：
+某個符號\_{某個下標值} % 中間放個 underscore，前面插個 \  所以上面的範例就成了：
+x\_{5} = y\_{6}  Render 出來就會是： $$ x_5 = y_6 $$ 好棒",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2018",
+        "datePublished": "2018-08-29 21:00:28 &#43;0800 CST",
+        "dateModified" : "2018-08-29 21:00:28 &#43;0800 CST",
+        "url" : "https://blog.onemid.net/blog/tex_markdown_underscore/",
+        "wordCount" : "61",
+        "keywords" : [ "tex","mathjax","hugo","underscore","markdown","","","Blog" ]
+    }
+    </script>
+        
+            
+                <title>TeX Underscore Problem in Markdown</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.47.1" />
+        
+
+
+        
+            <meta name="author" content="Gary Gong">
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="TeX Underscore Problem in Markdown"/>
+<meta name="twitter:description" content="一般來說 我們在打 TeX 指令時，弄下標應該會是這樣打的：
+某個符號_{某個下標值} % 中間放個 underscore  也理應會長這樣 $$ x_{5} $$ 但是問題來了，Markdown 若是要做 emphasis，語法是：
+_某個要強調的字串_  所以說，今天如果你要標兩個 underscore 在 TeX 裡面，舉例來說：
+x_{5} = y_{6}  理論上會出現： $$ x_{5} = y_{6} $$ 但是很詭異在某些 Markdown（像在 Hugo）就是出不來： $$ x{5} = y{6} $$
+方案？ 基本上就單純只是 Parsing 有了衝突（不過有人不會啦），善用\會 escape 的概念，所以可以長這樣：
+某個符號\_{某個下標值} % 中間放個 underscore，前面插個 \  所以上面的範例就成了：
+x\_{5} = y\_{6}  Render 出來就會是： $$ x_5 = y_6 $$ 好棒"/>
+
+        <meta property="og:title" content="TeX Underscore Problem in Markdown" />
+<meta property="og:description" content="一般來說 我們在打 TeX 指令時，弄下標應該會是這樣打的：
+某個符號_{某個下標值} % 中間放個 underscore  也理應會長這樣 $$ x_{5} $$ 但是問題來了，Markdown 若是要做 emphasis，語法是：
+_某個要強調的字串_  所以說，今天如果你要標兩個 underscore 在 TeX 裡面，舉例來說：
+x_{5} = y_{6}  理論上會出現： $$ x_{5} = y_{6} $$ 但是很詭異在某些 Markdown（像在 Hugo）就是出不來： $$ x{5} = y{6} $$
+方案？ 基本上就單純只是 Parsing 有了衝突（不過有人不會啦），善用\會 escape 的概念，所以可以長這樣：
+某個符號\_{某個下標值} % 中間放個 underscore，前面插個 \  所以上面的範例就成了：
+x\_{5} = y\_{6}  Render 出來就會是： $$ x_5 = y_6 $$ 好棒" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.onemid.net/blog/tex_markdown_underscore/" /><meta property="article:published_time" content="2018-08-29T21:00:28&#43;08:00"/>
+<meta property="article:modified_time" content="2018-08-29T21:00:28&#43;08:00"/>
+        <meta property="og:image" content="https://blog.onemid.net/images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        
+<meta itemprop="name" content="TeX Underscore Problem in Markdown">
+<meta itemprop="description" content="一般來說 我們在打 TeX 指令時，弄下標應該會是這樣打的：
+某個符號_{某個下標值} % 中間放個 underscore  也理應會長這樣 $$ x_{5} $$ 但是問題來了，Markdown 若是要做 emphasis，語法是：
+_某個要強調的字串_  所以說，今天如果你要標兩個 underscore 在 TeX 裡面，舉例來說：
+x_{5} = y_{6}  理論上會出現： $$ x_{5} = y_{6} $$ 但是很詭異在某些 Markdown（像在 Hugo）就是出不來： $$ x{5} = y{6} $$
+方案？ 基本上就單純只是 Parsing 有了衝突（不過有人不會啦），善用\會 escape 的概念，所以可以長這樣：
+某個符號\_{某個下標值} % 中間放個 underscore，前面插個 \  所以上面的範例就成了：
+x\_{5} = y\_{6}  Render 出來就會是： $$ x_5 = y_6 $$ 好棒">
+
+
+<meta itemprop="datePublished" content="2018-08-29T21:00:28&#43;08:00" />
+<meta itemprop="dateModified" content="2018-08-29T21:00:28&#43;08:00" />
+<meta itemprop="wordCount" content="61">
+
+
+
+<meta itemprop="keywords" content="tex,mathjax,hugo,underscore,markdown,,," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,400i,700">
+            <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500" rel="stylesheet">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://blog.onemid.net/css/main.css">
+            <link rel="stylesheet" href="https://blog.onemid.net/css/add-on.css">
+            <link rel="stylesheet" href="https://blog.onemid.net/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.12.0/styles/vs2015.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="https://blog.onemid.net/">blog</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://blog.onemid.net/">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://blog.onemid.net/about/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://blog.onemid.net/blog/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://blog.onemid.net/categories/">
+                            <i class="fa fa-sitemap">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://blog.onemid.net">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://blog.onemid.net">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://blog.onemid.net/">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.onemid.net/about/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.onemid.net/blog/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.onemid.net/categories/">
+                            <h3>
+                                <i class="fa fa-sitemap">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://blog.onemid.net/blog/tex_markdown_underscore/">TeX Underscore Problem in Markdown</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-08-29'>
+                                    August 29, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://blog.onemid.net/blog/ds_fast_transpose/">Sparse Matrix Fast Transpose</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-08-29'>
+                                    August 29, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://blog.onemid.net/blog/wrf-install/">Weather Research and Forecasting Model (WRF) Installation Guide on Ubuntu 16.04</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-08-26'>
+                                    August 26, 2018</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="https://blog.onemid.net/blog/wrf-install/" class="image featured">
+            <img src="https://blog.onemid.net/img/typhoon.jpg" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://blog.onemid.net/blog/julia-triple-quote-string-literals-alignment/">Julia Triple-Quoted String Literals Alignment</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-08-26'>
+                                    August 26, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://blog.onemid.net/blog/math-3-double-slashes/">MathJax Newline Alignment Problems in Hugo</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-08-26'>
+                                    August 26, 2018</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="https://blog.onemid.net/blog/math-3-double-slashes/" class="image featured">
+            <img src="https://blog.onemid.net/img/640px-Pure-mathematics-formula-blackboard.jpg" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=https%3a%2f%2fblog.onemid.net%2fblog%2ftex_markdown_underscore%2f&amp;text=TeX%20Underscore%20Problem%20in%20Markdown&amp;via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=https%3a%2f%2fblog.onemid.net%2fblog%2ftex_markdown_underscore%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.onemid.net%2fblog%2ftex_markdown_underscore%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by Gary%20Gong&amp;body=https%3a%2f%2fblog.onemid.net%2fblog%2ftex_markdown_underscore%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="https://blog.onemid.net/blog/tex_markdown_underscore/">TeX Underscore Problem in Markdown</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2018-08-29'>
+            August 29, 2018</time>
+        <span class="author">Gary Gong</span>
+        
+            <p>1 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  <div id="content">
+    
+
+<h1 id="一般來說">一般來說</h1>
+
+<p>我們在打 TeX 指令時，弄下標應該會是這樣打的：</p>
+
+<pre><code class="language-tex">某個符號_{某個下標值}
+% 中間放個 underscore
+</code></pre>
+
+<p>也理應會長這樣
+$$
+x_{5}
+$$
+但是問題來了，Markdown 若是要做 emphasis，語法是：</p>
+
+<pre><code class="language-markdown">_某個要強調的字串_
+</code></pre>
+
+<p>所以說，今天如果你要標兩個 underscore 在 TeX 裡面，舉例來說：</p>
+
+<pre><code class="language-tex">x_{5} = y_{6}
+</code></pre>
+
+<p>理論上會出現：
+$$
+x_{5} = y_{6}
+$$
+但是很詭異在某些 Markdown（像在 Hugo）就是出不來：
+$$
+x<em>{5} = y</em>{6}
+$$</p>
+
+<h1 id="方案">方案？</h1>
+
+<p>基本上就單純只是 Parsing 有了衝突（不過有人不會啦），善用<code>\</code>會 escape 的概念，所以可以長這樣：</p>
+
+<pre><code class="language-tex">某個符號\_{某個下標值}
+% 中間放個 underscore，前面插個 \
+</code></pre>
+
+<p>所以上面的範例就成了：</p>
+
+<pre><code class="language-tex">x\_{5} = y\_{6}
+</code></pre>
+
+<p>Render 出來就會是：
+$$
+x_5 = y_6
+$$
+好棒</p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/categories/tex">TeX</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/categories/mathjax">MathJax</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/categories/hugo">Hugo</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/tex">tex</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/mathjax">mathjax</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/hugo">hugo</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/underscore">underscore</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/markdown">markdown</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "onemid-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="https://blog.onemid.net/blog/ds_fast_transpose/"
+                class="button big previous">Sparse Matrix Fast Transpose</a></li>
+    
+
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        
+      </header>
+      <div class="posts-container" style="margin-top: 0.1em;">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://blog.onemid.net/blog/tex_markdown_underscore/">TeX Underscore Problem in Markdown</a>
+              </h3>
+              
+              <time class="published" datetime='2018-08-29'>
+                August 29, 2018
+              </time>
+            </header>
+            
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://blog.onemid.net/blog/ds_fast_transpose/">Sparse Matrix Fast Transpose</a>
+              </h3>
+              
+              <time class="published" datetime='2018-08-29'>
+                August 29, 2018
+              </time>
+            </header>
+            
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://blog.onemid.net/blog/wrf-install/">Weather Research and Forecasting Model (WRF) Installation Guide on Ubuntu 16.04</a>
+              </h3>
+              
+              <time class="published" datetime='2018-08-26'>
+                August 26, 2018
+              </time>
+            </header>
+            
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://blog.onemid.net/blog/julia-triple-quote-string-literals-alignment/">Julia Triple-Quoted String Literals Alignment</a>
+              </h3>
+              
+              <time class="published" datetime='2018-08-26'>
+                August 26, 2018
+              </time>
+            </header>
+            
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://blog.onemid.net/blog/math-3-double-slashes/">MathJax Newline Alignment Problems in Hugo</a>
+              </h3>
+              
+              <time class="published" datetime='2018-08-26'>
+                August 26, 2018
+              </time>
+            </header>
+            
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="https://blog.onemid.net/categories/">Categories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/mathjax/">MathJax</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/tex/">TeX</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/hexo/">Hexo</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/hugo/">Hugo</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/julia/">Julia</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/ds/">DS</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/deep-learning/">Deep Learning</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/python/">Python</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/weather/">Weather</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/web-programming/">Web Programming</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/%E5%BB%A2%E6%96%87/">廢文</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+  
+  
+    <section id="mini-bio">
+      <h3>About</h3>
+      <p>設計、深度學習、氣象三重人格</p>
+      <a href="https://blog.onemid.net/about/" class="button">Learn More</a>
+    </section>
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="https://blog.onemid.net/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/onemid" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/onemid85" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:yijhong@hotmail.com.tw" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2018
+        
+          Nothing to Do
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/shell.min.js"></script>
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/bash.min.js"></script>
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/tex.min.js"></script>
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/css.min.js"></script>
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/julia.min.js"></script>
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/go.min.js"></script>
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://blog.onemid.net/js/util.js"></script>
+      <script src="https://blog.onemid.net/js/main.js"></script>
+      <script src="https://blog.onemid.net/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+
+<script
+src="//cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_SVG-full">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [
+                ['$', '$'],
+                ['\\(', '\\)']
+            ],
+            displayMath: [
+                ['$$', '$$']
+            ],
+            processEscapes: true,
+            processEnvironments: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            TeX: {
+                equationNumbers: {
+                    autoNumber: "AMS"
+                },
+                extensions: ["AMSmath.js", "AMSsymbols.js"]
+            }
+        }
+    });
+    MathJax.Hub.Queue(function () {
+        
+        
+        
+        var all = MathJax.Hub.getAllJax(),
+            i;
+        for (i = 0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+
+    MathJax.Hub.Config({
+        
+        TeX: {
+            equationNumbers: {
+                autoNumber: "AMS"
+            }
+        }
+    });
+</script>
+
+
+
+  </body>
+</html>
+

@@ -6,10 +6,25 @@
     <description>Recent content in TeX on Nothing to Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 26 Aug 2018 11:11:49 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 29 Aug 2018 21:00:28 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.onemid.net/categories/tex/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>TeX Underscore Problem in Markdown</title>
+      <link>https://blog.onemid.net/blog/tex_markdown_underscore/</link>
+      <pubDate>Wed, 29 Aug 2018 21:00:28 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/blog/tex_markdown_underscore/</guid>
+      <description>一般來說 我們在打 TeX 指令時，弄下標應該會是這樣打的：
+某個符號_{某個下標值} % 中間放個 underscore  也理應會長這樣 $$ x_{5} $$ 但是問題來了，Markdown 若是要做 emphasis，語法是：
+_某個要強調的字串_  所以說，今天如果你要標兩個 underscore 在 TeX 裡面，舉例來說：
+x_{5} = y_{6}  理論上會出現： $$ x_{5} = y_{6} $$ 但是很詭異在某些 Markdown（像在 Hugo）就是出不來： $$ x{5} = y{6} $$
+方案？ 基本上就單純只是 Parsing 有了衝突（不過有人不會啦），善用\會 escape 的概念，所以可以長這樣：
+某個符號\_{某個下標值} % 中間放個 underscore，前面插個 \  所以上面的範例就成了：
+x\_{5} = y\_{6}  Render 出來就會是： $$ x_5 = y_6 $$ 好棒</description>
+    </item>
     
     <item>
       <title>MathJax Newline Alignment Problems in Hugo</title>
@@ -24,6 +39,24 @@
 原來是 Hugo Markdown Parser 會把 \\吃掉一些，變成單反斜（\），這個會造成好大一個空白；所以有人說要用 4 個雙反斜線（但是沒明講是 Hugo 僅說是 Markdown Parsing 問題），有人說用 6 個雙反斜線，在這邊我 6 個雙反斜線（看起來是 Hugo 要用 6 雙反斜）才有用。
 方案？ 那上面的 Tex Command 就變成
 \begin{aligned} &amp;amp; x^2+4x+4 \\\\\\ =&amp;amp; (x+2)(x+2) \\\\\\ =&amp;amp; (x+2)^2 \end{aligned}  再看一次 Render 的情形： $$ \begin{aligned} &amp;amp; x^2+4x+4 \\</description>
+    </item>
+    
+    <item>
+      <title>zzz我終於把 mathjax 弄進去了</title>
+      <link>https://blog.onemid.net/blog/testmath/</link>
+      <pubDate>Wed, 01 Aug 2018 02:01:00 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/blog/testmath/</guid>
+      <description>無關緊要的後記        我的老天，我花了一個多小時終於東湊西湊把 mathjax 塞進去了
+搞到後來我都不知道我在幹嘛
+結果 github 上面跟本機看得不一樣
+這是 inline $ x^2+x-5=y $
+這是隔行 $$ x^2+8 $$ 累死我ㄌ
+【2018/8/23 更】
+我有試圖用過「hexo-renderer-markdown-it-plus」加「katex」，但是因為又喇了「hexo-math」套件，就形成 inline latex 給 hexo-math 渲染，隔行的 latex 給 katex 渲染。
+但是 katex 在我試的時候 x 二次方的 2 跑版了，不得不放棄 katex；所以又換回「hexo-renderer-markdown-it」渲染，再搭配「hexo-math」。
+然後在_config.yml安插一小段
+math: engine: &#39;mathjax&#39; mathjax: src: &amp;quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;quot; config: tex2jax: inlineMath: [ [&#39;$&#39;,&#39;$&#39;], [&amp;quot;\\(&amp;quot;,&amp;quot;\\)&amp;quot;] ] skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;, &#39;code&#39;] processEscapes: true TeX: equationNumbers: autoNumber: &amp;quot;AMS&amp;quot;  無關緊要的後記 話說，我很想把 *.</description>
     </item>
     
   </channel>
