@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.onemid.net/blog/ds_fast_transpose/</loc>
+    <lastmod>2018-08-29T14:08:17+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.onemid.net/blog/wrf-install/</loc>
     <lastmod>2018-08-26T22:52:23+08:00</lastmod>
   </url>
@@ -54,7 +59,7 @@
   
   <url>
     <loc>https://blog.onemid.net/tags/</loc>
-    <lastmod>2018-08-25T18:01:37+08:00</lastmod>
+    <lastmod>2018-08-29T14:08:17+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -72,7 +77,7 @@
   
   <url>
     <loc>https://blog.onemid.net/blog/</loc>
-    <lastmod>2018-08-26T22:52:23+08:00</lastmod>
+    <lastmod>2018-08-29T14:08:17+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -94,6 +99,12 @@
   <url>
     <loc>https://blog.onemid.net/tags/cuda/</loc>
     <lastmod>2018-08-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.onemid.net/categories/ds/</loc>
+    <lastmod>2018-08-29T14:08:17+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -219,7 +230,7 @@
   
   <url>
     <loc>https://blog.onemid.net/</loc>
-    <lastmod>2018-08-26T22:52:23+08:00</lastmod>
+    <lastmod>2018-08-29T14:08:17+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -267,7 +278,7 @@
   
   <url>
     <loc>https://blog.onemid.net/tags/</loc>
-    <lastmod>2018-08-25T18:01:37+08:00</lastmod>
+    <lastmod>2018-08-29T14:08:17+08:00</lastmod>
     <priority>0</priority>
   </url>
   
