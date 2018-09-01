@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Nothing to Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 29 Aug 2018 21:00:28 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 30 Aug 2018 14:04:18 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.onemid.net/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title></title>
       <link>https://blog.onemid.net/tags/</link>
-      <pubDate>Wed, 29 Aug 2018 21:00:28 +0800</pubDate>
+      <pubDate>Thu, 30 Aug 2018 14:04:18 +0800</pubDate>
       
       <guid>https://blog.onemid.net/tags/</guid>
       <description></description>
@@ -59,7 +59,7 @@
     <item>
       <title>DS</title>
       <link>https://blog.onemid.net/tags/ds/</link>
-      <pubDate>Wed, 29 Aug 2018 14:08:17 +0800</pubDate>
+      <pubDate>Thu, 30 Aug 2018 14:04:18 +0800</pubDate>
       
       <guid>https://blog.onemid.net/tags/ds/</guid>
       <description></description>
@@ -165,6 +165,15 @@
     </item>
     
     <item>
+      <title>Multipication</title>
+      <link>https://blog.onemid.net/tags/multipication/</link>
+      <pubDate>Thu, 30 Aug 2018 14:04:18 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/tags/multipication/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Murmuring</title>
       <link>https://blog.onemid.net/tags/murmuring/</link>
       <pubDate>Wed, 01 Aug 2018 02:01:00 +0800</pubDate>
@@ -257,7 +266,7 @@
     <item>
       <title>SparseMatrix</title>
       <link>https://blog.onemid.net/tags/sparsematrix/</link>
-      <pubDate>Wed, 29 Aug 2018 14:08:17 +0800</pubDate>
+      <pubDate>Thu, 30 Aug 2018 14:04:18 +0800</pubDate>
       
       <guid>https://blog.onemid.net/tags/sparsematrix/</guid>
       <description></description>

@@ -6,10 +6,20 @@
     <description>Recent content in DS on Nothing to Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 29 Aug 2018 14:08:17 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 30 Aug 2018 14:04:18 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.onemid.net/categories/ds/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Sparse Matrix Multipication</title>
+      <link>https://blog.onemid.net/blog/ds_sparse_matrix_mul/</link>
+      <pubDate>Thu, 30 Aug 2018 14:04:18 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/blog/ds_sparse_matrix_mul/</guid>
+      <description>Overview 給定兩矩陣：$\boldsymbol{A}{m*n}$ 和 $\boldsymbol{B}{n*p}$ ，其中矩陣乘法定義如下： $$ (\boldsymbol{AB}){ij} = \sum{k=1}^{n}a{ik}*b{kj} $$ 矩陣乘法可以寫成三個迴圈的版本（變數 i, j, k）
+for (int i = 0; i &amp;lt; ATotalRows; i++) { for (int j = 0; j &amp;lt; BTotalCols; j++) { int sum = 0; for (int k = 0; k &amp;lt; BTotalRows; k++) { sum += (A[i][k] + B[k][j]); } AB[i][j] = sum; } }   Horowitz et al., 所著 Fundamentals of Data Structures in C (2/e) 在 p.</description>
+    </item>
     
     <item>
       <title>Sparse Matrix Fast Transpose</title>

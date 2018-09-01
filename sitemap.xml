@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.onemid.net/blog/ds_sparse_matrix_mul/</loc>
+    <lastmod>2018-08-30T14:04:18+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.onemid.net/blog/tex_markdown_underscore/</loc>
     <lastmod>2018-08-29T21:00:28+08:00</lastmod>
   </url>
@@ -64,7 +69,7 @@
   
   <url>
     <loc>https://blog.onemid.net/tags/</loc>
-    <lastmod>2018-08-29T21:00:28+08:00</lastmod>
+    <lastmod>2018-08-30T14:04:18+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -82,7 +87,7 @@
   
   <url>
     <loc>https://blog.onemid.net/blog/</loc>
-    <lastmod>2018-08-29T21:00:28+08:00</lastmod>
+    <lastmod>2018-08-30T14:04:18+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -109,13 +114,13 @@
   
   <url>
     <loc>https://blog.onemid.net/tags/ds/</loc>
-    <lastmod>2018-08-29T14:08:17+08:00</lastmod>
+    <lastmod>2018-08-30T14:04:18+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/categories/ds/</loc>
-    <lastmod>2018-08-29T14:08:17+08:00</lastmod>
+    <lastmod>2018-08-30T14:04:18+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -216,6 +221,12 @@
   </url>
   
   <url>
+    <loc>https://blog.onemid.net/tags/multipication/</loc>
+    <lastmod>2018-08-30T14:04:18+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.onemid.net/tags/murmuring/</loc>
     <lastmod>2018-08-01T02:01:00+08:00</lastmod>
     <priority>0</priority>
@@ -247,7 +258,7 @@
   
   <url>
     <loc>https://blog.onemid.net/</loc>
-    <lastmod>2018-08-29T21:00:28+08:00</lastmod>
+    <lastmod>2018-08-30T14:04:18+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -289,7 +300,7 @@
   
   <url>
     <loc>https://blog.onemid.net/tags/sparsematrix/</loc>
-    <lastmod>2018-08-29T14:08:17+08:00</lastmod>
+    <lastmod>2018-08-30T14:04:18+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -301,7 +312,7 @@
   
   <url>
     <loc>https://blog.onemid.net/tags/</loc>
-    <lastmod>2018-08-29T21:00:28+08:00</lastmod>
+    <lastmod>2018-08-30T14:04:18+08:00</lastmod>
     <priority>0</priority>
   </url>
   

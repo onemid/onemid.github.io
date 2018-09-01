@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-08-29 21:00:28 &#43;0800 CST",
-        "dateModified" : "2018-08-29 21:00:28 &#43;0800 CST",
+        "datePublished": "2018-08-30 14:04:18 &#43;0800 CST",
+        "dateModified" : "2018-08-30 14:04:18 &#43;0800 CST",
         "url" : "https://blog.onemid.net/",
         "wordCount" : "0",
         "keywords" : [ "Blog" ]
@@ -53,7 +53,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.onemid.net/" />
-<meta property="og:updated_time" content="2018-08-29T21:00:28&#43;08:00"/>
+<meta property="og:updated_time" content="2018-08-30T14:04:18&#43;08:00"/>
         <meta property="og:image" content="https://blog.onemid.net/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
@@ -236,6 +236,18 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="https://blog.onemid.net/blog/ds_sparse_matrix_mul/">Sparse Matrix Multipication</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-08-30'>
+                                    August 30, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="https://blog.onemid.net/blog/tex_markdown_underscore/">TeX Underscore Problem in Markdown</a></h3>
                                 
                                 <time class="published" datetime=
@@ -306,42 +318,6 @@ if (!doNotTrack) {
 
                         </article>
                 
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="https://blog.onemid.net/blog/math-3-double-slashes/">MathJax Newline Alignment Problems in Hugo</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2018-08-26'>
-                                    August 26, 2018</time>
-                            </header>
-                            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="https://blog.onemid.net/blog/math-3-double-slashes/" class="image featured">
-            <img src="https://blog.onemid.net/img/640px-Pure-mathematics-formula-blackboard.jpg" alt="">
-        </a>
-    
-
-
-                        </article>
-                
 
                 
                     <a href=
@@ -364,7 +340,7 @@ if (!doNotTrack) {
   <header>
     <div class="title">
         
-            <h2><a href="https://blog.onemid.net/blog/tex_markdown_underscore/">TeX Underscore Problem in Markdown</a></h2>
+            <h2><a href="https://blog.onemid.net/blog/ds_sparse_matrix_mul/">Sparse Matrix Multipication</a></h2>
         
         
     </div>
@@ -372,11 +348,11 @@ if (!doNotTrack) {
         
 
         <time class="published"
-            datetime='2018-08-29'>
-            August 29, 2018</time>
+            datetime='2018-08-30'>
+            August 30, 2018</time>
         <span class="author">Gary Gong</span>
         
-            <p>1 minute read</p>
+            <p>3 minute read</p>
         
         
     </div>
@@ -390,55 +366,197 @@ if (!doNotTrack) {
   <div id="content">
     
 
-<h1 id="一般來說">一般來說</h1>
+<h1 id="overview">Overview</h1>
 
-<p>我們在打 TeX 指令時，弄下標應該會是這樣打的：</p>
+<p>給定兩矩陣：$\boldsymbol{A}<em>{m*n}$ 和 $\boldsymbol{B}</em>{n*p}$ ，其中矩陣乘法定義如下：
+$$
+(\boldsymbol{AB})<em>{ij} = \sum</em>{k=1}^{n}a<em>{ik}*b</em>{kj}
+$$
+矩陣乘法可以寫成三個迴圈的版本（變數 i, j, k）</p>
 
-<pre><code class="language-tex">某個符號_{某個下標值}
-% 中間放個 underscore
+<pre><code class="language-c">for (int i = 0; i &lt; ATotalRows; i++) {
+    for (int j = 0; j &lt; BTotalCols; j++) {
+        int sum = 0;
+        for (int k = 0; k &lt; BTotalRows; k++) {
+            sum += (A[i][k] + B[k][j]);
+        }
+        AB[i][j] = sum;
+    }
+}
 </code></pre>
 
-<p>也理應會長這樣
-$$
-x_{5}
-$$
-但是問題來了，Markdown 若是要做 emphasis，語法是：</p>
+<blockquote>
+<p>Horowitz et al., 所著 Fundamentals of Data Structures in C (2/e) 在 p.84 頁也有這個演算法，但是第三個迴圈寫<code>for (k = 0; k &lt; colsA; k++) {...}</code>，我個人是比較傾向改成<code>rowsB</code>或許比較直觀一些（反正這些都是<code>k</code>值總數）。</p>
+</blockquote>
 
-<pre><code class="language-markdown">_某個要強調的字串_
+<p>Sparse Matrix 如果採用稀疏矩陣列表式記法的話，那麼這個演算法基本上小修一下也是可以動，但是也有一些專門對這種列表式做乘法的演算法：</p>
+
+<h1 id="sparse-matrix-multiplication">Sparse Matrix Multiplication</h1>
+
+<p>在列表式記法下，每列資料都記載一個三元資料集<code>&lt;row, col, val&gt;</code>，而這個列表遵循著 row index 遞增排列，而若是在相同的 row index 下，col index 進行遞增排列的方式；而因為我們矩陣乘法是 Matrix A 的 row 乘上 Matrix B 的 col，在這種稀疏矩陣記法中的 data row 都是採 row index 優先遞增排序方式可能會造成一些撰寫程式上的麻煩，不如我們就把 Matrix B 做一次的 transpose 把他的 col 轉成 row，這樣我們在乘法上雙方就都可以逐 data row 看（B 已經 transpose 完了，所以他的 row 基本上是先前未轉置前的 col），而不是一邊看 row 一邊看 col。</p>
+
+<p>在乘的時候我們習慣於，假若今日有給定二矩陣，$\boldsymbol{A}$ 與 $\boldsymbol{B}$ ，其形式如下：
+$$
+\boldsymbol{A} =
+\begin{bmatrix}
+    a<em>{11}  &amp;   a</em>{12}  &amp;   a<em>{13}  \newline
+    a</em>{21}  &amp;   a<em>{22}  &amp;   a</em>{23}  \newline
+    a<em>{31}  &amp;   a</em>{32}  &amp;   a<em>{33}  \newline
+\end{bmatrix},
+\boldsymbol{B} =
+\begin{bmatrix}
+    b</em>{11}  &amp;   b<em>{12}  &amp;   b</em>{13}  \newline
+    b<em>{21}  &amp;   b</em>{22}  &amp;   b<em>{23}  \newline
+    b</em>{31}  &amp;   b<em>{32}  &amp;   b</em>{33}  \newline
+\end{bmatrix}
+$$
+若我們欲求 $$[\boldsymbol{AB}]<em>{12}$$ 其值為 $a</em>{11}*b<em>{11} + a</em>{12}*b<em>{21} + a</em>{13}*b<em>{31}$，由於我們為了求列記法方便，已經將 $\boldsymbol{B}$ 轉置了，所以變成：
+$$
+\boldsymbol{A} =
+\begin{bmatrix}
+    a</em>{11}  &amp;   a<em>{12}  &amp;   a</em>{13}  \newline
+    a<em>{21}  &amp;   a</em>{22}  &amp;   a<em>{23}  \newline
+    a</em>{31}  &amp;   a<em>{32}  &amp;   a</em>{33}  \newline
+\end{bmatrix},
+\boldsymbol{B^T} =
+\begin{bmatrix}
+    b<em>{11} = b&rsquo;</em>{11}    &amp;   b<em>{21} = b&rsquo;</em>{12}    &amp;   b<em>{31} = b&rsquo;</em>{13}    \newline
+    b<em>{12} =  b&rsquo;</em>{21}   &amp;   b<em>{22} =b&rsquo;</em>{22} &amp;   b<em>{32} = b&rsquo;</em>{23}    \newline
+    b<em>{13} =  b&rsquo;</em>{31}   &amp;   b<em>{23} =b&rsquo;</em>{32} &amp;   b<em>{33} = b&rsquo;</em>{33}    \newline
+\end{bmatrix}
+$$
+$$[\boldsymbol{AB}]<em>{12}$$ 值等式可再表示為：
+$$
+a</em>{11}*b<em>{11} + a</em>{12}*b<em>{21} + a</em>{13}*b<em>{31} = a</em>{11}*b&rsquo;<em>{11} + a</em>{12}*b&rsquo;<em>{12} + a</em>{13}*b&rsquo;<em>{13}
+$$
+再一個，$$[\boldsymbol{AB}]</em>{32}$$ 可表示為：
+$$
+a<em>{31}*b</em>{12} + a<em>{32}*b</em>{22} + a<em>{33}*b</em>{32} = a<em>{31}*b&rsquo;</em>{21} + a<em>{32}*b&rsquo;</em>{22} + a<em>{33}*b&rsquo;</em>{23}
+$$
+所以我們整理一下，若是要求$$[\boldsymbol{AB}]<em>{ij}$$，則：
+$$
+a</em>{i1}*b<em>{1j} + a</em>{i2}*b<em>{2j} + a</em>{i3}*b<em>{3j} = a</em>{i1}*b&rsquo;<em>{j1} + a</em>{i2}*b&rsquo;<em>{j2} + a</em>{i3}*b&rsquo;<em>{j3}
+$$
+如果我們再把 $k$ 代上去，可求得：
+$$
+[\boldsymbol{AB}]</em>{ij} = a<em>{ik}*b</em>{kj} + a<em>{ik}*b</em>{kj} + a<em>{ik}*b</em>{kj} = a<em>{ik}*b&rsquo;</em>{jk} + a<em>{ik}*b&rsquo;</em>{jk} + a<em>{ik}*b&rsquo;</em>{jk}
+$$
+所以我們可以觀察到：在運算某一個位於 $$(i,j)$$ 的元素時，$i$ 與 $j$ 保持不動，只有 $k$ 在保持變動，所以我們可以了解到：若是 $i$ 或是 $j$ 有任一個變動，就是已經算完該元素了，這個結論對於以下了解 Horowitz et al. 所寫的程式中的判斷式尤為有用：</p>
+
+<p>我們用稀疏矩陣記法，先將 $i,j,k$ 三個變數填上去：</p>
+
+<table>
+<thead>
+<tr>
+<th>Matrix</th>
+<th>Row</th>
+<th>Col</th>
+<th>Val</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>a</code></td>
+<td>$i$</td>
+<td>$k$</td>
+<td>該元素值</td>
+</tr>
+
+<tr>
+<td><code>b</code></td>
+<td>$k$</td>
+<td>$j$</td>
+<td>該元素值</td>
+</tr>
+
+<tr>
+<td><code>b</code>的 transpose: <code>newB</code></td>
+<td>$j$</td>
+<td>$k$</td>
+<td>該元素值</td>
+</tr>
+</tbody>
+</table>
+
+<p>所以，我們可以大致建構以下的程式進行矩陣間的元素乘法：</p>
+
+<pre><code class="language-c">void mmult(term a[], term b[], term d[]) {
+    term newB[MAX_TERMS];
+    fastTranspose(b, newB);
+    int column, row = a[1].row, sum = 0;
+    int totalD = 0;
+    int rowsA = a[0].row, colsB = b[0].col;
+    int rowBegin = 1;
+    
+    a[a[0].val+1].row = rowsA;
+    newB[b[0].val+1].col = colsB;
+    newB[b[0].val+1].col = 0;
+    
+    for (int i = 1; i &lt;= a[0].val; ) {
+        column = newB[1].row;
+        for (int j = 1; j &lt;= b[0].val+1; ) {
+            if (a[i].row != row) {
+                storeSum(d, &amp;totalD, row, column, &amp;sum);
+                i = rowBegin;
+                for(; newB[j].row == column; j++);
+                column = newB[j].row;
+            } else if (newB[j].row != column) {
+                storeSum(d, &amp;totalD, row, column, &amp;sum);
+                i = rowBegin;
+                column = newB[j].row;
+            } else switch (COMPARE(a[i].col, newB[j].col)) {
+                case -1:
+                    i++;
+                    break;
+                case 0:
+                    sum += (a[i++].val * newB[j++].val);
+                    break;
+                case 1:
+                    j++;
+            }
+        }
+        for (; a[i].row == row; i++);
+        rowBegin = i;
+        row = a[i].row;
+    }
+    d[0].row = rowsA;
+    d[0].col = colsB;
+    d[0].val = totalD;
+}
 </code></pre>
 
-<p>所以說，今天如果你要標兩個 underscore 在 TeX 裡面，舉例來說：</p>
+<p>另外有一支 Function <code>storeSum</code>：</p>
 
-<pre><code class="language-tex">x_{5} = y_{6}
+<pre><code class="language-c">void storeSum (term d[], int *totalD, int row, int column, int *sum) {
+    if (*sum) {
+        if (*totalD &lt; MAX_TERMS) {
+            d[++*totalD].row = row;
+            d[*totalD].col = column;
+            d[*totalD].val = *sum;
+            *sum = 0;
+        }
+    }
+}
 </code></pre>
 
-<p>理論上會出現：
-$$
-x_{5} = y_{6}
-$$
-但是很詭異在某些 Markdown（像在 Hugo）就是出不來：
-$$
-x<em>{5} = y</em>{6}
-$$</p>
+<p><code>mmult</code>兩層迴圈中的判斷式主要判斷：</p>
 
-<h1 id="方案">方案？</h1>
+<ol>
+<li><p>是否仍在同 row 運算中，若是不同 row 則結束該元素運算，並儲存該元素總和。（<code>if (a[i].row != row)</code> 的意思）</p></li>
 
-<p>基本上就單純只是 Parsing 有了衝突（不過有人不會啦），善用<code>\</code>會 escape 的概念，所以可以長這樣：</p>
+<li><p>是否仍在同 col 運算中，若是不同 col 則結束該元素運算，並儲存該元素總和。（<code>else if (newB[j].row != column)</code>的意思，這裡的<code>newB</code>已是由<code>B</code>轉置過來的稀疏矩陣）</p></li>
 
-<pre><code class="language-tex">某個符號\_{某個下標值}
-% 中間放個 underscore，前面插個 \
-</code></pre>
+<li><p>以上條件皆否，表示仍在同一個 row 與 col 之中，要確保其元素是否一一對準（上面公式 $k$ 的作用，要確保 $k$ 值要保持一致），若是 a 的 k 值（<code>a[i].col</code>）小於 newb 的 k 值（<code>newB[j].col</code>）則讓<code>i++</code>讓 $k$ 值可追上 newb，若是 a 的 k 值（<code>a[i].col</code>）大於 newb 的 k 值（<code>newB[j].col</code>）則讓<code>j++</code>讓 $k$ 值可追上 a。</p></li>
+</ol>
 
-<p>所以上面的範例就成了：</p>
+<blockquote>
+<p>要值得注意的是，有可能你會懷疑增加<code>i, j</code>值可確保 $k$ 值增加嗎？由於我們先前已經確定我們在稀疏矩陣記法時已經保證在同一個 row index 底下，col index 會保持遞增，而我們這邊要已經在同一個 row 與 col（newB 的 row，B 的 col，newB 是 B 的轉置矩陣） 的前提下，<code>a.row</code>與<code>newB.row</code>都已經固定了，所以確保他們兩個 col 會保持遞增情形。</p>
+</blockquote>
 
-<pre><code class="language-tex">x\_{5} = y\_{6}
-</code></pre>
+<p>所以，何時才會執行到<code>switch</code>case 的<code>case 0</code>呢？也就是在<code>a[i].col</code>與<code>newB[j].col</code>值相同時，才會進行兩矩陣的元素相乘與加總；反之，就<code>i++, j++</code>移至下一個 data row，所以也就是<code>for</code>迴圈不加上執行後計數的指令了。</p>
 
-<p>Render 出來就會是：
-$$
-x_5 = y_6
-$$
-好棒</p>
+<p>第二層迴圈的終止條件與第一層的終止迴圈差一個「<code>+1</code>」，因為下方判斷式緣故，必須「col 與目前相異才會記錄該元素值」，也就是如果我只停在「<code>b[0].val</code>」，那我雖然<code>sum</code>已經記錄完該元素的所有東西，但是沒辦法進入到<code>newB[j].row != column</code>內進行記錄。</p>
 
   </div>
 
@@ -452,13 +570,7 @@ $$
                 <i class="fa fa-folder"></i>
                 
                 
-                <li><a class="article-category-link" href="https://blog.onemid.net/categories/tex">TeX</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://blog.onemid.net/categories/mathjax">MathJax</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://blog.onemid.net/categories/hugo">Hugo</a></li>
+                <li><a class="article-category-link" href="https://blog.onemid.net/categories/ds">DS</a></li>
                 
             
         
@@ -472,19 +584,19 @@ $$
                 <i class="fa fa-tags"></i>
                 
                 
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/tex">tex</a></li>
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/sparsematrix">SparseMatrix</a></li>
                 
                 
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/mathjax">mathjax</a></li>
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/multipication">Multipication</a></li>
                 
                 
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/hugo">hugo</a></li>
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/ds">DS</a></li>
                 
                 
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/underscore">underscore</a></li>
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
                 
                 
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/markdown">markdown</a></li>
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
                 
                 
                 <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
@@ -528,8 +640,8 @@ $$
 
 <ul class="actions pagination">
     
-        <li><a href="https://blog.onemid.net/blog/ds_fast_transpose/"
-                class="button big previous">Sparse Matrix Fast Transpose</a></li>
+        <li><a href="https://blog.onemid.net/blog/tex_markdown_underscore/"
+                class="button big previous">TeX Underscore Problem in Markdown</a></li>
     
 
     
@@ -548,7 +660,7 @@ $$
 
 
 <li>
-  <a href="//twitter.com/share?url=https%3a%2f%2fblog.onemid.net%2fblog%2ftex_markdown_underscore%2f&amp;text=TeX%20Underscore%20Problem%20in%20Markdown&amp;via=" target="_blank" class="share-btn twitter">
+  <a href="//twitter.com/share?url=https%3a%2f%2fblog.onemid.net%2fblog%2fds_sparse_matrix_mul%2f&amp;text=Sparse%20Matrix%20Multipication&amp;via=" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
     </a>
@@ -558,7 +670,7 @@ $$
 
 
 <li>
-  <a href="//plus.google.com/share?url=https%3a%2f%2fblog.onemid.net%2fblog%2ftex_markdown_underscore%2f" target="_blank" class="share-btn google-plus">
+  <a href="//plus.google.com/share?url=https%3a%2f%2fblog.onemid.net%2fblog%2fds_sparse_matrix_mul%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
   </a>
@@ -569,7 +681,7 @@ $$
 
 
 <li>
-  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.onemid.net%2fblog%2ftex_markdown_underscore%2f" target="_blank" class="share-btn facebook">
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.onemid.net%2fblog%2fds_sparse_matrix_mul%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
     </a>
@@ -591,7 +703,7 @@ $$
 
 
 <li>
-  <a href="mailto:?subject=Check out this post by Gary%20Gong&amp;body=https%3a%2f%2fblog.onemid.net%2fblog%2ftex_markdown_underscore%2f" target="_blank" class="share-btn email">
+  <a href="mailto:?subject=Check out this post by Gary%20Gong&amp;body=https%3a%2f%2fblog.onemid.net%2fblog%2fds_sparse_matrix_mul%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
   </a>
@@ -623,6 +735,19 @@ $$
           
         
 
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://blog.onemid.net/blog/ds_sparse_matrix_mul/">Sparse Matrix Multipication</a>
+              </h3>
+              
+              <time class="published" datetime='2018-08-30'>
+                August 30, 2018
+              </time>
+            </header>
+            
+          </article>
         
           <article class="mini-post">
             <header>
@@ -667,19 +792,6 @@ $$
             <header>
               <h3>
                 <a href="https://blog.onemid.net/blog/julia-triple-quote-string-literals-alignment/">Julia Triple-Quoted String Literals Alignment</a>
-              </h3>
-              
-              <time class="published" datetime='2018-08-26'>
-                August 26, 2018
-              </time>
-            </header>
-            
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="https://blog.onemid.net/blog/math-3-double-slashes/">MathJax Newline Alignment Problems in Hugo</a>
               </h3>
               
               <time class="published" datetime='2018-08-26'>
@@ -743,6 +855,17 @@ $$
           <article>
             <header>
               
+                <a href="https://blog.onemid.net/categories/ds/">DS</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
                 <a href="https://blog.onemid.net/categories/hexo/">Hexo</a>
                 <span style="float:right;">2</span>
               
@@ -767,17 +890,6 @@ $$
               
                 <a href="https://blog.onemid.net/categories/julia/">Julia</a>
                 <span style="float:right;">2</span>
-              
-            </header>
-          </article>
-        </p>
-        
-        <p>
-          <article>
-            <header>
-              
-                <a href="https://blog.onemid.net/categories/ds/">DS</a>
-                <span style="float:right;">1</span>
               
             </header>
           </article>
