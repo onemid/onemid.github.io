@@ -493,7 +493,7 @@ if (!doNotTrack) {
 
 <h3 id="這是-pattern-與變數的關係">這是 Pattern 與變數的關係：</h3>
 
-<pre><code>pattern:
+<pre><code class="language-c">pattern:
 (  a  a  b  \0  )
    ^j    ^endPatternPos
    _______
@@ -504,7 +504,7 @@ if (!doNotTrack) {
 
 <h4 id="第一層-for-迴圈-第-1-輪">第一層 for 迴圈，第 1 輪</h4>
 
-<pre><code>-------------------------------------------
+<pre><code class="language-c">-------------------------------------------
 (  a  b  a  b  b  a  a  b  a  a  \0)
    ^startStringPos            ^endStringPos
    ^i    ^endMatchingPos
@@ -517,7 +517,7 @@ if (!doNotTrack) {
 
 <h4 id="第一層-for-迴圈-第-2-輪">第一層 for 迴圈，第 2 輪</h4>
 
-<pre><code>-------------------------------------------
+<pre><code class="language-c">-------------------------------------------
 (  a  b  a  b  b  a  a  b  a  a  \0)
       ^startStringPos         ^endStringPos
       ^i    ^endMatchingPos
@@ -530,7 +530,7 @@ if (!doNotTrack) {
 
 <h4 id="第一層-for-迴圈-第-3-輪">第一層 for 迴圈，第 3 輪</h4>
 
-<pre><code>-------------------------------------------
+<pre><code class="language-c">-------------------------------------------
 (  a  b  a  b  b  a  a  b  a  a  \0)
          ^startStringPos      ^endStringPos
          ^i    ^endMatchingPos
@@ -543,7 +543,7 @@ if (!doNotTrack) {
 
 <h4 id="第一層-for-迴圈-第-4-輪">第一層 for 迴圈，第 4 輪</h4>
 
-<pre><code>-------------------------------------------
+<pre><code class="language-c">-------------------------------------------
 (  a  b  a  b  b  a  a  b  a  a  \0)
             ^startStringPos   ^endStringPos
             ^i    ^endMatchingPos
@@ -556,7 +556,7 @@ if (!doNotTrack) {
 
 <h4 id="第一層-for-迴圈-第-5-輪">第一層 for 迴圈，第 5 輪</h4>
 
-<pre><code>-------------------------------------------
+<pre><code class="language-c">-------------------------------------------
 (  a  b  a  b  b  a  a  b  a  a  \0)
                ^startStringPos^endStringPos
                ^i    ^endMatchingPos
@@ -569,7 +569,7 @@ if (!doNotTrack) {
 
 <h4 id="第一層-for-迴圈-第-6-輪">第一層 for 迴圈，第 6 輪</h4>
 
-<pre><code>-------------------------------------------
+<pre><code class="language-c">-------------------------------------------
                               ˇendStringPos
 (  a  b  a  b  b  a  a  b  a  a  \0)
                   ^startStringPos
