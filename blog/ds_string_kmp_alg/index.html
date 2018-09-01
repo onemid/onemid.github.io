@@ -25,7 +25,7 @@ int findString(char *string, char *pattern) { int i, j = 0; int startStringPos =
         "datePublished": "2018-09-01 13:41:41 &#43;0800 CST",
         "dateModified" : "2018-09-01 13:41:41 &#43;0800 CST",
         "url" : "https://blog.onemid.net/blog/ds_string_kmp_alg/",
-        "wordCount" : "524",
+        "wordCount" : "729",
         "keywords" : [ "DS","StringCompare","KMP","","","","","Blog" ]
     }
     </script>
@@ -71,7 +71,7 @@ int findString(char *string, char *pattern) { int i, j = 0; int startStringPos =
 
 <meta itemprop="datePublished" content="2018-09-01T13:41:41&#43;08:00" />
 <meta itemprop="dateModified" content="2018-09-01T13:41:41&#43;08:00" />
-<meta itemprop="wordCount" content="524">
+<meta itemprop="wordCount" content="729">
 
 
 
@@ -433,7 +433,7 @@ if (!doNotTrack) {
             September 1, 2018</time>
         <span class="author">Gary Gong</span>
         
-            <p>3 minute read</p>
+            <p>4 minute read</p>
         
         
     </div>
@@ -630,6 +630,165 @@ O(mn)
 $$</p>
 
 <h1 id="knuth-morris-pratt-kmp-pattern-matching-algorithm">Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm</h1>
+
+<h2 id="failure-function-recursion">Failure Function Recursion</h2>
+
+<p>$$</p>
+
+<p>$$</p>
+
+<pre><code class="language-c">void failureFunction (char *pattern) {
+    int n = strlen(pattern);
+    failure[0] = -1;
+    for (int j = 1; j &lt; n; j++) {
+        i = failure[j-1];
+        while ((pattern[j] != pattern[i+1]) &amp;&amp; (i &gt;= 0)) {
+            i = failure[i];
+        }
+        if (pattern[j] == pattern[i+1]) {
+            failure[j] = i + 1;
+        } else {
+            failure[j] = -1;
+        }
+    }
+}
+</code></pre>
+
+<h3 id="explanation">Explanation</h3>
+
+<p>這個 <code>failureFunction</code>主要是建構<code>failure</code>表供 KMP 演算法使用，其最重要的精神是在 Pattern 中找出 Sub-Pattern，並予以編號；假若今天給定 Pattern 字串<code>abcabcacab</code>，其中<code>abca</code>重複了兩次（<code>(abc[a)bca]cab</code>），<code>abc</code>重複了兩次（<code>(abc)(abc)acab</code>），<code>ab</code>重複了三次（<code>(ab)c(ab)cac(ab)</code>）。</p>
+
+<p>其程式就是要找出重複 Sub-Pattern 的部分，運作如下：</p>
+
+<h4 id="初始化">初始化</h4>
+
+<p><code>failure[0] = -1</code></p>
+
+<h4 id="比對過程">比對過程</h4>
+
+<ol>
+<li>先賦予前一次 Pattern 字元的編號（<code>i = failure[j-1];</code>）</li>
+<li>比對本次字元是否與子 Pattern 字元是否*不*相符（<code>pattern[j] != pattern[i+1]</code>）以及編號必須大於等於 0（<code>i &gt;= 0</code>）
+
+<ol>
+<li>若不相符，把<code>i</code>當<code>failure</code>索引，找到前一次的編號當作新的<code>i</code></li>
+</ol></li>
+<li>如果本次的字元與子 Pattern 字元相符（<code>pattern[j] == pattern[i+1]</code>），則賦予<code>failure</code>本次 Pattern 字元相對應的編號。</li>
+<li>若以上都不符合，直接賦予<code>failure</code>本次 Pattern 字元<code>-1</code>的編號。</li>
+<li></li>
+</ol>
+
+<h3 id="simulation">Simulation</h3>
+
+<h4 id="before-loop">Before Loop:</h4>
+
+<table>
+<thead>
+<tr>
+<th>Pat.</th>
+<th>a</th>
+<th>b</th>
+<th>c</th>
+<th>a</th>
+<th>b</th>
+<th>c</th>
+<th>a</th>
+<th>c</th>
+<th>a</th>
+<th>b</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>j</code></td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+</tr>
+
+<tr>
+<td><code>failure</code></td>
+<td>-1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p>-1 為其<code>failure[0] = -1</code>的初始化</p>
+
+<h4 id="1st-loop">1st Loop:</h4>
+
+<table>
+<thead>
+<tr>
+<th>Pat.</th>
+<th>a</th>
+<th>b</th>
+<th>c</th>
+<th>a</th>
+<th>b</th>
+<th>c</th>
+<th>a</th>
+<th>c</th>
+<th>a</th>
+<th>b</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>j</code></td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+</tr>
+
+<tr>
+<td><code>failure</code></td>
+<td>-1</td>
+<td>-1</td>
+<td>.-1</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>-1</td>
+<td>0</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<pre><code class="language-c">j == 1;
+i == failure[j-1] == failure[0] == -1;
+pattern[j] != pattern[i+1] =&gt; pattern[1] != pattern[0] (YES);
+i &gt;= 0 (NO);
+pattern[j] == pattern[i+1] =&gt; pattern[1] == pattern[0] (NO);
+=&gt; failure[j] == failure[1] == -1;
+</code></pre>
 
   </div>
 
