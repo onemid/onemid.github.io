@@ -366,19 +366,20 @@ if (!doNotTrack) {
   <div id="content">
     
 
-<h1 id="overview">Overview</h1>
+<h1 id="overview-a-basic-pattern-matching">Overview - A Basic Pattern Matching</h1>
 
 <p>字串是一個由字元所組成的有限集合，字串的比對有許多方法，其中最簡單的是選定一個起始點向下比對，若是遇到不符合 Pattern 的字串，即起始點向下挪動一格再重新啟動 Pattern 比對，其程式方法如下：</p>
 
 <pre><code class="language-c">int findString(char *string, char *pattern) {
+    int i, j;
     int startStringPos = 0, endStringPos = strlen(string)-1;
-    int patternTotalLen = strlen(pattern)-1;
-    int endMatchingPos = patternTotalLen;
-    for (int i = startStringPos; endMatchingPos &lt;= endStringPos; ) {
+    int endPatternPos = strlen(pattern)-1;
+    int endMatchingPos = endPatternPos;
+    for (i = startStringPos; endMatchingPos &lt;= endStringPos; ) {
         if (string[endMatchingPos] == pattern[endPatternPos]) {
-            for (int j = 0; i = startStringPos; j &lt; endPatternPos &amp;&amp; string[i] == pattern[j]; i++, j++);
+            for (j = 0, i = startStringPos; j &lt; endPatternPos &amp;&amp; string[i] == pattern[j]; i++, j++);
         }
-        if (j == patternTotalLen) {
+        if (j == endPatternPos) {
             return startStringPos;
         }
         endMatchingPos++;
@@ -392,7 +393,7 @@ if (!doNotTrack) {
 
 <p>初始化（<code>2~5 行地方</code>）：</p>
 
-<p>首先把定位（<code>i</code>）定在字串初始位置（<code>startStringPos = 0</code>）的地方，然後推移<code>patternTotalLen</code>個長度（<code>int endMatchingPos = patternTotalLen</code>）當作該字串比對結束位置（<code>endMatchingPos</code>）。</p>
+<p>首先把定位（<code>i</code>）定在字串初始位置（<code>startStringPos = 0</code>）的地方，然後推移<code>endMatchingPos</code>個長度當作該字串比對結束位置（<code>endMatchingPos</code>）。</p>
 
 <p>第一個<code>if</code>：</p>
 
@@ -404,7 +405,7 @@ if (!doNotTrack) {
 
 <p>第二個<code>if</code>：</p>
 
-<p>如果皆相符，<code>j</code>理應會被計數器加到跟<code>patternTotalLen</code>一樣，那就代表找到相符的樣式字串。</p>
+<p>如果皆相符，<code>j</code>理應會被計數器加到跟<code>endMatchingPos</code>一樣，那就代表找到相符的樣式字串。</p>
 
 <p>之後（<code>12, 13 行地方</code>）：</p>
 
@@ -416,7 +417,7 @@ if (!doNotTrack) {
 (  a  a  b  \0  )
    ^j    ^endPatternPos
    _______
-   patternTotalLen
+   endMatchingPos
 </code></pre>
 
 <h3 id="這是-string-比較的經過">這是 String 比較的經過：</h3>
@@ -539,6 +540,8 @@ if (!doNotTrack) {
 
 (2) j == endMatchingPos 故找到 String 的 Pattern，返回結果
 </code></pre>
+
+<h1 id="knuth-morris-pratt-kmp-pattern-matching-algorithm">Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm</h1>
 
   </div>
 
