@@ -1,0 +1,1172 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https://blog.onemid.net"
+        },
+        "articleSection" : "blog",
+        "name" : "(Draft) Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm",
+        "headline" : "(Draft) Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm",
+        "description" : "Overview 字串是一個由字元所組成的有限集合，字串的比對有許多方法，其中最簡單的是選定一個起始點向下比對，若是遇到不符合 Pattern 的字串，即起始點向下挪動一格再重新啟動 Pattern 比對，其程式方法如下：
+int findString(char *string, char *pattern) { int startStringPos = 0, endStringPos = strlen(string)-1; int patternTotalLen = strlen(pattern)-1; int endMatchingPos = patternTotalLen; for (int i = startStringPos; endMatchingPos &lt;= endStringPos; ) { if (string[endMatchingPos] == pattern[endPatternPos]) { for (int j = 0; i = startStringPos; j &lt; endPatternPos &amp;&amp; string[i] == pattern[j]; i++, j++); } if (j == patternTotalLen) { return startStringPos; } endMatchingPos++; startStringPos++; } return -1; }  這個程式主要運作起來長這樣：",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2018",
+        "datePublished": "2018-09-01 13:41:41 &#43;0800 CST",
+        "dateModified" : "2018-09-01 13:41:41 &#43;0800 CST",
+        "url" : "https://blog.onemid.net/blog/ds_string_kmp_alg/",
+        "wordCount" : "502",
+        "keywords" : [ "DS","StringCompare","KMP","","","","","Blog" ]
+    }
+    </script>
+        
+            
+                <title>(Draft) Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.47.1" />
+        
+
+
+        
+            <meta name="author" content="Gary Gong">
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="(Draft) Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm"/>
+<meta name="twitter:description" content="Overview 字串是一個由字元所組成的有限集合，字串的比對有許多方法，其中最簡單的是選定一個起始點向下比對，若是遇到不符合 Pattern 的字串，即起始點向下挪動一格再重新啟動 Pattern 比對，其程式方法如下：
+int findString(char *string, char *pattern) { int startStringPos = 0, endStringPos = strlen(string)-1; int patternTotalLen = strlen(pattern)-1; int endMatchingPos = patternTotalLen; for (int i = startStringPos; endMatchingPos &lt;= endStringPos; ) { if (string[endMatchingPos] == pattern[endPatternPos]) { for (int j = 0; i = startStringPos; j &lt; endPatternPos &amp;&amp; string[i] == pattern[j]; i&#43;&#43;, j&#43;&#43;); } if (j == patternTotalLen) { return startStringPos; } endMatchingPos&#43;&#43;; startStringPos&#43;&#43;; } return -1; }  這個程式主要運作起來長這樣："/>
+
+        <meta property="og:title" content="(Draft) Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm" />
+<meta property="og:description" content="Overview 字串是一個由字元所組成的有限集合，字串的比對有許多方法，其中最簡單的是選定一個起始點向下比對，若是遇到不符合 Pattern 的字串，即起始點向下挪動一格再重新啟動 Pattern 比對，其程式方法如下：
+int findString(char *string, char *pattern) { int startStringPos = 0, endStringPos = strlen(string)-1; int patternTotalLen = strlen(pattern)-1; int endMatchingPos = patternTotalLen; for (int i = startStringPos; endMatchingPos &lt;= endStringPos; ) { if (string[endMatchingPos] == pattern[endPatternPos]) { for (int j = 0; i = startStringPos; j &lt; endPatternPos &amp;&amp; string[i] == pattern[j]; i&#43;&#43;, j&#43;&#43;); } if (j == patternTotalLen) { return startStringPos; } endMatchingPos&#43;&#43;; startStringPos&#43;&#43;; } return -1; }  這個程式主要運作起來長這樣：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.onemid.net/blog/ds_string_kmp_alg/" /><meta property="article:published_time" content="2018-09-01T13:41:41&#43;08:00"/>
+<meta property="article:modified_time" content="2018-09-01T13:41:41&#43;08:00"/>
+        <meta property="og:image" content="https://blog.onemid.net/images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        
+<meta itemprop="name" content="(Draft) Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm">
+<meta itemprop="description" content="Overview 字串是一個由字元所組成的有限集合，字串的比對有許多方法，其中最簡單的是選定一個起始點向下比對，若是遇到不符合 Pattern 的字串，即起始點向下挪動一格再重新啟動 Pattern 比對，其程式方法如下：
+int findString(char *string, char *pattern) { int startStringPos = 0, endStringPos = strlen(string)-1; int patternTotalLen = strlen(pattern)-1; int endMatchingPos = patternTotalLen; for (int i = startStringPos; endMatchingPos &lt;= endStringPos; ) { if (string[endMatchingPos] == pattern[endPatternPos]) { for (int j = 0; i = startStringPos; j &lt; endPatternPos &amp;&amp; string[i] == pattern[j]; i&#43;&#43;, j&#43;&#43;); } if (j == patternTotalLen) { return startStringPos; } endMatchingPos&#43;&#43;; startStringPos&#43;&#43;; } return -1; }  這個程式主要運作起來長這樣：">
+
+
+<meta itemprop="datePublished" content="2018-09-01T13:41:41&#43;08:00" />
+<meta itemprop="dateModified" content="2018-09-01T13:41:41&#43;08:00" />
+<meta itemprop="wordCount" content="502">
+
+
+
+<meta itemprop="keywords" content="DS,StringCompare,KMP,,,,," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,400i,700">
+            <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500" rel="stylesheet">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://blog.onemid.net/css/main.css">
+            <link rel="stylesheet" href="https://blog.onemid.net/css/add-on.css">
+            <link rel="stylesheet" href="https://blog.onemid.net/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.12.0/styles/vs2015.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-124803046-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="https://blog.onemid.net/">blog</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://blog.onemid.net/">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://blog.onemid.net/about/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://blog.onemid.net/blog/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://blog.onemid.net/categories/">
+                            <i class="fa fa-sitemap">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://blog.onemid.net">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://blog.onemid.net">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://blog.onemid.net/">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.onemid.net/about/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.onemid.net/blog/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.onemid.net/categories/">
+                            <h3>
+                                <i class="fa fa-sitemap">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://blog.onemid.net/blog/ds_string_kmp_alg/">(Draft) Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-09-01'>
+                                    September 1, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://blog.onemid.net/blog/ds_sparse_matrix_mul/">Sparse Matrix Multipication</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-08-30'>
+                                    August 30, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://blog.onemid.net/blog/tex_markdown_underscore/">TeX Underscore Problem in Markdown</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-08-29'>
+                                    August 29, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://blog.onemid.net/blog/ds_fast_transpose/">Sparse Matrix Fast Transpose</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-08-29'>
+                                    August 29, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://blog.onemid.net/blog/wrf-install/">Weather Research and Forecasting Model (WRF) Installation Guide on Ubuntu 16.04</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-08-26'>
+                                    August 26, 2018</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="https://blog.onemid.net/blog/wrf-install/" class="image featured">
+            <img src="https://blog.onemid.net/img/typhoon.jpg" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=https%3a%2f%2fblog.onemid.net%2fblog%2fds_string_kmp_alg%2f&amp;text=%28Draft%29%20Knuth%2c%20Morris%2c%20Pratt%20%28KMP%29%20Pattern%20Matching%20Algorithm&amp;via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=https%3a%2f%2fblog.onemid.net%2fblog%2fds_string_kmp_alg%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.onemid.net%2fblog%2fds_string_kmp_alg%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by Gary%20Gong&amp;body=https%3a%2f%2fblog.onemid.net%2fblog%2fds_string_kmp_alg%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="https://blog.onemid.net/blog/ds_string_kmp_alg/">(Draft) Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2018-09-01'>
+            September 1, 2018</time>
+        <span class="author">Gary Gong</span>
+        
+            <p>3 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  <div id="content">
+    
+
+<h1 id="overview">Overview</h1>
+
+<p>字串是一個由字元所組成的有限集合，字串的比對有許多方法，其中最簡單的是選定一個起始點向下比對，若是遇到不符合 Pattern 的字串，即起始點向下挪動一格再重新啟動 Pattern 比對，其程式方法如下：</p>
+
+<pre><code class="language-c">int findString(char *string, char *pattern) {
+    int startStringPos = 0, endStringPos = strlen(string)-1;
+    int patternTotalLen = strlen(pattern)-1;
+    int endMatchingPos = patternTotalLen;
+    for (int i = startStringPos; endMatchingPos &lt;= endStringPos; ) {
+        if (string[endMatchingPos] == pattern[endPatternPos]) {
+            for (int j = 0; i = startStringPos; j &lt; endPatternPos &amp;&amp; string[i] == pattern[j]; i++, j++);
+        }
+        if (j == patternTotalLen) {
+            return startStringPos;
+        }
+        endMatchingPos++;
+        startStringPos++;
+    }
+    return -1;
+}
+</code></pre>
+
+<p>這個程式主要運作起來長這樣：</p>
+
+<p>初始化（<code>2~5 行地方</code>）：</p>
+
+<p>首先把定位（<code>i</code>）定在字串初始位置（<code>startStringPos = 0</code>）的地方，然後推移<code>patternTotalLen</code>個長度（<code>int endMatchingPos = patternTotalLen</code>）當作該字串比對結束位置（<code>endMatchingPos</code>）。</p>
+
+<p>第一個<code>if</code>：</p>
+
+<p>我們有字串比對結束位置（<code>endMatchingPos</code>）之後，先行檢查是否與欲比對的 Pattern 最尾端（<code>patternTotalLen</code>）是否有同樣的字元，如果不一樣，前面就都不用對了。</p>
+
+<p>第一個<code>if</code>裡面的<code>for</code>：</p>
+
+<p>如果發現我們要比對的字串尾巴與 Pattern 尾巴字元相符，那麼我們就檢查要比對的字串字元是否跟 Pattern 完全相符。</p>
+
+<p>第二個<code>if</code>：</p>
+
+<p>如果皆相符，<code>j</code>理應會被計數器加到跟<code>patternTotalLen</code>一樣，那就代表找到相符的樣式字串。</p>
+
+<p>之後（<code>12, 13 行地方</code>）：</p>
+
+<p>把字串比對的初始位置（<code>startStringPos</code>）往後調一個，<code>endMatchingPos</code>也是。</p>
+
+<h3 id="這是-pattern-與變數的關係">這是 Pattern 與變數的關係：</h3>
+
+<pre><code>pattern:
+(  a  a  b  \0  )
+   ^j    ^endPatternPos
+   _______
+   patternTotalLen
+</code></pre>
+
+<h3 id="這是-string-比較的經過">這是 String 比較的經過：</h3>
+
+<h4 id="第一層-for-迴圈-第-1-輪">第一層 for 迴圈，第 1 輪</h4>
+
+<pre><code>-------------------------------------------
+(  a  b  a  b  b  a  a  b  a  a  \0)
+   ^startStringPos            ^endStringPos
+   ^i    ^endMatchingPos
+-------------------------------------------
+(*) i = startStringPos
+(1) 比較 pattern[endPatternPos] 是否等於 string[endMatchingPos]：YES
+(2) 比較 string[i] 是否等於 pattern[j]：NO
+(3) endMatchingPos++; startStringPos++;
+</code></pre>
+
+<h4 id="第一層-for-迴圈-第-2-輪">第一層 for 迴圈，第 2 輪</h4>
+
+<pre><code>-------------------------------------------
+(  a  b  a  b  b  a  a  b  a  a  \0)
+      ^startStringPos         ^endStringPos
+      ^i    ^endMatchingPos
+-------------------------------------------
+(*) i = startStringPos
+(1) 比較 pattern[endPatternPos] 是否等於 string[endMatchingPos]：NO
+(2) 比較 string[i] 是否等於 pattern[j]：NO
+(3) endMatchingPos++; startStringPos++;
+</code></pre>
+
+<h4 id="第一層-for-迴圈-第-3-輪">第一層 for 迴圈，第 3 輪</h4>
+
+<pre><code>-------------------------------------------
+(  a  b  a  b  b  a  a  b  a  a  \0)
+         ^startStringPos      ^endStringPos
+         ^i    ^endMatchingPos
+-------------------------------------------
+(*) i = startStringPos
+(1) 比較 pattern[endPatternPos] 是否等於 string[endMatchingPos]：NO
+(2) 比較 string[i] 是否等於 pattern[j]：NO
+(3) endMatchingPos++; startStringPos++;
+</code></pre>
+
+<h4 id="第一層-for-迴圈-第-4-輪">第一層 for 迴圈，第 4 輪</h4>
+
+<pre><code>-------------------------------------------
+(  a  b  a  b  b  a  a  b  a  a  \0)
+            ^startStringPos   ^endStringPos
+            ^i    ^endMatchingPos
+-------------------------------------------
+(*) i = startStringPos
+(1) 比較 pattern[endPatternPos] 是否等於 string[endMatchingPos]：NO
+(2) 比較 string[i] 是否等於 pattern[j]：NO
+(3) endMatchingPos++; startStringPos++;
+</code></pre>
+
+<h4 id="第一層-for-迴圈-第-5-輪">第一層 for 迴圈，第 5 輪</h4>
+
+<pre><code>-------------------------------------------
+(  a  b  a  b  b  a  a  b  a  a  \0)
+               ^startStringPos^endStringPos
+               ^i    ^endMatchingPos
+-------------------------------------------
+(*) i = startStringPos
+(1) 比較 pattern[endPatternPos] 是否等於 string[endMatchingPos]：NO
+(2) 比較 string[i] 是否等於 pattern[j]：NO
+(3) endMatchingPos++; startStringPos++;
+</code></pre>
+
+<h4 id="第一層-for-迴圈-第-6-輪">第一層 for 迴圈，第 6 輪</h4>
+
+<pre><code>-------------------------------------------
+                              ˇendStringPos
+(  a  b  a  b  b  a  a  b  a  a  \0)
+                  ^startStringPos
+                  ^i    ^endMatchingPos
+-------------------------------------------
+(*) i = startStringPos
+(1) 比較 pattern[endPatternPos] 是否等於 string[endMatchingPos]：YES
+
+    第一層 for 迴圈，第 6 輪 - 第二層 for 迴圈，第 1 輪
+    -------------------------------------------
+                                  ˇendStringPos
+    (  a  b  a  b  b  a  a  b  a  a  \0)
+                      ^startStringPos
+                      ^i    ^endMatchingPos
+    -------------------------------------------
+    (  a  a  b  \0  )
+       ^j    ^endPatternPos
+    -------------------------------------------
+    (*) i = startStringPos
+    (1) 比較 pattern[endPatternPos] 是否等於 string[endMatchingPos]：YES
+    (1-1) 比較 pattern[j] 是否等於 string[i]：YES -&gt; i++; j++;
+
+    第一層 for 迴圈，第 6 輪 - 第二層 for 迴圈，第 2 輪
+    -------------------------------------------
+                                  ˇendStringPos
+    (  a  b  a  b  b  a  a  b  a  a  \0)
+                      ^startStringPos
+                         ^i ^endMatchingPos
+    -------------------------------------------
+    (  a  a  b  \0  )
+          ^j ^endPatternPos
+    -------------------------------------------
+    (1-2) 比較 pattern[j] 是否等於 string[i]：YES -&gt; i++; j++;
+
+    第一層 for 迴圈，第 6 輪 - 第二層 for 迴圈，第 3 輪
+    -------------------------------------------
+                                  ˇendStringPos
+    (  a  b  a  b  b  a  a  b  a  a  \0)
+                      ^startStringPos
+                            ^i 
+                            ^endMatchingPos
+    -------------------------------------------
+    (  a  a  b  \0  )
+             ^j 
+             ^endPatternPos
+    -------------------------------------------
+    (1-3) j == endMatchingPos，不符合第二個 for 迴圈執行要件，跳出此 for 迴圈
+
+(2) j == endMatchingPos 故找到 String 的 Pattern，返回結果
+</code></pre>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/categories/ds">DS</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/ds">DS</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/stringcompare">StringCompare</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/kmp">KMP</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "onemid-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="https://blog.onemid.net/blog/ds_sparse_matrix_mul/"
+                class="button big previous">Sparse Matrix Multipication</a></li>
+    
+
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        
+      </header>
+      <div class="posts-container" style="margin-top: 0.1em;">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://blog.onemid.net/blog/ds_string_kmp_alg/">(Draft) Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm</a>
+              </h3>
+              
+              <time class="published" datetime='2018-09-01'>
+                September 1, 2018
+              </time>
+            </header>
+            
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://blog.onemid.net/blog/ds_sparse_matrix_mul/">Sparse Matrix Multipication</a>
+              </h3>
+              
+              <time class="published" datetime='2018-08-30'>
+                August 30, 2018
+              </time>
+            </header>
+            
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://blog.onemid.net/blog/tex_markdown_underscore/">TeX Underscore Problem in Markdown</a>
+              </h3>
+              
+              <time class="published" datetime='2018-08-29'>
+                August 29, 2018
+              </time>
+            </header>
+            
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://blog.onemid.net/blog/ds_fast_transpose/">Sparse Matrix Fast Transpose</a>
+              </h3>
+              
+              <time class="published" datetime='2018-08-29'>
+                August 29, 2018
+              </time>
+            </header>
+            
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://blog.onemid.net/blog/wrf-install/">Weather Research and Forecasting Model (WRF) Installation Guide on Ubuntu 16.04</a>
+              </h3>
+              
+              <time class="published" datetime='2018-08-26'>
+                August 26, 2018
+              </time>
+            </header>
+            
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="https://blog.onemid.net/categories/">Categories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/ds/">DS</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/mathjax/">MathJax</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/tex/">TeX</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/hexo/">Hexo</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/hugo/">Hugo</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/julia/">Julia</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/deep-learning/">Deep Learning</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/python/">Python</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/weather/">Weather</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/web-programming/">Web Programming</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/%E5%BB%A2%E6%96%87/">廢文</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+  
+  
+    <section id="mini-bio">
+      <h3>About</h3>
+      <p>設計、深度學習、氣象三重人格</p>
+      <a href="https://blog.onemid.net/about/" class="button">Learn More</a>
+    </section>
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="https://blog.onemid.net/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/onemid" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/onemid85" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:yijhong@hotmail.com.tw" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2018
+        
+          Nothing to Do
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/shell.min.js"></script>
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/bash.min.js"></script>
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/tex.min.js"></script>
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/css.min.js"></script>
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/julia.min.js"></script>
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/go.min.js"></script>
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://blog.onemid.net/js/util.js"></script>
+      <script src="https://blog.onemid.net/js/main.js"></script>
+      <script src="https://blog.onemid.net/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+
+<script
+src="//cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_SVG-full">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [
+                ['$', '$'],
+                ['\\(', '\\)']
+            ],
+            displayMath: [
+                ['$$', '$$']
+            ],
+            processEscapes: true,
+            processEnvironments: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            TeX: {
+                equationNumbers: {
+                    autoNumber: "AMS"
+                },
+                extensions: ["AMSmath.js", "AMSsymbols.js"]
+            }
+        }
+    });
+    MathJax.Hub.Queue(function () {
+        
+        
+        
+        var all = MathJax.Hub.getAllJax(),
+            i;
+        for (i = 0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+
+    MathJax.Hub.Config({
+        
+        TeX: {
+            equationNumbers: {
+                autoNumber: "AMS"
+            }
+        }
+    });
+</script>
+
+
+
+  </body>
+</html>
+

@@ -6,10 +6,20 @@
     <description>Recent content in Blog on Nothing to Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 30 Aug 2018 14:04:18 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 01 Sep 2018 13:41:41 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.onemid.net/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>(Draft) Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm</title>
+      <link>https://blog.onemid.net/blog/ds_string_kmp_alg/</link>
+      <pubDate>Sat, 01 Sep 2018 13:41:41 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/blog/ds_string_kmp_alg/</guid>
+      <description>Overview 字串是一個由字元所組成的有限集合，字串的比對有許多方法，其中最簡單的是選定一個起始點向下比對，若是遇到不符合 Pattern 的字串，即起始點向下挪動一格再重新啟動 Pattern 比對，其程式方法如下：
+int findString(char *string, char *pattern) { int startStringPos = 0, endStringPos = strlen(string)-1; int patternTotalLen = strlen(pattern)-1; int endMatchingPos = patternTotalLen; for (int i = startStringPos; endMatchingPos &amp;lt;= endStringPos; ) { if (string[endMatchingPos] == pattern[endPatternPos]) { for (int j = 0; i = startStringPos; j &amp;lt; endPatternPos &amp;amp;&amp;amp; string[i] == pattern[j]; i++, j++); } if (j == patternTotalLen) { return startStringPos; } endMatchingPos++; startStringPos++; } return -1; }  這個程式主要運作起來長這樣：</description>
+    </item>
     
     <item>
       <title>Sparse Matrix Multipication</title>
