@@ -14,7 +14,7 @@
         "name" : "(Draft) Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm",
         "headline" : "(Draft) Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm",
         "description" : "Overview - A Basic Pattern Matching 字串是一個由字元所組成的有限集合，字串的比對有許多方法，其中最簡單的是選定一個起始點向下比對，若是遇到不符合 Pattern 的字串，即起始點向下挪動一格再重新啟動 Pattern 比對，其程式方法如下：
-int findString(char *string, char *pattern) { int i, j; int startStringPos = 0, endStringPos = strlen(string)-1; int endPatternPos = strlen(pattern)-1; int endMatchingPos = endPatternPos; for (i = startStringPos; endMatchingPos &lt;= endStringPos; ) { if (string[endMatchingPos] == pattern[endPatternPos]) { for (j = 0, i = startStringPos; j &lt; endPatternPos &amp;&amp; string[i] == pattern[j]; i++, j++); } if (j == endPatternPos) { return startStringPos; } endMatchingPos++; startStringPos++; } return -1; }  這個程式主要運作起來長這樣：",
+int findString(char *string, char *pattern) { int i, j = 0; int startStringPos = 0, endStringPos = strlen(string)-1; int endPatternPos = strlen(pattern)-1; int endMatchingPos = endPatternPos; for (i = startStringPos; endMatchingPos &lt;= endStringPos; ) { if (string[endMatchingPos] == pattern[endPatternPos]) { for (j = 0, i = startStringPos; j &lt; endPatternPos &amp;&amp; string[i] == pattern[j]; i++, j++); } if (j == endPatternPos) { return startStringPos; } endMatchingPos++; startStringPos++; } return -1; }  這個程式主要運作起來長這樣：",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -25,7 +25,7 @@ int findString(char *string, char *pattern) { int i, j; int startStringPos = 0, 
         "datePublished": "2018-09-01 13:41:41 &#43;0800 CST",
         "dateModified" : "2018-09-01 13:41:41 &#43;0800 CST",
         "url" : "https://blog.onemid.net/blog/ds_string_kmp_alg/",
-        "wordCount" : "512",
+        "wordCount" : "524",
         "keywords" : [ "DS","StringCompare","KMP","","","","","Blog" ]
     }
     </script>
@@ -51,11 +51,11 @@ int findString(char *string, char *pattern) { int i, j; int startStringPos = 0, 
         <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="(Draft) Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm"/>
 <meta name="twitter:description" content="Overview - A Basic Pattern Matching 字串是一個由字元所組成的有限集合，字串的比對有許多方法，其中最簡單的是選定一個起始點向下比對，若是遇到不符合 Pattern 的字串，即起始點向下挪動一格再重新啟動 Pattern 比對，其程式方法如下：
-int findString(char *string, char *pattern) { int i, j; int startStringPos = 0, endStringPos = strlen(string)-1; int endPatternPos = strlen(pattern)-1; int endMatchingPos = endPatternPos; for (i = startStringPos; endMatchingPos &lt;= endStringPos; ) { if (string[endMatchingPos] == pattern[endPatternPos]) { for (j = 0, i = startStringPos; j &lt; endPatternPos &amp;&amp; string[i] == pattern[j]; i&#43;&#43;, j&#43;&#43;); } if (j == endPatternPos) { return startStringPos; } endMatchingPos&#43;&#43;; startStringPos&#43;&#43;; } return -1; }  這個程式主要運作起來長這樣："/>
+int findString(char *string, char *pattern) { int i, j = 0; int startStringPos = 0, endStringPos = strlen(string)-1; int endPatternPos = strlen(pattern)-1; int endMatchingPos = endPatternPos; for (i = startStringPos; endMatchingPos &lt;= endStringPos; ) { if (string[endMatchingPos] == pattern[endPatternPos]) { for (j = 0, i = startStringPos; j &lt; endPatternPos &amp;&amp; string[i] == pattern[j]; i&#43;&#43;, j&#43;&#43;); } if (j == endPatternPos) { return startStringPos; } endMatchingPos&#43;&#43;; startStringPos&#43;&#43;; } return -1; }  這個程式主要運作起來長這樣："/>
 
         <meta property="og:title" content="(Draft) Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm" />
 <meta property="og:description" content="Overview - A Basic Pattern Matching 字串是一個由字元所組成的有限集合，字串的比對有許多方法，其中最簡單的是選定一個起始點向下比對，若是遇到不符合 Pattern 的字串，即起始點向下挪動一格再重新啟動 Pattern 比對，其程式方法如下：
-int findString(char *string, char *pattern) { int i, j; int startStringPos = 0, endStringPos = strlen(string)-1; int endPatternPos = strlen(pattern)-1; int endMatchingPos = endPatternPos; for (i = startStringPos; endMatchingPos &lt;= endStringPos; ) { if (string[endMatchingPos] == pattern[endPatternPos]) { for (j = 0, i = startStringPos; j &lt; endPatternPos &amp;&amp; string[i] == pattern[j]; i&#43;&#43;, j&#43;&#43;); } if (j == endPatternPos) { return startStringPos; } endMatchingPos&#43;&#43;; startStringPos&#43;&#43;; } return -1; }  這個程式主要運作起來長這樣：" />
+int findString(char *string, char *pattern) { int i, j = 0; int startStringPos = 0, endStringPos = strlen(string)-1; int endPatternPos = strlen(pattern)-1; int endMatchingPos = endPatternPos; for (i = startStringPos; endMatchingPos &lt;= endStringPos; ) { if (string[endMatchingPos] == pattern[endPatternPos]) { for (j = 0, i = startStringPos; j &lt; endPatternPos &amp;&amp; string[i] == pattern[j]; i&#43;&#43;, j&#43;&#43;); } if (j == endPatternPos) { return startStringPos; } endMatchingPos&#43;&#43;; startStringPos&#43;&#43;; } return -1; }  這個程式主要運作起來長這樣：" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.onemid.net/blog/ds_string_kmp_alg/" /><meta property="article:published_time" content="2018-09-01T13:41:41&#43;08:00"/>
 <meta property="article:modified_time" content="2018-09-01T13:41:41&#43;08:00"/>
@@ -66,12 +66,12 @@ int findString(char *string, char *pattern) { int i, j; int startStringPos = 0, 
         
 <meta itemprop="name" content="(Draft) Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm">
 <meta itemprop="description" content="Overview - A Basic Pattern Matching 字串是一個由字元所組成的有限集合，字串的比對有許多方法，其中最簡單的是選定一個起始點向下比對，若是遇到不符合 Pattern 的字串，即起始點向下挪動一格再重新啟動 Pattern 比對，其程式方法如下：
-int findString(char *string, char *pattern) { int i, j; int startStringPos = 0, endStringPos = strlen(string)-1; int endPatternPos = strlen(pattern)-1; int endMatchingPos = endPatternPos; for (i = startStringPos; endMatchingPos &lt;= endStringPos; ) { if (string[endMatchingPos] == pattern[endPatternPos]) { for (j = 0, i = startStringPos; j &lt; endPatternPos &amp;&amp; string[i] == pattern[j]; i&#43;&#43;, j&#43;&#43;); } if (j == endPatternPos) { return startStringPos; } endMatchingPos&#43;&#43;; startStringPos&#43;&#43;; } return -1; }  這個程式主要運作起來長這樣：">
+int findString(char *string, char *pattern) { int i, j = 0; int startStringPos = 0, endStringPos = strlen(string)-1; int endPatternPos = strlen(pattern)-1; int endMatchingPos = endPatternPos; for (i = startStringPos; endMatchingPos &lt;= endStringPos; ) { if (string[endMatchingPos] == pattern[endPatternPos]) { for (j = 0, i = startStringPos; j &lt; endPatternPos &amp;&amp; string[i] == pattern[j]; i&#43;&#43;, j&#43;&#43;); } if (j == endPatternPos) { return startStringPos; } endMatchingPos&#43;&#43;; startStringPos&#43;&#43;; } return -1; }  這個程式主要運作起來長這樣：">
 
 
 <meta itemprop="datePublished" content="2018-09-01T13:41:41&#43;08:00" />
 <meta itemprop="dateModified" content="2018-09-01T13:41:41&#43;08:00" />
-<meta itemprop="wordCount" content="512">
+<meta itemprop="wordCount" content="524">
 
 
 
@@ -452,7 +452,7 @@ if (!doNotTrack) {
 <p>字串是一個由字元所組成的有限集合，字串的比對有許多方法，其中最簡單的是選定一個起始點向下比對，若是遇到不符合 Pattern 的字串，即起始點向下挪動一格再重新啟動 Pattern 比對，其程式方法如下：</p>
 
 <pre><code class="language-c">int findString(char *string, char *pattern) {
-    int i, j;
+    int i, j = 0;
     int startStringPos = 0, endStringPos = strlen(string)-1;
     int endPatternPos = strlen(pattern)-1;
     int endMatchingPos = endPatternPos;
@@ -621,6 +621,13 @@ if (!doNotTrack) {
 
 (2) j == endMatchingPos 故找到 String 的 Pattern，返回結果
 </code></pre>
+
+<h2 id="time-complexity">Time Complexity</h2>
+
+<p>如果最糟最糟的情況是我們必須要把字串比到最後的話，那時間複雜度將會是 Pattern 字串的長度$n$以及拿來比較的 String 字串長度$m$的乘積，亦即：
+$$
+O(mn)
+$$</p>
 
 <h1 id="knuth-morris-pratt-kmp-pattern-matching-algorithm">Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm</h1>
 

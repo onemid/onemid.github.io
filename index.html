@@ -371,7 +371,7 @@ if (!doNotTrack) {
 <p>字串是一個由字元所組成的有限集合，字串的比對有許多方法，其中最簡單的是選定一個起始點向下比對，若是遇到不符合 Pattern 的字串，即起始點向下挪動一格再重新啟動 Pattern 比對，其程式方法如下：</p>
 
 <pre><code class="language-c">int findString(char *string, char *pattern) {
-    int i, j;
+    int i, j = 0;
     int startStringPos = 0, endStringPos = strlen(string)-1;
     int endPatternPos = strlen(pattern)-1;
     int endMatchingPos = endPatternPos;
@@ -540,6 +540,13 @@ if (!doNotTrack) {
 
 (2) j == endMatchingPos 故找到 String 的 Pattern，返回結果
 </code></pre>
+
+<h2 id="time-complexity">Time Complexity</h2>
+
+<p>如果最糟最糟的情況是我們必須要把字串比到最後的話，那時間複雜度將會是 Pattern 字串的長度$n$以及拿來比較的 String 字串長度$m$的乘積，亦即：
+$$
+O(mn)
+$$</p>
 
 <h1 id="knuth-morris-pratt-kmp-pattern-matching-algorithm">Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm</h1>
 
