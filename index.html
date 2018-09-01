@@ -417,15 +417,19 @@ $$
     a_{11} &amp;   a_{12} &amp;   a_{13} \newline
     a_{21} &amp;   a_{22} &amp;   a_{23} \newline
     a_{31} &amp;   a_{32} &amp;   a_{33} \newline
-\end{bmatrix},
+\end{bmatrix}
+$$</p>
+
+<p>$$
 \boldsymbol{B^T} =
 \begin{bmatrix}
     b_{11} = b&rsquo;_{11}  &amp;   b_{21} = b&rsquo;_{12}  &amp;   b_{31} = b&rsquo;_{13}  \newline
-    b_{12} =  b&rsquo;_{21} &amp;   bv<em>{22} =b&rsquo;_{22}   &amp;   b_{32} = b&rsquo;_{23}  \newline
+    b_{12} =  b&rsquo;_{21} &amp;   b_{22} =b&rsquo;_{22}   &amp;   b_{32} = b&rsquo;_{23}  \newline
     b_{13} =  b&rsquo;_{31} &amp;   b_{23} =b&rsquo;_{32}   &amp;   b_{33} = b&rsquo;_{33}  \newline
 \end{bmatrix}
-$$
-$[\boldsymbol{AB}]_{12}$ 值等式可再表示為：
+$$</p>
+
+<p>$[\boldsymbol{AB}]_{12}$ 值等式可再表示為：
 $$
 a_{11}*b_{11} + a_{12}*b_{21} + a_{13}*b_{31} = a_{11}*b&rsquo;_{11} + a_{12}*b&rsquo;_{12} + a_{13}*b&rsquo;_{13}
 $$
@@ -435,13 +439,13 @@ a_{31}*b_{12} + a_{32}*b_{22} + a_{33}*b_{32} = a_{31}*b&rsquo;_{21} + a_{32}*b&
 $$
 所以我們整理一下，若是要求$[\boldsymbol{AB}]_{ij}$，則：
 $$
-a</em>{i1}*b<em>{1j} + a</em>{i2}*b<em>{2j} + a</em>{i3}*b<em>{3j} = a</em>{i1}*b&rsquo;<em>{j1} + a</em>{i2}*b&rsquo;<em>{j2} + a</em>{i3}*b&rsquo;_{j3}
+a<em>{i1}*b</em>{1j} + a<em>{i2}*b</em>{2j} + a<em>{i3}*b</em>{3j} = a<em>{i1}*b&rsquo;</em>{j1} + a<em>{i2}*b&rsquo;</em>{j2} + a<em>{i3}*b&rsquo;</em>{j3}
 $$
 如果我們再把 $k$ 代上去，可求得：
 $$
 [\boldsymbol{AB}]_{ij} = a_{ik}*b_{kj} + a_{ik}*b_{kj} + a_{ik}*b_{kj} = a_{ik}*b&rsquo;_{jk} + a_{ik}*b&rsquo;_{jk} + a_{ik}*b&rsquo;_{jk}
 $$
-所以我們可以觀察到：在運算某一個位於 $$(i,j)​$$ 的元素時，$i​$ 與 $j​$ 保持不動，只有 $k​$ 在保持變動，所以我們可以了解到：若是 $i​$ 或是 $j​$ 有任一個變動，就是已經算完該元素了，這個結論對於以下了解 Horowitz et al. 所寫的程式中的判斷式尤為有用：</p>
+所以我們可以觀察到：在運算某一個位於 $$(i,j)$$ 的元素時，$i$ 與 $j$ 保持不動，只有 $k$ 在保持變動，所以我們可以了解到：若是 $i$ 或是 $j$ 有任一個變動，就是已經算完該元素了，這個結論對於以下了解 Horowitz et al. 所寫的程式中的判斷式尤為有用：</p>
 
 <p>我們用稀疏矩陣記法，先將 $i,j,k$ 三個變數填上去：</p>
 
