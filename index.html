@@ -368,9 +368,9 @@ if (!doNotTrack) {
 
 <h1 id="overview">Overview</h1>
 
-<p>給定兩矩陣：$\boldsymbol{A}<em>{m*n}$ 和 $\boldsymbol{B}</em>{n*p}$ ，其中矩陣乘法定義如下：
+<p>給定兩矩陣：$\boldsymbol{A}_{m*n}$ 和 $\boldsymbol{B}_{n*p}$ ，其中矩陣乘法定義如下：
 $$
-(\boldsymbol{AB})<em>{ij} = \sum</em>{k=1}^{n}a<em>{ik}*b</em>{kj}
+(\boldsymbol{AB})_{ij} = \sum_{k=1}^{n}a_{ik}*b_{kj}
 $$
 矩陣乘法可以寫成三個迴圈的版本（變數 i, j, k）</p>
 
@@ -399,49 +399,49 @@ $$
 $$
 \boldsymbol{A} =
 \begin{bmatrix}
-    a<em>{11}  &amp;   a</em>{12}  &amp;   a<em>{13}  \newline
-    a</em>{21}  &amp;   a<em>{22}  &amp;   a</em>{23}  \newline
-    a<em>{31}  &amp;   a</em>{32}  &amp;   a<em>{33}  \newline
+    a_{11} &amp;   a_{12} &amp;   a_{13} \newline
+    a_{21} &amp;   a_{22} &amp;   a_{23} \newline
+    a_{31} &amp;   a_{32} &amp;   a_{33} \newline
 \end{bmatrix},
 \boldsymbol{B} =
 \begin{bmatrix}
-    b</em>{11}  &amp;   b<em>{12}  &amp;   b</em>{13}  \newline
-    b<em>{21}  &amp;   b</em>{22}  &amp;   b<em>{23}  \newline
-    b</em>{31}  &amp;   b<em>{32}  &amp;   b</em>{33}  \newline
+    b_{11} &amp;   b_{12} &amp;   b_{13} \newline
+    b_{21} &amp;   b_{22} &amp;   b_{23} \newline
+    b_{31} &amp;   b_{32} &amp;   b_{33} \newline
 \end{bmatrix}
 $$
-若我們欲求 $$[\boldsymbol{AB}]<em>{12}$$ 其值為 $a</em>{11}*b<em>{11} + a</em>{12}*b<em>{21} + a</em>{13}*b<em>{31}$，由於我們為了求列記法方便，已經將 $\boldsymbol{B}$ 轉置了，所以變成：
+若我們欲求 $[\boldsymbol{AB}]_{12}$ 其值為 $a_{11}*b_{11} + a_{12}*b_{21} + a_{13}*b_{31}$，由於我們為了求列記法方便，已經將 $\boldsymbol{B}$ 轉置了，所以變成：
 $$
 \boldsymbol{A} =
 \begin{bmatrix}
-    a</em>{11}  &amp;   a<em>{12}  &amp;   a</em>{13}  \newline
-    a<em>{21}  &amp;   a</em>{22}  &amp;   a<em>{23}  \newline
-    a</em>{31}  &amp;   a<em>{32}  &amp;   a</em>{33}  \newline
+    a_{11} &amp;   a_{12} &amp;   a_{13} \newline
+    a_{21} &amp;   a_{22} &amp;   a_{23} \newline
+    a_{31} &amp;   a_{32} &amp;   a_{33} \newline
 \end{bmatrix},
 \boldsymbol{B^T} =
 \begin{bmatrix}
-    b<em>{11} = b&rsquo;</em>{11}    &amp;   b<em>{21} = b&rsquo;</em>{12}    &amp;   b<em>{31} = b&rsquo;</em>{13}    \newline
-    b<em>{12} =  b&rsquo;</em>{21}   &amp;   b<em>{22} =b&rsquo;</em>{22} &amp;   b<em>{32} = b&rsquo;</em>{23}    \newline
-    b<em>{13} =  b&rsquo;</em>{31}   &amp;   b<em>{23} =b&rsquo;</em>{32} &amp;   b<em>{33} = b&rsquo;</em>{33}    \newline
+    b_{11} = b&rsquo;_{11}  &amp;   b_{21} = b&rsquo;_{12}  &amp;   b_{31} = b&rsquo;_{13}  \newline
+    b_{12} =  b&rsquo;_{21} &amp;   bv<em>{22} =b&rsquo;_{22}   &amp;   b_{32} = b&rsquo;_{23}  \newline
+    b_{13} =  b&rsquo;_{31} &amp;   b_{23} =b&rsquo;_{32}   &amp;   b_{33} = b&rsquo;_{33}  \newline
 \end{bmatrix}
 $$
-$$[\boldsymbol{AB}]<em>{12}$$ 值等式可再表示為：
+$[\boldsymbol{AB}]_{12}$ 值等式可再表示為：
 $$
-a</em>{11}*b<em>{11} + a</em>{12}*b<em>{21} + a</em>{13}*b<em>{31} = a</em>{11}*b&rsquo;<em>{11} + a</em>{12}*b&rsquo;<em>{12} + a</em>{13}*b&rsquo;<em>{13}
+a_{11}*b_{11} + a_{12}*b_{21} + a_{13}*b_{31} = a_{11}*b&rsquo;_{11} + a_{12}*b&rsquo;_{12} + a_{13}*b&rsquo;_{13}
 $$
-再一個，$$[\boldsymbol{AB}]</em>{32}$$ 可表示為：
+再一個，$[\boldsymbol{AB}]_{32}$ 可表示為：
 $$
-a<em>{31}*b</em>{12} + a<em>{32}*b</em>{22} + a<em>{33}*b</em>{32} = a<em>{31}*b&rsquo;</em>{21} + a<em>{32}*b&rsquo;</em>{22} + a<em>{33}*b&rsquo;</em>{23}
+a_{31}*b_{12} + a_{32}*b_{22} + a_{33}*b_{32} = a_{31}*b&rsquo;_{21} + a_{32}*b&rsquo;_{22} + a_{33}*b&rsquo;_{23}
 $$
-所以我們整理一下，若是要求$$[\boldsymbol{AB}]<em>{ij}$$，則：
+所以我們整理一下，若是要求$[\boldsymbol{AB}]_{ij}$，則：
 $$
-a</em>{i1}*b<em>{1j} + a</em>{i2}*b<em>{2j} + a</em>{i3}*b<em>{3j} = a</em>{i1}*b&rsquo;<em>{j1} + a</em>{i2}*b&rsquo;<em>{j2} + a</em>{i3}*b&rsquo;<em>{j3}
+a</em>{i1}*b<em>{1j} + a</em>{i2}*b<em>{2j} + a</em>{i3}*b<em>{3j} = a</em>{i1}*b&rsquo;<em>{j1} + a</em>{i2}*b&rsquo;<em>{j2} + a</em>{i3}*b&rsquo;_{j3}
 $$
 如果我們再把 $k$ 代上去，可求得：
 $$
-[\boldsymbol{AB}]</em>{ij} = a<em>{ik}*b</em>{kj} + a<em>{ik}*b</em>{kj} + a<em>{ik}*b</em>{kj} = a<em>{ik}*b&rsquo;</em>{jk} + a<em>{ik}*b&rsquo;</em>{jk} + a<em>{ik}*b&rsquo;</em>{jk}
+[\boldsymbol{AB}]_{ij} = a_{ik}*b_{kj} + a_{ik}*b_{kj} + a_{ik}*b_{kj} = a_{ik}*b&rsquo;_{jk} + a_{ik}*b&rsquo;_{jk} + a_{ik}*b&rsquo;_{jk}
 $$
-所以我們可以觀察到：在運算某一個位於 $$(i,j)$$ 的元素時，$i$ 與 $j$ 保持不動，只有 $k$ 在保持變動，所以我們可以了解到：若是 $i$ 或是 $j$ 有任一個變動，就是已經算完該元素了，這個結論對於以下了解 Horowitz et al. 所寫的程式中的判斷式尤為有用：</p>
+所以我們可以觀察到：在運算某一個位於 $$(i,j)​$$ 的元素時，$i​$ 與 $j​$ 保持不動，只有 $k​$ 在保持變動，所以我們可以了解到：若是 $i​$ 或是 $j​$ 有任一個變動，就是已經算完該元素了，這個結論對於以下了解 Horowitz et al. 所寫的程式中的判斷式尤為有用：</p>
 
 <p>我們用稀疏矩陣記法，先將 $i,j,k$ 三個變數填上去：</p>
 
