@@ -29,8 +29,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-08-29 21:00:28 &#43;0800 CST",
-        "dateModified" : "2018-08-29 21:00:28 &#43;0800 CST",
+        "datePublished": "2018-08-30 14:04:18 &#43;0800 CST",
+        "dateModified" : "2018-08-30 14:04:18 &#43;0800 CST",
         "url" : "https://blog.onemid.net/tags/",
         "wordCount" : "0",
         "keywords" : [ "Blog" ]
@@ -59,7 +59,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.onemid.net/tags/" />
-<meta property="og:updated_time" content="2018-08-29T21:00:28&#43;08:00"/>
+<meta property="og:updated_time" content="2018-08-30T14:04:18&#43;08:00"/>
         <meta property="og:image" content="https://blog.onemid.net/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
@@ -237,6 +237,18 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="https://blog.onemid.net/blog/ds_string_kmp_alg/">(Draft) Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-09-01'>
+                                    September 1, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="https://blog.onemid.net/blog/ds_sparse_matrix_mul/">Sparse Matrix Multipication</a></h3>
                                 
                                 <time class="published" datetime=
@@ -307,18 +319,6 @@ if (!doNotTrack) {
 
                         </article>
                 
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="https://blog.onemid.net/blog/julia-triple-quote-string-literals-alignment/">Julia Triple-Quoted String Literals Alignment</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2018-08-26'>
-                                    August 26, 2018</time>
-                            </header>
-                            
-
-                        </article>
-                
 
                 
                     <a href=
@@ -338,6 +338,267 @@ if (!doNotTrack) {
     <div id="main">
         <h1></h1>
         
+        
+            <article class="post">
+  <header>
+    <div class="title">
+        
+            <h2><a href="https://blog.onemid.net/blog/ds_sparse_matrix_mul/">Sparse Matrix Multipication</a></h2>
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2018-08-30'>
+            August 30, 2018</time>
+        <span class="author">Gary Gong</span>
+        
+            <p>3 minute read</p>
+        
+        
+    </div>
+</header>
+
+  
+
+  
+  <p>給定兩矩陣：$\boldsymbol{A}_{m*n}$ 和 $\boldsymbol{B}_{n*p}$ ，其中矩陣乘法定義如下：
+$$
+(\boldsymbol{AB})_{ij} = \sum_{k=1}^{n}a_{ik}*b_{kj}
+$$
+矩陣乘法可以寫成三個迴圈的版本（變數 i, j, k）</p>
+  <footer>
+    <ul class="actions">
+      <li><a href="https://blog.onemid.net/blog/ds_sparse_matrix_mul/" class="button big">Continue Reading</a></li>
+    </ul>
+  <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/categories/ds">DS</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/sparsematrix">SparseMatrix</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/multipication">Multipication</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/ds">DS</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+</article>
+
+        
+            <article class="post">
+  <header>
+    <div class="title">
+        
+            <h2><a href="https://blog.onemid.net/blog/ds_sparse_matrix_mul/">Sparse Matrix Multipication</a></h2>
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2018-08-30'>
+            August 30, 2018</time>
+        <span class="author">Gary Gong</span>
+        
+            <p>3 minute read</p>
+        
+        
+    </div>
+</header>
+
+  
+
+  
+  <p>給定兩矩陣：$\boldsymbol{A}_{m*n}$ 和 $\boldsymbol{B}_{n*p}$ ，其中矩陣乘法定義如下：
+$$
+(\boldsymbol{AB})_{ij} = \sum_{k=1}^{n}a_{ik}*b_{kj}
+$$
+矩陣乘法可以寫成三個迴圈的版本（變數 i, j, k）</p>
+  <footer>
+    <ul class="actions">
+      <li><a href="https://blog.onemid.net/blog/ds_sparse_matrix_mul/" class="button big">Continue Reading</a></li>
+    </ul>
+  <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/categories/ds">DS</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/sparsematrix">SparseMatrix</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/multipication">Multipication</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/ds">DS</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+</article>
+
+        
+            <article class="post">
+  <header>
+    <div class="title">
+        
+            <h2><a href="https://blog.onemid.net/blog/ds_sparse_matrix_mul/">Sparse Matrix Multipication</a></h2>
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2018-08-30'>
+            August 30, 2018</time>
+        <span class="author">Gary Gong</span>
+        
+            <p>3 minute read</p>
+        
+        
+    </div>
+</header>
+
+  
+
+  
+  <p>給定兩矩陣：$\boldsymbol{A}_{m*n}$ 和 $\boldsymbol{B}_{n*p}$ ，其中矩陣乘法定義如下：
+$$
+(\boldsymbol{AB})_{ij} = \sum_{k=1}^{n}a_{ik}*b_{kj}
+$$
+矩陣乘法可以寫成三個迴圈的版本（變數 i, j, k）</p>
+  <footer>
+    <ul class="actions">
+      <li><a href="https://blog.onemid.net/blog/ds_sparse_matrix_mul/" class="button big">Continue Reading</a></li>
+    </ul>
+  <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/categories/ds">DS</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/sparsematrix">SparseMatrix</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/multipication">Multipication</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/ds">DS</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+</article>
+
         
             <article class="post">
   <header>
@@ -432,7 +693,7 @@ if (!doNotTrack) {
   <header>
     <div class="title">
         
-            <h2><a href="https://blog.onemid.net/blog/ds_fast_transpose/">Sparse Matrix Fast Transpose</a></h2>
+            <h2><a href="https://blog.onemid.net/blog/tex_markdown_underscore/">TeX Underscore Problem in Markdown</a></h2>
         
         
     </div>
@@ -444,7 +705,7 @@ if (!doNotTrack) {
             August 29, 2018</time>
         <span class="author">Gary Gong</span>
         
-            <p>19 minute read</p>
+            <p>1 minute read</p>
         
         
     </div>
@@ -453,10 +714,10 @@ if (!doNotTrack) {
   
 
   
-  <p>Sparse Matrix 又名稀疏矩陣，意思是一個矩陣超多零；使用一般的矩陣註記方法，有浪費空間之虞，所以產生了列表式的註記法，如以下舉例：</p>
+  <p>我們在打 TeX 指令時，弄下標應該會是這樣打的：</p>
   <footer>
     <ul class="actions">
-      <li><a href="https://blog.onemid.net/blog/ds_fast_transpose/" class="button big">Continue Reading</a></li>
+      <li><a href="https://blog.onemid.net/blog/tex_markdown_underscore/" class="button big">Continue Reading</a></li>
     </ul>
   <ul class="stats">
   <li class="categories">
@@ -467,7 +728,13 @@ if (!doNotTrack) {
                 <i class="fa fa-folder"></i>
                 
                 
-                <li><a class="article-category-link" href="https://blog.onemid.net/categories/ds">DS</a></li>
+                <li><a class="article-category-link" href="https://blog.onemid.net/categories/tex">TeX</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/categories/mathjax">MathJax</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/categories/hugo">Hugo</a></li>
                 
             
         
@@ -481,268 +748,19 @@ if (!doNotTrack) {
                 <i class="fa fa-tags"></i>
                 
                 
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/sparsematrix">SparseMatrix</a></li>
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/tex">tex</a></li>
                 
                 
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/transpose">Transpose</a></li>
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/mathjax">mathjax</a></li>
                 
                 
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/ds">DS</a></li>
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/hugo">hugo</a></li>
                 
                 
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/underscore">underscore</a></li>
                 
                 
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
-                
-                
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
-                
-                
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
-                
-            
-        
-    </ul>
-  </li>
-</ul>
-
-  </footer>
-</article>
-
-        
-            <article class="post">
-  <header>
-    <div class="title">
-        
-            <h2><a href="https://blog.onemid.net/blog/ds_fast_transpose/">Sparse Matrix Fast Transpose</a></h2>
-        
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2018-08-29'>
-            August 29, 2018</time>
-        <span class="author">Gary Gong</span>
-        
-            <p>19 minute read</p>
-        
-        
-    </div>
-</header>
-
-  
-
-  
-  <p>Sparse Matrix 又名稀疏矩陣，意思是一個矩陣超多零；使用一般的矩陣註記方法，有浪費空間之虞，所以產生了列表式的註記法，如以下舉例：</p>
-  <footer>
-    <ul class="actions">
-      <li><a href="https://blog.onemid.net/blog/ds_fast_transpose/" class="button big">Continue Reading</a></li>
-    </ul>
-  <ul class="stats">
-  <li class="categories">
-    <ul>
-        
-            
-            
-                <i class="fa fa-folder"></i>
-                
-                
-                <li><a class="article-category-link" href="https://blog.onemid.net/categories/ds">DS</a></li>
-                
-            
-        
-    </ul>
-  </li>
-  <li class="tags">
-    <ul>
-        
-            
-            
-                <i class="fa fa-tags"></i>
-                
-                
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/sparsematrix">SparseMatrix</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/transpose">Transpose</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/ds">DS</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
-                
-                
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
-                
-                
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
-                
-                
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
-                
-            
-        
-    </ul>
-  </li>
-</ul>
-
-  </footer>
-</article>
-
-        
-            <article class="post">
-  <header>
-    <div class="title">
-        
-            <h2><a href="https://blog.onemid.net/blog/ds_fast_transpose/">Sparse Matrix Fast Transpose</a></h2>
-        
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2018-08-29'>
-            August 29, 2018</time>
-        <span class="author">Gary Gong</span>
-        
-            <p>19 minute read</p>
-        
-        
-    </div>
-</header>
-
-  
-
-  
-  <p>Sparse Matrix 又名稀疏矩陣，意思是一個矩陣超多零；使用一般的矩陣註記方法，有浪費空間之虞，所以產生了列表式的註記法，如以下舉例：</p>
-  <footer>
-    <ul class="actions">
-      <li><a href="https://blog.onemid.net/blog/ds_fast_transpose/" class="button big">Continue Reading</a></li>
-    </ul>
-  <ul class="stats">
-  <li class="categories">
-    <ul>
-        
-            
-            
-                <i class="fa fa-folder"></i>
-                
-                
-                <li><a class="article-category-link" href="https://blog.onemid.net/categories/ds">DS</a></li>
-                
-            
-        
-    </ul>
-  </li>
-  <li class="tags">
-    <ul>
-        
-            
-            
-                <i class="fa fa-tags"></i>
-                
-                
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/sparsematrix">SparseMatrix</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/transpose">Transpose</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/ds">DS</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
-                
-                
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
-                
-                
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
-                
-                
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
-                
-            
-        
-    </ul>
-  </li>
-</ul>
-
-  </footer>
-</article>
-
-        
-            <article class="post">
-  <header>
-    <div class="title">
-        
-            <h2><a href="https://blog.onemid.net/blog/ds_fast_transpose/">Sparse Matrix Fast Transpose</a></h2>
-        
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2018-08-29'>
-            August 29, 2018</time>
-        <span class="author">Gary Gong</span>
-        
-            <p>19 minute read</p>
-        
-        
-    </div>
-</header>
-
-  
-
-  
-  <p>Sparse Matrix 又名稀疏矩陣，意思是一個矩陣超多零；使用一般的矩陣註記方法，有浪費空間之虞，所以產生了列表式的註記法，如以下舉例：</p>
-  <footer>
-    <ul class="actions">
-      <li><a href="https://blog.onemid.net/blog/ds_fast_transpose/" class="button big">Continue Reading</a></li>
-    </ul>
-  <ul class="stats">
-  <li class="categories">
-    <ul>
-        
-            
-            
-                <i class="fa fa-folder"></i>
-                
-                
-                <li><a class="article-category-link" href="https://blog.onemid.net/categories/ds">DS</a></li>
-                
-            
-        
-    </ul>
-  </li>
-  <li class="tags">
-    <ul>
-        
-            
-            
-                <i class="fa fa-tags"></i>
-                
-                
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/sparsematrix">SparseMatrix</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/transpose">Transpose</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/ds">DS</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
-                
-                
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/markdown">markdown</a></li>
                 
                 
                 <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
@@ -798,6 +816,19 @@ if (!doNotTrack) {
           <article class="mini-post">
             <header>
               <h3>
+                <a href="https://blog.onemid.net/blog/ds_string_kmp_alg/">(Draft) Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm</a>
+              </h3>
+              
+              <time class="published" datetime='2018-09-01'>
+                September 1, 2018
+              </time>
+            </header>
+            
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
                 <a href="https://blog.onemid.net/blog/ds_sparse_matrix_mul/">Sparse Matrix Multipication</a>
               </h3>
               
@@ -847,19 +878,6 @@ if (!doNotTrack) {
             
           </article>
         
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="https://blog.onemid.net/blog/julia-triple-quote-string-literals-alignment/">Julia Triple-Quoted String Literals Alignment</a>
-              </h3>
-              
-              <time class="published" datetime='2018-08-26'>
-                August 26, 2018
-              </time>
-            </header>
-            
-          </article>
-        
       </div>
 
       
@@ -892,6 +910,17 @@ if (!doNotTrack) {
           <article>
             <header>
               
+                <a href="https://blog.onemid.net/categories/ds/">DS</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
                 <a href="https://blog.onemid.net/categories/mathjax/">MathJax</a>
                 <span style="float:right;">3</span>
               
@@ -905,17 +934,6 @@ if (!doNotTrack) {
               
                 <a href="https://blog.onemid.net/categories/tex/">TeX</a>
                 <span style="float:right;">3</span>
-              
-            </header>
-          </article>
-        </p>
-        
-        <p>
-          <article>
-            <header>
-              
-                <a href="https://blog.onemid.net/categories/ds/">DS</a>
-                <span style="float:right;">2</span>
               
             </header>
           </article>

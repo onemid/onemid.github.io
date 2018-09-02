@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-08-30 14:04:18 &#43;0800 CST",
-        "dateModified" : "2018-08-30 14:04:18 &#43;0800 CST",
+        "datePublished": "2018-09-01 13:41:41 &#43;0800 CST",
+        "dateModified" : "2018-09-01 13:41:41 &#43;0800 CST",
         "url" : "https://blog.onemid.net/",
         "wordCount" : "0",
         "keywords" : [ "Blog" ]
@@ -53,7 +53,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.onemid.net/" />
-<meta property="og:updated_time" content="2018-08-30T14:04:18&#43;08:00"/>
+<meta property="og:updated_time" content="2018-09-01T13:41:41&#43;08:00"/>
         <meta property="og:image" content="https://blog.onemid.net/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
@@ -236,6 +236,18 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="https://blog.onemid.net/blog/ds_string_kmp_alg/">(Draft) Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-09-01'>
+                                    September 1, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="https://blog.onemid.net/blog/ds_sparse_matrix_mul/">Sparse Matrix Multipication</a></h3>
                                 
                                 <time class="published" datetime=
@@ -306,18 +318,6 @@ if (!doNotTrack) {
 
                         </article>
                 
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="https://blog.onemid.net/blog/julia-triple-quote-string-literals-alignment/">Julia Triple-Quoted String Literals Alignment</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2018-08-26'>
-                                    August 26, 2018</time>
-                            </header>
-                            
-
-                        </article>
-                
 
                 
                     <a href=
@@ -340,7 +340,7 @@ if (!doNotTrack) {
   <header>
     <div class="title">
         
-            <h2><a href="https://blog.onemid.net/blog/ds_sparse_matrix_mul/">Sparse Matrix Multipication</a></h2>
+            <h2><a href="https://blog.onemid.net/blog/ds_string_kmp_alg/">(Draft) Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm</a></h2>
         
         
     </div>
@@ -348,11 +348,11 @@ if (!doNotTrack) {
         
 
         <time class="published"
-            datetime='2018-08-30'>
-            August 30, 2018</time>
+            datetime='2018-09-01'>
+            September 1, 2018</time>
         <span class="author">Gary Gong</span>
         
-            <p>3 minute read</p>
+            <p>5 minute read</p>
         
         
     </div>
@@ -366,201 +366,346 @@ if (!doNotTrack) {
   <div id="content">
     
 
-<h1 id="overview">Overview</h1>
+<h1 id="overview-a-basic-pattern-matching">Overview - A Basic Pattern Matching</h1>
 
-<p>給定兩矩陣：$\boldsymbol{A}_{m*n}$ 和 $\boldsymbol{B}_{n*p}$ ，其中矩陣乘法定義如下：
-$$
-(\boldsymbol{AB})_{ij} = \sum_{k=1}^{n}a_{ik}*b_{kj}
-$$
-矩陣乘法可以寫成三個迴圈的版本（變數 i, j, k）</p>
+<p>字串是一個由字元所組成的有限集合，字串的比對有許多方法，其中最簡單的是選定一個起始點向下比對，若是遇到不符合 Pattern 的字串，即起始點向下挪動一格再重新啟動 Pattern 比對，其程式方法如下：</p>
 
-<pre><code class="language-c">for (int i = 0; i &lt; ATotalRows; i++) {
-    for (int j = 0; j &lt; BTotalCols; j++) {
-        int sum = 0;
-        for (int k = 0; k &lt; BTotalRows; k++) {
-            sum += (A[i][k] + B[k][j]);
+<pre><code class="language-c">int findString(char *string, char *pattern) {
+    int i, j = 0;
+    int startStringPos = 0, endStringPos = strlen(string)-1;
+    int endPatternPos = strlen(pattern)-1;
+    int endMatchingPos = endPatternPos;
+    for (i = startStringPos; endMatchingPos &lt;= endStringPos; ) {
+        if (string[endMatchingPos] == pattern[endPatternPos]) {
+            for (j = 0, i = startStringPos; j &lt; endPatternPos &amp;&amp; string[i] == pattern[j]; i++, j++);
         }
-        AB[i][j] = sum;
+        if (j == endPatternPos) {
+            return startStringPos;
+        }
+        endMatchingPos++;
+        startStringPos++;
     }
+    return -1;
 }
 </code></pre>
 
-<blockquote>
-<p>Horowitz et al., 所著 Fundamentals of Data Structures in C (2/e) 在 p.84 頁也有這個演算法，但是第三個迴圈寫<code>for (k = 0; k &lt; colsA; k++) {...}</code>，我個人是比較傾向改成<code>rowsB</code>或許比較直觀一些（反正這些都是<code>k</code>值總數）。</p>
-</blockquote>
+<p>這個程式主要運作起來長這樣：</p>
 
-<p>Sparse Matrix 如果採用稀疏矩陣列表式記法的話，那麼這個演算法基本上小修一下也是可以動，但是也有一些專門對這種列表式做乘法的演算法：</p>
+<p>初始化（<code>2~5 行地方</code>）：</p>
 
-<h1 id="sparse-matrix-multiplication">Sparse Matrix Multiplication</h1>
+<p>首先把定位（<code>i</code>）定在字串初始位置（<code>startStringPos = 0</code>）的地方，然後推移<code>endMatchingPos</code>個長度當作該字串比對結束位置（<code>endMatchingPos</code>）。</p>
 
-<p>在列表式記法下，每列資料都記載一個三元資料集<code>&lt;row, col, val&gt;</code>，而這個列表遵循著 row index 遞增排列，而若是在相同的 row index 下，col index 進行遞增排列的方式；而因為我們矩陣乘法是 Matrix A 的 row 乘上 Matrix B 的 col，在這種稀疏矩陣記法中的 data row 都是採 row index 優先遞增排序方式可能會造成一些撰寫程式上的麻煩，不如我們就把 Matrix B 做一次的 transpose 把他的 col 轉成 row，這樣我們在乘法上雙方就都可以逐 data row 看（B 已經 transpose 完了，所以他的 row 基本上是先前未轉置前的 col），而不是一邊看 row 一邊看 col。</p>
+<p>第一個<code>if</code>：</p>
 
-<p>在乘的時候我們習慣於，假若今日有給定二矩陣，$\boldsymbol{A}$ 與 $\boldsymbol{B}$ ，其形式如下：
+<p>我們有字串比對結束位置（<code>endMatchingPos</code>）之後，先行檢查是否與欲比對的 Pattern 最尾端（<code>patternTotalLen</code>）是否有同樣的字元，如果不一樣，前面就都不用對了。</p>
+
+<p>第一個<code>if</code>裡面的<code>for</code>：</p>
+
+<p>如果發現我們要比對的字串尾巴與 Pattern 尾巴字元相符，那麼我們就檢查要比對的字串字元是否跟 Pattern 完全相符。</p>
+
+<p>第二個<code>if</code>：</p>
+
+<p>如果皆相符，<code>j</code>理應會被計數器加到跟<code>endMatchingPos</code>一樣，那就代表找到相符的樣式字串。</p>
+
+<p>之後（<code>12, 13 行地方</code>）：</p>
+
+<p>把字串比對的初始位置（<code>startStringPos</code>）往後調一個，<code>endMatchingPos</code>也是。</p>
+
+<h3 id="這是-pattern-與變數的關係">這是 Pattern 與變數的關係：</h3>
+
+<pre><code class="language-c">pattern:
+(  a  a  b  \0  )
+   ^j    ^endPatternPos
+   _______
+   endMatchingPos
+</code></pre>
+
+<h3 id="這是-string-比較的經過">這是 String 比較的經過：</h3>
+
+<h4 id="第一層-for-迴圈-第-1-輪">第一層 for 迴圈，第 1 輪</h4>
+
+<pre><code class="language-c">-------------------------------------------
+(  a  b  a  b  b  a  a  b  a  a  \0)
+   ^startStringPos            ^endStringPos
+   ^i    ^endMatchingPos
+-------------------------------------------
+(*) i = startStringPos
+(1) 比較 pattern[endPatternPos] 是否等於 string[endMatchingPos]：YES
+(2) 比較 string[i] 是否等於 pattern[j]：NO
+(3) endMatchingPos++; startStringPos++;
+</code></pre>
+
+<h4 id="第一層-for-迴圈-第-2-輪">第一層 for 迴圈，第 2 輪</h4>
+
+<pre><code class="language-c">-------------------------------------------
+(  a  b  a  b  b  a  a  b  a  a  \0)
+      ^startStringPos         ^endStringPos
+      ^i    ^endMatchingPos
+-------------------------------------------
+(*) i = startStringPos
+(1) 比較 pattern[endPatternPos] 是否等於 string[endMatchingPos]：NO
+(2) 比較 string[i] 是否等於 pattern[j]：NO
+(3) endMatchingPos++; startStringPos++;
+</code></pre>
+
+<h4 id="第一層-for-迴圈-第-3-輪">第一層 for 迴圈，第 3 輪</h4>
+
+<pre><code class="language-c">-------------------------------------------
+(  a  b  a  b  b  a  a  b  a  a  \0)
+         ^startStringPos      ^endStringPos
+         ^i    ^endMatchingPos
+-------------------------------------------
+(*) i = startStringPos
+(1) 比較 pattern[endPatternPos] 是否等於 string[endMatchingPos]：NO
+(2) 比較 string[i] 是否等於 pattern[j]：NO
+(3) endMatchingPos++; startStringPos++;
+</code></pre>
+
+<h4 id="第一層-for-迴圈-第-4-輪">第一層 for 迴圈，第 4 輪</h4>
+
+<pre><code class="language-c">-------------------------------------------
+(  a  b  a  b  b  a  a  b  a  a  \0)
+            ^startStringPos   ^endStringPos
+            ^i    ^endMatchingPos
+-------------------------------------------
+(*) i = startStringPos
+(1) 比較 pattern[endPatternPos] 是否等於 string[endMatchingPos]：NO
+(2) 比較 string[i] 是否等於 pattern[j]：NO
+(3) endMatchingPos++; startStringPos++;
+</code></pre>
+
+<h4 id="第一層-for-迴圈-第-5-輪">第一層 for 迴圈，第 5 輪</h4>
+
+<pre><code class="language-c">-------------------------------------------
+(  a  b  a  b  b  a  a  b  a  a  \0)
+               ^startStringPos^endStringPos
+               ^i    ^endMatchingPos
+-------------------------------------------
+(*) i = startStringPos
+(1) 比較 pattern[endPatternPos] 是否等於 string[endMatchingPos]：NO
+(2) 比較 string[i] 是否等於 pattern[j]：NO
+(3) endMatchingPos++; startStringPos++;
+</code></pre>
+
+<h4 id="第一層-for-迴圈-第-6-輪">第一層 for 迴圈，第 6 輪</h4>
+
+<pre><code class="language-c">-------------------------------------------
+                              ˇendStringPos
+(  a  b  a  b  b  a  a  b  a  a  \0)
+                  ^startStringPos
+                  ^i    ^endMatchingPos
+-------------------------------------------
+(*) i = startStringPos
+(1) 比較 pattern[endPatternPos] 是否等於 string[endMatchingPos]：YES
+
+    第一層 for 迴圈，第 6 輪 - 第二層 for 迴圈，第 1 輪
+    -------------------------------------------
+                                  ˇendStringPos
+    (  a  b  a  b  b  a  a  b  a  a  \0)
+                      ^startStringPos
+                      ^i    ^endMatchingPos
+    -------------------------------------------
+    (  a  a  b  \0  )
+       ^j    ^endPatternPos
+    -------------------------------------------
+    (*) i = startStringPos
+    (1) 比較 pattern[endPatternPos] 是否等於 string[endMatchingPos]：YES
+    (1-1) 比較 pattern[j] 是否等於 string[i]：YES -&gt; i++; j++;
+
+    第一層 for 迴圈，第 6 輪 - 第二層 for 迴圈，第 2 輪
+    -------------------------------------------
+                                  ˇendStringPos
+    (  a  b  a  b  b  a  a  b  a  a  \0)
+                      ^startStringPos
+                         ^i ^endMatchingPos
+    -------------------------------------------
+    (  a  a  b  \0  )
+          ^j ^endPatternPos
+    -------------------------------------------
+    (1-2) 比較 pattern[j] 是否等於 string[i]：YES -&gt; i++; j++;
+
+    第一層 for 迴圈，第 6 輪 - 第二層 for 迴圈，第 3 輪
+    -------------------------------------------
+                                  ˇendStringPos
+    (  a  b  a  b  b  a  a  b  a  a  \0)
+                      ^startStringPos
+                            ^i 
+                            ^endMatchingPos
+    -------------------------------------------
+    (  a  a  b  \0  )
+             ^j 
+             ^endPatternPos
+    -------------------------------------------
+    (1-3) j == endMatchingPos，不符合第二個 for 迴圈執行要件，跳出此 for 迴圈
+
+(2) j == endMatchingPos 故找到 String 的 Pattern，返回結果
+</code></pre>
+
+<h2 id="time-complexity">Time Complexity</h2>
+
+<p>如果最糟最糟的情況是我們必須要把字串比到最後的話，那時間複雜度將會是 Pattern 字串的長度$n$以及拿來比較的 String 字串長度$m$的乘積，亦即：
 $$
-\boldsymbol{A} =
-\begin{bmatrix}
-    a_{11} &amp;   a_{12} &amp;   a_{13} \newline
-    a_{21} &amp;   a_{22} &amp;   a_{23} \newline
-    a_{31} &amp;   a_{32} &amp;   a_{33} \newline
-\end{bmatrix},
-\boldsymbol{B} =
-\begin{bmatrix}
-    b_{11} &amp;   b_{12} &amp;   b_{13} \newline
-    b_{21} &amp;   b_{22} &amp;   b_{23} \newline
-    b_{31} &amp;   b_{32} &amp;   b_{33} \newline
-\end{bmatrix}
-$$
-若我們欲求 $[\boldsymbol{AB}]_{12}$ 其值為 $a_{11}*b_{11} + a_{12}*b_{21} + a_{13}*b_{31}$，由於我們為了求列記法方便，已經將 $\boldsymbol{B}$ 轉置了，所以變成：
-$$
-\boldsymbol{A} =
-\begin{bmatrix}
-    a_{11} &amp;   a_{12} &amp;   a_{13} \newline
-    a_{21} &amp;   a_{22} &amp;   a_{23} \newline
-    a_{31} &amp;   a_{32} &amp;   a_{33} \newline
-\end{bmatrix}
+O(mn)
 $$</p>
 
-<p>$$
-\boldsymbol{B^T} =
-\begin{bmatrix}
-    b_{11} = b&rsquo;_{11}  &amp;   b_{21} = b&rsquo;_{12}  &amp;   b_{31} = b&rsquo;_{13}  \newline
-    b_{12} =  b&rsquo;_{21} &amp;   b_{22} =b&rsquo;_{22}   &amp;   b_{32} = b&rsquo;_{23}  \newline
-    b_{13} =  b&rsquo;_{31} &amp;   b_{23} =b&rsquo;_{32}   &amp;   b_{33} = b&rsquo;_{33}  \newline
-\end{bmatrix}
-$$</p>
+<h1 id="knuth-morris-pratt-kmp-pattern-matching-algorithm">Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm</h1>
 
-<p>$[\boldsymbol{AB}]_{12}$ 值等式可再表示為：
-$$
-a_{11}*b_{11} + a_{12}*b_{21} + a_{13}*b_{31} = a_{11}*b&rsquo;_{11} + a_{12}*b&rsquo;_{12} + a_{13}*b&rsquo;_{13}
-$$
-再一個，$[\boldsymbol{AB}]_{32}$ 可表示為：
-$$
-a_{31}*b_{12} + a_{32}*b_{22} + a_{33}*b_{32} = a_{31}*b&rsquo;_{21} + a_{32}*b&rsquo;_{22} + a_{33}*b&rsquo;_{23}
-$$
-所以我們整理一下，若是要求$[\boldsymbol{AB}]_{ij}$，則：
-$$
-a_{i1}*b_{1j} + a_{i2}*b_{2j} + a_{i3}*b_{3j} = a_{i1}*b&rsquo;_{j1} + a_{i2}*b&rsquo;_{j2} + a_{i3}*b&rsquo;_{j3}
-$$
-如果我們再把 $k$ 代上去，可求得：
-$$
-[\boldsymbol{AB}]_{ij} = a_{ik}*b_{kj} + a_{ik}*b_{kj} + a_{ik}*b_{kj} = a_{ik}*b&rsquo;_{jk} + a_{ik}*b&rsquo;_{jk} + a_{ik}*b&rsquo;_{jk}
-$$
-所以我們可以觀察到：在運算某一個位於$(i,j)$ 的元素時，$i$ 與 $j$ 保持不動，只有 $k$ 在保持變動，所以我們可以了解到：若是 $i$ 或是 $j$ 有任一個變動，就是已經算完該元素了，這個結論對於以下了解 Horowitz et al. 所寫的程式中的判斷式尤為有用：</p>
+<h2 id="kmp-alg-overview">KMP Alg. Overview</h2>
 
-<p>我們用稀疏矩陣記法，先將 $i,j,k​$ 三個變數填上去：</p>
+<p>這個演算法基本上就是不要重複比那麼多次已經確定知道的事實，假若給定欲比較的字串$s$  <code>ABCCABABCACBABCACB</code>以及 Pattern $p$ <code>ABCACBABCACB</code>，如果是上述的演算法，$s_1$ 與 $p_1$ 會先比較，再來比較 $s_2$ 與 $p_2$，再來是 $s_3$ 與 $p_3$，但是比到 $s_4$ 與 $p_4$ 時卻發現不同了，這時，上述演算法就會從 $s_2$ 開始再跟 $p_1$ 重新開始比。</p>
+
+<p>如果 Pattern 裡面有很多 Sub-Patterns，例如給定一個 $p&rsquo; = ABCACBABCACB$ ，這個 $p&rsquo;$ 有重複兩次的 <code>ABCACB</code>，假若今天給定一個欲比較的字串 $s&rsquo; = ABCACBABCABCACBABCACB$ 比到 $p&rsquo;<em>{11}$ 時，發現與 $s&rsquo;</em>{11}$ 不一樣，如果我再從 $s&rsquo;<em>2$ 開始跟 $p&rsquo;</em>{1}$ 比其實很耗時間；我們發現到，在 $s&rsquo;_{11}$ 的時候我們已經比完了 $p&rsquo;<em>1$ ～ $p&rsquo;</em>{10}$ 了，再仔細觀察一下，我們又發現 $p&rsquo;_1$ ～ $p&rsquo;_4$ 以及 $p&rsquo;<em>7$ ～ $p&rsquo;</em>{10}$ 根本都是一樣的（都是<code>ABCA</code>）；也就是說，當我的 $s&rsquo;<em>7$ ～ $s&rsquo;</em>{10}$ 跟 $ p&rsquo;<em>7$ ～ $p&rsquo;</em>{10}$ 一樣就等同於$s&rsquo;<em>7$ ～ $s&rsquo;</em>{10}$ 跟$ p&rsquo;_1$ ～ $p&rsquo;_4$ 也一樣的意思，那我就直接把 $ p&rsquo;_1$ ～ $p&rsquo;_4$ 對齊 $ s&rsquo;<em>7$ ～ $s&rsquo;</em>{10}$ 不就好了呢？</p>
+
+<ul>
+<li>註，$s_1$ 等等那些 1 就是從字串第一個字開始。</li>
+</ul>
+
+<pre><code>s' = ABCACBABCABCACBABCACB
+p' = ABCACBABCACB
+               ^比到這裡錯了
+笨：
+s' = ABCACBABCABCACBABCACB
+p' =  ABCACBABCACB
+
+讚：
+s' = ABCACBABCABCACBABCACB
+p' =       ABCACBABCACB
+</code></pre>
+
+<p>因為 Pattern 如果有字樣重複問題（如上面重複兩次的<code>ABCACB</code>）很容易在比較的時候重複比對，造成不必要的運算，為了解決這個問題，我們於是有了<code>Failure</code>表，讓我們知道在比對的時候如果發現錯了，我們要該從哪裡重新比對，而非一直從頭開始慢慢比對。</p>
+
+<p>以下是 $p&rsquo; = ABCACBABCACB$ 的 Failure Table：</p>
 
 <table>
 <thead>
 <tr>
-<th>Matrix</th>
-<th>Row</th>
-<th>Col</th>
-<th>Val</th>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>A</th>
+<th>C</th>
+<th>B</th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>A</th>
+<th>C</th>
+<th>B</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td><code>a</code></td>
-<td>$i$</td>
-<td>$k$</td>
-<td>該元素值</td>
+<td>When failure, goto?</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>0</td>
+<td>-1</td>
+<td>-1</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
 </tr>
 
 <tr>
-<td><code>b</code></td>
-<td>$k$</td>
-<td>$j$</td>
-<td>該元素值</td>
-</tr>
-
-<tr>
-<td><code>b</code>的 transpose: <code>newB</code></td>
-<td>$j$</td>
-<td>$k$</td>
-<td>該元素值</td>
+<td>index</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
 </tr>
 </tbody>
 </table>
 
-<p>所以，我們可以大致建構以下的程式進行矩陣間的元素乘法：</p>
+<p>再給定 $s&rsquo; = ABCACBABCABCACBABCACB$</p>
 
-<pre><code class="language-c">void mmult(term a[], term b[], term d[]) {
-    term newB[MAX_TERMS];
-    fastTranspose(b, newB);
-    int column, row = a[1].row, sum = 0;
-    int totalD = 0;
-    int rowsA = a[0].row, colsB = b[0].col;
-    int rowBegin = 1;
-    
-    a[a[0].val+1].row = rowsA;
-    newB[b[0].val+1].col = colsB;
-    newB[b[0].val+1].col = 0;
-    
-    for (int i = 1; i &lt;= a[0].val; ) {
-        column = newB[1].row;
-        for (int j = 1; j &lt;= b[0].val+1; ) {
-            if (a[i].row != row) {
-                storeSum(d, &amp;totalD, row, column, &amp;sum);
-                i = rowBegin;
-                for(; newB[j].row == column; j++);
-                column = newB[j].row;
-            } else if (newB[j].row != column) {
-                storeSum(d, &amp;totalD, row, column, &amp;sum);
-                i = rowBegin;
-                column = newB[j].row;
-            } else switch (COMPARE(a[i].col, newB[j].col)) {
-                case -1:
-                    i++;
-                    break;
-                case 0:
-                    sum += (a[i++].val * newB[j++].val);
-                    break;
-                case 1:
-                    j++;
-            }
+<p>很顯而易見的，如果 Pattern 比對到 index <code>10</code> (<code>C</code>) 的地方發現爛掉了，那我就依循 index <code>10</code> 的 failure index 看看要從哪裡開始重新比較，此時是 <code>4</code> ，所以欲比較的字串目前比對的字就回到 index <code>4</code> 的地方從這裡開始比，就不重複比 index <code>0 ~ 3</code>的地方了。</p>
+
+<h2 id="failure-function-recursion">Failure Function Recursion</h2>
+
+<p>如何創造出一個 Failure Table，若給定相關的遞迴式（From Horowitz et al.）：
+$$
+f(j) =
+  \begin{cases}
+    -1       &amp; \quad \text{if } j \text{ is 0}  \newline
+    f^m(j-1)+1       &amp; \quad \text{where } m \text{ is the least integer } k \text{ for which } p_{f^k(j-1)+1}=p_j  \newline
+    -1       &amp; \quad \text{if there is no } k \text{ satisfying the above}
+  \end{cases}
+$$
+可求得以下程式，Horowitz et al. 的 Fundamental of Data Structures in C 給出初始值為<code>-1</code>而在 CLRS 的 Introduction to Algorithm 給出初始值為<code>0</code>，這其實大同小異，程式微調而已，演算法本質不變。</p>
+
+<pre><code class="language-c">void failureFunction (char *pattern) {
+    int n = strlen(pattern);
+    failure[0] = -1;
+    for (int j = 1; j &lt; n; j++) {
+        i = failure[j-1];
+        while ((pattern[j] != pattern[i+1]) &amp;&amp; (i &gt;= 0)) {
+            i = failure[i];
         }
-        for (; a[i].row == row; i++);
-        rowBegin = i;
-        row = a[i].row;
-    }
-    d[0].row = rowsA;
-    d[0].col = colsB;
-    d[0].val = totalD;
-}
-</code></pre>
-
-<p>另外有一支 Function <code>storeSum</code>：</p>
-
-<pre><code class="language-c">void storeSum (term d[], int *totalD, int row, int column, int *sum) {
-    if (*sum) {
-        if (*totalD &lt; MAX_TERMS) {
-            d[++*totalD].row = row;
-            d[*totalD].col = column;
-            d[*totalD].val = *sum;
-            *sum = 0;
+        if (pattern[j] == pattern[i+1]) {
+            failure[j] = i + 1;
+        } else {
+            failure[j] = -1;
         }
     }
 }
 </code></pre>
 
-<p><code>mmult</code>兩層迴圈中的判斷式主要判斷：</p>
+<h3 id="explanation">Explanation</h3>
+
+<p>這個 <code>failureFunction</code>主要是建構<code>failure</code>表供 KMP 演算法使用，其最重要的精神是在</p>
+
+<h4 id="初始化">初始化</h4>
+
+<p><code>failure[0] = -1</code></p>
+
+<h4 id="比對過程">比對過程</h4>
 
 <ol>
-<li><p>是否仍在同 row 運算中，若是不同 row 則結束該元素運算，並儲存該元素總和。（<code>if (a[i].row != row)</code> 的意思）</p></li>
+<li>先賦予前一次 Pattern 字元的編號（<code>i = failure[j-1];</code>）</li>
+<li>比對本次字元是否與子 Pattern 字元是否*不*相符（<code>pattern[j] != pattern[i+1]</code>）以及編號必須大於等於 0（<code>i &gt;= 0</code>）
 
-<li><p>是否仍在同 col 運算中，若是不同 col 則結束該元素運算，並儲存該元素總和。（<code>else if (newB[j].row != column)</code>的意思，這裡的<code>newB</code>已是由<code>B</code>轉置過來的稀疏矩陣）</p></li>
-
-<li><p>以上條件皆否，表示仍在同一個 row 與 col 之中，要確保其元素是否一一對準（上面公式 $k$ 的作用，要確保 $k$ 值要保持一致），若是 a 的 k 值（<code>a[i].col</code>）小於 newb 的 k 值（<code>newB[j].col</code>）則讓<code>i++</code>讓 $k$ 值可追上 newb，若是 a 的 k 值（<code>a[i].col</code>）大於 newb 的 k 值（<code>newB[j].col</code>）則讓<code>j++</code>讓 $k$ 值可追上 a。</p></li>
+<ol>
+<li>若不相符，把<code>i</code>當<code>failure</code>索引，找到前一次的編號當作新的<code>i</code></li>
+</ol></li>
+<li>如果本次的字元與子 Pattern 字元相符（<code>pattern[j] == pattern[i+1]</code>），則賦予<code>failure</code>本次 Pattern 字元相對應的編號。</li>
+<li>若以上都不符合，直接賦予<code>failure</code>本次 Pattern 字元<code>-1</code>的編號。</li>
 </ol>
 
-<blockquote>
-<p>要值得注意的是，有可能你會懷疑增加<code>i, j</code>值可確保 $k$ 值增加嗎？由於我們先前已經確定我們在稀疏矩陣記法時已經保證在同一個 row index 底下，col index 會保持遞增，而我們這邊要已經在同一個 row 與 col（newB 的 row，B 的 col，newB 是 B 的轉置矩陣） 的前提下，<code>a.row</code>與<code>newB.row</code>都已經固定了，所以確保他們兩個 col 會保持遞增情形。</p>
-</blockquote>
+<h2 id="kmp-matching-procedure">KMP Matching Procedure</h2>
 
-<p>所以，何時才會執行到<code>switch</code>case 的<code>case 0</code>呢？也就是在<code>a[i].col</code>與<code>newB[j].col</code>值相同時，才會進行兩矩陣的元素相乘與加總；反之，就<code>i++, j++</code>移至下一個 data row，所以也就是<code>for</code>迴圈不加上執行後計數的指令了。</p>
+<p>有了 Failure Table 可供使用之後，就可以建立起比較的模式，程式如下：</p>
 
-<p>第二層迴圈的終止條件與第一層的終止迴圈差一個「<code>+1</code>」，因為下方判斷式緣故，必須「col 與目前相異才會記錄該元素值」，也就是如果我只停在「<code>b[0].val</code>」，那我雖然<code>sum</code>已經記錄完該元素的所有東西，但是沒辦法進入到<code>newB[j].row != column</code>內進行記錄。</p>
+<pre><code class="language-c">int kmpMatching(char *string, char *pattern) {
+    int i = 0, j = 0;
+    int stringLen = strlen(string);
+    int patternLen = strlen(pattern);
+    while (i &lt; stringLen &amp;&amp; j &lt; patternLen) {
+        if (string[i] == pattern[j]) {
+            i++;
+            j++;
+        } else if (j == 0) {
+            i++;
+        } else {
+            j = failure[j-1] + 1;
+        }
+    }
+    return ((j == patternLen) ? (i - patternLen) : -1);
+}
+</code></pre>
 
   </div>
 
@@ -588,13 +733,13 @@ $$
                 <i class="fa fa-tags"></i>
                 
                 
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/sparsematrix">SparseMatrix</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/multipication">Multipication</a></li>
-                
-                
                 <li><a class="article-category-link" href="https://blog.onemid.net/tags/ds">DS</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/stringcompare">StringCompare</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/kmp">KMP</a></li>
                 
                 
                 <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
@@ -644,8 +789,8 @@ $$
 
 <ul class="actions pagination">
     
-        <li><a href="https://blog.onemid.net/blog/tex_markdown_underscore/"
-                class="button big previous">TeX Underscore Problem in Markdown</a></li>
+        <li><a href="https://blog.onemid.net/blog/ds_sparse_matrix_mul/"
+                class="button big previous">Sparse Matrix Multipication</a></li>
     
 
     
@@ -664,7 +809,7 @@ $$
 
 
 <li>
-  <a href="//twitter.com/share?url=https%3a%2f%2fblog.onemid.net%2fblog%2fds_sparse_matrix_mul%2f&amp;text=Sparse%20Matrix%20Multipication&amp;via=" target="_blank" class="share-btn twitter">
+  <a href="//twitter.com/share?url=https%3a%2f%2fblog.onemid.net%2fblog%2fds_string_kmp_alg%2f&amp;text=%28Draft%29%20Knuth%2c%20Morris%2c%20Pratt%20%28KMP%29%20Pattern%20Matching%20Algorithm&amp;via=" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
     </a>
@@ -674,7 +819,7 @@ $$
 
 
 <li>
-  <a href="//plus.google.com/share?url=https%3a%2f%2fblog.onemid.net%2fblog%2fds_sparse_matrix_mul%2f" target="_blank" class="share-btn google-plus">
+  <a href="//plus.google.com/share?url=https%3a%2f%2fblog.onemid.net%2fblog%2fds_string_kmp_alg%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
   </a>
@@ -685,7 +830,7 @@ $$
 
 
 <li>
-  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.onemid.net%2fblog%2fds_sparse_matrix_mul%2f" target="_blank" class="share-btn facebook">
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.onemid.net%2fblog%2fds_string_kmp_alg%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
     </a>
@@ -707,7 +852,7 @@ $$
 
 
 <li>
-  <a href="mailto:?subject=Check out this post by Gary%20Gong&amp;body=https%3a%2f%2fblog.onemid.net%2fblog%2fds_sparse_matrix_mul%2f" target="_blank" class="share-btn email">
+  <a href="mailto:?subject=Check out this post by Gary%20Gong&amp;body=https%3a%2f%2fblog.onemid.net%2fblog%2fds_string_kmp_alg%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
   </a>
@@ -739,6 +884,19 @@ $$
           
         
 
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://blog.onemid.net/blog/ds_string_kmp_alg/">(Draft) Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm</a>
+              </h3>
+              
+              <time class="published" datetime='2018-09-01'>
+                September 1, 2018
+              </time>
+            </header>
+            
+          </article>
         
           <article class="mini-post">
             <header>
@@ -792,19 +950,6 @@ $$
             
           </article>
         
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="https://blog.onemid.net/blog/julia-triple-quote-string-literals-alignment/">Julia Triple-Quoted String Literals Alignment</a>
-              </h3>
-              
-              <time class="published" datetime='2018-08-26'>
-                August 26, 2018
-              </time>
-            </header>
-            
-          </article>
-        
       </div>
 
       
@@ -837,6 +982,17 @@ $$
           <article>
             <header>
               
+                <a href="https://blog.onemid.net/categories/ds/">DS</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
                 <a href="https://blog.onemid.net/categories/mathjax/">MathJax</a>
                 <span style="float:right;">3</span>
               
@@ -850,17 +1006,6 @@ $$
               
                 <a href="https://blog.onemid.net/categories/tex/">TeX</a>
                 <span style="float:right;">3</span>
-              
-            </header>
-          </article>
-        </p>
-        
-        <p>
-          <article>
-            <header>
-              
-                <a href="https://blog.onemid.net/categories/ds/">DS</a>
-                <span style="float:right;">2</span>
               
             </header>
           </article>

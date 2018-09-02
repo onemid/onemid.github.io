@@ -25,7 +25,7 @@ int findString(char *string, char *pattern) { int i, j = 0; int startStringPos =
         "datePublished": "2018-09-01 13:41:41 &#43;0800 CST",
         "dateModified" : "2018-09-01 13:41:41 &#43;0800 CST",
         "url" : "https://blog.onemid.net/blog/ds_string_kmp_alg/",
-        "wordCount" : "729",
+        "wordCount" : "951",
         "keywords" : [ "DS","StringCompare","KMP","","","","","Blog" ]
     }
     </script>
@@ -71,7 +71,7 @@ int findString(char *string, char *pattern) { int i, j = 0; int startStringPos =
 
 <meta itemprop="datePublished" content="2018-09-01T13:41:41&#43;08:00" />
 <meta itemprop="dateModified" content="2018-09-01T13:41:41&#43;08:00" />
-<meta itemprop="wordCount" content="729">
+<meta itemprop="wordCount" content="951">
 
 
 
@@ -433,7 +433,7 @@ if (!doNotTrack) {
             September 1, 2018</time>
         <span class="author">Gary Gong</span>
         
-            <p>4 minute read</p>
+            <p>5 minute read</p>
         
         
     </div>
@@ -631,11 +631,102 @@ $$</p>
 
 <h1 id="knuth-morris-pratt-kmp-pattern-matching-algorithm">Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm</h1>
 
+<h2 id="kmp-alg-overview">KMP Alg. Overview</h2>
+
+<p>這個演算法基本上就是不要重複比那麼多次已經確定知道的事實，假若給定欲比較的字串$s$  <code>ABCCABABCACBABCACB</code>以及 Pattern $p$ <code>ABCACBABCACB</code>，如果是上述的演算法，$s_1$ 與 $p_1$ 會先比較，再來比較 $s_2$ 與 $p_2$，再來是 $s_3$ 與 $p_3$，但是比到 $s_4$ 與 $p_4$ 時卻發現不同了，這時，上述演算法就會從 $s_2$ 開始再跟 $p_1$ 重新開始比。</p>
+
+<p>如果 Pattern 裡面有很多 Sub-Patterns，例如給定一個 $p&rsquo; = ABCACBABCACB$ ，這個 $p&rsquo;$ 有重複兩次的 <code>ABCACB</code>，假若今天給定一個欲比較的字串 $s&rsquo; = ABCACBABCABCACBABCACB$ 比到 $p&rsquo;<em>{11}$ 時，發現與 $s&rsquo;</em>{11}$ 不一樣，如果我再從 $s&rsquo;<em>2$ 開始跟 $p&rsquo;</em>{1}$ 比其實很耗時間；我們發現到，在 $s&rsquo;_{11}$ 的時候我們已經比完了 $p&rsquo;<em>1$ ～ $p&rsquo;</em>{10}$ 了，再仔細觀察一下，我們又發現 $p&rsquo;_1$ ～ $p&rsquo;_4$ 以及 $p&rsquo;<em>7$ ～ $p&rsquo;</em>{10}$ 根本都是一樣的（都是<code>ABCA</code>）；也就是說，當我的 $s&rsquo;<em>7$ ～ $s&rsquo;</em>{10}$ 跟 $ p&rsquo;<em>7$ ～ $p&rsquo;</em>{10}$ 一樣就等同於$s&rsquo;<em>7$ ～ $s&rsquo;</em>{10}$ 跟$ p&rsquo;_1$ ～ $p&rsquo;_4$ 也一樣的意思，那我就直接把 $ p&rsquo;_1$ ～ $p&rsquo;_4$ 對齊 $ s&rsquo;<em>7$ ～ $s&rsquo;</em>{10}$ 不就好了呢？</p>
+
+<ul>
+<li>註，$s_1$ 等等那些 1 就是從字串第一個字開始。</li>
+</ul>
+
+<pre><code>s' = ABCACBABCABCACBABCACB
+p' = ABCACBABCACB
+               ^比到這裡錯了
+笨：
+s' = ABCACBABCABCACBABCACB
+p' =  ABCACBABCACB
+
+讚：
+s' = ABCACBABCABCACBABCACB
+p' =       ABCACBABCACB
+</code></pre>
+
+<p>因為 Pattern 如果有字樣重複問題（如上面重複兩次的<code>ABCACB</code>）很容易在比較的時候重複比對，造成不必要的運算，為了解決這個問題，我們於是有了<code>Failure</code>表，讓我們知道在比對的時候如果發現錯了，我們要該從哪裡重新比對，而非一直從頭開始慢慢比對。</p>
+
+<p>以下是 $p&rsquo; = ABCACBABCACB$ 的 Failure Table：</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>A</th>
+<th>C</th>
+<th>B</th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>A</th>
+<th>C</th>
+<th>B</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>When failure, goto?</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>0</td>
+<td>-1</td>
+<td>-1</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+</tr>
+
+<tr>
+<td>index</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+</tr>
+</tbody>
+</table>
+
+<p>再給定 $s&rsquo; = ABCACBABCABCACBABCACB$</p>
+
+<p>很顯而易見的，如果 Pattern 比對到 index <code>10</code> (<code>C</code>) 的地方發現爛掉了，那我就依循 index <code>10</code> 的 failure index 看看要從哪裡開始重新比較，此時是 <code>4</code> ，所以欲比較的字串目前比對的字就回到 index <code>4</code> 的地方從這裡開始比，就不重複比 index <code>0 ~ 3</code>的地方了。</p>
+
 <h2 id="failure-function-recursion">Failure Function Recursion</h2>
 
-<p>$$</p>
-
-<p>$$</p>
+<p>如何創造出一個 Failure Table，若給定相關的遞迴式（From Horowitz et al.）：
+$$
+f(j) =
+  \begin{cases}
+    -1       &amp; \quad \text{if } j \text{ is 0}  \newline
+    f^m(j-1)+1       &amp; \quad \text{where } m \text{ is the least integer } k \text{ for which } p_{f^k(j-1)+1}=p_j  \newline
+    -1       &amp; \quad \text{if there is no } k \text{ satisfying the above}
+  \end{cases}
+$$
+可求得以下程式，Horowitz et al. 的 Fundamental of Data Structures in C 給出初始值為<code>-1</code>而在 CLRS 的 Introduction to Algorithm 給出初始值為<code>0</code>，這其實大同小異，程式微調而已，演算法本質不變。</p>
 
 <pre><code class="language-c">void failureFunction (char *pattern) {
     int n = strlen(pattern);
@@ -656,9 +747,7 @@ $$</p>
 
 <h3 id="explanation">Explanation</h3>
 
-<p>這個 <code>failureFunction</code>主要是建構<code>failure</code>表供 KMP 演算法使用，其最重要的精神是在 Pattern 中找出 Sub-Pattern，並予以編號；假若今天給定 Pattern 字串<code>abcabcacab</code>，其中<code>abca</code>重複了兩次（<code>(abc[a)bca]cab</code>），<code>abc</code>重複了兩次（<code>(abc)(abc)acab</code>），<code>ab</code>重複了三次（<code>(ab)c(ab)cac(ab)</code>）。</p>
-
-<p>其程式就是要找出重複 Sub-Pattern 的部分，運作如下：</p>
+<p>這個 <code>failureFunction</code>主要是建構<code>failure</code>表供 KMP 演算法使用，其最重要的精神是在</p>
 
 <h4 id="初始化">初始化</h4>
 
@@ -675,119 +764,28 @@ $$</p>
 </ol></li>
 <li>如果本次的字元與子 Pattern 字元相符（<code>pattern[j] == pattern[i+1]</code>），則賦予<code>failure</code>本次 Pattern 字元相對應的編號。</li>
 <li>若以上都不符合，直接賦予<code>failure</code>本次 Pattern 字元<code>-1</code>的編號。</li>
-<li></li>
 </ol>
 
-<h3 id="simulation">Simulation</h3>
+<h2 id="kmp-matching-procedure">KMP Matching Procedure</h2>
 
-<h4 id="before-loop">Before Loop:</h4>
+<p>有了 Failure Table 可供使用之後，就可以建立起比較的模式，程式如下：</p>
 
-<table>
-<thead>
-<tr>
-<th>Pat.</th>
-<th>a</th>
-<th>b</th>
-<th>c</th>
-<th>a</th>
-<th>b</th>
-<th>c</th>
-<th>a</th>
-<th>c</th>
-<th>a</th>
-<th>b</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>j</code></td>
-<td>0</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
-<td>6</td>
-<td>7</td>
-<td>8</td>
-<td>9</td>
-</tr>
-
-<tr>
-<td><code>failure</code></td>
-<td>-1</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-<p>-1 為其<code>failure[0] = -1</code>的初始化</p>
-
-<h4 id="1st-loop">1st Loop:</h4>
-
-<table>
-<thead>
-<tr>
-<th>Pat.</th>
-<th>a</th>
-<th>b</th>
-<th>c</th>
-<th>a</th>
-<th>b</th>
-<th>c</th>
-<th>a</th>
-<th>c</th>
-<th>a</th>
-<th>b</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>j</code></td>
-<td>0</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
-<td>6</td>
-<td>7</td>
-<td>8</td>
-<td>9</td>
-</tr>
-
-<tr>
-<td><code>failure</code></td>
-<td>-1</td>
-<td>-1</td>
-<td>.-1</td>
-<td>0</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>-1</td>
-<td>0</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-<pre><code class="language-c">j == 1;
-i == failure[j-1] == failure[0] == -1;
-pattern[j] != pattern[i+1] =&gt; pattern[1] != pattern[0] (YES);
-i &gt;= 0 (NO);
-pattern[j] == pattern[i+1] =&gt; pattern[1] == pattern[0] (NO);
-=&gt; failure[j] == failure[1] == -1;
+<pre><code class="language-c">int kmpMatching(char *string, char *pattern) {
+    int i = 0, j = 0;
+    int stringLen = strlen(string);
+    int patternLen = strlen(pattern);
+    while (i &lt; stringLen &amp;&amp; j &lt; patternLen) {
+        if (string[i] == pattern[j]) {
+            i++;
+            j++;
+        } else if (j == 0) {
+            i++;
+        } else {
+            j = failure[j-1] + 1;
+        }
+    }
+    return ((j == patternLen) ? (i - patternLen) : -1);
+}
 </code></pre>
 
   </div>
