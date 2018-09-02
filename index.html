@@ -554,7 +554,7 @@ $$</p>
 
 <p>這個演算法基本上就是不要重複比那麼多次已經確定知道的事實，假若給定欲比較的字串$s$  <code>ABCCABABCACBABCACB</code>以及 Pattern $p$ <code>ABCACBABCACB</code>，如果是上述的演算法，$s_1$ 與 $p_1$ 會先比較，再來比較 $s_2$ 與 $p_2$，再來是 $s_3$ 與 $p_3$，但是比到 $s_4$ 與 $p_4$ 時卻發現不同了，這時，上述演算法就會從 $s_2$ 開始再跟 $p_1$ 重新開始比。</p>
 
-<p>如果 Pattern 裡面有很多 Sub-Patterns，例如給定一個 $p&rsquo; = ABCACBABCACB$ ，這個 $p&rsquo;$ 有重複兩次的 <code>ABCACB</code>，假若今天給定一個欲比較的字串 $s&rsquo; = ABCACBABCABCACBABCACB$ 比到 $p&rsquo;<em>{11}$ 時，發現與 $s&rsquo;</em>{11}$ 不一樣，如果我再從 $s&rsquo;<em>2$ 開始跟 $p&rsquo;</em>{1}$ 比其實很耗時間；我們發現到，在 $s&rsquo;_{11}$ 的時候我們已經比完了 $p&rsquo;<em>1$ ～ $p&rsquo;</em>{10}$ 了，再仔細觀察一下，我們又發現 $p&rsquo;_1$ ～ $p&rsquo;_4$ 以及 $p&rsquo;<em>7$ ～ $p&rsquo;</em>{10}$ 根本都是一樣的（都是<code>ABCA</code>）；也就是說，當我的 $s&rsquo;<em>7$ ～ $s&rsquo;</em>{10}$ 跟 $ p&rsquo;<em>7$ ～ $p&rsquo;</em>{10}$ 一樣就等同於$s&rsquo;<em>7$ ～ $s&rsquo;</em>{10}$ 跟$ p&rsquo;_1$ ～ $p&rsquo;_4$ 也一樣的意思，那我就直接把 $ p&rsquo;_1$ ～ $p&rsquo;_4$ 對齊 $ s&rsquo;<em>7$ ～ $s&rsquo;</em>{10}$ 不就好了呢？</p>
+<p>如果 Pattern 裡面有很多 Sub-Patterns，例如給定一個 $p&rsquo; = ABCACBABCACB$ ，這個 $p&rsquo;$ 有重複兩次的 <code>ABCACB</code>，假若今天給定一個欲比較的字串 $s&rsquo; = ABCACBABCABCACBABCACB$ 比到 $p&rsquo;_{11}$ 時，發現與 $s&rsquo;_{11}$ 不一樣，如果我再從 $s&rsquo;_2$ 開始跟 $p&rsquo;_{1}$ 比其實很耗時間；我們發現到，在 $s&rsquo;_{11}$ 的時候我們已經比完了 $p&rsquo;_1$ ～ $p&rsquo;_{10}$ 了，再仔細觀察一下，我們又發現 $p&rsquo;_1$ ～ $p&rsquo;_4$ 以及 $p&rsquo;_7$ ～ $p&rsquo;_{10}$ 根本都是一樣的（都是<code>ABCA</code>）；也就是說，當我的 $s&rsquo;_7$ ～ $s&rsquo;_{10}$ 跟 $ p&rsquo;_7$ ～ $p&rsquo;_{10}$ 一樣就等同於$s&rsquo;_7$ ～ $s&rsquo;_{10}$ 跟$ p&rsquo;_1$ ～ $p&rsquo;_4$ 也一樣的意思，那我就直接把 $ p&rsquo;_1$ ～ $p&rsquo;_4$ 對齊 $ s&rsquo;_7$ ～ $s&rsquo;_{10}$ 不就好了呢？</p>
 
 <ul>
 <li>註，$s_1$ 等等那些 1 就是從字串第一個字開始。</li>
