@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-09-01 13:41:41 &#43;0800 CST",
-        "dateModified" : "2018-09-01 13:41:41 &#43;0800 CST",
+        "datePublished": "2018-09-07 14:15:44 &#43;0800 CST",
+        "dateModified" : "2018-09-07 14:15:44 &#43;0800 CST",
         "url" : "https://blog.onemid.net/",
         "wordCount" : "0",
         "keywords" : [ "Blog" ]
@@ -53,7 +53,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.onemid.net/" />
-<meta property="og:updated_time" content="2018-09-01T13:41:41&#43;08:00"/>
+<meta property="og:updated_time" content="2018-09-07T14:15:44&#43;08:00"/>
         <meta property="og:image" content="https://blog.onemid.net/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
@@ -236,6 +236,18 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="https://blog.onemid.net/blog/ux-necessary-stuffs/">小工具的必要性與設計</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-09-07'>
+                                    September 7, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="https://blog.onemid.net/blog/ds_string_kmp_alg/">Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm</a></h3>
                                 
                                 <time class="published" datetime=
@@ -282,42 +294,6 @@ if (!doNotTrack) {
 
                         </article>
                 
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="https://blog.onemid.net/blog/wrf-install/">Weather Research and Forecasting Model (WRF) Installation Guide on Ubuntu 16.04</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2018-08-26'>
-                                    August 26, 2018</time>
-                            </header>
-                            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="https://blog.onemid.net/blog/wrf-install/" class="image featured">
-            <img src="https://blog.onemid.net/img/typhoon.jpg" alt="">
-        </a>
-    
-
-
-                        </article>
-                
 
                 
                     <a href=
@@ -340,7 +316,7 @@ if (!doNotTrack) {
   <header>
     <div class="title">
         
-            <h2><a href="https://blog.onemid.net/blog/ds_string_kmp_alg/">Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm</a></h2>
+            <h2><a href="https://blog.onemid.net/blog/ux-necessary-stuffs/">小工具的必要性與設計</a></h2>
         
         
     </div>
@@ -348,11 +324,11 @@ if (!doNotTrack) {
         
 
         <time class="published"
-            datetime='2018-09-01'>
-            September 1, 2018</time>
+            datetime='2018-09-07'>
+            September 7, 2018</time>
         <span class="author">Gary Gong</span>
         
-            <p>5 minute read</p>
+            <p>1 minute read</p>
         
         
     </div>
@@ -366,350 +342,45 @@ if (!doNotTrack) {
   <div id="content">
     
 
-<h1 id="overview-a-basic-pattern-matching">Overview - A Basic Pattern Matching</h1>
+<p>使用者理所當然會傾向於直覺與方便的操作，所謂直覺操作，亦即使用者可以根據過往生活經驗，不用額外輔助知識就能在未知介面中達成任務。</p>
 
-<p>字串是一個由字元所組成的有限集合，字串的比對有許多方法，其中最簡單的是選定一個起始點向下比對，若是遇到不符合 Pattern 的字串，即起始點向下挪動一格再重新啟動 Pattern 比對，其程式方法如下：</p>
+<p>有些工具與介面，我們認為是方便使用者使用，但是因為功能過於高度重複以及不能完全輔佐使用者達成任務，導致該工具與介面被使用者棄用。</p>
 
-<pre><code class="language-c">int findString(char *string, char *pattern) {
-    int i, j = 0;
-    int startStringPos = 0, endStringPos = strlen(string)-1;
-    int endPatternPos = strlen(pattern)-1;
-    int endMatchingPos = endPatternPos;
-    for (i = startStringPos; endMatchingPos &lt;= endStringPos; ) {
-        if (string[endMatchingPos] == pattern[endPatternPos]) {
-            for (j = 0, i = startStringPos; j &lt; endPatternPos &amp;&amp; string[i] == pattern[j]; i++, j++);
-        }
-        if (j == endPatternPos) {
-            return startStringPos;
-        }
-        endMatchingPos++;
-        startStringPos++;
-    }
-    return -1;
-}
-</code></pre>
+<h1 id="功能覆蓋">功能覆蓋</h1>
 
-<p>這個程式主要運作起來長這樣：</p>
+<p>我們透過一些例子了解這是怎麼運作的：</p>
 
-<p>初始化（<code>2~5 行地方</code>）：</p>
+<p>假設給定一個小工具，該小工具可顯示公告等相關訊息；而此小工具的公告訊息來源來自某個系統。若今天某系統最常被使用來觀看公告系統，但使用者必須經歷多於操作小工具的步驟才可觀看公告，那麼這個小工具是有用的。</p>
 
-<p>首先把定位（<code>i</code>）定在字串初始位置（<code>startStringPos = 0</code>）的地方，然後推移<code>endMatchingPos</code>個長度當作該字串比對結束位置（<code>endMatchingPos</code>）。</p>
-
-<p>第一個<code>if</code>：</p>
-
-<p>我們有字串比對結束位置（<code>endMatchingPos</code>）之後，先行檢查是否與欲比對的 Pattern 最尾端（<code>endPatternPos</code>）是否有同樣的字元，如果不一樣，前面就都不用對了。</p>
-
-<p>第一個<code>if</code>裡面的<code>for</code>：</p>
-
-<p>如果發現我們要比對的字串尾巴與 Pattern 尾巴字元相符，那麼我們就檢查要比對的字串字元是否跟 Pattern 完全相符。</p>
-
-<p>第二個<code>if</code>：</p>
-
-<p>如果皆相符，<code>j</code>理應會被計數器加到跟<code>endMatchingPos</code>一樣，那就代表找到相符的樣式字串。</p>
-
-<p>之後（<code>12, 13 行地方</code>）：</p>
-
-<p>把字串比對的初始位置（<code>startStringPos</code>）往後調一個，<code>endMatchingPos</code>也是。</p>
-
-<h3 id="這是-pattern-與變數的關係">這是 Pattern 與變數的關係：</h3>
-
-<pre><code class="language-c">pattern:
-(  a  a  b  \0  )
-   ^j    ^endPatternPos
-   _______
-   endMatchingPos
-</code></pre>
-
-<h3 id="這是-string-比較的經過">這是 String 比較的經過：</h3>
-
-<h4 id="第一層-for-迴圈-第-1-輪">第一層 for 迴圈，第 1 輪</h4>
-
-<pre><code class="language-c">-------------------------------------------
-(  a  b  a  b  b  a  a  b  a  a  \0)
-   ^startStringPos            ^endStringPos
-   ^i    ^endMatchingPos
--------------------------------------------
-(*) i = startStringPos
-(1) 比較 pattern[endPatternPos] 是否等於 string[endMatchingPos]：YES
-(2) 比較 string[i] 是否等於 pattern[j]：NO
-(3) endMatchingPos++; startStringPos++;
-</code></pre>
-
-<h4 id="第一層-for-迴圈-第-2-輪">第一層 for 迴圈，第 2 輪</h4>
-
-<pre><code class="language-c">-------------------------------------------
-(  a  b  a  b  b  a  a  b  a  a  \0)
-      ^startStringPos         ^endStringPos
-      ^i    ^endMatchingPos
--------------------------------------------
-(*) i = startStringPos
-(1) 比較 pattern[endPatternPos] 是否等於 string[endMatchingPos]：NO
-(2) 比較 string[i] 是否等於 pattern[j]：NO
-(3) endMatchingPos++; startStringPos++;
-</code></pre>
-
-<h4 id="第一層-for-迴圈-第-3-輪">第一層 for 迴圈，第 3 輪</h4>
-
-<pre><code class="language-c">-------------------------------------------
-(  a  b  a  b  b  a  a  b  a  a  \0)
-         ^startStringPos      ^endStringPos
-         ^i    ^endMatchingPos
--------------------------------------------
-(*) i = startStringPos
-(1) 比較 pattern[endPatternPos] 是否等於 string[endMatchingPos]：NO
-(2) 比較 string[i] 是否等於 pattern[j]：NO
-(3) endMatchingPos++; startStringPos++;
-</code></pre>
-
-<h4 id="第一層-for-迴圈-第-4-輪">第一層 for 迴圈，第 4 輪</h4>
-
-<pre><code class="language-c">-------------------------------------------
-(  a  b  a  b  b  a  a  b  a  a  \0)
-            ^startStringPos   ^endStringPos
-            ^i    ^endMatchingPos
--------------------------------------------
-(*) i = startStringPos
-(1) 比較 pattern[endPatternPos] 是否等於 string[endMatchingPos]：NO
-(2) 比較 string[i] 是否等於 pattern[j]：NO
-(3) endMatchingPos++; startStringPos++;
-</code></pre>
-
-<h4 id="第一層-for-迴圈-第-5-輪">第一層 for 迴圈，第 5 輪</h4>
-
-<pre><code class="language-c">-------------------------------------------
-(  a  b  a  b  b  a  a  b  a  a  \0)
-               ^startStringPos^endStringPos
-               ^i    ^endMatchingPos
--------------------------------------------
-(*) i = startStringPos
-(1) 比較 pattern[endPatternPos] 是否等於 string[endMatchingPos]：NO
-(2) 比較 string[i] 是否等於 pattern[j]：NO
-(3) endMatchingPos++; startStringPos++;
-</code></pre>
-
-<h4 id="第一層-for-迴圈-第-6-輪">第一層 for 迴圈，第 6 輪</h4>
-
-<pre><code class="language-c">-------------------------------------------
-                              ˇendStringPos
-(  a  b  a  b  b  a  a  b  a  a  \0)
-                  ^startStringPos
-                  ^i    ^endMatchingPos
--------------------------------------------
-(*) i = startStringPos
-(1) 比較 pattern[endPatternPos] 是否等於 string[endMatchingPos]：YES
-
-    第一層 for 迴圈，第 6 輪 - 第二層 for 迴圈，第 1 輪
-    -------------------------------------------
-                                  ˇendStringPos
-    (  a  b  a  b  b  a  a  b  a  a  \0)
-                      ^startStringPos
-                      ^i    ^endMatchingPos
-    -------------------------------------------
-    (  a  a  b  \0  )
-       ^j    ^endPatternPos
-    -------------------------------------------
-    (*) i = startStringPos
-    (1) 比較 pattern[endPatternPos] 是否等於 string[endMatchingPos]：YES
-    (1-1) 比較 pattern[j] 是否等於 string[i]：YES -&gt; i++; j++;
-
-    第一層 for 迴圈，第 6 輪 - 第二層 for 迴圈，第 2 輪
-    -------------------------------------------
-                                  ˇendStringPos
-    (  a  b  a  b  b  a  a  b  a  a  \0)
-                      ^startStringPos
-                         ^i ^endMatchingPos
-    -------------------------------------------
-    (  a  a  b  \0  )
-          ^j ^endPatternPos
-    -------------------------------------------
-    (1-2) 比較 pattern[j] 是否等於 string[i]：YES -&gt; i++; j++;
-
-    第一層 for 迴圈，第 6 輪 - 第二層 for 迴圈，第 3 輪
-    -------------------------------------------
-                                  ˇendStringPos
-    (  a  b  a  b  b  a  a  b  a  a  \0)
-                      ^startStringPos
-                            ^i 
-                            ^endMatchingPos
-    -------------------------------------------
-    (  a  a  b  \0  )
-             ^j 
-             ^endPatternPos
-    -------------------------------------------
-    (1-3) j == endMatchingPos，不符合第二個 for 迴圈執行要件，跳出此 for 迴圈
-
-(2) j == endMatchingPos 故找到 String 的 Pattern，返回結果
-</code></pre>
-
-<h2 id="time-complexity">Time Complexity</h2>
-
-<p>如果最糟最糟的情況是我們必須要把字串比到最後的話，那時間複雜度將會是 Pattern 字串的長度$n$以及拿來比較的 String 字串長度$m$的乘積，亦即：
-$$
-O(mn)
-$$</p>
-
-<h1 id="knuth-morris-pratt-kmp-pattern-matching-algorithm">Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm</h1>
-
-<h2 id="kmp-alg-overview">KMP Alg. Overview</h2>
-
-<p>這個演算法基本上就是不要重複比那麼多次已經確定知道的事實，假若給定欲比較的字串$s$  <code>ABCCABABCACBABCACB</code>以及 Pattern $p$ <code>ABCACBABCACB</code>，如果是上述的演算法，$s_1$ 與 $p_1$ 會先比較，再來比較 $s_2$ 與 $p_2$，再來是 $s_3$ 與 $p_3$，但是比到 $s_4$ 與 $p_4$ 時卻發現不同了，這時，上述演算法就會從 $s_2$ 開始再跟 $p_1$ 重新開始比。</p>
-
-<p>如果 Pattern 裡面有很多 Sub-Patterns，例如給定一個 $p&rsquo; = ABCACBABCACB$ ，這個 $p&rsquo;$ 有重複兩次的 <code>ABCACB</code>，假若今天給定一個欲比較的字串 $s&rsquo; = ABCACBABCABCACBABCACB$ 比到 $p&rsquo;_{11}$ 時，發現與 $s&rsquo;_{11}$ 不一樣，如果我再從 $s&rsquo;_2$ 開始跟 $p&rsquo;_{1}$ 比其實很耗時間；我們發現到，在 $s&rsquo;_{11}$ 的時候我們已經比完了 $p&rsquo;_1$ ～ $p&rsquo;_{10}$ 了，再仔細觀察一下，我們又發現 $p&rsquo;_1$ ～ $p&rsquo;_4$ 以及 $p&rsquo;_7$ ～ $p&rsquo;_{10}$ 根本都是一樣的（都是<code>ABCA</code>）；也就是說，當我的 $s&rsquo;_7$ ～ $s&rsquo;_{10}$ 跟 $ p&rsquo;_7$ ～ $p&rsquo;_{10}$ 一樣就等同於$s&rsquo;_7$ ～ $s&rsquo;_{10}$ 跟$ p&rsquo;_1$ ～ $p&rsquo;_4$ 也一樣的意思，那我就直接把 $ p&rsquo;_1$ ～ $p&rsquo;_4$ 對齊 $ s&rsquo;_7$ ～ $s&rsquo;_{10}$ 不就好了呢？</p>
+<p>亦即：若假設 $A$ 為某系統，$A&rsquo;$ 為某系統的小工具，彼此之間的功能隸屬為 $A&rsquo; \subset A$；若是使用者操作歷程的方便度為 $A_{convenience} &lt; A&rsquo;_{convenience}$，則 $A&rsquo;$ 在這條規則，是一個成功設計的工具。</p>
 
 <blockquote>
-<p>註：我這裡的 $s_1$ 等等那些 1 就是從字串第一個字開始。</p>
+<p>在這裡的註記，我們不使用 $\subseteq$  的概念，因為此概念可代表左右可代表一樣的集合，但是就失去我們的主系統與小工具的意義了。</p>
 </blockquote>
 
-<pre><code>s' = ABCACBABCABCACBABCACB
-p' = ABCACBABCACB
-               ^比到這裡錯了
-笨：
-s' = ABCACBABCABCACBABCACB
-p' =  ABCACBABCACB
+<p>要注意的一點，上面的規則並不代表這是一個「全面」成功的設計工具；再一個例子：</p>
 
-讚：
-s' = ABCACBABCABCACBABCACB
-p' =       ABCACBABCACB
-</code></pre>
+<h1 id="伴隨作用">伴隨作用</h1>
 
-<p>因為 Pattern 如果有字樣重複問題（如上面重複兩次的<code>ABCACB</code>）很容易在比較的時候重複比對，造成不必要的運算，為了解決這個問題，我們於是有了<code>Failure</code>表，讓我們知道在比對的時候如果發現錯了，我們要該從哪裡重新比對，而非一直從頭開始慢慢比對。</p>
+<p>若是今天使用者習慣有伴隨的作用，亦即使用者習慣於操作 $x$ 動作後會再進行 $y$ 操作；今天小工具給予顯示公告等相關訊息，使用者習慣於看完公告後觀看作業項目，但是小工具並未給予此項目的顯示功能，迫使使用者必須進入到系統觀看作業項目；在此，就不是一個成功的設計，因為使用者可以選擇直接進入系統觀看，而避免使用小工具，尤其是小工具的操作經驗與系統操作經驗不一致時。</p>
 
-<p>以下是 $p&rsquo; = ABCACBABCACB$ 的 Failure Table：</p>
+<p>所以：使用以上的註記法，若是使用者有一連串的習慣行為動作集合記為 $B$ ，而 $B$  為有序集合，每一元素為該用戶使用到的功能；如果 $B \not\subset A&rsquo;$ 但是 $B \subset A$ ，那麼此小工具 $A&rsquo;$ 在此規則中，不能帶給使用者流暢的體驗。</p>
 
-<table>
-<thead>
-<tr>
-<th></th>
-<th>A</th>
-<th>B</th>
-<th>C</th>
-<th>A</th>
-<th>C</th>
-<th>B</th>
-<th>A</th>
-<th>B</th>
-<th>C</th>
-<th>A</th>
-<th>C</th>
-<th>B</th>
-</tr>
-</thead>
+<h1 id="範例">範例</h1>
 
-<tbody>
-<tr>
-<td>When failure, goto?</td>
-<td>-1</td>
-<td>-1</td>
-<td>-1</td>
-<td>0</td>
-<td>-1</td>
-<td>-1</td>
-<td>0</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
-</tr>
+<p>今天設計一套系統，擁有公告訊息、繳費等一般使用者會使用到的功能，今天系統設計部門，由於操作系統需要一點精力與時間，所以部門決定設計一個小工具，希望可以帶給使用者更大的方便性，我們分幾個情境來看：</p>
 
-<tr>
-<td>index</td>
-<td>0</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
-<td>6</td>
-<td>7</td>
-<td>8</td>
-<td>9</td>
-<td>10</td>
-<td>11</td>
-</tr>
-</tbody>
-</table>
+<h2 id="管理方發布公告-而使用者也只看公告而已">管理方發布公告，而使用者也只看公告而已</h2>
 
-<p>再給定 $s&rsquo; = ABCACBABCABCACBABCACB$</p>
+<p>這種情況有可能發生在：系統的繳費功能較少用到，但是管理方通常用系統發布公告，那麼小工具可以只設計顯示公告，供使用者觀看。</p>
 
-<p>很顯而易見的，如果 Pattern 比對到 index <code>10</code> (<code>C</code>) 的地方發現爛掉了，那我就依循 index <code>10</code> 的 failure index 看看要從哪裡開始重新比較，此時是 <code>4</code> ，所以欲比較的字串目前比對的字就回到 index <code>4</code> 的地方從這裡開始比，就不重複比 index <code>0 ~ 3</code>的地方了。</p>
+<h2 id="管理方發布公告-而公告內容通常需要要求使用者觀看後繳費">管理方發布公告，而公告內容通常需要要求使用者觀看後繳費</h2>
 
-<h2 id="failure-function-recursion">Failure Function Recursion</h2>
+<p>考慮到若是使用者觀看（$x$ 動作）後就想繳清費用（$y$ 動作），那小工具應該提供繳清費用的功能。</p>
 
-<p>如何創造出一個 Failure Table，若給定相關的遞迴式（From Horowitz et al.）：
-$$
-f(j) =
-  \begin{cases}
-    -1       &amp; \quad \text{if } j \text{ is 0}  \newline
-    f^m(j-1)+1       &amp; \quad \text{where } m \text{ is the least integer } k \text{ for which } p_{f^k(j-1)+1}=p_j  \newline
-    -1       &amp; \quad \text{if there is no } k \text{ satisfying the above}
-  \end{cases}
-$$
-可求得以下程式，Horowitz et al. 的 Fundamental of Data Structures in C 給出初始值為<code>-1</code>而在 CLRS 的 Introduction to Algorithm 給出初始值為<code>0</code>，這其實大同小異，程式微調而已，演算法本質不變。</p>
+<h2 id="管理方發布公告-但是大家都不鳥">管理方發布公告，但是大家都不鳥</h2>
 
-<pre><code class="language-c">void failureFunction (char *pattern) {
-    int n = strlen(pattern);
-    failure[0] = -1;
-    for (int j = 1; j &lt; n; j++) {
-        i = failure[j-1];
-        while ((pattern[j] != pattern[i+1]) &amp;&amp; (i &gt;= 0)) {
-            i = failure[i];
-        }
-        if (pattern[j] == pattern[i+1]) {
-            failure[j] = i + 1;
-        } else {
-            failure[j] = -1;
-        }
-    }
-}
-</code></pre>
-
-<h3 id="explanation">Explanation</h3>
-
-<p>這個 <code>failureFunction</code>主要是建構<code>failure</code>表供 KMP 演算法使用，其最重要的精神是在</p>
-
-<h4 id="初始化">初始化</h4>
-
-<p><code>failure[0] = -1</code></p>
-
-<h4 id="比對過程">比對過程</h4>
-
-<ol>
-<li>先賦予前一次 Pattern 字元的編號（<code>i = failure[j-1];</code>）</li>
-<li>比對本次字元是否與子 Pattern 字元是否*不*相符（<code>pattern[j] != pattern[i+1]</code>）以及編號必須大於等於 0（<code>i &gt;= 0</code>）
-
-<ol>
-<li>若不相符，把<code>i</code>當<code>failure</code>索引，找到前一次的編號當作新的<code>i</code></li>
-</ol></li>
-<li>如果本次的字元與子 Pattern 字元相符（<code>pattern[j] == pattern[i+1]</code>），則賦予<code>failure</code>本次 Pattern 字元相對應的編號。</li>
-<li>若以上都不符合，直接賦予<code>failure</code>本次 Pattern 字元<code>-1</code>的編號。</li>
-</ol>
-
-<h2 id="kmp-matching-procedure">KMP Matching Procedure</h2>
-
-<p>有了 Failure Table 可供使用之後，就可以建立起比較的模式，程式如下：</p>
-
-<pre><code class="language-c">int kmpMatching(char *string, char *pattern) {
-    int i = 0, j = 0;
-    int stringLen = strlen(string);
-    int patternLen = strlen(pattern);
-    while (i &lt; stringLen &amp;&amp; j &lt; patternLen) {
-        if (string[i] == pattern[j]) {
-            i++;
-            j++;
-        } else if (j == 0) {
-            i++;
-        } else {
-            j = failure[j-1] + 1;
-        }
-    }
-    return ((j == patternLen) ? (i - patternLen) : -1);
-}
-</code></pre>
-
-<blockquote>
-<p>後記： 這篇打得有點虛虛的，感覺論述還不是很齊全，日後再慢慢補上。</p>
-</blockquote>
+<p>那你應該檢討你自己了。</p>
 
   </div>
 
@@ -723,7 +394,7 @@ $$
                 <i class="fa fa-folder"></i>
                 
                 
-                <li><a class="article-category-link" href="https://blog.onemid.net/categories/ds">DS</a></li>
+                <li><a class="article-category-link" href="https://blog.onemid.net/categories/ux">UX</a></li>
                 
             
         
@@ -737,13 +408,13 @@ $$
                 <i class="fa fa-tags"></i>
                 
                 
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/ds">DS</a></li>
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/widget">widget</a></li>
                 
                 
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/stringcompare">StringCompare</a></li>
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/evaluation">evaluation</a></li>
                 
                 
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/kmp">KMP</a></li>
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/design">design</a></li>
                 
                 
                 <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
@@ -793,8 +464,8 @@ $$
 
 <ul class="actions pagination">
     
-        <li><a href="https://blog.onemid.net/blog/ds_sparse_matrix_mul/"
-                class="button big previous">Sparse Matrix Multipication</a></li>
+        <li><a href="https://blog.onemid.net/blog/ds_string_kmp_alg/"
+                class="button big previous">Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm</a></li>
     
 
     
@@ -813,7 +484,7 @@ $$
 
 
 <li>
-  <a href="//twitter.com/share?url=https%3a%2f%2fblog.onemid.net%2fblog%2fds_string_kmp_alg%2f&amp;text=Knuth%2c%20Morris%2c%20Pratt%20%28KMP%29%20Pattern%20Matching%20Algorithm&amp;via=" target="_blank" class="share-btn twitter">
+  <a href="//twitter.com/share?url=https%3a%2f%2fblog.onemid.net%2fblog%2fux-necessary-stuffs%2f&amp;text=%e5%b0%8f%e5%b7%a5%e5%85%b7%e7%9a%84%e5%bf%85%e8%a6%81%e6%80%a7%e8%88%87%e8%a8%ad%e8%a8%88&amp;via=" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
     </a>
@@ -823,7 +494,7 @@ $$
 
 
 <li>
-  <a href="//plus.google.com/share?url=https%3a%2f%2fblog.onemid.net%2fblog%2fds_string_kmp_alg%2f" target="_blank" class="share-btn google-plus">
+  <a href="//plus.google.com/share?url=https%3a%2f%2fblog.onemid.net%2fblog%2fux-necessary-stuffs%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
   </a>
@@ -834,7 +505,7 @@ $$
 
 
 <li>
-  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.onemid.net%2fblog%2fds_string_kmp_alg%2f" target="_blank" class="share-btn facebook">
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.onemid.net%2fblog%2fux-necessary-stuffs%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
     </a>
@@ -856,7 +527,7 @@ $$
 
 
 <li>
-  <a href="mailto:?subject=Check out this post by Gary%20Gong&amp;body=https%3a%2f%2fblog.onemid.net%2fblog%2fds_string_kmp_alg%2f" target="_blank" class="share-btn email">
+  <a href="mailto:?subject=Check out this post by Gary%20Gong&amp;body=https%3a%2f%2fblog.onemid.net%2fblog%2fux-necessary-stuffs%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
   </a>
@@ -888,6 +559,19 @@ $$
           
         
 
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://blog.onemid.net/blog/ux-necessary-stuffs/">小工具的必要性與設計</a>
+              </h3>
+              
+              <time class="published" datetime='2018-09-07'>
+                September 7, 2018
+              </time>
+            </header>
+            
+          </article>
         
           <article class="mini-post">
             <header>
@@ -936,19 +620,6 @@ $$
               
               <time class="published" datetime='2018-08-29'>
                 August 29, 2018
-              </time>
-            </header>
-            
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="https://blog.onemid.net/blog/wrf-install/">Weather Research and Forecasting Model (WRF) Installation Guide on Ubuntu 16.04</a>
-              </h3>
-              
-              <time class="published" datetime='2018-08-26'>
-                August 26, 2018
               </time>
             </header>
             
@@ -1064,6 +735,17 @@ $$
             <header>
               
                 <a href="https://blog.onemid.net/categories/python/">Python</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/ux/">UX</a>
                 <span style="float:right;">1</span>
               
             </header>

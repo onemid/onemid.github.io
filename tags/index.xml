@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Nothing to Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 01 Sep 2018 13:41:41 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 07 Sep 2018 14:15:44 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.onemid.net/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title></title>
       <link>https://blog.onemid.net/tags/</link>
-      <pubDate>Sat, 01 Sep 2018 13:41:41 +0800</pubDate>
+      <pubDate>Fri, 07 Sep 2018 14:15:44 +0800</pubDate>
       
       <guid>https://blog.onemid.net/tags/</guid>
       <description></description>
@@ -62,6 +62,24 @@
       <pubDate>Sat, 01 Sep 2018 13:41:41 +0800</pubDate>
       
       <guid>https://blog.onemid.net/tags/ds/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Design</title>
+      <link>https://blog.onemid.net/tags/design/</link>
+      <pubDate>Fri, 07 Sep 2018 14:15:44 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/tags/design/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Evaluation</title>
+      <link>https://blog.onemid.net/tags/evaluation/</link>
+      <pubDate>Fri, 07 Sep 2018 14:15:44 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/tags/evaluation/</guid>
       <description></description>
     </item>
     
@@ -359,6 +377,15 @@
       <pubDate>Sun, 26 Aug 2018 22:52:23 +0800</pubDate>
       
       <guid>https://blog.onemid.net/tags/wrf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Widget</title>
+      <link>https://blog.onemid.net/tags/widget/</link>
+      <pubDate>Fri, 07 Sep 2018 14:15:44 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/tags/widget/</guid>
       <description></description>
     </item>
     
