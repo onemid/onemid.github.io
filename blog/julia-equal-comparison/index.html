@@ -13,11 +13,11 @@
         "articleSection" : "blog",
         "name" : "Julia isequal() 和 ==",
         "headline" : "Julia isequal() 和 ==",
-        "description" : "isequal() 和 == 本執行環境：Julia 1.0
+        "description" : "ISEQUAL() 和 == 本執行環境：Julia 1.0
 在 Julia 裡面，isequal()和==表面上看起來都是比較兩者是否相等；但其實裡面還是有些微的差距：isequal(a, b)隱含著hash(a)及hash(b)是否相等。在浮點數（包含NaN）、遺失值（Missing）中，兩者處理狀況有差距。根據文件所述，isequal會視0.0與-0.0為不同，NaN永遠與其他NaN相同，missing也是。
 isequal() 文件：https://docs.julialang.org/en/v1/base/base/#Base.isequal
 == 文件：https://docs.julialang.org/en/v1/base/math/#Base.:==
-比較 正零與負零    指令 結果？ 指令 結果？     isequal(0.0, -0.0) false 0.0 == -0.0 true   isequal(0, -0) true 0 == -0 true   isequal(0.0, -0) true 0.0 == -0 true    julia&gt; hash(0) 0x77cfa1eef01bca90 julia&gt; hash(-0) 0x77cfa1eef01bca90 julia&gt; hash(0.0) 0x77cfa1eef01bca90 julia&gt; hash(-0.0) 0x3be7d0f7780de548  Missing 們    指令 結果？ 指令 結果？     isequal(missing, missing) true missing == missing missing   isequal(Missing, Missing) true Missing == Missing true   isequal(missing, Missing) false missing == Missing missing   isequal(missing, 3) false missing == 3 missing    julia&gt; typeof(missing) Missing julia&gt; typeof(Missing) DataType  NaN 們    指令 結果？ 指令 結果？     isequal(NaN, NaN) true NaN == NaN false   isequal([1 NaN], [1 NaN]) true [1 NaN] == [1 NaN] false   isequal(NaN, NaN32) true NaN == NaN32 false    julia&gt; hash(NaN) 0x15d7d083d04ecb90 julia&gt; hash(NaN16) 0x15d7d083d04ecb90 julia&gt; hash(NaN32) 0x15d7d083d04ecb90 julia&gt; hash(NaN64) 0x15d7d083d04ecb90  不管哪一種NaNhash 值都一樣；同樣出現在Inf中，不管是Inf16、Inf32、Inf64皆為0x807bb202c9cbfc6f，而負無限大者皆為0x96e782fc7639e1bc。",
+比較 正零與負零    指令 結果？ 指令 結果？     isequal(0.0, -0.0) false 0.0 == -0.0 true   isequal(0, -0) true 0 == -0 true   isequal(0.0, -0) true 0.0 == -0 true    julia&gt; hash(0) 0x77cfa1eef01bca90 julia&gt; hash(-0) 0x77cfa1eef01bca90 julia&gt; hash(0.0) 0x77cfa1eef01bca90 julia&gt; hash(-0.0) 0x3be7d0f7780de548  MISSING 們    指令 結果？ 指令 結果？     isequal(missing, missing) true missing == missing missing   isequal(Missing, Missing) true Missing == Missing true   isequal(missing, Missing) false missing == Missing missing   isequal(missing, 3) false missing == 3 missing    julia&gt; typeof(missing) Missing julia&gt; typeof(Missing) DataType  NAN 們    指令 結果？ 指令 結果？     isequal(NaN, NaN) true NaN == NaN false   isequal([1 NaN], [1 NaN]) true [1 NaN] == [1 NaN] false   isequal(NaN, NaN32) true NaN == NaN32 false    julia&gt; hash(NaN) 0x15d7d083d04ecb90 julia&gt; hash(NaN16) 0x15d7d083d04ecb90 julia&gt; hash(NaN32) 0x15d7d083d04ecb90 julia&gt; hash(NaN64) 0x15d7d083d04ecb90  不管哪一種NaNhash 值都一樣；同樣出現在Inf中，不管是Inf16、Inf32、Inf64皆為0x807bb202c9cbfc6f，而負無限大者皆為0x96e782fc7639e1bc。",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -25,11 +25,11 @@ isequal() 文件：https://docs.julialang.org/en/v1/base/base/#Base.isequal
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-08-25 18:01:37 &#43;0800 CST",
-        "dateModified" : "2018-08-25 18:01:37 &#43;0800 CST",
+        "datePublished": "2018-08-25 19:50:16 &#43;0800 CST",
+        "dateModified" : "2018-08-25 19:50:16 &#43;0800 CST",
         "url" : "https://blog.onemid.net/blog/julia-equal-comparison/",
-        "wordCount" : "364",
-        "keywords" : [ "julia","isequal","comparison","NaN","Missing","==","","Blog" ]
+        "wordCount" : "365",
+        "keywords" : [ "Julia","isequal","comparison","nan","missing","==","","Blog" ]
     }
     </script>
         
@@ -53,41 +53,41 @@ isequal() 文件：https://docs.julialang.org/en/v1/base/base/#Base.isequal
 
         <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Julia isequal() 和 =="/>
-<meta name="twitter:description" content="isequal() 和 == 本執行環境：Julia 1.0
+<meta name="twitter:description" content="ISEQUAL() 和 == 本執行環境：Julia 1.0
 在 Julia 裡面，isequal()和==表面上看起來都是比較兩者是否相等；但其實裡面還是有些微的差距：isequal(a, b)隱含著hash(a)及hash(b)是否相等。在浮點數（包含NaN）、遺失值（Missing）中，兩者處理狀況有差距。根據文件所述，isequal會視0.0與-0.0為不同，NaN永遠與其他NaN相同，missing也是。
 isequal() 文件：https://docs.julialang.org/en/v1/base/base/#Base.isequal
 == 文件：https://docs.julialang.org/en/v1/base/math/#Base.:==
-比較 正零與負零    指令 結果？ 指令 結果？     isequal(0.0, -0.0) false 0.0 == -0.0 true   isequal(0, -0) true 0 == -0 true   isequal(0.0, -0) true 0.0 == -0 true    julia&gt; hash(0) 0x77cfa1eef01bca90 julia&gt; hash(-0) 0x77cfa1eef01bca90 julia&gt; hash(0.0) 0x77cfa1eef01bca90 julia&gt; hash(-0.0) 0x3be7d0f7780de548  Missing 們    指令 結果？ 指令 結果？     isequal(missing, missing) true missing == missing missing   isequal(Missing, Missing) true Missing == Missing true   isequal(missing, Missing) false missing == Missing missing   isequal(missing, 3) false missing == 3 missing    julia&gt; typeof(missing) Missing julia&gt; typeof(Missing) DataType  NaN 們    指令 結果？ 指令 結果？     isequal(NaN, NaN) true NaN == NaN false   isequal([1 NaN], [1 NaN]) true [1 NaN] == [1 NaN] false   isequal(NaN, NaN32) true NaN == NaN32 false    julia&gt; hash(NaN) 0x15d7d083d04ecb90 julia&gt; hash(NaN16) 0x15d7d083d04ecb90 julia&gt; hash(NaN32) 0x15d7d083d04ecb90 julia&gt; hash(NaN64) 0x15d7d083d04ecb90  不管哪一種NaNhash 值都一樣；同樣出現在Inf中，不管是Inf16、Inf32、Inf64皆為0x807bb202c9cbfc6f，而負無限大者皆為0x96e782fc7639e1bc。"/>
+比較 正零與負零    指令 結果？ 指令 結果？     isequal(0.0, -0.0) false 0.0 == -0.0 true   isequal(0, -0) true 0 == -0 true   isequal(0.0, -0) true 0.0 == -0 true    julia&gt; hash(0) 0x77cfa1eef01bca90 julia&gt; hash(-0) 0x77cfa1eef01bca90 julia&gt; hash(0.0) 0x77cfa1eef01bca90 julia&gt; hash(-0.0) 0x3be7d0f7780de548  MISSING 們    指令 結果？ 指令 結果？     isequal(missing, missing) true missing == missing missing   isequal(Missing, Missing) true Missing == Missing true   isequal(missing, Missing) false missing == Missing missing   isequal(missing, 3) false missing == 3 missing    julia&gt; typeof(missing) Missing julia&gt; typeof(Missing) DataType  NAN 們    指令 結果？ 指令 結果？     isequal(NaN, NaN) true NaN == NaN false   isequal([1 NaN], [1 NaN]) true [1 NaN] == [1 NaN] false   isequal(NaN, NaN32) true NaN == NaN32 false    julia&gt; hash(NaN) 0x15d7d083d04ecb90 julia&gt; hash(NaN16) 0x15d7d083d04ecb90 julia&gt; hash(NaN32) 0x15d7d083d04ecb90 julia&gt; hash(NaN64) 0x15d7d083d04ecb90  不管哪一種NaNhash 值都一樣；同樣出現在Inf中，不管是Inf16、Inf32、Inf64皆為0x807bb202c9cbfc6f，而負無限大者皆為0x96e782fc7639e1bc。"/>
 
         <meta property="og:title" content="Julia isequal() 和 ==" />
-<meta property="og:description" content="isequal() 和 == 本執行環境：Julia 1.0
+<meta property="og:description" content="ISEQUAL() 和 == 本執行環境：Julia 1.0
 在 Julia 裡面，isequal()和==表面上看起來都是比較兩者是否相等；但其實裡面還是有些微的差距：isequal(a, b)隱含著hash(a)及hash(b)是否相等。在浮點數（包含NaN）、遺失值（Missing）中，兩者處理狀況有差距。根據文件所述，isequal會視0.0與-0.0為不同，NaN永遠與其他NaN相同，missing也是。
 isequal() 文件：https://docs.julialang.org/en/v1/base/base/#Base.isequal
 == 文件：https://docs.julialang.org/en/v1/base/math/#Base.:==
-比較 正零與負零    指令 結果？ 指令 結果？     isequal(0.0, -0.0) false 0.0 == -0.0 true   isequal(0, -0) true 0 == -0 true   isequal(0.0, -0) true 0.0 == -0 true    julia&gt; hash(0) 0x77cfa1eef01bca90 julia&gt; hash(-0) 0x77cfa1eef01bca90 julia&gt; hash(0.0) 0x77cfa1eef01bca90 julia&gt; hash(-0.0) 0x3be7d0f7780de548  Missing 們    指令 結果？ 指令 結果？     isequal(missing, missing) true missing == missing missing   isequal(Missing, Missing) true Missing == Missing true   isequal(missing, Missing) false missing == Missing missing   isequal(missing, 3) false missing == 3 missing    julia&gt; typeof(missing) Missing julia&gt; typeof(Missing) DataType  NaN 們    指令 結果？ 指令 結果？     isequal(NaN, NaN) true NaN == NaN false   isequal([1 NaN], [1 NaN]) true [1 NaN] == [1 NaN] false   isequal(NaN, NaN32) true NaN == NaN32 false    julia&gt; hash(NaN) 0x15d7d083d04ecb90 julia&gt; hash(NaN16) 0x15d7d083d04ecb90 julia&gt; hash(NaN32) 0x15d7d083d04ecb90 julia&gt; hash(NaN64) 0x15d7d083d04ecb90  不管哪一種NaNhash 值都一樣；同樣出現在Inf中，不管是Inf16、Inf32、Inf64皆為0x807bb202c9cbfc6f，而負無限大者皆為0x96e782fc7639e1bc。" />
+比較 正零與負零    指令 結果？ 指令 結果？     isequal(0.0, -0.0) false 0.0 == -0.0 true   isequal(0, -0) true 0 == -0 true   isequal(0.0, -0) true 0.0 == -0 true    julia&gt; hash(0) 0x77cfa1eef01bca90 julia&gt; hash(-0) 0x77cfa1eef01bca90 julia&gt; hash(0.0) 0x77cfa1eef01bca90 julia&gt; hash(-0.0) 0x3be7d0f7780de548  MISSING 們    指令 結果？ 指令 結果？     isequal(missing, missing) true missing == missing missing   isequal(Missing, Missing) true Missing == Missing true   isequal(missing, Missing) false missing == Missing missing   isequal(missing, 3) false missing == 3 missing    julia&gt; typeof(missing) Missing julia&gt; typeof(Missing) DataType  NAN 們    指令 結果？ 指令 結果？     isequal(NaN, NaN) true NaN == NaN false   isequal([1 NaN], [1 NaN]) true [1 NaN] == [1 NaN] false   isequal(NaN, NaN32) true NaN == NaN32 false    julia&gt; hash(NaN) 0x15d7d083d04ecb90 julia&gt; hash(NaN16) 0x15d7d083d04ecb90 julia&gt; hash(NaN32) 0x15d7d083d04ecb90 julia&gt; hash(NaN64) 0x15d7d083d04ecb90  不管哪一種NaNhash 值都一樣；同樣出現在Inf中，不管是Inf16、Inf32、Inf64皆為0x807bb202c9cbfc6f，而負無限大者皆為0x96e782fc7639e1bc。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.onemid.net/blog/julia-equal-comparison/" /><meta property="article:published_time" content="2018-08-25T18:01:37&#43;08:00"/>
-<meta property="article:modified_time" content="2018-08-25T18:01:37&#43;08:00"/>
+<meta property="og:url" content="https://blog.onemid.net/blog/julia-equal-comparison/" /><meta property="article:published_time" content="2018-08-25T19:50:16&#43;08:00"/>
+<meta property="article:modified_time" content="2018-08-25T19:50:16&#43;08:00"/>
         <meta property="og:image" content="https://blog.onemid.net/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
         
 <meta itemprop="name" content="Julia isequal() 和 ==">
-<meta itemprop="description" content="isequal() 和 == 本執行環境：Julia 1.0
+<meta itemprop="description" content="ISEQUAL() 和 == 本執行環境：Julia 1.0
 在 Julia 裡面，isequal()和==表面上看起來都是比較兩者是否相等；但其實裡面還是有些微的差距：isequal(a, b)隱含著hash(a)及hash(b)是否相等。在浮點數（包含NaN）、遺失值（Missing）中，兩者處理狀況有差距。根據文件所述，isequal會視0.0與-0.0為不同，NaN永遠與其他NaN相同，missing也是。
 isequal() 文件：https://docs.julialang.org/en/v1/base/base/#Base.isequal
 == 文件：https://docs.julialang.org/en/v1/base/math/#Base.:==
-比較 正零與負零    指令 結果？ 指令 結果？     isequal(0.0, -0.0) false 0.0 == -0.0 true   isequal(0, -0) true 0 == -0 true   isequal(0.0, -0) true 0.0 == -0 true    julia&gt; hash(0) 0x77cfa1eef01bca90 julia&gt; hash(-0) 0x77cfa1eef01bca90 julia&gt; hash(0.0) 0x77cfa1eef01bca90 julia&gt; hash(-0.0) 0x3be7d0f7780de548  Missing 們    指令 結果？ 指令 結果？     isequal(missing, missing) true missing == missing missing   isequal(Missing, Missing) true Missing == Missing true   isequal(missing, Missing) false missing == Missing missing   isequal(missing, 3) false missing == 3 missing    julia&gt; typeof(missing) Missing julia&gt; typeof(Missing) DataType  NaN 們    指令 結果？ 指令 結果？     isequal(NaN, NaN) true NaN == NaN false   isequal([1 NaN], [1 NaN]) true [1 NaN] == [1 NaN] false   isequal(NaN, NaN32) true NaN == NaN32 false    julia&gt; hash(NaN) 0x15d7d083d04ecb90 julia&gt; hash(NaN16) 0x15d7d083d04ecb90 julia&gt; hash(NaN32) 0x15d7d083d04ecb90 julia&gt; hash(NaN64) 0x15d7d083d04ecb90  不管哪一種NaNhash 值都一樣；同樣出現在Inf中，不管是Inf16、Inf32、Inf64皆為0x807bb202c9cbfc6f，而負無限大者皆為0x96e782fc7639e1bc。">
+比較 正零與負零    指令 結果？ 指令 結果？     isequal(0.0, -0.0) false 0.0 == -0.0 true   isequal(0, -0) true 0 == -0 true   isequal(0.0, -0) true 0.0 == -0 true    julia&gt; hash(0) 0x77cfa1eef01bca90 julia&gt; hash(-0) 0x77cfa1eef01bca90 julia&gt; hash(0.0) 0x77cfa1eef01bca90 julia&gt; hash(-0.0) 0x3be7d0f7780de548  MISSING 們    指令 結果？ 指令 結果？     isequal(missing, missing) true missing == missing missing   isequal(Missing, Missing) true Missing == Missing true   isequal(missing, Missing) false missing == Missing missing   isequal(missing, 3) false missing == 3 missing    julia&gt; typeof(missing) Missing julia&gt; typeof(Missing) DataType  NAN 們    指令 結果？ 指令 結果？     isequal(NaN, NaN) true NaN == NaN false   isequal([1 NaN], [1 NaN]) true [1 NaN] == [1 NaN] false   isequal(NaN, NaN32) true NaN == NaN32 false    julia&gt; hash(NaN) 0x15d7d083d04ecb90 julia&gt; hash(NaN16) 0x15d7d083d04ecb90 julia&gt; hash(NaN32) 0x15d7d083d04ecb90 julia&gt; hash(NaN64) 0x15d7d083d04ecb90  不管哪一種NaNhash 值都一樣；同樣出現在Inf中，不管是Inf16、Inf32、Inf64皆為0x807bb202c9cbfc6f，而負無限大者皆為0x96e782fc7639e1bc。">
 
 
-<meta itemprop="datePublished" content="2018-08-25T18:01:37&#43;08:00" />
-<meta itemprop="dateModified" content="2018-08-25T18:01:37&#43;08:00" />
-<meta itemprop="wordCount" content="364">
+<meta itemprop="datePublished" content="2018-08-25T19:50:16&#43;08:00" />
+<meta itemprop="dateModified" content="2018-08-25T19:50:16&#43;08:00" />
+<meta itemprop="wordCount" content="365">
 
 
 
-<meta itemprop="keywords" content="julia,isequal,comparison,NaN,Missing,==,," />
+<meta itemprop="keywords" content="Julia,isequal,comparison,nan,missing,==,," />
 
         
 
@@ -274,7 +274,7 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
-                                <h3><a href="https://blog.onemid.net/blog/ds_string_kmp_alg/">Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm</a></h3>
+                                <h3><a href="https://blog.onemid.net/blog/ds_string_kmp_alg/">KNUTH, MORRIS, PRATT (KMP) PATTERN MATCHING ALGORITHM</a></h3>
                                 
                                 <time class="published" datetime=
                                     '2018-09-01'>
@@ -286,7 +286,7 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
-                                <h3><a href="https://blog.onemid.net/blog/ds_sparse_matrix_mul/">Sparse Matrix Multipication</a></h3>
+                                <h3><a href="https://blog.onemid.net/blog/ds_sparse_matrix_mul/">SPARSE MATRIX MULTIPICATION</a></h3>
                                 
                                 <time class="published" datetime=
                                     '2018-08-30'>
@@ -298,7 +298,7 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
-                                <h3><a href="https://blog.onemid.net/blog/tex_markdown_underscore/">TeX Underscore Problem in Markdown</a></h3>
+                                <h3><a href="https://blog.onemid.net/blog/ds_fast_transpose/">Sparse Matrix Fast Transpose</a></h3>
                                 
                                 <time class="published" datetime=
                                     '2018-08-29'>
@@ -310,7 +310,7 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
-                                <h3><a href="https://blog.onemid.net/blog/ds_fast_transpose/">Sparse Matrix Fast Transpose</a></h3>
+                                <h3><a href="https://blog.onemid.net/blog/tex_markdown_underscore/">Tex Underscore Problem in Markdown</a></h3>
                                 
                                 <time class="published" datetime=
                                     '2018-08-29'>
@@ -435,7 +435,7 @@ if (!doNotTrack) {
   <div id="content">
     
 
-<h1 id="isequal-和"><code>isequal()</code> 和 <code>==</code></h1>
+<h1 id="isequal-和"><code>ISEQUAL()</code> 和 <code>==</code></h1>
 
 <p>本執行環境：Julia 1.0</p>
 
@@ -444,8 +444,6 @@ if (!doNotTrack) {
 <p><a href="https://docs.julialang.org/en/v1/base/base/#Base.isequal">isequal() 文件：https://docs.julialang.org/en/v1/base/base/#Base.isequal</a></p>
 
 <p><a href="https://docs.julialang.org/en/v1/base/math/#Base.:==">== 文件：https://docs.julialang.org/en/v1/base/math/#Base.:==</a></p>
-
-<!-- more -->
 
 <h1 id="比較">比較</h1>
 
@@ -495,7 +493,7 @@ julia&gt; hash(-0.0)
 0x3be7d0f7780de548
 </code></pre>
 
-<h2 id="missing-們">Missing 們</h2>
+<h2 id="missing-們">MISSING 們</h2>
 
 <table>
 <thead>
@@ -544,7 +542,7 @@ julia&gt; typeof(Missing)
 DataType
 </code></pre>
 
-<h2 id="nan-們">NaN 們</h2>
+<h2 id="nan-們">NAN 們</h2>
 
 <table>
 <thead>
@@ -594,7 +592,7 @@ julia&gt; hash(NaN64)
 
 <p>由於系統是 64 位元，<code>NaN</code>的<code>DataType</code>為<code>Float64</code></p>
 
-<h2 id="複數-complex-number-們">複數（Complex Number）們</h2>
+<h2 id="複數-complex-number-們">複數（COMPLEX NUMBER）們</h2>
 
 <table>
 <thead>
@@ -651,29 +649,20 @@ julia&gt; -(3/4im)
 
 <p>前兩者<code>3/(4*im)</code>和<code>3/4im</code>表現像為
 $$
-\begin{aligned}
-\frac{3}{(4i)} = \frac{3}{4i}
-&amp;=\frac{3i}{4i*i}\\<br />
-&amp;=-\frac{3i}{4}\\<br />
-&amp;=0-0.75i
-\end{aligned}
+\begin{aligned} \frac{3}{(4i)} = \frac{3}{4i} &amp;=\frac{3i}{4i*i}\newline
+&amp;=-\frac{3i}{4}\newline
+&amp;=0-0.75i \end{aligned}
 $$
 雖然<code>-(3/4im)</code>表現像是：
 $$
-\begin{aligned}
--(\frac{3}{4i})
-&amp;=-(\frac{3i}{4i*i})\\<br />
-&amp;=-(-\frac{3i}{4})\\<br />
-&amp;=0.75i
-\end{aligned}
+\begin{aligned} -(\frac{3}{4i}) &amp;=-(\frac{3i}{4i*i})\newline
+&amp;=-(-\frac{3i}{4})\newline
+&amp;=0.75i \end{aligned} ​
 $$</p>
 
 <p><code>-(3/4*im)</code>的表現卻像是：
 $$
-\begin{aligned}
--(\frac{3}{4}i)
-&amp;=-0.75i
-\end{aligned}
+\begin{aligned} -(\frac{3}{4}i) &amp;=-0.75i \end{aligned}
 $$
 根據文件指出，這是因為係數卡重要啦（Note that <code>3/4im == 3/(4*im) == -(3/4*im)</code>, since a literal coefficient binds more tightly than division.）</p>
 
@@ -685,7 +674,7 @@ $$
 
 <p>這個<code>*</code>一擺上去 $i$ 與分數從此天人永隔。</p>
 
-<h2 id="有理數-rational-number-們">有理數（Rational Number）們</h2>
+<h2 id="有理數-rational-number-們">有理數（RATIONAL NUMBER）們</h2>
 
 <table>
 <thead>
@@ -812,7 +801,7 @@ julia&gt; -float(0//3)
                 <i class="fa fa-tags"></i>
                 
                 
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/julia">julia</a></li>
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/julia">Julia</a></li>
                 
                 
                 <li><a class="article-category-link" href="https://blog.onemid.net/tags/isequal">isequal</a></li>
@@ -821,10 +810,10 @@ julia&gt; -float(0//3)
                 <li><a class="article-category-link" href="https://blog.onemid.net/tags/comparison">comparison</a></li>
                 
                 
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/nan">NaN</a></li>
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/nan">nan</a></li>
                 
                 
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/missing">Missing</a></li>
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/missing">missing</a></li>
                 
                 
                 <li><a class="article-category-link" href="https://blog.onemid.net/tags/">==</a></li>
@@ -868,13 +857,13 @@ julia&gt; -float(0//3)
 
 <ul class="actions pagination">
     
-        <li><a href="https://blog.onemid.net/blog/cuda-and-tf-install/"
-                class="button big previous">Compiling TensorFlow-GPU on Ubuntu 16.04 with CUDA 9.1(9.2) and Python3</a></li>
+        <li><a href="https://blog.onemid.net/blog/python3-pip3-zlib-in-macos/"
+                class="button big previous">Cannot Use pip3 in macOS (zlib Dependency Problem)</a></li>
     
 
     
-        <li><a href="https://blog.onemid.net/blog/math-3-double-slashes/"
-                class="button big next">MathJax Newline Alignment Problems in Hugo</a></li>
+        <li><a href="https://blog.onemid.net/blog/dl-cuda-and-tf-install/"
+                class="button big next">Compiling TensorFlow-GPU on Ubuntu 16.04 with CUDA 9.1(9.2) and Python3</a></li>
     
 </ul>
 
@@ -916,7 +905,7 @@ julia&gt; -float(0//3)
           <article class="mini-post">
             <header>
               <h3>
-                <a href="https://blog.onemid.net/blog/ds_string_kmp_alg/">Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm</a>
+                <a href="https://blog.onemid.net/blog/ds_string_kmp_alg/">KNUTH, MORRIS, PRATT (KMP) PATTERN MATCHING ALGORITHM</a>
               </h3>
               
               <time class="published" datetime='2018-09-01'>
@@ -929,7 +918,7 @@ julia&gt; -float(0//3)
           <article class="mini-post">
             <header>
               <h3>
-                <a href="https://blog.onemid.net/blog/ds_sparse_matrix_mul/">Sparse Matrix Multipication</a>
+                <a href="https://blog.onemid.net/blog/ds_sparse_matrix_mul/">SPARSE MATRIX MULTIPICATION</a>
               </h3>
               
               <time class="published" datetime='2018-08-30'>
@@ -942,7 +931,7 @@ julia&gt; -float(0//3)
           <article class="mini-post">
             <header>
               <h3>
-                <a href="https://blog.onemid.net/blog/tex_markdown_underscore/">TeX Underscore Problem in Markdown</a>
+                <a href="https://blog.onemid.net/blog/ds_fast_transpose/">Sparse Matrix Fast Transpose</a>
               </h3>
               
               <time class="published" datetime='2018-08-29'>
@@ -955,7 +944,7 @@ julia&gt; -float(0//3)
           <article class="mini-post">
             <header>
               <h3>
-                <a href="https://blog.onemid.net/blog/ds_fast_transpose/">Sparse Matrix Fast Transpose</a>
+                <a href="https://blog.onemid.net/blog/tex_markdown_underscore/">Tex Underscore Problem in Markdown</a>
               </h3>
               
               <time class="published" datetime='2018-08-29'>

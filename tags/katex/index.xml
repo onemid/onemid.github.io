@@ -6,18 +6,19 @@
     <description>Recent content in Katex on Nothing to Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 01 Aug 2018 02:01:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 01 Aug 2018 19:57:32 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.onemid.net/tags/katex/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>zzz我終於把 mathjax 弄進去了</title>
-      <link>https://blog.onemid.net/blog/testmath/</link>
-      <pubDate>Wed, 01 Aug 2018 02:01:00 +0800</pubDate>
+      <title>ZZZ我終於把 MATHJAX 弄進去了</title>
+      <link>https://blog.onemid.net/blog/zzz-testmath/</link>
+      <pubDate>Wed, 01 Aug 2018 19:57:32 +0800</pubDate>
       
-      <guid>https://blog.onemid.net/blog/testmath/</guid>
-      <description>無關緊要的後記        我的老天，我花了一個多小時終於東湊西湊把 mathjax 塞進去了
+      <guid>https://blog.onemid.net/blog/zzz-testmath/</guid>
+      <description>無關緊要的後記        無關緊要的後記
+我的老天，我花了一個多小時終於東湊西湊把 mathjax 塞進去了
 搞到後來我都不知道我在幹嘛
 結果 github 上面跟本機看得不一樣
 這是 inline $ x^2+x-5=y $

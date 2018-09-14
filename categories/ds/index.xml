@@ -6,38 +6,38 @@
     <description>Recent content in DS on Nothing to Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 01 Sep 2018 13:41:41 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 01 Sep 2018 19:13:41 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.onemid.net/categories/ds/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm</title>
+      <title>KNUTH, MORRIS, PRATT (KMP) PATTERN MATCHING ALGORITHM</title>
       <link>https://blog.onemid.net/blog/ds_string_kmp_alg/</link>
-      <pubDate>Sat, 01 Sep 2018 13:41:41 +0800</pubDate>
+      <pubDate>Sat, 01 Sep 2018 19:13:41 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/ds_string_kmp_alg/</guid>
-      <description>Overview - A Basic Pattern Matching 字串是一個由字元所組成的有限集合，字串的比對有許多方法，其中最簡單的是選定一個起始點向下比對，若是遇到不符合 Pattern 的字串，即起始點向下挪動一格再重新啟動 Pattern 比對，其程式方法如下：
+      <description>OVERVIEW - A BASIC PATTERN MATCHING 字串是一個由字元所組成的有限集合，字串的比對有許多方法，其中最簡單的是選定一個起始點向下比對，若是遇到不符合 Pattern 的字串，即起始點向下挪動一格再重新啟動 Pattern 比對，其程式方法如下：
 int findString(char *string, char *pattern) { int i, j = 0; int startStringPos = 0, endStringPos = strlen(string)-1; int endPatternPos = strlen(pattern)-1; int endMatchingPos = endPatternPos; for (i = startStringPos; endMatchingPos &amp;lt;= endStringPos; ) { if (string[endMatchingPos] == pattern[endPatternPos]) { for (j = 0, i = startStringPos; j &amp;lt; endPatternPos &amp;amp;&amp;amp; string[i] == pattern[j]; i++, j++); } if (j == endPatternPos) { return startStringPos; } endMatchingPos++; startStringPos++; } return -1; }  這個程式主要運作起來長這樣：</description>
     </item>
     
     <item>
-      <title>Sparse Matrix Multipication</title>
+      <title>SPARSE MATRIX MULTIPICATION</title>
       <link>https://blog.onemid.net/blog/ds_sparse_matrix_mul/</link>
-      <pubDate>Thu, 30 Aug 2018 14:04:18 +0800</pubDate>
+      <pubDate>Thu, 30 Aug 2018 19:20:40 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/ds_sparse_matrix_mul/</guid>
-      <description>Overview 給定兩矩陣：$\boldsymbol{A}_{m*n}$ 和 $\boldsymbol{B}_{n*p}$ ，其中矩陣乘法定義如下： $$ (\boldsymbol{AB})_{ij} = \sum_{k=1}^{n}a_{ik}*b_{kj} $$ 矩陣乘法可以寫成三個迴圈的版本（變數 i, j, k）
+      <description>OVERVIEW 給定兩矩陣：$\boldsymbol{A}_{m*n}$ 和 $\boldsymbol{B}_{n*p}$ ，其中矩陣乘法定義如下： $$ (\boldsymbol{AB})_{ij} = \sum_{k=1}^{n}a_{ik}*b_{kj} $$ 矩陣乘法可以寫成三個迴圈的版本（變數 i, j, k）
 for (int i = 0; i &amp;lt; ATotalRows; i++) { for (int j = 0; j &amp;lt; BTotalCols; j++) { int sum = 0; for (int k = 0; k &amp;lt; BTotalRows; k++) { sum += (A[i][k] + B[k][j]); } AB[i][j] = sum; } }   Horowitz et al., 所著 Fundamentals of Data Structures in C (2/e) 在 p.</description>
     </item>
     
     <item>
       <title>Sparse Matrix Fast Transpose</title>
       <link>https://blog.onemid.net/blog/ds_fast_transpose/</link>
-      <pubDate>Wed, 29 Aug 2018 14:08:17 +0800</pubDate>
+      <pubDate>Wed, 29 Aug 2018 19:30:31 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/ds_fast_transpose/</guid>
-      <description>Overview Sparse Matrix 又名稀疏矩陣，意思是一個矩陣超多零；使用一般的矩陣註記方法，有浪費空間之虞，所以產生了列表式的註記法，如以下舉例：
+      <description>OVERVIEW Sparse Matrix 又名稀疏矩陣，意思是一個矩陣超多零；使用一般的矩陣註記方法，有浪費空間之虞，所以產生了列表式的註記法，如以下舉例：
 我們給定一個稀疏矩陣$ \boldsymbol{M}$，其中矩陣內容為： $$ \boldsymbol{M} = \begin{bmatrix} 15 &amp;amp; 0 &amp;amp; 0 &amp;amp; 22 &amp;amp; 0 &amp;amp; -15 \newline 0 &amp;amp; 11 &amp;amp; 3 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \newline 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; -6 &amp;amp; 0 &amp;amp; 0 \newline 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \newline 91 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \newline 0 &amp;amp; 0 &amp;amp; 28 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \newline \end{bmatrix} $$ 轉化為稀疏矩陣記法為：</description>
     </item>
     

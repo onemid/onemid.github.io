@@ -6,15 +6,15 @@
     <description>Recent content in Highlightjs on Nothing to Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 23 Aug 2018 17:24:27 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 23 Aug 2018 19:53:33 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.onemid.net/tags/highlightjs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Hexo Syntax Highlighting (Tested under Tranquilpeak)</title>
+      <title>Hexo Syntax Highlighting (Tested Under Tranquilpeak)</title>
       <link>https://blog.onemid.net/blog/hexo-syntax-highlighting/</link>
-      <pubDate>Thu, 23 Aug 2018 17:24:27 +0000</pubDate>
+      <pubDate>Thu, 23 Aug 2018 19:53:33 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/hexo-syntax-highlighting/</guid>
       <description>把這個主題弄 Syntax Highlighting 又是一番折騰，本來想說用prism.js做做，奈何就是在佈景上跟原始的佈景相衝，該高亮顯示的地方也沒有，索性走回頭路用highlight.js
@@ -26,7 +26,7 @@
 另外一個是，在 Hexo 根目錄下的_config.yml裡面：
 ... highlight: enable: false ...  記得要把 enable 改成 false，不然會打架。
 改完之後，hexo clean和 generate以及deploy記得做ㄛ
-後記：使用深色佈景主題時，Tranquilpeak 會讓一些 Token 反白 我當時看到快傻眼了，怎麼那麼難搞阿Q</description>
+後記：使用深色佈景主題時，TRANQUILPEAK 會讓一些 TOKEN 反白 我當時看到快傻眼了，怎麼那麼難搞阿Q</description>
     </item>
     
   </channel>

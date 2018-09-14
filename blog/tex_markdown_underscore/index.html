@@ -11,12 +11,15 @@
              "@id": "https://blog.onemid.net"
         },
         "articleSection" : "blog",
-        "name" : "TeX Underscore Problem in Markdown",
-        "headline" : "TeX Underscore Problem in Markdown",
+        "name" : "Tex Underscore Problem in Markdown",
+        "headline" : "Tex Underscore Problem in Markdown",
         "description" : "一般來說 我們在打 TeX 指令時，弄下標應該會是這樣打的：
 某個符號_{某個下標值} % 中間放個 underscore  也理應會長這樣 $$ x_{5} $$ 但是問題來了，Markdown 若是要做 emphasis，語法是：
 _某個要強調的字串_  所以說，今天如果你要標兩個 underscore 在 TeX 裡面，舉例來說：
-x_{5} = y_{6}  理論上會出現： $$ x_{5} = y_{6} $$ 但是很詭異在某些 Markdown（像在 Hugo）就是出不來： $$ x{5} = y{6} $$
+x_{5} = y_{6}  理論上會出現：
+$$ x_{5} = y_{6} $$
+但是很詭異在某些 Markdown（像在 Hugo）就是出不來：
+$$ x{5} = y{6} $$
 方案？ 基本上就單純只是 Parsing 有了衝突（不過有人不會啦），善用\會 escape 的概念，所以可以長這樣：
 某個符號\_{某個下標值} % 中間放個 underscore，前面插個 \  所以上面的範例就成了：
 x\_{5} = y\_{6}  Render 出來就會是： $$ x_5 = y_6 $$ 好棒",
@@ -27,16 +30,16 @@ x\_{5} = y\_{6}  Render 出來就會是： $$ x_5 = y_6 $$ 好棒",
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-08-29 21:00:28 &#43;0800 CST",
-        "dateModified" : "2018-08-29 21:00:28 &#43;0800 CST",
+        "datePublished": "2018-08-29 19:26:08 &#43;0800 CST",
+        "dateModified" : "2018-08-29 19:26:08 &#43;0800 CST",
         "url" : "https://blog.onemid.net/blog/tex_markdown_underscore/",
         "wordCount" : "61",
-        "keywords" : [ "tex","mathjax","hugo","underscore","markdown","","","Blog" ]
+        "keywords" : [ "TeX","MathJax","Hugo","Underscore","Markdown","","","Blog" ]
     }
     </script>
         
             
-                <title>TeX Underscore Problem in Markdown</title>
+                <title>Tex Underscore Problem in Markdown</title>
             
         
 
@@ -54,48 +57,57 @@ x\_{5} = y\_{6}  Render 出來就會是： $$ x_5 = y_6 $$ 好棒",
         
 
         <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="TeX Underscore Problem in Markdown"/>
+<meta name="twitter:title" content="Tex Underscore Problem in Markdown"/>
 <meta name="twitter:description" content="一般來說 我們在打 TeX 指令時，弄下標應該會是這樣打的：
 某個符號_{某個下標值} % 中間放個 underscore  也理應會長這樣 $$ x_{5} $$ 但是問題來了，Markdown 若是要做 emphasis，語法是：
 _某個要強調的字串_  所以說，今天如果你要標兩個 underscore 在 TeX 裡面，舉例來說：
-x_{5} = y_{6}  理論上會出現： $$ x_{5} = y_{6} $$ 但是很詭異在某些 Markdown（像在 Hugo）就是出不來： $$ x{5} = y{6} $$
+x_{5} = y_{6}  理論上會出現：
+$$ x_{5} = y_{6} $$
+但是很詭異在某些 Markdown（像在 Hugo）就是出不來：
+$$ x{5} = y{6} $$
 方案？ 基本上就單純只是 Parsing 有了衝突（不過有人不會啦），善用\會 escape 的概念，所以可以長這樣：
 某個符號\_{某個下標值} % 中間放個 underscore，前面插個 \  所以上面的範例就成了：
 x\_{5} = y\_{6}  Render 出來就會是： $$ x_5 = y_6 $$ 好棒"/>
 
-        <meta property="og:title" content="TeX Underscore Problem in Markdown" />
+        <meta property="og:title" content="Tex Underscore Problem in Markdown" />
 <meta property="og:description" content="一般來說 我們在打 TeX 指令時，弄下標應該會是這樣打的：
 某個符號_{某個下標值} % 中間放個 underscore  也理應會長這樣 $$ x_{5} $$ 但是問題來了，Markdown 若是要做 emphasis，語法是：
 _某個要強調的字串_  所以說，今天如果你要標兩個 underscore 在 TeX 裡面，舉例來說：
-x_{5} = y_{6}  理論上會出現： $$ x_{5} = y_{6} $$ 但是很詭異在某些 Markdown（像在 Hugo）就是出不來： $$ x{5} = y{6} $$
+x_{5} = y_{6}  理論上會出現：
+$$ x_{5} = y_{6} $$
+但是很詭異在某些 Markdown（像在 Hugo）就是出不來：
+$$ x{5} = y{6} $$
 方案？ 基本上就單純只是 Parsing 有了衝突（不過有人不會啦），善用\會 escape 的概念，所以可以長這樣：
 某個符號\_{某個下標值} % 中間放個 underscore，前面插個 \  所以上面的範例就成了：
 x\_{5} = y\_{6}  Render 出來就會是： $$ x_5 = y_6 $$ 好棒" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.onemid.net/blog/tex_markdown_underscore/" /><meta property="article:published_time" content="2018-08-29T21:00:28&#43;08:00"/>
-<meta property="article:modified_time" content="2018-08-29T21:00:28&#43;08:00"/>
+<meta property="og:url" content="https://blog.onemid.net/blog/tex_markdown_underscore/" /><meta property="article:published_time" content="2018-08-29T19:26:08&#43;08:00"/>
+<meta property="article:modified_time" content="2018-08-29T19:26:08&#43;08:00"/>
         <meta property="og:image" content="https://blog.onemid.net/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
         
-<meta itemprop="name" content="TeX Underscore Problem in Markdown">
+<meta itemprop="name" content="Tex Underscore Problem in Markdown">
 <meta itemprop="description" content="一般來說 我們在打 TeX 指令時，弄下標應該會是這樣打的：
 某個符號_{某個下標值} % 中間放個 underscore  也理應會長這樣 $$ x_{5} $$ 但是問題來了，Markdown 若是要做 emphasis，語法是：
 _某個要強調的字串_  所以說，今天如果你要標兩個 underscore 在 TeX 裡面，舉例來說：
-x_{5} = y_{6}  理論上會出現： $$ x_{5} = y_{6} $$ 但是很詭異在某些 Markdown（像在 Hugo）就是出不來： $$ x{5} = y{6} $$
+x_{5} = y_{6}  理論上會出現：
+$$ x_{5} = y_{6} $$
+但是很詭異在某些 Markdown（像在 Hugo）就是出不來：
+$$ x{5} = y{6} $$
 方案？ 基本上就單純只是 Parsing 有了衝突（不過有人不會啦），善用\會 escape 的概念，所以可以長這樣：
 某個符號\_{某個下標值} % 中間放個 underscore，前面插個 \  所以上面的範例就成了：
 x\_{5} = y\_{6}  Render 出來就會是： $$ x_5 = y_6 $$ 好棒">
 
 
-<meta itemprop="datePublished" content="2018-08-29T21:00:28&#43;08:00" />
-<meta itemprop="dateModified" content="2018-08-29T21:00:28&#43;08:00" />
+<meta itemprop="datePublished" content="2018-08-29T19:26:08&#43;08:00" />
+<meta itemprop="dateModified" content="2018-08-29T19:26:08&#43;08:00" />
 <meta itemprop="wordCount" content="61">
 
 
 
-<meta itemprop="keywords" content="tex,mathjax,hugo,underscore,markdown,,," />
+<meta itemprop="keywords" content="TeX,MathJax,Hugo,Underscore,Markdown,,," />
 
         
 
@@ -282,7 +294,7 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
-                                <h3><a href="https://blog.onemid.net/blog/ds_string_kmp_alg/">Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm</a></h3>
+                                <h3><a href="https://blog.onemid.net/blog/ds_string_kmp_alg/">KNUTH, MORRIS, PRATT (KMP) PATTERN MATCHING ALGORITHM</a></h3>
                                 
                                 <time class="published" datetime=
                                     '2018-09-01'>
@@ -294,7 +306,7 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
-                                <h3><a href="https://blog.onemid.net/blog/ds_sparse_matrix_mul/">Sparse Matrix Multipication</a></h3>
+                                <h3><a href="https://blog.onemid.net/blog/ds_sparse_matrix_mul/">SPARSE MATRIX MULTIPICATION</a></h3>
                                 
                                 <time class="published" datetime=
                                     '2018-08-30'>
@@ -306,7 +318,7 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
-                                <h3><a href="https://blog.onemid.net/blog/tex_markdown_underscore/">TeX Underscore Problem in Markdown</a></h3>
+                                <h3><a href="https://blog.onemid.net/blog/ds_fast_transpose/">Sparse Matrix Fast Transpose</a></h3>
                                 
                                 <time class="published" datetime=
                                     '2018-08-29'>
@@ -318,7 +330,7 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
-                                <h3><a href="https://blog.onemid.net/blog/ds_fast_transpose/">Sparse Matrix Fast Transpose</a></h3>
+                                <h3><a href="https://blog.onemid.net/blog/tex_markdown_underscore/">Tex Underscore Problem in Markdown</a></h3>
                                 
                                 <time class="published" datetime=
                                     '2018-08-29'>
@@ -354,7 +366,7 @@ if (!doNotTrack) {
 
 
 <li>
-  <a href="//twitter.com/share?url=https%3a%2f%2fblog.onemid.net%2fblog%2ftex_markdown_underscore%2f&amp;text=TeX%20Underscore%20Problem%20in%20Markdown&amp;via=" target="_blank" class="share-btn twitter">
+  <a href="//twitter.com/share?url=https%3a%2f%2fblog.onemid.net%2fblog%2ftex_markdown_underscore%2f&amp;text=Tex%20Underscore%20Problem%20in%20Markdown&amp;via=" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
     </a>
@@ -416,7 +428,7 @@ if (!doNotTrack) {
   <header>
     <div class="title">
         
-            <h1><a href="https://blog.onemid.net/blog/tex_markdown_underscore/">TeX Underscore Problem in Markdown</a></h1>
+            <h1><a href="https://blog.onemid.net/blog/tex_markdown_underscore/">Tex Underscore Problem in Markdown</a></h1>
             
         
         
@@ -451,11 +463,7 @@ if (!doNotTrack) {
 % 中間放個 underscore
 </code></pre>
 
-<p>也理應會長這樣
-$$
-x_{5}
-$$
-但是問題來了，Markdown 若是要做 emphasis，語法是：</p>
+<p>也理應會長這樣 $$ x_{5} $$ 但是問題來了，Markdown 若是要做 emphasis，語法是：</p>
 
 <pre><code class="language-markdown">_某個要強調的字串_
 </code></pre>
@@ -465,12 +473,15 @@ $$
 <pre><code class="language-tex">x_{5} = y_{6}
 </code></pre>
 
-<p>理論上會出現：
-$$
+<p>理論上會出現：</p>
+
+<p>$$
 x_{5} = y_{6}
-$$
-但是很詭異在某些 Markdown（像在 Hugo）就是出不來：
-$$
+$$</p>
+
+<p>但是很詭異在某些 Markdown（像在 Hugo）就是出不來：</p>
+
+<p>$$
 x<em>{5} = y</em>{6}
 $$</p>
 
@@ -487,11 +498,7 @@ $$</p>
 <pre><code class="language-tex">x\_{5} = y\_{6}
 </code></pre>
 
-<p>Render 出來就會是：
-$$
-x_5 = y_6
-$$
-好棒</p>
+<p>Render 出來就會是： $$ x_5 = y_6 $$ 好棒</p>
 
   </div>
 
@@ -525,19 +532,19 @@ $$
                 <i class="fa fa-tags"></i>
                 
                 
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/tex">tex</a></li>
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/tex">TeX</a></li>
                 
                 
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/mathjax">mathjax</a></li>
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/mathjax">MathJax</a></li>
                 
                 
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/hugo">hugo</a></li>
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/hugo">Hugo</a></li>
                 
                 
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/underscore">underscore</a></li>
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/underscore">Underscore</a></li>
                 
                 
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/markdown">markdown</a></li>
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/markdown">Markdown</a></li>
                 
                 
                 <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
@@ -581,13 +588,13 @@ $$
 
 <ul class="actions pagination">
     
-        <li><a href="https://blog.onemid.net/blog/ds_fast_transpose/"
-                class="button big previous">Sparse Matrix Fast Transpose</a></li>
+        <li><a href="https://blog.onemid.net/blog/math-3-double-slashes/"
+                class="button big previous">MathJax Newline Alignment Problems in Hugo</a></li>
     
 
     
-        <li><a href="https://blog.onemid.net/blog/ds_sparse_matrix_mul/"
-                class="button big next">Sparse Matrix Multipication</a></li>
+        <li><a href="https://blog.onemid.net/blog/ds_fast_transpose/"
+                class="button big next">Sparse Matrix Fast Transpose</a></li>
     
 </ul>
 
@@ -629,7 +636,7 @@ $$
           <article class="mini-post">
             <header>
               <h3>
-                <a href="https://blog.onemid.net/blog/ds_string_kmp_alg/">Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm</a>
+                <a href="https://blog.onemid.net/blog/ds_string_kmp_alg/">KNUTH, MORRIS, PRATT (KMP) PATTERN MATCHING ALGORITHM</a>
               </h3>
               
               <time class="published" datetime='2018-09-01'>
@@ -642,7 +649,7 @@ $$
           <article class="mini-post">
             <header>
               <h3>
-                <a href="https://blog.onemid.net/blog/ds_sparse_matrix_mul/">Sparse Matrix Multipication</a>
+                <a href="https://blog.onemid.net/blog/ds_sparse_matrix_mul/">SPARSE MATRIX MULTIPICATION</a>
               </h3>
               
               <time class="published" datetime='2018-08-30'>
@@ -655,7 +662,7 @@ $$
           <article class="mini-post">
             <header>
               <h3>
-                <a href="https://blog.onemid.net/blog/tex_markdown_underscore/">TeX Underscore Problem in Markdown</a>
+                <a href="https://blog.onemid.net/blog/ds_fast_transpose/">Sparse Matrix Fast Transpose</a>
               </h3>
               
               <time class="published" datetime='2018-08-29'>
@@ -668,7 +675,7 @@ $$
           <article class="mini-post">
             <header>
               <h3>
-                <a href="https://blog.onemid.net/blog/ds_fast_transpose/">Sparse Matrix Fast Transpose</a>
+                <a href="https://blog.onemid.net/blog/tex_markdown_underscore/">Tex Underscore Problem in Markdown</a>
               </h3>
               
               <time class="published" datetime='2018-08-29'>

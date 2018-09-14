@@ -1,28 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tensorflow on Nothing to Do</title>
+    <title>TensorFlow on Nothing to Do</title>
     <link>https://blog.onemid.net/tags/tensorflow/</link>
-    <description>Recent content in Tensorflow on Nothing to Do</description>
+    <description>Recent content in TensorFlow on Nothing to Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 25 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 25 Aug 2018 19:51:51 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.onemid.net/tags/tensorflow/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Compiling TensorFlow-GPU on Ubuntu 16.04 with CUDA 9.1(9.2) and Python3</title>
-      <link>https://blog.onemid.net/blog/cuda-and-tf-install/</link>
-      <pubDate>Sat, 25 Aug 2018 00:00:00 +0000</pubDate>
+      <link>https://blog.onemid.net/blog/dl-cuda-and-tf-install/</link>
+      <pubDate>Sat, 25 Aug 2018 19:51:51 +0800</pubDate>
       
-      <guid>https://blog.onemid.net/blog/cuda-and-tf-install/</guid>
-      <description>Install CUDA: https://developer.nvidia.com/cuda-downloads?target_os=Linux&amp;amp;target_arch=ppc64le&amp;amp;target_distro=Ubuntu&amp;amp;target_version=1604&amp;amp;target_type=deblocal
- Here, we used &amp;ldquo;Linux&amp;rdquo; -&amp;gt; &amp;ldquo;ppc64le&amp;rdquo;(64-bit) -&amp;gt; &amp;ldquo;16.04&amp;rdquo; -&amp;gt; &amp;ldquo;deb(local)&amp;rdquo;, and downloaded the &amp;ldquo;Base Installer&amp;rdquo; (approx. 1.0GB)
- Following the guidance which given by the nVidia webpage to install the CUDA.
- During installation, the installation program will ask you to create a &amp;ldquo;symbolic link&amp;rdquo; of CUDA library folder; remember to create.
- Create the environment variable to make these work.
-  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/ local/cuda/extras/CUPTI/lib64:/usr/lib/nvidia-381 # Remember that nvidia-381 is the driver version, if you install 390, please modifiy it to nvidia-390 export CUDA_HOME=/usr/local/cuda export PATH=$PATH:/usr/local/cuda/bin   Execute source ~/.</description>
+      <guid>https://blog.onemid.net/blog/dl-cuda-and-tf-install/</guid>
+      <description>INSTALL CUDA: https://developer.nvidia.com/cuda-downloads?target_os=Linux&amp;amp;target_arch=ppc64le&amp;amp;target_distro=Ubuntu&amp;amp;target_version=1604&amp;amp;target_type=deblocal
+ Here, we used “Linux” -&amp;gt; “ppc64le”(64-bit) -&amp;gt; “16.04” -&amp;gt; “deb(local)”, and downloaded the “Base Installer” (approx. 1.0GB) Following the guidance which given by the nVidia webpage to install the CUDA. During installation, the installation program will ask you to create a “symbolic link” of CUDA library folder; remember to create. Create the environment variable to make these work.  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/ local/cuda/extras/CUPTI/lib64:/usr/lib/nvidia-381 # Remember that nvidia-381 is the driver version, if you install 390, please modifiy it to nvidia-390 export CUDA_HOME=/usr/local/cuda export PATH=$PATH:/usr/local/cuda/bin   Execute source ~/.</description>
     </item>
     
   </channel>

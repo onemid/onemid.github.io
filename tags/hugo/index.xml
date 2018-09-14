@@ -6,21 +6,24 @@
     <description>Recent content in Hugo on Nothing to Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 29 Aug 2018 21:00:28 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 29 Aug 2018 19:26:08 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.onemid.net/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>TeX Underscore Problem in Markdown</title>
+      <title>Tex Underscore Problem in Markdown</title>
       <link>https://blog.onemid.net/blog/tex_markdown_underscore/</link>
-      <pubDate>Wed, 29 Aug 2018 21:00:28 +0800</pubDate>
+      <pubDate>Wed, 29 Aug 2018 19:26:08 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/tex_markdown_underscore/</guid>
       <description>一般來說 我們在打 TeX 指令時，弄下標應該會是這樣打的：
 某個符號_{某個下標值} % 中間放個 underscore  也理應會長這樣 $$ x_{5} $$ 但是問題來了，Markdown 若是要做 emphasis，語法是：
 _某個要強調的字串_  所以說，今天如果你要標兩個 underscore 在 TeX 裡面，舉例來說：
-x_{5} = y_{6}  理論上會出現： $$ x_{5} = y_{6} $$ 但是很詭異在某些 Markdown（像在 Hugo）就是出不來： $$ x{5} = y{6} $$
+x_{5} = y_{6}  理論上會出現：
+$$ x_{5} = y_{6} $$
+但是很詭異在某些 Markdown（像在 Hugo）就是出不來：
+$$ x{5} = y{6} $$
 方案？ 基本上就單純只是 Parsing 有了衝突（不過有人不會啦），善用\會 escape 的概念，所以可以長這樣：
 某個符號\_{某個下標值} % 中間放個 underscore，前面插個 \  所以上面的範例就成了：
 x\_{5} = y\_{6}  Render 出來就會是： $$ x_5 = y_6 $$ 好棒</description>
@@ -29,7 +32,7 @@ x\_{5} = y\_{6}  Render 出來就會是： $$ x_5 = y_6 $$ 好棒</description>
     <item>
       <title>MathJax Newline Alignment Problems in Hugo</title>
       <link>https://blog.onemid.net/blog/math-3-double-slashes/</link>
-      <pubDate>Sun, 26 Aug 2018 11:11:49 +0800</pubDate>
+      <pubDate>Sun, 26 Aug 2018 19:46:52 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/math-3-double-slashes/</guid>
       <description>By Wallpoper [Public domain or Public domain], via Wikimedia Commons
@@ -38,7 +41,7 @@ x\_{5} = y\_{6}  Render 出來就會是： $$ x_5 = y_6 $$ 好棒</description>
 結果長這樣： $$ \begin{aligned} &amp;amp; x^2+4x+4 =&amp;amp;(x+2)(x+2) =&amp;amp;(x+2)^2 \end{aligned} $$
 原來是 Hugo Markdown Parser 會把 \\吃掉一些，變成單反斜（\），這個會造成好大一個空白；所以有人說要用 4 個雙反斜線（但是沒明講是 Hugo 僅說是 Markdown Parsing 問題），有人說用 6 個雙反斜線，在這邊我 6 個雙反斜線（看起來是 Hugo 要用 6 雙反斜）才有用。
 方案？ 那上面的 Tex Command 就變成
-\begin{aligned} &amp;amp; x^2+4x+4 \\\\\\ =&amp;amp; (x+2)(x+2) \\\\\\ =&amp;amp; (x+2)^2 \end{aligned}  再看一次 Render 的情形： $$ \begin{aligned} &amp;amp; x^2+4x+4 \\</description>
+\begin{aligned} &amp;amp; x^2+4x+4 \\\\\\ =&amp;amp; (x+2)(x+2) \\\\\\ =&amp;amp; (x+2)^2 \end{aligned}  再看一次 Render 的情形：</description>
     </item>
     
   </channel>

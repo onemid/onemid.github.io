@@ -6,7 +6,7 @@
     <description>Recent content in Julia on Nothing to Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 26 Aug 2018 12:50:53 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 26 Aug 2018 19:45:16 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.onemid.net/categories/julia/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Julia Triple-Quoted String Literals Alignment</title>
       <link>https://blog.onemid.net/blog/julia-triple-quote-string-literals-alignment/</link>
-      <pubDate>Sun, 26 Aug 2018 12:50:53 +0800</pubDate>
+      <pubDate>Sun, 26 Aug 2018 19:45:16 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/julia-triple-quote-string-literals-alignment/</guid>
       <description>很多程式語言基本上都會提供三個單或雙引號來支援區塊（block）字串，例如 Python 就有提供相關功能。然而在 Parsing 上，Julia 卻是有一套規則在運行（部分測試也與 Python 有不同的結果），以下舉一些測試範例，以及大略推測 Julia 是如何解析：
@@ -30,14 +30,14 @@ Github Issue - Julia - Problem with parsing triple quoted strings
     <item>
       <title>Julia isequal() 和 ==</title>
       <link>https://blog.onemid.net/blog/julia-equal-comparison/</link>
-      <pubDate>Sat, 25 Aug 2018 18:01:37 +0800</pubDate>
+      <pubDate>Sat, 25 Aug 2018 19:50:16 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/julia-equal-comparison/</guid>
-      <description>isequal() 和 == 本執行環境：Julia 1.0
+      <description>ISEQUAL() 和 == 本執行環境：Julia 1.0
 在 Julia 裡面，isequal()和==表面上看起來都是比較兩者是否相等；但其實裡面還是有些微的差距：isequal(a, b)隱含著hash(a)及hash(b)是否相等。在浮點數（包含NaN）、遺失值（Missing）中，兩者處理狀況有差距。根據文件所述，isequal會視0.0與-0.0為不同，NaN永遠與其他NaN相同，missing也是。
 isequal() 文件：https://docs.julialang.org/en/v1/base/base/#Base.isequal
 == 文件：https://docs.julialang.org/en/v1/base/math/#Base.:==
-比較 正零與負零    指令 結果？ 指令 結果？     isequal(0.0, -0.0) false 0.0 == -0.0 true   isequal(0, -0) true 0 == -0 true   isequal(0.0, -0) true 0.0 == -0 true    julia&amp;gt; hash(0) 0x77cfa1eef01bca90 julia&amp;gt; hash(-0) 0x77cfa1eef01bca90 julia&amp;gt; hash(0.0) 0x77cfa1eef01bca90 julia&amp;gt; hash(-0.0) 0x3be7d0f7780de548  Missing 們    指令 結果？ 指令 結果？     isequal(missing, missing) true missing == missing missing   isequal(Missing, Missing) true Missing == Missing true   isequal(missing, Missing) false missing == Missing missing   isequal(missing, 3) false missing == 3 missing    julia&amp;gt; typeof(missing) Missing julia&amp;gt; typeof(Missing) DataType  NaN 們    指令 結果？ 指令 結果？     isequal(NaN, NaN) true NaN == NaN false   isequal([1 NaN], [1 NaN]) true [1 NaN] == [1 NaN] false   isequal(NaN, NaN32) true NaN == NaN32 false    julia&amp;gt; hash(NaN) 0x15d7d083d04ecb90 julia&amp;gt; hash(NaN16) 0x15d7d083d04ecb90 julia&amp;gt; hash(NaN32) 0x15d7d083d04ecb90 julia&amp;gt; hash(NaN64) 0x15d7d083d04ecb90  不管哪一種NaNhash 值都一樣；同樣出現在Inf中，不管是Inf16、Inf32、Inf64皆為0x807bb202c9cbfc6f，而負無限大者皆為0x96e782fc7639e1bc。</description>
+比較 正零與負零    指令 結果？ 指令 結果？     isequal(0.0, -0.0) false 0.0 == -0.0 true   isequal(0, -0) true 0 == -0 true   isequal(0.0, -0) true 0.0 == -0 true    julia&amp;gt; hash(0) 0x77cfa1eef01bca90 julia&amp;gt; hash(-0) 0x77cfa1eef01bca90 julia&amp;gt; hash(0.0) 0x77cfa1eef01bca90 julia&amp;gt; hash(-0.0) 0x3be7d0f7780de548  MISSING 們    指令 結果？ 指令 結果？     isequal(missing, missing) true missing == missing missing   isequal(Missing, Missing) true Missing == Missing true   isequal(missing, Missing) false missing == Missing missing   isequal(missing, 3) false missing == 3 missing    julia&amp;gt; typeof(missing) Missing julia&amp;gt; typeof(Missing) DataType  NAN 們    指令 結果？ 指令 結果？     isequal(NaN, NaN) true NaN == NaN false   isequal([1 NaN], [1 NaN]) true [1 NaN] == [1 NaN] false   isequal(NaN, NaN32) true NaN == NaN32 false    julia&amp;gt; hash(NaN) 0x15d7d083d04ecb90 julia&amp;gt; hash(NaN16) 0x15d7d083d04ecb90 julia&amp;gt; hash(NaN32) 0x15d7d083d04ecb90 julia&amp;gt; hash(NaN64) 0x15d7d083d04ecb90  不管哪一種NaNhash 值都一樣；同樣出現在Inf中，不管是Inf16、Inf32、Inf64皆為0x807bb202c9cbfc6f，而負無限大者皆為0x96e782fc7639e1bc。</description>
     </item>
     
   </channel>

@@ -4,47 +4,52 @@
   
   <url>
     <loc>https://blog.onemid.net/blog/ux-necessary-stuffs/</loc>
-    <lastmod>2018-09-07T14:15:44+08:00</lastmod>
+    <lastmod>2018-09-07T19:10:46+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/blog/ds_string_kmp_alg/</loc>
-    <lastmod>2018-09-01T13:41:41+08:00</lastmod>
+    <lastmod>2018-09-01T19:13:41+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/blog/ds_sparse_matrix_mul/</loc>
-    <lastmod>2018-08-30T14:04:18+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.onemid.net/blog/tex_markdown_underscore/</loc>
-    <lastmod>2018-08-29T21:00:28+08:00</lastmod>
+    <lastmod>2018-08-30T19:20:40+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/blog/ds_fast_transpose/</loc>
-    <lastmod>2018-08-29T14:08:17+08:00</lastmod>
+    <lastmod>2018-08-29T19:30:31+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.onemid.net/blog/wrf-install/</loc>
-    <lastmod>2018-08-26T22:52:23+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.onemid.net/blog/julia-triple-quote-string-literals-alignment/</loc>
-    <lastmod>2018-08-26T12:50:53+08:00</lastmod>
+    <loc>https://blog.onemid.net/blog/tex_markdown_underscore/</loc>
+    <lastmod>2018-08-29T19:26:08+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/blog/math-3-double-slashes/</loc>
-    <lastmod>2018-08-26T11:11:49+08:00</lastmod>
+    <lastmod>2018-08-26T19:46:52+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.onemid.net/blog/julia-triple-quote-string-literals-alignment/</loc>
+    <lastmod>2018-08-26T19:45:16+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.onemid.net/blog/weather-wrf-install/</loc>
+    <lastmod>2018-08-26T19:40:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.onemid.net/blog/dl-cuda-and-tf-install/</loc>
+    <lastmod>2018-08-25T19:51:51+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/blog/julia-equal-comparison/</loc>
-    <lastmod>2018-08-25T18:01:37+08:00</lastmod>
+    <lastmod>2018-08-25T19:50:16+08:00</lastmod>
   </url>
   
   <url>
@@ -53,51 +58,52 @@
   </url>
   
   <url>
-    <loc>https://blog.onemid.net/blog/cuda-and-tf-install/</loc>
-    <lastmod>2018-08-25T00:00:00+00:00</lastmod>
+    <loc>https://blog.onemid.net/blog/python3-pip3-zlib-in-macos/</loc>
+    <lastmod>2018-08-23T19:55:47+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/blog/hexo-syntax-highlighting/</loc>
-    <lastmod>2018-08-23T17:24:27+00:00</lastmod>
+    <lastmod>2018-08-23T19:53:33+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.onemid.net/blog/python3-pip3-zlib-in-macos/</loc>
-    <lastmod>2018-08-23T09:32:15+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.onemid.net/blog/testmath/</loc>
-    <lastmod>2018-08-01T02:01:00+08:00</lastmod>
+    <loc>https://blog.onemid.net/blog/zzz-testmath/</loc>
+    <lastmod>2018-08-01T19:57:32+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/blog/nginx-mysql-php-installation-ubuntu-16-04/</loc>
-    <lastmod>2018-07-31T23:57:00+08:00</lastmod>
+    <lastmod>2018-07-31T19:59:07+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags/</loc>
-    <lastmod>2018-09-07T14:15:44+08:00</lastmod>
+    <lastmod>2018-09-07T19:10:46+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags//</loc>
-    <lastmod>2018-08-25T18:01:37+08:00</lastmod>
+    <lastmod>2018-08-25T19:50:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags/alignment/</loc>
-    <lastmod>2018-08-26T11:11:49+08:00</lastmod>
+    <lastmod>2018-08-26T19:46:52+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/blog/</loc>
-    <lastmod>2018-09-07T14:15:44+08:00</lastmod>
+    <lastmod>2018-09-07T19:10:46+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.onemid.net/tags/cuda/</loc>
+    <lastmod>2018-08-25T19:51:51+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -108,7 +114,7 @@
   
   <url>
     <loc>https://blog.onemid.net/tags/comparison/</loc>
-    <lastmod>2018-08-25T18:01:37+08:00</lastmod>
+    <lastmod>2018-08-25T19:50:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -117,320 +123,314 @@
   </url>
   
   <url>
-    <loc>https://blog.onemid.net/tags/cuda/</loc>
-    <lastmod>2018-08-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.onemid.net/tags/ds/</loc>
-    <lastmod>2018-09-01T13:41:41+08:00</lastmod>
+    <lastmod>2018-09-01T19:13:41+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/categories/ds/</loc>
-    <lastmod>2018-09-01T13:41:41+08:00</lastmod>
+    <lastmod>2018-09-01T19:13:41+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/categories/deep-learning/</loc>
-    <lastmod>2018-08-25T00:00:00+00:00</lastmod>
+    <lastmod>2018-08-25T19:51:51+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags/design/</loc>
-    <lastmod>2018-09-07T14:15:44+08:00</lastmod>
+    <lastmod>2018-09-07T19:10:46+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags/evaluation/</loc>
-    <lastmod>2018-09-07T14:15:44+08:00</lastmod>
+    <lastmod>2018-09-07T19:10:46+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags/hexo/</loc>
-    <lastmod>2018-08-23T17:24:27+00:00</lastmod>
+    <lastmod>2018-08-23T19:53:33+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/categories/hexo/</loc>
-    <lastmod>2018-08-23T17:24:27+00:00</lastmod>
+    <lastmod>2018-08-23T19:53:33+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags/highlightjs/</loc>
-    <lastmod>2018-08-23T17:24:27+00:00</lastmod>
+    <lastmod>2018-08-23T19:53:33+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags/hugo/</loc>
-    <lastmod>2018-08-29T21:00:28+08:00</lastmod>
+    <lastmod>2018-08-29T19:26:08+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/categories/hugo/</loc>
-    <lastmod>2018-08-29T21:00:28+08:00</lastmod>
+    <lastmod>2018-08-29T19:26:08+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags/install/</loc>
-    <lastmod>2018-08-26T22:52:23+08:00</lastmod>
+    <lastmod>2018-08-26T19:40:50+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags/isequal/</loc>
-    <lastmod>2018-08-25T18:01:37+08:00</lastmod>
+    <lastmod>2018-08-25T19:50:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags/julia/</loc>
-    <lastmod>2018-08-26T12:50:53+08:00</lastmod>
+    <lastmod>2018-08-26T19:45:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/categories/julia/</loc>
-    <lastmod>2018-08-26T12:50:53+08:00</lastmod>
+    <lastmod>2018-08-26T19:45:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags/kmp/</loc>
-    <lastmod>2018-09-01T13:41:41+08:00</lastmod>
+    <lastmod>2018-09-01T19:13:41+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags/katex/</loc>
-    <lastmod>2018-08-01T02:01:00+08:00</lastmod>
+    <lastmod>2018-08-01T19:57:32+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags/macos/</loc>
-    <lastmod>2018-08-23T09:32:15+08:00</lastmod>
+    <lastmod>2018-08-23T19:55:47+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags/markdown/</loc>
-    <lastmod>2018-08-29T21:00:28+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.onemid.net/categories/mathjax/</loc>
-    <lastmod>2018-08-29T21:00:28+08:00</lastmod>
+    <lastmod>2018-08-29T19:26:08+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags/mathjax/</loc>
-    <lastmod>2018-08-29T21:00:28+08:00</lastmod>
+    <lastmod>2018-08-29T19:26:08+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.onemid.net/categories/mathjax/</loc>
+    <lastmod>2018-08-29T19:26:08+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags/missing/</loc>
-    <lastmod>2018-08-25T18:01:37+08:00</lastmod>
+    <lastmod>2018-08-25T19:50:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.onemid.net/tags/multipication/</loc>
-    <lastmod>2018-08-30T14:04:18+08:00</lastmod>
+    <loc>https://blog.onemid.net/tags/multiplication/</loc>
+    <lastmod>2018-08-30T19:20:40+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags/murmuring/</loc>
-    <lastmod>2018-08-01T02:01:00+08:00</lastmod>
+    <lastmod>2018-08-01T19:57:32+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags/mysql/</loc>
-    <lastmod>2018-07-31T23:57:00+08:00</lastmod>
+    <lastmod>2018-07-31T19:59:07+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags/nan/</loc>
-    <lastmod>2018-08-25T18:01:37+08:00</lastmod>
+    <lastmod>2018-08-25T19:50:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags/newline/</loc>
-    <lastmod>2018-08-26T11:11:49+08:00</lastmod>
+    <lastmod>2018-08-26T19:46:52+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags/nginx/</loc>
-    <lastmod>2018-07-31T23:57:00+08:00</lastmod>
+    <lastmod>2018-07-31T19:59:07+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/</loc>
-    <lastmod>2018-09-07T14:15:44+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.onemid.net/tags/parsing/</loc>
-    <lastmod>2018-08-26T12:50:53+08:00</lastmod>
+    <lastmod>2018-09-07T19:10:46+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags/php/</loc>
-    <lastmod>2018-07-31T23:57:00+08:00</lastmod>
+    <lastmod>2018-07-31T19:59:07+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.onemid.net/tags/parsing/</loc>
+    <lastmod>2018-08-26T19:45:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags/pip3/</loc>
-    <lastmod>2018-08-23T09:32:15+08:00</lastmod>
+    <lastmod>2018-08-23T19:55:47+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags/prismjs/</loc>
-    <lastmod>2018-08-23T17:24:27+00:00</lastmod>
+    <lastmod>2018-08-23T19:53:33+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/categories/python/</loc>
-    <lastmod>2018-08-23T09:32:15+08:00</lastmod>
+    <lastmod>2018-08-23T19:55:47+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags/python3/</loc>
-    <lastmod>2018-08-23T09:32:15+08:00</lastmod>
+    <lastmod>2018-08-23T19:55:47+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.onemid.net/tags/sparsematrix/</loc>
-    <lastmod>2018-08-30T14:04:18+08:00</lastmod>
+    <loc>https://blog.onemid.net/tags/sparse-matrix/</loc>
+    <lastmod>2018-08-30T19:20:40+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.onemid.net/tags/stringcompare/</loc>
-    <lastmod>2018-09-01T13:41:41+08:00</lastmod>
+    <loc>https://blog.onemid.net/tags/string-compare/</loc>
+    <lastmod>2018-09-01T19:13:41+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.onemid.net/tags/syntaxhighlight/</loc>
-    <lastmod>2018-08-23T17:24:27+00:00</lastmod>
+    <loc>https://blog.onemid.net/tags/syntax-highlight/</loc>
+    <lastmod>2018-08-23T19:53:33+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags/</loc>
-    <lastmod>2018-09-07T14:15:44+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.onemid.net/categories/tex/</loc>
-    <lastmod>2018-08-29T21:00:28+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.onemid.net/tags/tensorflow/</loc>
-    <lastmod>2018-08-25T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-07T19:10:46+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags/tex/</loc>
-    <lastmod>2018-08-29T21:00:28+08:00</lastmod>
+    <lastmod>2018-08-29T19:26:08+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.onemid.net/categories/tex/</loc>
+    <lastmod>2018-08-29T19:26:08+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.onemid.net/tags/tensorflow/</loc>
+    <lastmod>2018-08-25T19:51:51+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags/tranquilpeak/</loc>
-    <lastmod>2018-08-23T17:24:27+00:00</lastmod>
+    <lastmod>2018-08-23T19:53:33+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags/transpose/</loc>
-    <lastmod>2018-08-29T14:08:17+08:00</lastmod>
+    <lastmod>2018-08-29T19:30:31+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags/triple-quoted-string/</loc>
-    <lastmod>2018-08-26T12:50:53+08:00</lastmod>
+    <lastmod>2018-08-26T19:45:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/categories/ux/</loc>
-    <lastmod>2018-09-07T14:15:44+08:00</lastmod>
+    <lastmod>2018-09-07T19:10:46+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags/underscore/</loc>
-    <lastmod>2018-08-29T21:00:28+08:00</lastmod>
+    <lastmod>2018-08-29T19:26:08+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags/wrf/</loc>
-    <lastmod>2018-08-26T22:52:23+08:00</lastmod>
+    <lastmod>2018-08-26T19:40:50+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/categories/weather/</loc>
-    <lastmod>2018-08-26T22:52:23+08:00</lastmod>
+    <lastmod>2018-08-26T19:40:50+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/categories/web-programming/</loc>
-    <lastmod>2018-07-31T23:57:00+08:00</lastmod>
+    <lastmod>2018-07-31T19:59:07+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags/widget/</loc>
-    <lastmod>2018-09-07T14:15:44+08:00</lastmod>
+    <lastmod>2018-09-07T19:10:46+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/tags/zlib/</loc>
-    <lastmod>2018-08-23T09:32:15+08:00</lastmod>
+    <lastmod>2018-08-23T19:55:47+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/categories/%E5%BB%A2%E6%96%87/</loc>
-    <lastmod>2018-08-01T02:01:00+08:00</lastmod>
+    <lastmod>2018-08-01T19:57:32+08:00</lastmod>
     <priority>0</priority>
   </url>
   

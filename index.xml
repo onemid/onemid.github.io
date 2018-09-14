@@ -6,7 +6,7 @@
     <description>Recent content on Nothing to Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 07 Sep 2018 14:15:44 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 07 Sep 2018 19:10:46 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.onemid.net/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,90 +14,92 @@
     <item>
       <title>小工具的必要性與設計</title>
       <link>https://blog.onemid.net/blog/ux-necessary-stuffs/</link>
-      <pubDate>Fri, 07 Sep 2018 14:15:44 +0800</pubDate>
+      <pubDate>Fri, 07 Sep 2018 19:10:46 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/ux-necessary-stuffs/</guid>
       <description>使用者理所當然會傾向於直覺與方便的操作，所謂直覺操作，亦即使用者可以根據過往生活經驗，不用額外輔助知識就能在未知介面中達成任務。
 有些工具與介面，我們認為是方便使用者使用，但是因為功能過於高度重複以及不能完全輔佐使用者達成任務，導致該工具與介面被使用者棄用。
 功能覆蓋 我們透過一些例子了解這是怎麼運作的：
 假設給定一個小工具，該小工具可顯示公告等相關訊息；而此小工具的公告訊息來源來自某個系統。若今天某系統最常被使用來觀看公告系統，但使用者必須經歷多於操作小工具的步驟才可觀看公告，那麼這個小工具是有用的。
-亦即：若假設 $A$ 為某系統，$A&amp;rsquo;$ 為某系統的小工具，彼此之間的功能隸屬為 $A&amp;rsquo; \subset A$；若是使用者操作歷程的方便度為 $A_{convenience} &amp;lt; A&amp;rsquo;_{convenience}$，則 $A&amp;rsquo;$ 在這條規則，是一個成功設計的工具。
- 在這裡的註記，我們不使用 $\subseteq$ 的概念，因為此概念可代表左右可代表一樣的集合，但是就失去我們的主系統與小工具的意義了。
+亦即：若假設 為某系統， 為某系統的小工具，彼此之間的功能隸屬為 ；若是使用者操作歷程的方便度為 ，則 在這條規則，是一個成功設計的工具。
+ 在這裡的註記，我們不使用 的概念，因為此概念可代表左右可代表一樣的集合，但是就失去我們的主系統與小工具的意義了。
  要注意的一點，上面的規則並不代表這是一個「全面」成功的設計工具；再一個例子：
-伴隨作用 若是今天使用者習慣有伴隨的作用，亦即使用者習慣於操作 $x$ 動作後會再進行 $y$ 操作；今天小工具給予顯示公告等相關訊息，使用者習慣於看完公告後觀看作業項目，但是小工具並未給予此項目的顯示功能，迫使使用者必須進入到系統觀看作業項目；在此，就不是一個成功的設計，因為使用者可以選擇直接進入系統觀看，而避免使用小工具，尤其是小工具的操作經驗與系統操作經驗不一致時。
-所以：使用以上的註記法，若是使用者有一連串的習慣行為動作集合記為 $B$ ，而 $B$ 為有序集合，每一元素為該用戶使用到的功能；如果 $B \not\subset A&amp;rsquo;$ 但是 $B \subset A$ ，那麼此小工具 $A&amp;rsquo;$ 在此規則中，不能帶給使用者流暢的體驗。
+伴隨作用 若是今天使用者習慣有伴隨的作用，亦即使用者習慣於操作 動作後會再進行 操作；今天小工具給予顯示公告等相關訊息，使用者習慣於看完公告後觀看作業項目，但是小工具並未給予此項目的顯示功能，迫使使用者必須進入到系統觀看作業項目；在此，就不是一個成功的設計，因為使用者可以選擇直接進入系統觀看，而避免使用小工具，尤其是小工具的操作經驗與系統操作經驗不一致時。
+所以：使用以上的註記法，若是使用者有一連串的習慣行為動作集合記為 ，而 為有序集合，每一元素為該用戶使用到的功能；如果 但是 ，那麼此小工具 在此規則中，不能帶給使用者流暢的體驗。
 範例 今天設計一套系統，擁有公告訊息、繳費等一般使用者會使用到的功能，今天系統設計部門，由於操作系統需要一點精力與時間，所以部門決定設計一個小工具，希望可以帶給使用者更大的方便性，我們分幾個情境來看：
 管理方發布公告，而使用者也只看公告而已 這種情況有可能發生在：系統的繳費功能較少用到，但是管理方通常用系統發布公告，那麼小工具可以只設計顯示公告，供使用者觀看。
-管理方發布公告，而公告內容通常需要要求使用者觀看後繳費 考慮到若是使用者觀看（$x$ 動作）後就想繳清費用（$y$ 動作），那小工具應該提供繳清費用的功能。
+管理方發布公告，而公告內容通常需要要求使用者觀看後繳費 考慮到若是使用者觀看（ 動作）後就想繳清費用（ 動作），那小工具應該提供繳清費用的功能。
 管理方發布公告，但是大家都不鳥 那你應該檢討你自己了。
 後記 另外值得注意的是，我們並不鼓勵將所有的系統功能都移植到小工具上；普遍來說，由於系統上並非所有都是使用者常用功能，若是皆為常用功能，則考慮點並非另造小工具，而是考慮該系統 UX 改善。</description>
     </item>
     
     <item>
-      <title>Knuth, Morris, Pratt (KMP) Pattern Matching Algorithm</title>
+      <title>KNUTH, MORRIS, PRATT (KMP) PATTERN MATCHING ALGORITHM</title>
       <link>https://blog.onemid.net/blog/ds_string_kmp_alg/</link>
-      <pubDate>Sat, 01 Sep 2018 13:41:41 +0800</pubDate>
+      <pubDate>Sat, 01 Sep 2018 19:13:41 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/ds_string_kmp_alg/</guid>
-      <description>Overview - A Basic Pattern Matching 字串是一個由字元所組成的有限集合，字串的比對有許多方法，其中最簡單的是選定一個起始點向下比對，若是遇到不符合 Pattern 的字串，即起始點向下挪動一格再重新啟動 Pattern 比對，其程式方法如下：
+      <description>OVERVIEW - A BASIC PATTERN MATCHING 字串是一個由字元所組成的有限集合，字串的比對有許多方法，其中最簡單的是選定一個起始點向下比對，若是遇到不符合 Pattern 的字串，即起始點向下挪動一格再重新啟動 Pattern 比對，其程式方法如下：
 int findString(char *string, char *pattern) { int i, j = 0; int startStringPos = 0, endStringPos = strlen(string)-1; int endPatternPos = strlen(pattern)-1; int endMatchingPos = endPatternPos; for (i = startStringPos; endMatchingPos &amp;lt;= endStringPos; ) { if (string[endMatchingPos] == pattern[endPatternPos]) { for (j = 0, i = startStringPos; j &amp;lt; endPatternPos &amp;amp;&amp;amp; string[i] == pattern[j]; i++, j++); } if (j == endPatternPos) { return startStringPos; } endMatchingPos++; startStringPos++; } return -1; }  這個程式主要運作起來長這樣：</description>
     </item>
     
     <item>
-      <title>Sparse Matrix Multipication</title>
+      <title>SPARSE MATRIX MULTIPICATION</title>
       <link>https://blog.onemid.net/blog/ds_sparse_matrix_mul/</link>
-      <pubDate>Thu, 30 Aug 2018 14:04:18 +0800</pubDate>
+      <pubDate>Thu, 30 Aug 2018 19:20:40 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/ds_sparse_matrix_mul/</guid>
-      <description>Overview 給定兩矩陣：$\boldsymbol{A}_{m*n}$ 和 $\boldsymbol{B}_{n*p}$ ，其中矩陣乘法定義如下： $$ (\boldsymbol{AB})_{ij} = \sum_{k=1}^{n}a_{ik}*b_{kj} $$ 矩陣乘法可以寫成三個迴圈的版本（變數 i, j, k）
+      <description>OVERVIEW 給定兩矩陣：$\boldsymbol{A}_{m*n}$ 和 $\boldsymbol{B}_{n*p}$ ，其中矩陣乘法定義如下： $$ (\boldsymbol{AB})_{ij} = \sum_{k=1}^{n}a_{ik}*b_{kj} $$ 矩陣乘法可以寫成三個迴圈的版本（變數 i, j, k）
 for (int i = 0; i &amp;lt; ATotalRows; i++) { for (int j = 0; j &amp;lt; BTotalCols; j++) { int sum = 0; for (int k = 0; k &amp;lt; BTotalRows; k++) { sum += (A[i][k] + B[k][j]); } AB[i][j] = sum; } }   Horowitz et al., 所著 Fundamentals of Data Structures in C (2/e) 在 p.</description>
     </item>
     
     <item>
-      <title>TeX Underscore Problem in Markdown</title>
+      <title>Sparse Matrix Fast Transpose</title>
+      <link>https://blog.onemid.net/blog/ds_fast_transpose/</link>
+      <pubDate>Wed, 29 Aug 2018 19:30:31 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/blog/ds_fast_transpose/</guid>
+      <description>OVERVIEW Sparse Matrix 又名稀疏矩陣，意思是一個矩陣超多零；使用一般的矩陣註記方法，有浪費空間之虞，所以產生了列表式的註記法，如以下舉例：
+我們給定一個稀疏矩陣$ \boldsymbol{M}$，其中矩陣內容為： $$ \boldsymbol{M} = \begin{bmatrix} 15 &amp;amp; 0 &amp;amp; 0 &amp;amp; 22 &amp;amp; 0 &amp;amp; -15 \newline 0 &amp;amp; 11 &amp;amp; 3 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \newline 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; -6 &amp;amp; 0 &amp;amp; 0 \newline 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \newline 91 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \newline 0 &amp;amp; 0 &amp;amp; 28 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \newline \end{bmatrix} $$ 轉化為稀疏矩陣記法為：</description>
+    </item>
+    
+    <item>
+      <title>Tex Underscore Problem in Markdown</title>
       <link>https://blog.onemid.net/blog/tex_markdown_underscore/</link>
-      <pubDate>Wed, 29 Aug 2018 21:00:28 +0800</pubDate>
+      <pubDate>Wed, 29 Aug 2018 19:26:08 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/tex_markdown_underscore/</guid>
       <description>一般來說 我們在打 TeX 指令時，弄下標應該會是這樣打的：
 某個符號_{某個下標值} % 中間放個 underscore  也理應會長這樣 $$ x_{5} $$ 但是問題來了，Markdown 若是要做 emphasis，語法是：
 _某個要強調的字串_  所以說，今天如果你要標兩個 underscore 在 TeX 裡面，舉例來說：
-x_{5} = y_{6}  理論上會出現： $$ x_{5} = y_{6} $$ 但是很詭異在某些 Markdown（像在 Hugo）就是出不來： $$ x{5} = y{6} $$
+x_{5} = y_{6}  理論上會出現：
+$$ x_{5} = y_{6} $$
+但是很詭異在某些 Markdown（像在 Hugo）就是出不來：
+$$ x{5} = y{6} $$
 方案？ 基本上就單純只是 Parsing 有了衝突（不過有人不會啦），善用\會 escape 的概念，所以可以長這樣：
 某個符號\_{某個下標值} % 中間放個 underscore，前面插個 \  所以上面的範例就成了：
 x\_{5} = y\_{6}  Render 出來就會是： $$ x_5 = y_6 $$ 好棒</description>
     </item>
     
     <item>
-      <title>Sparse Matrix Fast Transpose</title>
-      <link>https://blog.onemid.net/blog/ds_fast_transpose/</link>
-      <pubDate>Wed, 29 Aug 2018 14:08:17 +0800</pubDate>
+      <title>MathJax Newline Alignment Problems in Hugo</title>
+      <link>https://blog.onemid.net/blog/math-3-double-slashes/</link>
+      <pubDate>Sun, 26 Aug 2018 19:46:52 +0800</pubDate>
       
-      <guid>https://blog.onemid.net/blog/ds_fast_transpose/</guid>
-      <description>Overview Sparse Matrix 又名稀疏矩陣，意思是一個矩陣超多零；使用一般的矩陣註記方法，有浪費空間之虞，所以產生了列表式的註記法，如以下舉例：
-我們給定一個稀疏矩陣$ \boldsymbol{M}$，其中矩陣內容為： $$ \boldsymbol{M} = \begin{bmatrix} 15 &amp;amp; 0 &amp;amp; 0 &amp;amp; 22 &amp;amp; 0 &amp;amp; -15 \newline 0 &amp;amp; 11 &amp;amp; 3 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \newline 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; -6 &amp;amp; 0 &amp;amp; 0 \newline 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \newline 91 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \newline 0 &amp;amp; 0 &amp;amp; 28 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \newline \end{bmatrix} $$ 轉化為稀疏矩陣記法為：</description>
-    </item>
-    
-    <item>
-      <title>Weather Research and Forecasting Model (WRF) Installation Guide on Ubuntu 16.04</title>
-      <link>https://blog.onemid.net/blog/wrf-install/</link>
-      <pubDate>Sun, 26 Aug 2018 22:52:23 +0800</pubDate>
-      
-      <guid>https://blog.onemid.net/blog/wrf-install/</guid>
-      <description>By NOAA / Satellite and Information Service [Public domain], via Wikimedia Commons
-前言 WRF，對於天氣預報研究從業人員來說一定是一個非常熟悉的詞彙，WRF 是一個天氣數值預報（Numerical Weather Prediction, NWP）模型，大體上使用 Fortran 撰寫，因為涉及多個數值求解（例如 Runge-Kutta 法求常微分方程），費力耗時，實務上使用超級電腦運算；隨著 GPU 運算興起，WRF 也一度改寫為 CUDA 版本加速運算。
-安裝前言 安裝真的非常非常的麻煩，有些東西不可以裝太新，有些東西不可以裝太舊（很生氣），看到網路上也沒什麼太多的教學，而我又常常忘記，就來寫這一篇 Guide。
-此次使用的系統為 Ubuntu 16.04；CPU 為何，RAM 多少，其實都不會妨害安裝，但是會妨礙你算資料；你會發現為了預報下三個小時的資料花了半天去算，預報都不預報了，而且事後校驗還不準，真的想哭。
-安裝 申請 WRF 官網的帳號 說是申請帳號，也只是讓你填填 E-mail 一些資料驗驗證，就行的
-WRF Download Page
-進入到 Download Page，若是新使用者，點按 New Users；若是先前已申請過，填寫先前的 E-mail 即可驗證進入到下載頁面。
-下載頁面 他有提到如果你是第一次使用 WRF 的使用者的話，可以看看他的線上教學（If you are a first-time WRF user, learn how to run the programs via the online tutorial.</description>
+      <guid>https://blog.onemid.net/blog/math-3-double-slashes/</guid>
+      <description>By Wallpoper [Public domain or Public domain], via Wikimedia Commons
+一般來說 打 TeX 相關指令的時候，基本上要對齊會使用上\begin{aligned}和\end{aligned}，中間對齊的基準點用&amp;amp;，換行用\\。如下所示範例 TeX Command 為：
+\begin{aligned} &amp;amp; x^2+4x+4 \\ =&amp;amp; (x+2)(x+2) \\ =&amp;amp; (x+2)^2 \end{aligned}  顯示結果應該要像這樣：
+結果長這樣： $$ \begin{aligned} &amp;amp; x^2+4x+4 =&amp;amp;(x+2)(x+2) =&amp;amp;(x+2)^2 \end{aligned} $$
+原來是 Hugo Markdown Parser 會把 \\吃掉一些，變成單反斜（\），這個會造成好大一個空白；所以有人說要用 4 個雙反斜線（但是沒明講是 Hugo 僅說是 Markdown Parsing 問題），有人說用 6 個雙反斜線，在這邊我 6 個雙反斜線（看起來是 Hugo 要用 6 雙反斜）才有用。
+方案？ 那上面的 Tex Command 就變成
+\begin{aligned} &amp;amp; x^2+4x+4 \\\\\\ =&amp;amp; (x+2)(x+2) \\\\\\ =&amp;amp; (x+2)^2 \end{aligned}  再看一次 Render 的情形：</description>
     </item>
     
     <item>
       <title>Julia Triple-Quoted String Literals Alignment</title>
       <link>https://blog.onemid.net/blog/julia-triple-quote-string-literals-alignment/</link>
-      <pubDate>Sun, 26 Aug 2018 12:50:53 +0800</pubDate>
+      <pubDate>Sun, 26 Aug 2018 19:45:16 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/julia-triple-quote-string-literals-alignment/</guid>
       <description>很多程式語言基本上都會提供三個單或雙引號來支援區塊（block）字串，例如 Python 就有提供相關功能。然而在 Parsing 上，Julia 卻是有一套規則在運行（部分測試也與 Python 有不同的結果），以下舉一些測試範例，以及大略推測 Julia 是如何解析：
@@ -111,51 +113,61 @@ Github Issue - Julia - Problem with parsing triple quoted strings
     </item>
     
     <item>
-      <title>MathJax Newline Alignment Problems in Hugo</title>
-      <link>https://blog.onemid.net/blog/math-3-double-slashes/</link>
-      <pubDate>Sun, 26 Aug 2018 11:11:49 +0800</pubDate>
+      <title>Weather Research and Forecasting Model (WRF) Installation Guide on Ubuntu 16.04</title>
+      <link>https://blog.onemid.net/blog/weather-wrf-install/</link>
+      <pubDate>Sun, 26 Aug 2018 19:40:50 +0800</pubDate>
       
-      <guid>https://blog.onemid.net/blog/math-3-double-slashes/</guid>
-      <description>By Wallpoper [Public domain or Public domain], via Wikimedia Commons
-一般來說 打 TeX 相關指令的時候，基本上要對齊會使用上\begin{aligned}和\end{aligned}，中間對齊的基準點用&amp;amp;，換行用\\。如下所示範例 TeX Command 為：
-\begin{aligned} &amp;amp; x^2+4x+4 \\ =&amp;amp; (x+2)(x+2) \\ =&amp;amp; (x+2)^2 \end{aligned}  顯示結果應該要像這樣：
-結果長這樣： $$ \begin{aligned} &amp;amp; x^2+4x+4 =&amp;amp;(x+2)(x+2) =&amp;amp;(x+2)^2 \end{aligned} $$
-原來是 Hugo Markdown Parser 會把 \\吃掉一些，變成單反斜（\），這個會造成好大一個空白；所以有人說要用 4 個雙反斜線（但是沒明講是 Hugo 僅說是 Markdown Parsing 問題），有人說用 6 個雙反斜線，在這邊我 6 個雙反斜線（看起來是 Hugo 要用 6 雙反斜）才有用。
-方案？ 那上面的 Tex Command 就變成
-\begin{aligned} &amp;amp; x^2+4x+4 \\\\\\ =&amp;amp; (x+2)(x+2) \\\\\\ =&amp;amp; (x+2)^2 \end{aligned}  再看一次 Render 的情形： $$ \begin{aligned} &amp;amp; x^2+4x+4 \\</description>
+      <guid>https://blog.onemid.net/blog/weather-wrf-install/</guid>
+      <description>By NOAA / Satellite and Information Service [Public domain], via Wikimedia Commons
+前言 WRF，對於天氣預報研究從業人員來說一定是一個非常熟悉的詞彙，WRF 是一個天氣數值預報（Numerical Weather Prediction, NWP）模型，大體上使用 Fortran 撰寫，因為涉及多個數值求解（例如 Runge-Kutta 法求常微分方程），費力耗時，實務上使用超級電腦運算；隨著 GPU 運算興起，WRF 也一度改寫為 CUDA 版本加速運算。
+安裝前言 安裝真的非常非常的麻煩，有些東西不可以裝太新，有些東西不可以裝太舊（很生氣），看到網路上也沒什麼太多的教學，而我又常常忘記，就來寫這一篇 Guide。
+此次使用的系統為 Ubuntu 16.04；CPU 為何，RAM 多少，其實都不會妨害安裝，但是會妨礙你算資料；你會發現為了預報下三個小時的資料花了半天去算，預報都不預報了，而且事後校驗還不準，真的想哭。
+安裝 申請 WRF 官網的帳號 說是申請帳號，也只是讓你填填 E-mail 一些資料驗驗證，就行的
+WRF Download Page
+進入到 Download Page，若是新使用者，點按 New Users；若是先前已申請過，填寫先前的 E-mail 即可驗證進入到下載頁面。
+下載頁面 他有提到如果你是第一次使用 WRF 的使用者的話，可以看看他的線上教學（If you are a first-time WRF user, learn how to run the programs via the online tutorial.</description>
+    </item>
+    
+    <item>
+      <title>Compiling TensorFlow-GPU on Ubuntu 16.04 with CUDA 9.1(9.2) and Python3</title>
+      <link>https://blog.onemid.net/blog/dl-cuda-and-tf-install/</link>
+      <pubDate>Sat, 25 Aug 2018 19:51:51 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/blog/dl-cuda-and-tf-install/</guid>
+      <description>INSTALL CUDA: https://developer.nvidia.com/cuda-downloads?target_os=Linux&amp;amp;target_arch=ppc64le&amp;amp;target_distro=Ubuntu&amp;amp;target_version=1604&amp;amp;target_type=deblocal
+ Here, we used “Linux” -&amp;gt; “ppc64le”(64-bit) -&amp;gt; “16.04” -&amp;gt; “deb(local)”, and downloaded the “Base Installer” (approx. 1.0GB) Following the guidance which given by the nVidia webpage to install the CUDA. During installation, the installation program will ask you to create a “symbolic link” of CUDA library folder; remember to create. Create the environment variable to make these work.  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/ local/cuda/extras/CUPTI/lib64:/usr/lib/nvidia-381 # Remember that nvidia-381 is the driver version, if you install 390, please modifiy it to nvidia-390 export CUDA_HOME=/usr/local/cuda export PATH=$PATH:/usr/local/cuda/bin   Execute source ~/.</description>
     </item>
     
     <item>
       <title>Julia isequal() 和 ==</title>
       <link>https://blog.onemid.net/blog/julia-equal-comparison/</link>
-      <pubDate>Sat, 25 Aug 2018 18:01:37 +0800</pubDate>
+      <pubDate>Sat, 25 Aug 2018 19:50:16 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/julia-equal-comparison/</guid>
-      <description>isequal() 和 == 本執行環境：Julia 1.0
+      <description>ISEQUAL() 和 == 本執行環境：Julia 1.0
 在 Julia 裡面，isequal()和==表面上看起來都是比較兩者是否相等；但其實裡面還是有些微的差距：isequal(a, b)隱含著hash(a)及hash(b)是否相等。在浮點數（包含NaN）、遺失值（Missing）中，兩者處理狀況有差距。根據文件所述，isequal會視0.0與-0.0為不同，NaN永遠與其他NaN相同，missing也是。
 isequal() 文件：https://docs.julialang.org/en/v1/base/base/#Base.isequal
 == 文件：https://docs.julialang.org/en/v1/base/math/#Base.:==
-比較 正零與負零    指令 結果？ 指令 結果？     isequal(0.0, -0.0) false 0.0 == -0.0 true   isequal(0, -0) true 0 == -0 true   isequal(0.0, -0) true 0.0 == -0 true    julia&amp;gt; hash(0) 0x77cfa1eef01bca90 julia&amp;gt; hash(-0) 0x77cfa1eef01bca90 julia&amp;gt; hash(0.0) 0x77cfa1eef01bca90 julia&amp;gt; hash(-0.0) 0x3be7d0f7780de548  Missing 們    指令 結果？ 指令 結果？     isequal(missing, missing) true missing == missing missing   isequal(Missing, Missing) true Missing == Missing true   isequal(missing, Missing) false missing == Missing missing   isequal(missing, 3) false missing == 3 missing    julia&amp;gt; typeof(missing) Missing julia&amp;gt; typeof(Missing) DataType  NaN 們    指令 結果？ 指令 結果？     isequal(NaN, NaN) true NaN == NaN false   isequal([1 NaN], [1 NaN]) true [1 NaN] == [1 NaN] false   isequal(NaN, NaN32) true NaN == NaN32 false    julia&amp;gt; hash(NaN) 0x15d7d083d04ecb90 julia&amp;gt; hash(NaN16) 0x15d7d083d04ecb90 julia&amp;gt; hash(NaN32) 0x15d7d083d04ecb90 julia&amp;gt; hash(NaN64) 0x15d7d083d04ecb90  不管哪一種NaNhash 值都一樣；同樣出現在Inf中，不管是Inf16、Inf32、Inf64皆為0x807bb202c9cbfc6f，而負無限大者皆為0x96e782fc7639e1bc。</description>
+比較 正零與負零    指令 結果？ 指令 結果？     isequal(0.0, -0.0) false 0.0 == -0.0 true   isequal(0, -0) true 0 == -0 true   isequal(0.0, -0) true 0.0 == -0 true    julia&amp;gt; hash(0) 0x77cfa1eef01bca90 julia&amp;gt; hash(-0) 0x77cfa1eef01bca90 julia&amp;gt; hash(0.0) 0x77cfa1eef01bca90 julia&amp;gt; hash(-0.0) 0x3be7d0f7780de548  MISSING 們    指令 結果？ 指令 結果？     isequal(missing, missing) true missing == missing missing   isequal(Missing, Missing) true Missing == Missing true   isequal(missing, Missing) false missing == Missing missing   isequal(missing, 3) false missing == 3 missing    julia&amp;gt; typeof(missing) Missing julia&amp;gt; typeof(Missing) DataType  NAN 們    指令 結果？ 指令 結果？     isequal(NaN, NaN) true NaN == NaN false   isequal([1 NaN], [1 NaN]) true [1 NaN] == [1 NaN] false   isequal(NaN, NaN32) true NaN == NaN32 false    julia&amp;gt; hash(NaN) 0x15d7d083d04ecb90 julia&amp;gt; hash(NaN16) 0x15d7d083d04ecb90 julia&amp;gt; hash(NaN32) 0x15d7d083d04ecb90 julia&amp;gt; hash(NaN64) 0x15d7d083d04ecb90  不管哪一種NaNhash 值都一樣；同樣出現在Inf中，不管是Inf16、Inf32、Inf64皆為0x807bb202c9cbfc6f，而負無限大者皆為0x96e782fc7639e1bc。</description>
     </item>
     
     <item>
-      <title>Compiling TensorFlow-GPU on Ubuntu 16.04 with CUDA 9.1(9.2) and Python3</title>
-      <link>https://blog.onemid.net/blog/cuda-and-tf-install/</link>
-      <pubDate>Sat, 25 Aug 2018 00:00:00 +0000</pubDate>
+      <title>Cannot Use pip3 in macOS (zlib Dependency Problem)</title>
+      <link>https://blog.onemid.net/blog/python3-pip3-zlib-in-macos/</link>
+      <pubDate>Thu, 23 Aug 2018 19:55:47 +0800</pubDate>
       
-      <guid>https://blog.onemid.net/blog/cuda-and-tf-install/</guid>
-      <description>Install CUDA: https://developer.nvidia.com/cuda-downloads?target_os=Linux&amp;amp;target_arch=ppc64le&amp;amp;target_distro=Ubuntu&amp;amp;target_version=1604&amp;amp;target_type=deblocal
- Here, we used &amp;ldquo;Linux&amp;rdquo; -&amp;gt; &amp;ldquo;ppc64le&amp;rdquo;(64-bit) -&amp;gt; &amp;ldquo;16.04&amp;rdquo; -&amp;gt; &amp;ldquo;deb(local)&amp;rdquo;, and downloaded the &amp;ldquo;Base Installer&amp;rdquo; (approx. 1.0GB)
- Following the guidance which given by the nVidia webpage to install the CUDA.
- During installation, the installation program will ask you to create a &amp;ldquo;symbolic link&amp;rdquo; of CUDA library folder; remember to create.
- Create the environment variable to make these work.
-  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/ local/cuda/extras/CUPTI/lib64:/usr/lib/nvidia-381 # Remember that nvidia-381 is the driver version, if you install 390, please modifiy it to nvidia-390 export CUDA_HOME=/usr/local/cuda export PATH=$PATH:/usr/local/cuda/bin   Execute source ~/.</description>
+      <guid>https://blog.onemid.net/blog/python3-pip3-zlib-in-macos/</guid>
+      <description>問題描述 在使用 pip3 時，會回應 zlib相關套件的錯誤訊息
+簡單解法 開 terminal 打
+xcode-select --install  之後再裝
+brew install python3  如果先裝 python3 然後再裝 xcode-select 東西的話
+brew reinstall python3  就重裝 python3 吧</description>
     </item>
     
     <item>
-      <title>Hexo Syntax Highlighting (Tested under Tranquilpeak)</title>
+      <title>Hexo Syntax Highlighting (Tested Under Tranquilpeak)</title>
       <link>https://blog.onemid.net/blog/hexo-syntax-highlighting/</link>
-      <pubDate>Thu, 23 Aug 2018 17:24:27 +0000</pubDate>
+      <pubDate>Thu, 23 Aug 2018 19:53:33 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/hexo-syntax-highlighting/</guid>
       <description>把這個主題弄 Syntax Highlighting 又是一番折騰，本來想說用prism.js做做，奈何就是在佈景上跟原始的佈景相衝，該高亮顯示的地方也沒有，索性走回頭路用highlight.js
@@ -167,29 +179,17 @@ isequal() 文件：https://docs.julialang.org/en/v1/base/base/#Base.isequal
 另外一個是，在 Hexo 根目錄下的_config.yml裡面：
 ... highlight: enable: false ...  記得要把 enable 改成 false，不然會打架。
 改完之後，hexo clean和 generate以及deploy記得做ㄛ
-後記：使用深色佈景主題時，Tranquilpeak 會讓一些 Token 反白 我當時看到快傻眼了，怎麼那麼難搞阿Q</description>
+後記：使用深色佈景主題時，TRANQUILPEAK 會讓一些 TOKEN 反白 我當時看到快傻眼了，怎麼那麼難搞阿Q</description>
     </item>
     
     <item>
-      <title>Cannot Use Pip3 in MacOS (zlib Dependency Problem)</title>
-      <link>https://blog.onemid.net/blog/python3-pip3-zlib-in-macos/</link>
-      <pubDate>Thu, 23 Aug 2018 09:32:15 +0800</pubDate>
+      <title>ZZZ我終於把 MATHJAX 弄進去了</title>
+      <link>https://blog.onemid.net/blog/zzz-testmath/</link>
+      <pubDate>Wed, 01 Aug 2018 19:57:32 +0800</pubDate>
       
-      <guid>https://blog.onemid.net/blog/python3-pip3-zlib-in-macos/</guid>
-      <description>問題描述 在使用 pip3 時，會回應 zlib相關套件的錯誤訊息
-簡單解法 開 terminal 打
-xcode-select --install  之後再裝
-brew install python3  如果先裝 python3 然後再裝 xcode-select 東西的話
-brew reinstall python3  就重裝 python3 吧</description>
-    </item>
-    
-    <item>
-      <title>zzz我終於把 mathjax 弄進去了</title>
-      <link>https://blog.onemid.net/blog/testmath/</link>
-      <pubDate>Wed, 01 Aug 2018 02:01:00 +0800</pubDate>
-      
-      <guid>https://blog.onemid.net/blog/testmath/</guid>
-      <description>無關緊要的後記        我的老天，我花了一個多小時終於東湊西湊把 mathjax 塞進去了
+      <guid>https://blog.onemid.net/blog/zzz-testmath/</guid>
+      <description>無關緊要的後記        無關緊要的後記
+我的老天，我花了一個多小時終於東湊西湊把 mathjax 塞進去了
 搞到後來我都不知道我在幹嘛
 結果 github 上面跟本機看得不一樣
 這是 inline $ x^2+x-5=y $
@@ -202,16 +202,16 @@ math: engine: &#39;mathjax&#39; mathjax: src: &amp;quot;https://cdnjs.cloudflare
     </item>
     
     <item>
-      <title>Nginx, MySQL, PHP Installation (Ubuntu 16.04)</title>
+      <title>NGINX, MYSQL, PHP INSTALLATION (UBUNTU 16.04)</title>
       <link>https://blog.onemid.net/blog/nginx-mysql-php-installation-ubuntu-16-04/</link>
-      <pubDate>Tue, 31 Jul 2018 23:57:00 +0800</pubDate>
+      <pubDate>Tue, 31 Jul 2018 19:59:07 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/nginx-mysql-php-installation-ubuntu-16-04/</guid>
-      <description>Install the Nginx Web Server $ sudo apt-get update $ sudo apt-get install nginx  請確認防火牆開啟埠號 80 / 443
-Install MySQL $ sudo apt-get install mysql-server $ mysql_secure_installation  請遵照指示文字設定
-Install PHP for Processing $ sudo apt-get install php-fpm php-mysql  Configure the PHP Processor $ sudo vim /etc/php/7.0/fpm/php.ini  編輯 php.ini 內部數值，先前請解除註解
+      <description>INSTALL THE NGINX WEB SERVER $ sudo apt-get update $ sudo apt-get install nginx  請確認防火牆開啟埠號 80 / 443
+INSTALL MYSQL $ sudo apt-get install mysql-server $ mysql_secure_installation  請遵照指示文字設定
+INSTALL PHP FOR PROCESSING $ sudo apt-get install php-fpm php-mysql  CONFIGURE THE PHP PROCESSOR $ sudo vim /etc/php/7.0/fpm/php.ini  編輯 php.ini 內部數值，先前請解除註解
 cgi.fix_pathinfo=0  重新啟動 PHP Processor
-$ sudo systemctl restart php7.0-fpm  Configure Nginx to Use the PHP Processor $ sudo vim /etc/nginx/sites-available/default  編輯 default 內部檔案，更動原 server {&amp;hellip;} 區塊為下方區塊</description>
+$ sudo systemctl restart php7.0-fpm  CONFIGURE NGINX TO USE THE PHP PROCESSOR $ sudo vim /etc/nginx/sites-available/default  編輯 default 內部檔案，更動原 server {…} 區塊為下方區塊</description>
     </item>
     
   </channel>

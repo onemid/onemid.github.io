@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sparse Matrix on Nothing to Do</title>
+    <link>https://blog.onemid.net/tags/sparse-matrix/</link>
+    <description>Recent content in Sparse Matrix on Nothing to Do</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Thu, 30 Aug 2018 19:20:40 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.onemid.net/tags/sparse-matrix/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SPARSE MATRIX MULTIPICATION</title>
+      <link>https://blog.onemid.net/blog/ds_sparse_matrix_mul/</link>
+      <pubDate>Thu, 30 Aug 2018 19:20:40 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/blog/ds_sparse_matrix_mul/</guid>
+      <description>OVERVIEW 給定兩矩陣：$\boldsymbol{A}_{m*n}$ 和 $\boldsymbol{B}_{n*p}$ ，其中矩陣乘法定義如下： $$ (\boldsymbol{AB})_{ij} = \sum_{k=1}^{n}a_{ik}*b_{kj} $$ 矩陣乘法可以寫成三個迴圈的版本（變數 i, j, k）
+for (int i = 0; i &amp;lt; ATotalRows; i++) { for (int j = 0; j &amp;lt; BTotalCols; j++) { int sum = 0; for (int k = 0; k &amp;lt; BTotalRows; k++) { sum += (A[i][k] + B[k][j]); } AB[i][j] = sum; } }   Horowitz et al., 所著 Fundamentals of Data Structures in C (2/e) 在 p.</description>
+    </item>
+    
+    <item>
+      <title>Sparse Matrix Fast Transpose</title>
+      <link>https://blog.onemid.net/blog/ds_fast_transpose/</link>
+      <pubDate>Wed, 29 Aug 2018 19:30:31 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/blog/ds_fast_transpose/</guid>
+      <description>OVERVIEW Sparse Matrix 又名稀疏矩陣，意思是一個矩陣超多零；使用一般的矩陣註記方法，有浪費空間之虞，所以產生了列表式的註記法，如以下舉例：
+我們給定一個稀疏矩陣$ \boldsymbol{M}$，其中矩陣內容為： $$ \boldsymbol{M} = \begin{bmatrix} 15 &amp;amp; 0 &amp;amp; 0 &amp;amp; 22 &amp;amp; 0 &amp;amp; -15 \newline 0 &amp;amp; 11 &amp;amp; 3 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \newline 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; -6 &amp;amp; 0 &amp;amp; 0 \newline 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \newline 91 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \newline 0 &amp;amp; 0 &amp;amp; 28 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \newline \end{bmatrix} $$ 轉化為稀疏矩陣記法為：</description>
+    </item>
+    
+  </channel>
+</rss>

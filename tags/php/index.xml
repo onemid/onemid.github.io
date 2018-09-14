@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Php on Nothing to Do</title>
+    <title>PHP on Nothing to Do</title>
     <link>https://blog.onemid.net/tags/php/</link>
-    <description>Recent content in Php on Nothing to Do</description>
+    <description>Recent content in PHP on Nothing to Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 31 Jul 2018 23:57:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 31 Jul 2018 19:59:07 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.onemid.net/tags/php/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Nginx, MySQL, PHP Installation (Ubuntu 16.04)</title>
+      <title>NGINX, MYSQL, PHP INSTALLATION (UBUNTU 16.04)</title>
       <link>https://blog.onemid.net/blog/nginx-mysql-php-installation-ubuntu-16-04/</link>
-      <pubDate>Tue, 31 Jul 2018 23:57:00 +0800</pubDate>
+      <pubDate>Tue, 31 Jul 2018 19:59:07 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/nginx-mysql-php-installation-ubuntu-16-04/</guid>
-      <description>Install the Nginx Web Server $ sudo apt-get update $ sudo apt-get install nginx  請確認防火牆開啟埠號 80 / 443
-Install MySQL $ sudo apt-get install mysql-server $ mysql_secure_installation  請遵照指示文字設定
-Install PHP for Processing $ sudo apt-get install php-fpm php-mysql  Configure the PHP Processor $ sudo vim /etc/php/7.0/fpm/php.ini  編輯 php.ini 內部數值，先前請解除註解
+      <description>INSTALL THE NGINX WEB SERVER $ sudo apt-get update $ sudo apt-get install nginx  請確認防火牆開啟埠號 80 / 443
+INSTALL MYSQL $ sudo apt-get install mysql-server $ mysql_secure_installation  請遵照指示文字設定
+INSTALL PHP FOR PROCESSING $ sudo apt-get install php-fpm php-mysql  CONFIGURE THE PHP PROCESSOR $ sudo vim /etc/php/7.0/fpm/php.ini  編輯 php.ini 內部數值，先前請解除註解
 cgi.fix_pathinfo=0  重新啟動 PHP Processor
-$ sudo systemctl restart php7.0-fpm  Configure Nginx to Use the PHP Processor $ sudo vim /etc/nginx/sites-available/default  編輯 default 內部檔案，更動原 server {&amp;hellip;} 區塊為下方區塊</description>
+$ sudo systemctl restart php7.0-fpm  CONFIGURE NGINX TO USE THE PHP PROCESSOR $ sudo vim /etc/nginx/sites-available/default  編輯 default 內部檔案，更動原 server {…} 區塊為下方區塊</description>
     </item>
     
   </channel>
