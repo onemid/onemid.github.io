@@ -6,10 +6,26 @@
     <description>Recent content in Weather on Nothing to Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 26 Aug 2018 19:40:50 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 14 Sep 2018 22:33:16 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.onemid.net/categories/weather/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>107 天氣分析與預報研討會</title>
+      <link>https://blog.onemid.net/blog/weather-cwb-conf/</link>
+      <pubDate>Fri, 14 Sep 2018 22:33:16 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/blog/weather-cwb-conf/</guid>
+      <description>前幾天（9/11 - 9/13）去中央氣象局參加他們舉辦的「天氣分析與預報研討會」，我是第一次參加，也蠻高興能夠來這個主司台灣天氣與氣候預報的主管機關一睹風采，由於是第一次參與這個研討會，所以可能有些想法會有點缺少長期的觀察（樣本太少XD）所作的結論可能會有所偏差，僅供參考也歡迎指教。
+本次研討會分成 大氣監測與分析、天氣模擬與預報、氣象跨域應用與環境永續發展、環境遙測、氣象防災與氣候調適應用、氣候監測與預報 以及 海象測報與應用；其實也不難看出來在天氣測報這個區塊，監測、預報與模擬是常常密不可分的。
+跟其他學術研討會的流程大同小異，有 Keynote Speech、平行運作的議程還有點心(?)，我這三天大致上聽了大氣監測與分析、天氣模擬與預報、環境遙測以及氣候監測與預報這幾個 Sessions。
+雖然在氣象方面有一些涉略，但由於我不是大氣科學本科系出身，有時候會有一種霧裡探花的感覺，因為報告時間的限制，在某些現象、名詞上面他們就常常講說「相信各位很了解XXXX」、「這是很常見的XXXX」，就跳過去了，我真的也不好意思舉手說請問 MJO（Madden-Julian Oscillation 馬登－朱利安震盪） 是什麼意思 Monsoon Trough（季風槽） 又是什麼，只好私下趕快維基一下。
+想一想蠻有趣的，如果一個不是資工 Deep Learning（以下稱 DL）、 Machine Learning（以下稱 ML） 或是 AI 領域的人來聽相關的研討會，大概也覺得我們習慣的語言很不習慣吧。
+我對於 DL 涉略的深度相對比其他深，DL 與氣象結合也是我未來預定要走的方向，這次來聽這場研討會很大一部分是要來看看他們對於電腦模擬預報是怎麼運用的，也來看我們目前氣象測報技術的發展現況，給自己一點 idea；在此次研討會中，大致上有 160 篇左右的論文，而實際運用到 AI（Machine Learning）技術的基本上只佔了約略 2~3% 左右（如果我們不計算採用 Linear Regression 這種類似於 Statisical Learning 的論文的話，因為這太常見了）；所以至少在去年（2017 年），台灣氣象界對於 AI 上的輔助預報可以說是在整體之中仍占少部分，綜觀幾年下來的研討會論文，其實每一年或多或少都會使用到 AI 技術，但部分技術稍嫌過時。
+如果說使用 DL 作為天氣模擬的技術或是測報的輔助技術，在氣象界常常使用「類神經網路」或 ANN（Artificial Neural Networks）作為預報參數調整的策略之一；當然這些對於模型的描述較正規電腦科學領域的論述少很多了，對於 Hidden Layers 層數、 Activation、Loss Function 的敘述著墨較少，也鮮少看見不同的方法做變化，甚至對於 Hidden Layer 也只使用一層而已（有違我們在建構 Model 時的經驗），這些因素都有可能導致效果不彰，我認為這是值得改進的。
+在預報上，氣象局的模型改進許多構基在模型的參數調整，或是引用新資料、加入更精確的解析度資料，對於主要的大氣方程式其實沒什麼改動，這跟深度學習很像阿，參數調一調，挖塞跑好快，發 Paper；既然是人工調參數改進模型，我想 AI 應該也可以有機會參與到這個任務？</description>
+    </item>
     
     <item>
       <title>Weather Research and Forecasting Model (WRF) Installation Guide on Ubuntu 16.04</title>

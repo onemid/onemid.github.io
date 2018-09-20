@@ -94,12 +94,6 @@
   </url>
   
   <url>
-    <loc>https://blog.onemid.net/categories/</loc>
-    <lastmod>2018-09-14T22:33:16+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.onemid.net/tags//</loc>
     <lastmod>2018-08-25T19:50:16+08:00</lastmod>
     <priority>0</priority>
@@ -131,7 +125,6 @@
   
   <url>
     <loc>https://blog.onemid.net/categories/</loc>
-    <lastmod>2018-09-14T22:33:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -148,7 +141,19 @@
   </url>
   
   <url>
+    <loc>https://blog.onemid.net/tags/conference/</loc>
+    <lastmod>2018-09-14T22:33:16+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.onemid.net/contact/</loc>
+  </url>
+  
+  <url>
+    <loc>https://blog.onemid.net/tags/cwb/</loc>
+    <lastmod>2018-09-14T22:33:16+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -434,8 +439,14 @@
   </url>
   
   <url>
+    <loc>https://blog.onemid.net/tags/weather/</loc>
+    <lastmod>2018-09-14T22:33:16+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.onemid.net/categories/weather/</loc>
-    <lastmod>2018-08-26T19:40:50+08:00</lastmod>
+    <lastmod>2018-09-14T22:33:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
