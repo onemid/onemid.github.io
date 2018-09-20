@@ -6,9 +6,19 @@
     <description>Recent content in Categories on Nothing to Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
+    <lastBuildDate>Fri, 14 Sep 2018 22:33:16 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.onemid.net/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title></title>
+      <link>https://blog.onemid.net/categories/</link>
+      <pubDate>Fri, 14 Sep 2018 22:33:16 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/categories/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>DS</title>
@@ -22,7 +32,7 @@
     <item>
       <title>Deep Learning</title>
       <link>https://blog.onemid.net/categories/deep-learning/</link>
-      <pubDate>Sat, 25 Aug 2018 19:51:51 +0800</pubDate>
+      <pubDate>Mon, 17 Sep 2018 18:42:32 +0800</pubDate>
       
       <guid>https://blog.onemid.net/categories/deep-learning/</guid>
       <description></description>
