@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.onemid.net/blog/c_1_01/</loc>
+    <lastmod>2019-03-17T14:58:40+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.onemid.net/blog/vm_windows10_1803/</loc>
+    <lastmod>2018-11-23T22:40:40+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.onemid.net/blog/ux-necessary-stuffs/</loc>
     <lastmod>2018-09-07T19:10:46+08:00</lastmod>
   </url>
@@ -79,12 +89,18 @@
   
   <url>
     <loc>https://blog.onemid.net/tags/</loc>
-    <lastmod>2018-09-07T19:10:46+08:00</lastmod>
+    <lastmod>2019-03-17T14:58:40+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.onemid.net/tags//</loc>
+    <loc>https://blog.onemid.net/categories/</loc>
+    <lastmod>2018-11-23T22:40:40+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.onemid.net/tags/</loc>
     <lastmod>2018-08-25T19:50:16+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -97,7 +113,7 @@
   
   <url>
     <loc>https://blog.onemid.net/blog/</loc>
-    <lastmod>2018-09-07T19:10:46+08:00</lastmod>
+    <lastmod>2019-03-17T14:58:40+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -109,17 +125,18 @@
   
   <url>
     <loc>https://blog.onemid.net/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.onemid.net/tags/comparison/</loc>
-    <lastmod>2018-08-25T19:50:16+08:00</lastmod>
+    <lastmod>2018-11-23T22:40:40+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/contact/</loc>
+  </url>
+  
+  <url>
+    <loc>https://blog.onemid.net/categories/c%E6%95%99%E5%AD%B8/</loc>
+    <lastmod>2019-03-17T14:58:40+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -137,18 +154,6 @@
   <url>
     <loc>https://blog.onemid.net/categories/deep-learning/</loc>
     <lastmod>2018-08-25T19:51:51+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.onemid.net/tags/design/</loc>
-    <lastmod>2018-09-07T19:10:46+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.onemid.net/tags/evaluation/</loc>
-    <lastmod>2018-09-07T19:10:46+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -189,12 +194,6 @@
   </url>
   
   <url>
-    <loc>https://blog.onemid.net/tags/isequal/</loc>
-    <lastmod>2018-08-25T19:50:16+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.onemid.net/tags/julia/</loc>
     <lastmod>2018-08-26T19:45:16+08:00</lastmod>
     <priority>0</priority>
@@ -219,12 +218,6 @@
   </url>
   
   <url>
-    <loc>https://blog.onemid.net/tags/macos/</loc>
-    <lastmod>2018-08-23T19:55:47+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.onemid.net/tags/markdown/</loc>
     <lastmod>2018-08-29T19:26:08+08:00</lastmod>
     <priority>0</priority>
@@ -239,12 +232,6 @@
   <url>
     <loc>https://blog.onemid.net/categories/mathjax/</loc>
     <lastmod>2018-08-29T19:26:08+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.onemid.net/tags/missing/</loc>
-    <lastmod>2018-08-25T19:50:16+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -267,12 +254,6 @@
   </url>
   
   <url>
-    <loc>https://blog.onemid.net/tags/nan/</loc>
-    <lastmod>2018-08-25T19:50:16+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.onemid.net/tags/newline/</loc>
     <lastmod>2018-08-26T19:46:52+08:00</lastmod>
     <priority>0</priority>
@@ -286,7 +267,7 @@
   
   <url>
     <loc>https://blog.onemid.net/</loc>
-    <lastmod>2018-09-07T19:10:46+08:00</lastmod>
+    <lastmod>2019-03-17T14:58:40+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -299,12 +280,6 @@
   <url>
     <loc>https://blog.onemid.net/tags/parsing/</loc>
     <lastmod>2018-08-26T19:45:16+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.onemid.net/tags/pip3/</loc>
-    <lastmod>2018-08-23T19:55:47+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -346,7 +321,7 @@
   
   <url>
     <loc>https://blog.onemid.net/tags/</loc>
-    <lastmod>2018-09-07T19:10:46+08:00</lastmod>
+    <lastmod>2019-03-17T14:58:40+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -413,6 +388,54 @@
   <url>
     <loc>https://blog.onemid.net/categories/web-programming/</loc>
     <lastmod>2018-07-31T19:59:07+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.onemid.net/tags/comparison/</loc>
+    <lastmod>2018-08-25T19:50:16+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.onemid.net/tags/design/</loc>
+    <lastmod>2018-09-07T19:10:46+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.onemid.net/tags/evaluation/</loc>
+    <lastmod>2018-09-07T19:10:46+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.onemid.net/tags/isequal/</loc>
+    <lastmod>2018-08-25T19:50:16+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.onemid.net/tags/macos/</loc>
+    <lastmod>2018-08-23T19:55:47+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.onemid.net/tags/missing/</loc>
+    <lastmod>2018-08-25T19:50:16+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.onemid.net/tags/nan/</loc>
+    <lastmod>2018-08-25T19:50:16+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.onemid.net/tags/pip3/</loc>
+    <lastmod>2018-08-23T19:55:47+08:00</lastmod>
     <priority>0</priority>
   </url>
   

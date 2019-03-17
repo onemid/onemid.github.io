@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Nothing to Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 07 Sep 2018 19:10:46 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 17 Mar 2019 14:58:40 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.onemid.net/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title></title>
       <link>https://blog.onemid.net/tags/</link>
-      <pubDate>Fri, 07 Sep 2018 19:10:46 +0800</pubDate>
+      <pubDate>Sun, 17 Mar 2019 14:58:40 +0800</pubDate>
       
       <guid>https://blog.onemid.net/tags/</guid>
       <description></description>
@@ -22,10 +22,10 @@
     
     <item>
       <title>==</title>
-      <link>https://blog.onemid.net/tags//</link>
+      <link>https://blog.onemid.net/tags/</link>
       <pubDate>Sat, 25 Aug 2018 19:50:16 +0800</pubDate>
       
-      <guid>https://blog.onemid.net/tags//</guid>
+      <guid>https://blog.onemid.net/tags/</guid>
       <description></description>
     </item>
     
@@ -48,38 +48,11 @@
     </item>
     
     <item>
-      <title>Comparison</title>
-      <link>https://blog.onemid.net/tags/comparison/</link>
-      <pubDate>Sat, 25 Aug 2018 19:50:16 +0800</pubDate>
-      
-      <guid>https://blog.onemid.net/tags/comparison/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>DS</title>
       <link>https://blog.onemid.net/tags/ds/</link>
       <pubDate>Sat, 01 Sep 2018 19:13:41 +0800</pubDate>
       
       <guid>https://blog.onemid.net/tags/ds/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Design</title>
-      <link>https://blog.onemid.net/tags/design/</link>
-      <pubDate>Fri, 07 Sep 2018 19:10:46 +0800</pubDate>
-      
-      <guid>https://blog.onemid.net/tags/design/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Evaluation</title>
-      <link>https://blog.onemid.net/tags/evaluation/</link>
-      <pubDate>Fri, 07 Sep 2018 19:10:46 +0800</pubDate>
-      
-      <guid>https://blog.onemid.net/tags/evaluation/</guid>
       <description></description>
     </item>
     
@@ -120,15 +93,6 @@
     </item>
     
     <item>
-      <title>Isequal</title>
-      <link>https://blog.onemid.net/tags/isequal/</link>
-      <pubDate>Sat, 25 Aug 2018 19:50:16 +0800</pubDate>
-      
-      <guid>https://blog.onemid.net/tags/isequal/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Julia</title>
       <link>https://blog.onemid.net/tags/julia/</link>
       <pubDate>Sun, 26 Aug 2018 19:45:16 +0800</pubDate>
@@ -156,15 +120,6 @@
     </item>
     
     <item>
-      <title>MacOS</title>
-      <link>https://blog.onemid.net/tags/macos/</link>
-      <pubDate>Thu, 23 Aug 2018 19:55:47 +0800</pubDate>
-      
-      <guid>https://blog.onemid.net/tags/macos/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Markdown</title>
       <link>https://blog.onemid.net/tags/markdown/</link>
       <pubDate>Wed, 29 Aug 2018 19:26:08 +0800</pubDate>
@@ -179,15 +134,6 @@
       <pubDate>Wed, 29 Aug 2018 19:26:08 +0800</pubDate>
       
       <guid>https://blog.onemid.net/tags/mathjax/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Missing</title>
-      <link>https://blog.onemid.net/tags/missing/</link>
-      <pubDate>Sat, 25 Aug 2018 19:50:16 +0800</pubDate>
-      
-      <guid>https://blog.onemid.net/tags/missing/</guid>
       <description></description>
     </item>
     
@@ -215,15 +161,6 @@
       <pubDate>Tue, 31 Jul 2018 19:59:07 +0800</pubDate>
       
       <guid>https://blog.onemid.net/tags/mysql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nan</title>
-      <link>https://blog.onemid.net/tags/nan/</link>
-      <pubDate>Sat, 25 Aug 2018 19:50:16 +0800</pubDate>
-      
-      <guid>https://blog.onemid.net/tags/nan/</guid>
       <description></description>
     </item>
     
@@ -260,15 +197,6 @@
       <pubDate>Sun, 26 Aug 2018 19:45:16 +0800</pubDate>
       
       <guid>https://blog.onemid.net/tags/parsing/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pip3</title>
-      <link>https://blog.onemid.net/tags/pip3/</link>
-      <pubDate>Thu, 23 Aug 2018 19:55:47 +0800</pubDate>
-      
-      <guid>https://blog.onemid.net/tags/pip3/</guid>
       <description></description>
     </item>
     
@@ -381,7 +309,79 @@
     </item>
     
     <item>
-      <title>Widget</title>
+      <title>comparison</title>
+      <link>https://blog.onemid.net/tags/comparison/</link>
+      <pubDate>Sat, 25 Aug 2018 19:50:16 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/tags/comparison/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>design</title>
+      <link>https://blog.onemid.net/tags/design/</link>
+      <pubDate>Fri, 07 Sep 2018 19:10:46 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/tags/design/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>evaluation</title>
+      <link>https://blog.onemid.net/tags/evaluation/</link>
+      <pubDate>Fri, 07 Sep 2018 19:10:46 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/tags/evaluation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>isequal</title>
+      <link>https://blog.onemid.net/tags/isequal/</link>
+      <pubDate>Sat, 25 Aug 2018 19:50:16 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/tags/isequal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>macOS</title>
+      <link>https://blog.onemid.net/tags/macos/</link>
+      <pubDate>Thu, 23 Aug 2018 19:55:47 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/tags/macos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>missing</title>
+      <link>https://blog.onemid.net/tags/missing/</link>
+      <pubDate>Sat, 25 Aug 2018 19:50:16 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/tags/missing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nan</title>
+      <link>https://blog.onemid.net/tags/nan/</link>
+      <pubDate>Sat, 25 Aug 2018 19:50:16 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/tags/nan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pip3</title>
+      <link>https://blog.onemid.net/tags/pip3/</link>
+      <pubDate>Thu, 23 Aug 2018 19:55:47 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/tags/pip3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>widget</title>
       <link>https://blog.onemid.net/tags/widget/</link>
       <pubDate>Fri, 07 Sep 2018 19:10:46 +0800</pubDate>
       
@@ -390,7 +390,7 @@
     </item>
     
     <item>
-      <title>Zlib</title>
+      <title>zlib</title>
       <link>https://blog.onemid.net/tags/zlib/</link>
       <pubDate>Thu, 23 Aug 2018 19:55:47 +0800</pubDate>
       

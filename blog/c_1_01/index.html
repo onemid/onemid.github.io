@@ -1,0 +1,1143 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https://blog.onemid.net"
+        },
+        "articleSection" : "blog",
+        "name" : "C - 1.01 你的第一個程式",
+        "headline" : "C - 1.01 你的第一個程式",
+        "description" : "1.01 你的第一個程式 寫 C 語言其實是一件愉快的事，C 語言博大精深引人入勝，但並不代表它不好入門；在此，我們要建立屬於自己的第一支程式：
+給定一個範例，其範例將輸出 Hello, Juice! 這個句子（或稱「字串」）。
+實驗室 1 - 印出 Hello, Juice! #include &lt;stdio.h&gt; int main ( void ) { printf(&quot;Hello, Juice!&quot;); return 0; }  C 語法要件 在撰寫 C 程式的時候，都會有一個結構，不外乎就是：
+ 標頭檔（Header File）—— 在第 1 行 主函式（main Function）—— 在第 3 ~ 7 行  第 1 行：標頭檔（Header File） 在這個範例程式中，我們引用了 stdio.h 這個標頭檔，stdio.h 為「標準輸入/輸出函式庫標頭檔」（Standard Input/Output Header），許多廣泛的功能需要由這個標頭檔協助，否則會無法運作，其中 printf 就是一例。我們大致上可以把標頭檔看成一個圖書館的概念，你想要某個資料的時候，就跑去圖書館借，沒有圖書館，想要什麼東西也就無法實現了。
+ 許多人看著 stdio 會看著看著就把他念成「studio」，然後在寫程式時就會拼成 studio.h，導致編譯錯誤（Compilation Error, CE），請特別小心謹慎。
+ 第 2 行：主函式 (main Function) 當我們編譯好寫完的程式並開始執行時，系統會建立一連串的程序並準備執行我們的程式，首先會被執行到的就是我們的「主函式」（main Function），這個 main 名稱原則上是固定的，改動會造成未預期的錯誤。",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-03-17 14:58:40 &#43;0800 CST",
+        "dateModified" : "2019-03-17 14:58:40 &#43;0800 CST",
+        "url" : "https://blog.onemid.net/blog/c_1_01/",
+        "wordCount" : "199",
+        "keywords" : [ "","","","","","","","Blog" ]
+    }
+    </script>
+        
+            
+                <title>C - 1.01 你的第一個程式</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.51" />
+        
+
+
+        
+            <meta name="author" content="Gary Gong">
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="C - 1.01 你的第一個程式"/>
+<meta name="twitter:description" content="1.01 你的第一個程式 寫 C 語言其實是一件愉快的事，C 語言博大精深引人入勝，但並不代表它不好入門；在此，我們要建立屬於自己的第一支程式：
+給定一個範例，其範例將輸出 Hello, Juice! 這個句子（或稱「字串」）。
+實驗室 1 - 印出 Hello, Juice! #include &lt;stdio.h&gt; int main ( void ) { printf(&quot;Hello, Juice!&quot;); return 0; }  C 語法要件 在撰寫 C 程式的時候，都會有一個結構，不外乎就是：
+ 標頭檔（Header File）—— 在第 1 行 主函式（main Function）—— 在第 3 ~ 7 行  第 1 行：標頭檔（Header File） 在這個範例程式中，我們引用了 stdio.h 這個標頭檔，stdio.h 為「標準輸入/輸出函式庫標頭檔」（Standard Input/Output Header），許多廣泛的功能需要由這個標頭檔協助，否則會無法運作，其中 printf 就是一例。我們大致上可以把標頭檔看成一個圖書館的概念，你想要某個資料的時候，就跑去圖書館借，沒有圖書館，想要什麼東西也就無法實現了。
+ 許多人看著 stdio 會看著看著就把他念成「studio」，然後在寫程式時就會拼成 studio.h，導致編譯錯誤（Compilation Error, CE），請特別小心謹慎。
+ 第 2 行：主函式 (main Function) 當我們編譯好寫完的程式並開始執行時，系統會建立一連串的程序並準備執行我們的程式，首先會被執行到的就是我們的「主函式」（main Function），這個 main 名稱原則上是固定的，改動會造成未預期的錯誤。"/>
+
+        <meta property="og:title" content="C - 1.01 你的第一個程式" />
+<meta property="og:description" content="1.01 你的第一個程式 寫 C 語言其實是一件愉快的事，C 語言博大精深引人入勝，但並不代表它不好入門；在此，我們要建立屬於自己的第一支程式：
+給定一個範例，其範例將輸出 Hello, Juice! 這個句子（或稱「字串」）。
+實驗室 1 - 印出 Hello, Juice! #include &lt;stdio.h&gt; int main ( void ) { printf(&quot;Hello, Juice!&quot;); return 0; }  C 語法要件 在撰寫 C 程式的時候，都會有一個結構，不外乎就是：
+ 標頭檔（Header File）—— 在第 1 行 主函式（main Function）—— 在第 3 ~ 7 行  第 1 行：標頭檔（Header File） 在這個範例程式中，我們引用了 stdio.h 這個標頭檔，stdio.h 為「標準輸入/輸出函式庫標頭檔」（Standard Input/Output Header），許多廣泛的功能需要由這個標頭檔協助，否則會無法運作，其中 printf 就是一例。我們大致上可以把標頭檔看成一個圖書館的概念，你想要某個資料的時候，就跑去圖書館借，沒有圖書館，想要什麼東西也就無法實現了。
+ 許多人看著 stdio 會看著看著就把他念成「studio」，然後在寫程式時就會拼成 studio.h，導致編譯錯誤（Compilation Error, CE），請特別小心謹慎。
+ 第 2 行：主函式 (main Function) 當我們編譯好寫完的程式並開始執行時，系統會建立一連串的程序並準備執行我們的程式，首先會被執行到的就是我們的「主函式」（main Function），這個 main 名稱原則上是固定的，改動會造成未預期的錯誤。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.onemid.net/blog/c_1_01/" /><meta property="article:published_time" content="2019-03-17T14:58:40&#43;08:00"/>
+<meta property="article:modified_time" content="2019-03-17T14:58:40&#43;08:00"/>
+
+        <meta property="og:image" content="https://blog.onemid.net/images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        
+<meta itemprop="name" content="C - 1.01 你的第一個程式">
+<meta itemprop="description" content="1.01 你的第一個程式 寫 C 語言其實是一件愉快的事，C 語言博大精深引人入勝，但並不代表它不好入門；在此，我們要建立屬於自己的第一支程式：
+給定一個範例，其範例將輸出 Hello, Juice! 這個句子（或稱「字串」）。
+實驗室 1 - 印出 Hello, Juice! #include &lt;stdio.h&gt; int main ( void ) { printf(&quot;Hello, Juice!&quot;); return 0; }  C 語法要件 在撰寫 C 程式的時候，都會有一個結構，不外乎就是：
+ 標頭檔（Header File）—— 在第 1 行 主函式（main Function）—— 在第 3 ~ 7 行  第 1 行：標頭檔（Header File） 在這個範例程式中，我們引用了 stdio.h 這個標頭檔，stdio.h 為「標準輸入/輸出函式庫標頭檔」（Standard Input/Output Header），許多廣泛的功能需要由這個標頭檔協助，否則會無法運作，其中 printf 就是一例。我們大致上可以把標頭檔看成一個圖書館的概念，你想要某個資料的時候，就跑去圖書館借，沒有圖書館，想要什麼東西也就無法實現了。
+ 許多人看著 stdio 會看著看著就把他念成「studio」，然後在寫程式時就會拼成 studio.h，導致編譯錯誤（Compilation Error, CE），請特別小心謹慎。
+ 第 2 行：主函式 (main Function) 當我們編譯好寫完的程式並開始執行時，系統會建立一連串的程序並準備執行我們的程式，首先會被執行到的就是我們的「主函式」（main Function），這個 main 名稱原則上是固定的，改動會造成未預期的錯誤。">
+
+
+<meta itemprop="datePublished" content="2019-03-17T14:58:40&#43;08:00" />
+<meta itemprop="dateModified" content="2019-03-17T14:58:40&#43;08:00" />
+<meta itemprop="wordCount" content="199">
+
+
+
+<meta itemprop="keywords" content=",,,,,,," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,400i,700">
+            <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500" rel="stylesheet">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="https://blog.onemid.net/css/main.css">
+            <link rel="stylesheet" href="https://blog.onemid.net/css/add-on.css">
+            <link rel="stylesheet" href="https://blog.onemid.net/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.12.0/styles/vs2015.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-124803046-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="https://blog.onemid.net/">blog</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="https://blog.onemid.net/">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://blog.onemid.net/about/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://blog.onemid.net/blog/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://blog.onemid.net/categories/">
+                            <i class="fa fa-sitemap">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://blog.onemid.net">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://blog.onemid.net">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="https://blog.onemid.net/">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.onemid.net/about/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.onemid.net/blog/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.onemid.net/categories/">
+                            <h3>
+                                <i class="fa fa-sitemap">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://blog.onemid.net/blog/c_1_01/">C - 1.01 你的第一個程式</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-03-17'>
+                                    March 17, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://blog.onemid.net/blog/vm_windows10_1803/"></a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-11-23'>
+                                    November 23, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://blog.onemid.net/blog/ux-necessary-stuffs/">小工具的必要性與設計</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-09-07'>
+                                    September 7, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://blog.onemid.net/blog/ds_string_kmp_alg/">KNUTH, MORRIS, PRATT (KMP) PATTERN MATCHING ALGORITHM</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-09-01'>
+                                    September 1, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://blog.onemid.net/blog/ds_sparse_matrix_mul/">SPARSE MATRIX MULTIPICATION</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-08-30'>
+                                    August 30, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=https%3a%2f%2fblog.onemid.net%2fblog%2fc_1_01%2f&amp;text=C%20-%201.01%20%e4%bd%a0%e7%9a%84%e7%ac%ac%e4%b8%80%e5%80%8b%e7%a8%8b%e5%bc%8f&amp;via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=https%3a%2f%2fblog.onemid.net%2fblog%2fc_1_01%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.onemid.net%2fblog%2fc_1_01%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by Gary%20Gong&amp;body=https%3a%2f%2fblog.onemid.net%2fblog%2fc_1_01%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="https://blog.onemid.net/blog/c_1_01/">C - 1.01 你的第一個程式</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2019-03-17'>
+            March 17, 2019</time>
+        <span class="author">Gary Gong</span>
+        
+            <p>1 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  <div id="content">
+    
+
+<h1 id="1-01-你的第一個程式">1.01 你的第一個程式</h1>
+
+<hr />
+
+<p>寫 C 語言其實是一件愉快的事，C 語言博大精深引人入勝，但並不代表它不好入門；在此，我們要建立屬於自己的第一支程式：</p>
+
+<p><img src="https://blog.onemid.net/img/attachments/2d00924d.png" alt="02C_Basic_01 你的第一個程式.png" /></p>
+
+<p>給定一個範例，其範例將輸出 <code>Hello, Juice!</code> 這個句子（或稱「字串」）。</p>
+
+<h4 id="實驗室-1-印出-hello-juice">實驗室 1 - 印出 Hello, Juice!</h4>
+
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main ( void )
+{
+  printf(&quot;Hello, Juice!&quot;);
+  return 0;
+}
+</code></pre>
+
+<h2 id="c-語法要件">C 語法要件</h2>
+
+<p>在撰寫 C 程式的時候，都會有一個結構，不外乎就是：</p>
+
+<ol>
+<li>標頭檔（Header File）—— 在第 1 行</li>
+<li>主函式（<code>main</code> Function）—— 在第 3 ~ 7 行</li>
+</ol>
+
+<h3 id="第-1-行-標頭檔-header-file">第 1 行：標頭檔（Header File）</h3>
+
+<p>在這個範例程式中，我們引用了 <code>stdio.h</code> 這個標頭檔，<code>stdio.h</code> 為「標準輸入/輸出函式庫標頭檔」（<strong>St</strong>andar<strong>d</strong> <strong>I</strong>nput/<strong>O</strong>utput Header），許多廣泛的功能需要由這個標頭檔協助，否則會無法運作，其中 <code>printf</code> 就是一例。我們大致上可以把標頭檔看成一個圖書館的概念，你想要某個資料的時候，就跑去圖書館借，沒有圖書館，想要什麼東西也就無法實現了。</p>
+
+<blockquote>
+<p>許多人看著 <code>stdio</code> 會看著看著就把他念成「studio」，然後在寫程式時就會拼成 <code>studio.h</code>，導致編譯錯誤（<strong>C</strong>ompilation <strong>E</strong>rror, CE），請特別小心謹慎。</p>
+</blockquote>
+
+<h3 id="第-2-行-主函式-main-function">第 2 行：主函式 (<code>main</code> Function)</h3>
+
+<p>當我們編譯好寫完的程式並開始執行時，系統會建立一連串的程序並準備執行我們的程式，首先會被執行到的就是我們的「主函式」（<code>main</code> Function），這個 <code>main</code> 名稱原則上是固定的，改動會造成未預期的錯誤。</p>
+
+<p>在 <code>main</code> 前面是 <code>int</code>，是宣告其函式（Function）的回傳值（Return Value）是整數型態（<strong>Int</strong>eger）。所以我們後面的 <code>return</code> 才會接一個 <code>0</code> 這個整數數字。</p>
+
+<blockquote>
+<p>那我 <code>return</code> 別的數字可不可以？當然可以，而且還會順利執行呢！<code>return 0</code> 的意義基本上是一個慣例，代表「順利執行，完美結束」的意思。</p>
+
+<p>可是我看有人用 <code>void main() {...}</code> 寫程式呢，而且沒有 return 值？這也可以，<code>void</code> 是指無回傳值，所以也就沒有回傳值了。</p>
+</blockquote>
+
+<h4 id="實驗室-2-印出-hello-juice-void-main-版本">實驗室 2 - 印出 Hello, Juice!（<code>void main</code> 版本）</h4>
+
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+void main ( void )
+{
+  printf(&quot;Hello, Juice!&quot;);
+  return 0;
+}
+</code></pre>
+
+<blockquote>
+<p>甚至是，你不寫回傳值也可以，但是 C 編譯器會警告你這樣不太好。</p>
+</blockquote>
+
+<h4 id="實驗室-3-印出-hello-juice-只有-main-版本">實驗室 3 - 印出 Hello, Juice!（只有 <code>main</code> 版本）</h4>
+
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+main ( void )
+{
+  printf(&quot;Hello, Juice!&quot;);
+  return 0;
+}
+</code></pre>
+
+<p>要了解的是，在 C 語言裡頭，在宣告完函式型別後，會用左右大括號括住你撰寫的程式內容，左右大括號要配的剛剛好，不可多也不可少，否則會有錯誤的情況發生。</p>
+
+<h4 id="實驗室-4-手賤特區-大括號沒有括好導致編譯錯誤">實驗室 4 - 【手賤特區】大括號沒有括好導致編譯錯誤</h4>
+
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main ( void )
+{
+  printf(&quot;Hello, Juice!&quot;);
+  return 0;
+</code></pre>
+
+<h3 id="第-5-行-printf">第 5 行：<code>printf</code></h3>
+
+<p>在 <code>printf</code> 裡面，我們可以填寫一句話；在電腦上廣義來說，一個字我們稱為「字元」（Character），多於一個字我們稱為「字串」（String），字串必須使用雙引號包著，就如同我們範例程式給的：<code>&quot;Hello, World!&quot;</code> 一樣。</p>
+
+<h3 id="分號結尾">分號結尾</h3>
+
+<p>要記住，每一行敘述（Statement），都要給一個分號（<code>;</code>），否則會出錯；只有哪些地方不用分號呢？</p>
+
+<ol>
+<li>所有開頭是「<code>#</code>」後都不用</li>
+<li>函式右大括號後都不用</li>
+<li>註釋後面不用</li>
+</ol>
+
+<h4 id="實驗室-5-手賤特區-指令忘了分號結尾導致編譯錯誤">實驗室 5 - 【手賤特區】指令忘了分號結尾導致編譯錯誤</h4>
+
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main ( void )
+{
+  printf(&quot;Hello, Juice!&quot;) // 忘了分號
+  return 0;
+}
+</code></pre>
+
+<p>其中第五行部分 <code>// 忘了分號</code> ，代表著是「單行註解」（Single-Line Comment）的意思，而前面的 <code>//</code> 代表著是包含這兩個斜線之後，程式都會一概跳過而不執行該行內容；我們下一節會更深入探討如何使用註解的部分。</p>
+
+<h3 id="程式執行的順序">程式執行的順序？</h3>
+
+<p>程式執行時，是一行一行由上而下執行的，不會無故亂跳（就算要跳，也是跳過去之後按上而下執行）。</p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/categories/c%E6%95%99%E5%AD%B8">C教學</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
+                
+                
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "onemid-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="https://blog.onemid.net/blog/vm_windows10_1803/"
+                class="button big previous"></a></li>
+    
+
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        
+      </header>
+      <div class="posts-container" style="margin-top: 0.1em;">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://blog.onemid.net/blog/c_1_01/">C - 1.01 你的第一個程式</a>
+              </h3>
+              
+              <time class="published" datetime='2019-03-17'>
+                March 17, 2019
+              </time>
+            </header>
+            
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://blog.onemid.net/blog/vm_windows10_1803/"></a>
+              </h3>
+              
+              <time class="published" datetime='2018-11-23'>
+                November 23, 2018
+              </time>
+            </header>
+            
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://blog.onemid.net/blog/ux-necessary-stuffs/">小工具的必要性與設計</a>
+              </h3>
+              
+              <time class="published" datetime='2018-09-07'>
+                September 7, 2018
+              </time>
+            </header>
+            
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://blog.onemid.net/blog/ds_string_kmp_alg/">KNUTH, MORRIS, PRATT (KMP) PATTERN MATCHING ALGORITHM</a>
+              </h3>
+              
+              <time class="published" datetime='2018-09-01'>
+                September 1, 2018
+              </time>
+            </header>
+            
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://blog.onemid.net/blog/ds_sparse_matrix_mul/">SPARSE MATRIX MULTIPICATION</a>
+              </h3>
+              
+              <time class="published" datetime='2018-08-30'>
+                August 30, 2018
+              </time>
+            </header>
+            
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="https://blog.onemid.net/categories/">Categories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/ds/">DS</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/mathjax/">MathJax</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/tex/">TeX</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/hexo/">Hexo</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/hugo/">Hugo</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/julia/">Julia</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                Uncategorized
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/c%E6%95%99%E5%AD%B8/">C教學</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/deep-learning/">Deep Learning</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/python/">Python</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/ux/">UX</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/weather/">Weather</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/web-programming/">Web Programming</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://blog.onemid.net/categories/%E5%BB%A2%E6%96%87/">廢文</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+  
+  
+    <section id="mini-bio">
+      <h3>About</h3>
+      <p>設計、深度學習、氣象三重人格</p>
+      <a href="https://blog.onemid.net/about/" class="button">Learn More</a>
+    </section>
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="https://blog.onemid.net/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/onemid" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/onemid85" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:yijhong@hotmail.com.tw" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2019
+        
+          Nothing to Do
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/shell.min.js"></script>
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/bash.min.js"></script>
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/tex.min.js"></script>
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/css.min.js"></script>
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/julia.min.js"></script>
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/go.min.js"></script>
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="https://blog.onemid.net/js/util.js"></script>
+      <script src="https://blog.onemid.net/js/main.js"></script>
+      <script src="https://blog.onemid.net/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+
+<script
+src="//cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_SVG-full">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [
+                ['$', '$'],
+                ['\\(', '\\)']
+            ],
+            displayMath: [
+                ['$$', '$$']
+            ],
+            processEscapes: true,
+            processEnvironments: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            TeX: {
+                equationNumbers: {
+                    autoNumber: "AMS"
+                },
+                extensions: ["AMSmath.js", "AMSsymbols.js"]
+            }
+        }
+    });
+    MathJax.Hub.Queue(function () {
+        
+        
+        
+        var all = MathJax.Hub.getAllJax(),
+            i;
+        for (i = 0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+
+    MathJax.Hub.Config({
+        
+        TeX: {
+            equationNumbers: {
+                autoNumber: "AMS"
+            }
+        }
+    });
+</script>
+
+
+
+  </body>
+</html>
+

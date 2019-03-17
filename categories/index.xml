@@ -6,9 +6,28 @@
     <description>Recent content in Categories on Nothing to Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
+    <lastBuildDate>Fri, 23 Nov 2018 22:40:40 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.onemid.net/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title></title>
+      <link>https://blog.onemid.net/categories/</link>
+      <pubDate>Fri, 23 Nov 2018 22:40:40 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/categories/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C教學</title>
+      <link>https://blog.onemid.net/categories/c%E6%95%99%E5%AD%B8/</link>
+      <pubDate>Sun, 17 Mar 2019 14:58:40 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/categories/c%E6%95%99%E5%AD%B8/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>DS</title>
