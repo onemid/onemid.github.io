@@ -17,12 +17,11 @@
       <pubDate>Sun, 17 Mar 2019 14:58:40 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/c_1_01/</guid>
-      <description>1.01 你的第一個程式 寫 C 語言其實是一件愉快的事，C 語言博大精深引人入勝，但並不代表它不好入門；在此，我們要建立屬於自己的第一支程式：
+      <description>1.01 你的第一個程式  本文章同步刊載於 https://learning.juice.codes/ 的 Programming in C 教材（須註冊登入），在 Juice 上你能直接執行這篇教學的範例程式碼，以及練習相關題目（系統會自動幫你改喲！）
+ 寫 C 語言其實是一件愉快的事，C 語言博大精深引人入勝，但並不代表它不好入門；在此，我們要建立屬於自己的第一支程式：
 給定一個範例，其範例將輸出 Hello, Juice! 這個句子（或稱「字串」）。
 實驗室 1 - 印出 Hello, Juice! #include &amp;lt;stdio.h&amp;gt; int main ( void ) { printf(&amp;quot;Hello, Juice!&amp;quot;); return 0; }  C 語法要件 在撰寫 C 程式的時候，都會有一個結構，不外乎就是：
- 標頭檔（Header File）—— 在第 1 行 主函式（main Function）—— 在第 3 ~ 7 行  第 1 行：標頭檔（Header File） 在這個範例程式中，我們引用了 stdio.h 這個標頭檔，stdio.h 為「標準輸入/輸出函式庫標頭檔」（Standard Input/Output Header），許多廣泛的功能需要由這個標頭檔協助，否則會無法運作，其中 printf 就是一例。我們大致上可以把標頭檔看成一個圖書館的概念，你想要某個資料的時候，就跑去圖書館借，沒有圖書館，想要什麼東西也就無法實現了。
- 許多人看著 stdio 會看著看著就把他念成「studio」，然後在寫程式時就會拼成 studio.h，導致編譯錯誤（Compilation Error, CE），請特別小心謹慎。
- 第 2 行：主函式 (main Function) 當我們編譯好寫完的程式並開始執行時，系統會建立一連串的程序並準備執行我們的程式，首先會被執行到的就是我們的「主函式」（main Function），這個 main 名稱原則上是固定的，改動會造成未預期的錯誤。</description>
+ 標頭檔（Header File）—— 在第 1 行 主函式（main Function）—— 在第 3 ~ 7 行  第 1 行：標頭檔（Header File） 在這個範例程式中，我們引用了 stdio.h 這個標頭檔，stdio.h 為「標準輸入/輸出函式庫標頭檔」（Standard Input/Output Header），許多廣泛的功能需要由這個標頭檔協助，否則會無法運作，其中 printf 就是一例。我們大致上可以把標頭檔看成一個圖書館的概念，你想要某個資料的時候，就跑去圖書館借，沒有圖書館，想要什麼東西也就無法實現了。</description>
     </item>
     
   </channel>
