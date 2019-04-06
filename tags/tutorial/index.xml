@@ -6,10 +6,19 @@
     <description>Recent content in Tutorial on Nothing to Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 17 Mar 2019 14:58:40 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 06 Apr 2019 23:59:31 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.onemid.net/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>二元樹與二元搜尋樹</title>
+      <link>https://blog.onemid.net/blog/ds_idx_binary_tree_binary_search_tree/</link>
+      <pubDate>Sat, 06 Apr 2019 23:59:31 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/blog/ds_idx_binary_tree_binary_search_tree/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>C - 1.01 你的第一個程式</title>

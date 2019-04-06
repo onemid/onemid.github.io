@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Binary Search Tree on Nothing to Do</title>
+    <link>https://blog.onemid.net/tags/binary-search-tree/</link>
+    <description>Recent content in Binary Search Tree on Nothing to Do</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Sat, 06 Apr 2019 23:59:31 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.onemid.net/tags/binary-search-tree/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>二元樹與二元搜尋樹</title>
+      <link>https://blog.onemid.net/blog/ds_idx_binary_tree_binary_search_tree/</link>
+      <pubDate>Sat, 06 Apr 2019 23:59:31 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/blog/ds_idx_binary_tree_binary_search_tree/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>二元搜尋樹的架構 --- 二元樹與二元搜尋樹系列文章 02</title>
+      <link>https://blog.onemid.net/blog/ds_binary_search_tree_intro/</link>
+      <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/blog/ds_binary_search_tree_intro/</guid>
+      <description>二元樹（Binary Tree）與二元搜尋樹（Binary Search Tree）中文差了兩個字（英文差了一個詞），但是在運作上；二元搜尋樹有著較為嚴格的定義；但為了用詞精確，在未來我們在說二元樹時，基本上可適用於二元搜尋樹上。
+簡單來說，假定我們沒有一筆資料是完全相同的情況下，若是該輸入值大於目前節點，就要往右子樹（Right Sub-tree）走；若是小於目前節點，就要往左子樹（Left Sub-tree）走；直到一個 NULL 節點方可插入新值。
+對於相等值的處理方法依照不同需求有不同方法；但原則上不影響後續的排序處理。</description>
+    </item>
+    
+  </channel>
+</rss>

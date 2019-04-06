@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2019",
-        "datePublished": "2019-04-06 23:36:22 &#43;0800 CST",
-        "dateModified" : "2019-04-06 23:36:22 &#43;0800 CST",
+        "datePublished": "2019-04-07 00:00:54 &#43;0800 CST",
+        "dateModified" : "2019-04-07 00:00:54 &#43;0800 CST",
         "url" : "https://blog.onemid.net/",
         "wordCount" : "0",
         "keywords" : [ "Blog" ]
@@ -53,7 +53,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.onemid.net/" />
-<meta property="og:updated_time" content="2019-04-06T23:36:22&#43;08:00"/>
+<meta property="og:updated_time" content="2019-04-07T00:00:54&#43;08:00"/>
 
         <meta property="og:image" content="https://blog.onemid.net/images/logo.png">
         <meta property="og:image:type" content="image/png">
@@ -237,7 +237,19 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
-                                <h3><a href="https://blog.onemid.net/blog/struct_and_typedef_struct/">struct 與 typedef struct</a></h3>
+                                <h3><a href="https://blog.onemid.net/blog/ds_binary_tree_node/">二元樹的節點架構 --- 二元樹與二元搜尋樹系列文章 03</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-04-07'>
+                                    April 7, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="https://blog.onemid.net/blog/ds_idx_binary_tree_binary_search_tree/">二元樹與二元搜尋樹</a></h3>
                                 
                                 <time class="published" datetime=
                                     '2019-04-06'>
@@ -249,11 +261,11 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
-                                <h3><a href="https://blog.onemid.net/blog/c_1_01/">C - 1.01 你的第一個程式</a></h3>
+                                <h3><a href="https://blog.onemid.net/blog/ds_binary_search_tree_intro/">二元搜尋樹的架構 --- 二元樹與二元搜尋樹系列文章 02</a></h3>
                                 
                                 <time class="published" datetime=
-                                    '2019-03-17'>
-                                    March 17, 2019</time>
+                                    '2019-04-06'>
+                                    April 6, 2019</time>
                             </header>
                             
 
@@ -261,11 +273,11 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
-                                <h3><a href="https://blog.onemid.net/blog/vm_windows10_1803/"></a></h3>
+                                <h3><a href="https://blog.onemid.net/blog/ds_binary_search_tree_searching_null_and_insert_node/">使用迴圈找到二元搜尋樹的 NULL 節點並插入新節點 --- 二元樹與二元搜尋樹系列文章 06</a></h3>
                                 
                                 <time class="published" datetime=
-                                    '2018-11-23'>
-                                    November 23, 2018</time>
+                                    '2019-04-06'>
+                                    April 6, 2019</time>
                             </header>
                             
 
@@ -273,23 +285,11 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
-                                <h3><a href="https://blog.onemid.net/blog/ux-necessary-stuffs/">小工具的必要性與設計</a></h3>
+                                <h3><a href="https://blog.onemid.net/blog/ds_binary_search_tree_searching_null/">利用迴圈找到二元搜尋樹的 NULL 位置 --- 二元樹與二元搜尋樹系列文章 05</a></h3>
                                 
                                 <time class="published" datetime=
-                                    '2018-09-07'>
-                                    September 7, 2018</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="https://blog.onemid.net/blog/ds_string_kmp_alg/">KNUTH, MORRIS, PRATT (KMP) PATTERN MATCHING ALGORITHM</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2018-09-01'>
-                                    September 1, 2018</time>
+                                    '2019-04-06'>
+                                    April 6, 2019</time>
                             </header>
                             
 
@@ -317,7 +317,7 @@ if (!doNotTrack) {
   <header>
     <div class="title">
         
-            <h2><a href="https://blog.onemid.net/blog/struct_and_typedef_struct/">struct 與 typedef struct</a></h2>
+            <h2><a href="https://blog.onemid.net/blog/ds_binary_tree_node/">二元樹的節點架構 --- 二元樹與二元搜尋樹系列文章 03</a></h2>
         
         
     </div>
@@ -325,8 +325,8 @@ if (!doNotTrack) {
         
 
         <time class="published"
-            datetime='2019-04-06'>
-            April 6, 2019</time>
+            datetime='2019-04-07'>
+            April 7, 2019</time>
         <span class="author">Gary Gong</span>
         
             <p>1 minute read</p>
@@ -343,77 +343,20 @@ if (!doNotTrack) {
   <div id="content">
     
 
-<h1 id="struct-typedef-struct">struct &amp; typedef struct</h1>
+<p><img src="https://blog.onemid.net/img/DS/BT&amp;BST/02_BST_03 建立一個節點架構.png" alt="02_BST_03 建立一個節點架構" /></p>
 
-<p>基本上我們會這樣使用 <code>struct</code></p>
+<p>在 C 中，我們原則上建立 <code>struct</code> 製造一個二元樹的節點架構：</p>
 
-<pre><code class="language-c">struct {
-...
-} p1, p2;
+<h4 id="部分程式碼-二元樹的節點架構">【部分程式碼】 二元樹的節點架構</h4>
+
+<pre><code class="language-c">struct bstNode {
+  int data;
+  struct bstNode *lnode;
+  struct bstNode *rnode;
+}
 </code></pre>
 
-<p>此時， <code>p1</code>,<code>p2</code> 這兩個變數是隸屬於 <code>struct {...}</code> 型態的變數。</p>
-
-<p>但是遇到以下需要分開 <code>p1</code>, <code>p2</code> 變數做宣告時，就必須得：</p>
-
-<pre><code class="language-c">struct {
-...
-} p1;
-
-/* 一堆程式碼 */
-
-struct {
-...
-} p2;
-</code></pre>
-
-<p>我們需要重複打兩次 <code>struct {...}</code> 的內容，非常之冗；所以於是有了第二種方式：</p>
-
-<pre><code class="language-c">struct p_type {
-...
-};
-
-struct p_type p1;
-struct p_type p2;
-</code></pre>
-
-<p>在 <code>struct</code> 後面加上 tag name，也就是那個 <code>p_type</code>，就可以不用重複打同樣的 <code>struct</code> 結構。</p>
-
-<p>這時，我們有第三種方式可以少打 <code>struct</code> 這個字，就是使用 <code>typedef</code>:</p>
-
-<pre><code class="language-c">typedef struct {
-...
-} PType;
-
-PType p1;
-PType p2;
-</code></pre>
-
-<p>你會發現到 <code>typedef</code> 會將 <code>struct {...}</code> 以別名（Alias）<code>Ptype</code> 取而代之；之後 <code>Ptype</code> 就是代表 <code>struct {...}</code> 的代名詞。</p>
-
-<p>有一個地方大家可能都會搞混：</p>
-
-<pre><code class="language-c">typedef struct PType { // 第一個 PType
-...
-} PType; // 第二個 PType
-
-PType p1;
-PType p2;
-</code></pre>
-
-<p>這裡的 <code>PType p1;</code> 與 <code>PType p2;</code> 是哪一個 <code>PType</code> 發揮效果了呢？答案是第二個 <code>PType</code>；因為 <code>typedef</code> 會將 <code>struct PType {...}</code> 以別名 <code>PType</code>（第二個的）取而代之。</p>
-
-<p>另外一個例子：</p>
-
-<pre><code class="language-c">typedef struct PType_tag {
-...
-} PType_alias;
-
-struct PType_tag p1;
-PType_alias p2;
-</code></pre>
-
-<p>這樣有清楚ㄌ嗎</p>
+<p>原則上資料可以使用 <code>int</code> 或是 <code>char</code> 或是 <code>float</code> 等等內容；若是要建立二元搜尋樹（Binary Search Tree）則需要稍微確認比較大小的資料為何型態。</p>
 
   </div>
 
@@ -427,7 +370,7 @@ PType_alias p2;
                 <i class="fa fa-folder"></i>
                 
                 
-                <li><a class="article-category-link" href="https://blog.onemid.net/categories/c%E6%95%99%E5%AD%B8">C教學</a></li>
+                <li><a class="article-category-link" href="https://blog.onemid.net/categories/ds">DS</a></li>
                 
             
         
@@ -441,13 +384,13 @@ PType_alias p2;
                 <i class="fa fa-tags"></i>
                 
                 
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/struct">struct</a></li>
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/binary-tree">Binary Tree</a></li>
                 
                 
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/typedef">typedef</a></li>
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/node">Node</a></li>
                 
                 
-                <li><a class="article-category-link" href="https://blog.onemid.net/tags/tag">tag</a></li>
+                <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
                 
                 
                 <li><a class="article-category-link" href="https://blog.onemid.net/tags/"></a></li>
@@ -497,8 +440,8 @@ PType_alias p2;
 
 <ul class="actions pagination">
     
-        <li><a href="https://blog.onemid.net/blog/c_1_01/"
-                class="button big previous">C - 1.01 你的第一個程式</a></li>
+        <li><a href="https://blog.onemid.net/blog/ds_idx_binary_tree_binary_search_tree/"
+                class="button big previous">二元樹與二元搜尋樹</a></li>
     
 
     
@@ -517,7 +460,7 @@ PType_alias p2;
 
 
 <li>
-  <a href="//twitter.com/share?url=https%3a%2f%2fblog.onemid.net%2fblog%2fstruct_and_typedef_struct%2f&amp;text=struct%20%e8%88%87%20typedef%20struct&amp;via=" target="_blank" class="share-btn twitter">
+  <a href="//twitter.com/share?url=https%3a%2f%2fblog.onemid.net%2fblog%2fds_binary_tree_node%2f&amp;text=%e4%ba%8c%e5%85%83%e6%a8%b9%e7%9a%84%e7%af%80%e9%bb%9e%e6%9e%b6%e6%a7%8b%20---%20%e4%ba%8c%e5%85%83%e6%a8%b9%e8%88%87%e4%ba%8c%e5%85%83%e6%90%9c%e5%b0%8b%e6%a8%b9%e7%b3%bb%e5%88%97%e6%96%87%e7%ab%a0%2003&amp;via=" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
     </a>
@@ -527,7 +470,7 @@ PType_alias p2;
 
 
 <li>
-  <a href="//plus.google.com/share?url=https%3a%2f%2fblog.onemid.net%2fblog%2fstruct_and_typedef_struct%2f" target="_blank" class="share-btn google-plus">
+  <a href="//plus.google.com/share?url=https%3a%2f%2fblog.onemid.net%2fblog%2fds_binary_tree_node%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
   </a>
@@ -538,7 +481,7 @@ PType_alias p2;
 
 
 <li>
-  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.onemid.net%2fblog%2fstruct_and_typedef_struct%2f" target="_blank" class="share-btn facebook">
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.onemid.net%2fblog%2fds_binary_tree_node%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
     </a>
@@ -560,7 +503,7 @@ PType_alias p2;
 
 
 <li>
-  <a href="mailto:?subject=Check out this post by Gary%20Gong&amp;body=https%3a%2f%2fblog.onemid.net%2fblog%2fstruct_and_typedef_struct%2f" target="_blank" class="share-btn email">
+  <a href="mailto:?subject=Check out this post by Gary%20Gong&amp;body=https%3a%2f%2fblog.onemid.net%2fblog%2fds_binary_tree_node%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
   </a>
@@ -596,7 +539,20 @@ PType_alias p2;
           <article class="mini-post">
             <header>
               <h3>
-                <a href="https://blog.onemid.net/blog/struct_and_typedef_struct/">struct 與 typedef struct</a>
+                <a href="https://blog.onemid.net/blog/ds_binary_tree_node/">二元樹的節點架構 --- 二元樹與二元搜尋樹系列文章 03</a>
+              </h3>
+              
+              <time class="published" datetime='2019-04-07'>
+                April 7, 2019
+              </time>
+            </header>
+            
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="https://blog.onemid.net/blog/ds_idx_binary_tree_binary_search_tree/">二元樹與二元搜尋樹</a>
               </h3>
               
               <time class="published" datetime='2019-04-06'>
@@ -609,11 +565,11 @@ PType_alias p2;
           <article class="mini-post">
             <header>
               <h3>
-                <a href="https://blog.onemid.net/blog/c_1_01/">C - 1.01 你的第一個程式</a>
+                <a href="https://blog.onemid.net/blog/ds_binary_search_tree_intro/">二元搜尋樹的架構 --- 二元樹與二元搜尋樹系列文章 02</a>
               </h3>
               
-              <time class="published" datetime='2019-03-17'>
-                March 17, 2019
+              <time class="published" datetime='2019-04-06'>
+                April 6, 2019
               </time>
             </header>
             
@@ -622,11 +578,11 @@ PType_alias p2;
           <article class="mini-post">
             <header>
               <h3>
-                <a href="https://blog.onemid.net/blog/vm_windows10_1803/"></a>
+                <a href="https://blog.onemid.net/blog/ds_binary_search_tree_searching_null_and_insert_node/">使用迴圈找到二元搜尋樹的 NULL 節點並插入新節點 --- 二元樹與二元搜尋樹系列文章 06</a>
               </h3>
               
-              <time class="published" datetime='2018-11-23'>
-                November 23, 2018
+              <time class="published" datetime='2019-04-06'>
+                April 6, 2019
               </time>
             </header>
             
@@ -635,24 +591,11 @@ PType_alias p2;
           <article class="mini-post">
             <header>
               <h3>
-                <a href="https://blog.onemid.net/blog/ux-necessary-stuffs/">小工具的必要性與設計</a>
+                <a href="https://blog.onemid.net/blog/ds_binary_search_tree_searching_null/">利用迴圈找到二元搜尋樹的 NULL 位置 --- 二元樹與二元搜尋樹系列文章 05</a>
               </h3>
               
-              <time class="published" datetime='2018-09-07'>
-                September 7, 2018
-              </time>
-            </header>
-            
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="https://blog.onemid.net/blog/ds_string_kmp_alg/">KNUTH, MORRIS, PRATT (KMP) PATTERN MATCHING ALGORITHM</a>
-              </h3>
-              
-              <time class="published" datetime='2018-09-01'>
-                September 1, 2018
+              <time class="published" datetime='2019-04-06'>
+                April 6, 2019
               </time>
             </header>
             
@@ -691,7 +634,7 @@ PType_alias p2;
             <header>
               
                 <a href="https://blog.onemid.net/categories/ds/">DS</a>
-                <span style="float:right;">3</span>
+                <span style="float:right;">10</span>
               
             </header>
           </article>
