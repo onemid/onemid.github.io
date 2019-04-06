@@ -17,7 +17,7 @@
       <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/ds_binary_search_tree_searching_null_and_insert_node/</guid>
-      <description>我們需要一個變數去紀錄前一代節點的記憶體位置，好讓我們可以存取左右子樹的記憶體位址並更新成我所需要的。
+      <description>二元樹與二元搜尋樹系列教學文目錄 我們需要一個變數去紀錄前一代節點的記憶體位置，好讓我們可以存取左右子樹的記憶體位址並更新成我所需要的。
 有沒有感動到？有ㄛ</description>
     </item>
     
@@ -27,7 +27,7 @@
       <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/ds_binary_search_tree_searching_null/</guid>
-      <description>原則上這個迴圈只能帶著我們在二元搜尋樹中找到 NULL 節點，但尚未能夠具備插入的功能。
+      <description>二元樹與二元搜尋樹系列教學文目錄 原則上這個迴圈只能帶著我們在二元搜尋樹中找到 NULL 節點，但尚未能夠具備插入的功能。
 我們在以下用模擬的方法講述為何這種方式無法正常插入節點。
 在以下以及未來的圖說中，0x0通常指記憶體為 0 的位置，也就是俗稱的 NULL，為了簡化版面，記憶體位置有做稍微調整，並非真實情況。
 簡單來說，就算你知道是要插入在 0xc 的左子樹位置，但是電腦並未紀錄這個訊息；在上一格章節我們有提到我們需要一個 preNode 紀錄他的左右子樹記憶體位置，但我們這邊並沒有紀錄，所以不管再怎麼哭怎麼喊，你都沒辦法插入。</description>
@@ -39,7 +39,7 @@
       <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_insert/</guid>
-      <description> 【部分程式碼】遞迴方式插入節點 struct bstNode *insert (struct bstNode *node, int input) { if (node != NULL) { if (input &amp;gt;= node-&amp;gt;key) { node-&amp;gt;rnode = insert(node-&amp;gt;rnode, input); } else { node-&amp;gt;lnode = insert(node-&amp;gt;lnode, input); } } else { node = malloc(sizeof(struct bstNode)); node-&amp;gt;key = input; node-&amp;gt;lnode = NULL; node-&amp;gt;rnode = NULL; } return node; }  </description>
+      <description> 二元樹與二元搜尋樹系列教學文目錄 【部分程式碼】遞迴方式插入節點 struct bstNode *insert (struct bstNode *node, int input) { if (node != NULL) { if (input &amp;gt;= node-&amp;gt;key) { node-&amp;gt;rnode = insert(node-&amp;gt;rnode, input); } else { node-&amp;gt;lnode = insert(node-&amp;gt;lnode, input); } } else { node = malloc(sizeof(struct bstNode)); node-&amp;gt;key = input; node-&amp;gt;lnode = NULL; node-&amp;gt;rnode = NULL; } return node; }  </description>
     </item>
     
     <item>
@@ -48,7 +48,7 @@
       <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/ds_binary_tree_insert_node/</guid>
-      <description> 我們需要使用動態記憶體配置，例如：malloc，去配製一個節點空間；要值得注意的是，配置時使用的 sizeof 引數為 struct bstNode 而非 struct bstNode *，若是使用後者，會配置到一個指標大小，而非 struct bstNode 的大小。
+      <description> 二元樹與二元搜尋樹系列教學文目錄 我們需要使用動態記憶體配置，例如：malloc，去配製一個節點空間；要值得注意的是，配置時使用的 sizeof 引數為 struct bstNode 而非 struct bstNode *，若是使用後者，會配置到一個指標大小，而非 struct bstNode 的大小。
 另外配置新節點時，除了寫入資料外，務必要將新節點的左右兩個節點指標位置重設為 NULL；在未來，我們有很多地方是需要使用 NULL 判斷是否已經達到葉節點（Leaf Node，也就是樹的尾巴）。
 【部分程式碼】新節點的配置與引用 struct bstNode *newNode; newNode = malloc(sizeof(struct bstNode)); preNode-&amp;gt;rnode = newNode; // 假設 preNode 是基於 struct bstNode 架構下的一個節點。 newNode-&amp;gt;lnode = NULL; newNode-&amp;gt;rnode = NULL;  </description>
     </item>

@@ -13,7 +13,7 @@
         "articleSection" : "blog",
         "name" : "插入一個節點至二元樹 --- 二元樹與二元搜尋樹系列文章 04",
         "headline" : "插入一個節點至二元樹 --- 二元樹與二元搜尋樹系列文章 04",
-        "description" : " 我們需要使用動態記憶體配置，例如：malloc，去配製一個節點空間；要值得注意的是，配置時使用的 sizeof 引數為 struct bstNode 而非 struct bstNode *，若是使用後者，會配置到一個指標大小，而非 struct bstNode 的大小。
+        "description" : " 二元樹與二元搜尋樹系列教學文目錄 我們需要使用動態記憶體配置，例如：malloc，去配製一個節點空間；要值得注意的是，配置時使用的 sizeof 引數為 struct bstNode 而非 struct bstNode *，若是使用後者，會配置到一個指標大小，而非 struct bstNode 的大小。
 另外配置新節點時，除了寫入資料外，務必要將新節點的左右兩個節點指標位置重設為 NULL；在未來，我們有很多地方是需要使用 NULL 判斷是否已經達到葉節點（Leaf Node，也就是樹的尾巴）。
 【部分程式碼】新節點的配置與引用 struct bstNode *newNode; newNode = malloc(sizeof(struct bstNode)); preNode-&gt;rnode = newNode; // 假設 preNode 是基於 struct bstNode 架構下的一個節點。 newNode-&gt;lnode = NULL; newNode-&gt;rnode = NULL;  ",
         "inLanguage" : "en",
@@ -26,7 +26,7 @@
         "datePublished": "2019-04-06 23:56:42 &#43;0800 CST",
         "dateModified" : "2019-04-06 23:56:42 &#43;0800 CST",
         "url" : "https://blog.onemid.net/blog/ds_binary_tree_insert_node/",
-        "wordCount" : "41",
+        "wordCount" : "42",
         "keywords" : [ "Binary Tree","insert","node","","","","","Blog" ]
     }
     </script>
@@ -51,12 +51,12 @@
 
         <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="插入一個節點至二元樹 --- 二元樹與二元搜尋樹系列文章 04"/>
-<meta name="twitter:description" content=" 我們需要使用動態記憶體配置，例如：malloc，去配製一個節點空間；要值得注意的是，配置時使用的 sizeof 引數為 struct bstNode 而非 struct bstNode *，若是使用後者，會配置到一個指標大小，而非 struct bstNode 的大小。
+<meta name="twitter:description" content=" 二元樹與二元搜尋樹系列教學文目錄 我們需要使用動態記憶體配置，例如：malloc，去配製一個節點空間；要值得注意的是，配置時使用的 sizeof 引數為 struct bstNode 而非 struct bstNode *，若是使用後者，會配置到一個指標大小，而非 struct bstNode 的大小。
 另外配置新節點時，除了寫入資料外，務必要將新節點的左右兩個節點指標位置重設為 NULL；在未來，我們有很多地方是需要使用 NULL 判斷是否已經達到葉節點（Leaf Node，也就是樹的尾巴）。
 【部分程式碼】新節點的配置與引用 struct bstNode *newNode; newNode = malloc(sizeof(struct bstNode)); preNode-&gt;rnode = newNode; // 假設 preNode 是基於 struct bstNode 架構下的一個節點。 newNode-&gt;lnode = NULL; newNode-&gt;rnode = NULL;  "/>
 
         <meta property="og:title" content="插入一個節點至二元樹 --- 二元樹與二元搜尋樹系列文章 04" />
-<meta property="og:description" content=" 我們需要使用動態記憶體配置，例如：malloc，去配製一個節點空間；要值得注意的是，配置時使用的 sizeof 引數為 struct bstNode 而非 struct bstNode *，若是使用後者，會配置到一個指標大小，而非 struct bstNode 的大小。
+<meta property="og:description" content=" 二元樹與二元搜尋樹系列教學文目錄 我們需要使用動態記憶體配置，例如：malloc，去配製一個節點空間；要值得注意的是，配置時使用的 sizeof 引數為 struct bstNode 而非 struct bstNode *，若是使用後者，會配置到一個指標大小，而非 struct bstNode 的大小。
 另外配置新節點時，除了寫入資料外，務必要將新節點的左右兩個節點指標位置重設為 NULL；在未來，我們有很多地方是需要使用 NULL 判斷是否已經達到葉節點（Leaf Node，也就是樹的尾巴）。
 【部分程式碼】新節點的配置與引用 struct bstNode *newNode; newNode = malloc(sizeof(struct bstNode)); preNode-&gt;rnode = newNode; // 假設 preNode 是基於 struct bstNode 架構下的一個節點。 newNode-&gt;lnode = NULL; newNode-&gt;rnode = NULL;  " />
 <meta property="og:type" content="article" />
@@ -69,14 +69,14 @@
         <meta property="og:image:height" content="512">
         
 <meta itemprop="name" content="插入一個節點至二元樹 --- 二元樹與二元搜尋樹系列文章 04">
-<meta itemprop="description" content=" 我們需要使用動態記憶體配置，例如：malloc，去配製一個節點空間；要值得注意的是，配置時使用的 sizeof 引數為 struct bstNode 而非 struct bstNode *，若是使用後者，會配置到一個指標大小，而非 struct bstNode 的大小。
+<meta itemprop="description" content=" 二元樹與二元搜尋樹系列教學文目錄 我們需要使用動態記憶體配置，例如：malloc，去配製一個節點空間；要值得注意的是，配置時使用的 sizeof 引數為 struct bstNode 而非 struct bstNode *，若是使用後者，會配置到一個指標大小，而非 struct bstNode 的大小。
 另外配置新節點時，除了寫入資料外，務必要將新節點的左右兩個節點指標位置重設為 NULL；在未來，我們有很多地方是需要使用 NULL 判斷是否已經達到葉節點（Leaf Node，也就是樹的尾巴）。
 【部分程式碼】新節點的配置與引用 struct bstNode *newNode; newNode = malloc(sizeof(struct bstNode)); preNode-&gt;rnode = newNode; // 假設 preNode 是基於 struct bstNode 架構下的一個節點。 newNode-&gt;lnode = NULL; newNode-&gt;rnode = NULL;  ">
 
 
 <meta itemprop="datePublished" content="2019-04-06T23:56:42&#43;08:00" />
 <meta itemprop="dateModified" content="2019-04-06T23:56:42&#43;08:00" />
-<meta itemprop="wordCount" content="41">
+<meta itemprop="wordCount" content="42">
 
 
 
@@ -427,6 +427,8 @@ if (!doNotTrack) {
 
   <div id="content">
     
+
+<h4 id="二元樹與二元搜尋樹系列教學文目錄-https-blog-onemid-net-blog-ds-idx-binary-tree-binary-search-tree"><a href="https://blog.onemid.net/blog/ds_idx_binary_tree_binary_search_tree/">二元樹與二元搜尋樹系列教學文目錄</a></h4>
 
 <p><img src="https://blog.onemid.net/img/DS/BT&amp;BST/02_BST_04 插入一個節點.png" alt="02_BST_04 插入一個節點" /></p>
 

@@ -17,7 +17,7 @@
       <pubDate>Sun, 07 Apr 2019 00:00:54 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/ds_binary_tree_node/</guid>
-      <description>在 C 中，我們原則上建立 struct 製造一個二元樹的節點架構：
+      <description>二元樹與二元搜尋樹系列教學文目錄 在 C 中，我們原則上建立 struct 製造一個二元樹的節點架構：
 【部分程式碼】 二元樹的節點架構 struct bstNode { int data; struct bstNode *lnode; struct bstNode *rnode; }  原則上資料可以使用 int 或是 char 或是 float 等等內容；若是要建立二元搜尋樹（Binary Search Tree）則需要稍微確認比較大小的資料為何型態。</description>
     </item>
     
@@ -27,7 +27,7 @@
       <pubDate>Sat, 06 Apr 2019 23:59:31 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/ds_idx_binary_tree_binary_search_tree/</guid>
-      <description></description>
+      <description> 二元樹與二元搜尋樹系列教學文 二元搜尋樹的架構 &amp;mdash; 二元樹與二元搜尋樹系列文章 02 二元樹的節點架構 &amp;mdash; 二元樹與二元搜尋樹系列文章 03 利用迴圈找到二元搜尋樹的 NULL 位置 &amp;mdash; 二元樹與二元搜尋樹系列文章 05 使用迴圈找到二元搜尋樹的 NULL 節點並插入新節點 &amp;mdash; 二元樹與二元搜尋樹系列文章 06 二元樹的走訪 &amp;mdash; 二元樹與二元搜尋樹系列文章 08 二元樹遞迴中序走訪 &amp;mdash; 二元樹與二元搜尋樹系列文章 10 </description>
     </item>
     
     <item>
@@ -36,7 +36,7 @@
       <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/ds_binary_tree_traversal/</guid>
-      <description></description>
+      <description> 二元樹與二元搜尋樹系列教學文目錄 </description>
     </item>
     
     <item>
@@ -45,7 +45,7 @@
       <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_inorder/</guid>
-      <description></description>
+      <description> 二元樹與二元搜尋樹系列教學文目錄 </description>
     </item>
     
     <item>
@@ -54,7 +54,7 @@
       <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_preorder/</guid>
-      <description></description>
+      <description> 二元樹與二元搜尋樹系列教學文目錄 </description>
     </item>
     
     <item>
@@ -63,7 +63,7 @@
       <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_postorder/</guid>
-      <description></description>
+      <description> 二元樹與二元搜尋樹系列教學文目錄 </description>
     </item>
     
     <item>
@@ -72,7 +72,7 @@
       <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/ds_binary_tree_insert_node/</guid>
-      <description> 我們需要使用動態記憶體配置，例如：malloc，去配製一個節點空間；要值得注意的是，配置時使用的 sizeof 引數為 struct bstNode 而非 struct bstNode *，若是使用後者，會配置到一個指標大小，而非 struct bstNode 的大小。
+      <description> 二元樹與二元搜尋樹系列教學文目錄 我們需要使用動態記憶體配置，例如：malloc，去配製一個節點空間；要值得注意的是，配置時使用的 sizeof 引數為 struct bstNode 而非 struct bstNode *，若是使用後者，會配置到一個指標大小，而非 struct bstNode 的大小。
 另外配置新節點時，除了寫入資料外，務必要將新節點的左右兩個節點指標位置重設為 NULL；在未來，我們有很多地方是需要使用 NULL 判斷是否已經達到葉節點（Leaf Node，也就是樹的尾巴）。
 【部分程式碼】新節點的配置與引用 struct bstNode *newNode; newNode = malloc(sizeof(struct bstNode)); preNode-&amp;gt;rnode = newNode; // 假設 preNode 是基於 struct bstNode 架構下的一個節點。 newNode-&amp;gt;lnode = NULL; newNode-&amp;gt;rnode = NULL;  </description>
     </item>
@@ -83,7 +83,7 @@
       <pubDate>Sat, 06 Apr 2019 23:53:22 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/ds_binary_tree_intro/</guid>
-      <description>關於樹有親屬關係，每一層都是下一層的父母 (Parent Node)（要有連接關係）。
+      <description>二元樹與二元搜尋樹系列教學文目錄 關於樹有親屬關係，每一層都是下一層的父母 (Parent Node)（要有連接關係）。
 Complete Binary Tree 中間所描述的「偏左」，意思即為在這一「層」當中，必須左填滿子樹後才能填到右邊。</description>
     </item>
     
