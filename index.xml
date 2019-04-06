@@ -6,20 +6,10 @@
     <description>Recent content on Nothing to Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 07 Apr 2019 00:00:54 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 06 Apr 2019 23:59:31 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.onemid.net/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>二元樹的節點架構 --- 二元樹與二元搜尋樹系列文章 03</title>
-      <link>https://blog.onemid.net/blog/ds_binary_tree_node/</link>
-      <pubDate>Sun, 07 Apr 2019 00:00:54 +0800</pubDate>
-      
-      <guid>https://blog.onemid.net/blog/ds_binary_tree_node/</guid>
-      <description>二元樹與二元搜尋樹系列教學文目錄 在 C 中，我們原則上建立 struct 製造一個二元樹的節點架構：
-【部分程式碼】 二元樹的節點架構 struct bstNode { int data; struct bstNode *lnode; struct bstNode *rnode; }  原則上資料可以使用 int 或是 char 或是 float 等等內容；若是要建立二元搜尋樹（Binary Search Tree）則需要稍微確認比較大小的資料為何型態。</description>
-    </item>
     
     <item>
       <title>二元樹與二元搜尋樹</title>
@@ -27,106 +17,7 @@
       <pubDate>Sat, 06 Apr 2019 23:59:31 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/ds_idx_binary_tree_binary_search_tree/</guid>
-      <description> 二元樹與二元搜尋樹系列教學文 二元搜尋樹的架構 &amp;mdash; 二元樹與二元搜尋樹系列文章 02 二元樹的節點架構 &amp;mdash; 二元樹與二元搜尋樹系列文章 03 利用迴圈找到二元搜尋樹的 NULL 位置 &amp;mdash; 二元樹與二元搜尋樹系列文章 05 使用迴圈找到二元搜尋樹的 NULL 節點並插入新節點 &amp;mdash; 二元樹與二元搜尋樹系列文章 06 二元樹的走訪 &amp;mdash; 二元樹與二元搜尋樹系列文章 08 二元樹遞迴中序走訪 &amp;mdash; 二元樹與二元搜尋樹系列文章 10 </description>
-    </item>
-    
-    <item>
-      <title>二元搜尋樹的架構 --- 二元樹與二元搜尋樹系列文章 02</title>
-      <link>https://blog.onemid.net/blog/ds_binary_search_tree_intro/</link>
-      <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
-      
-      <guid>https://blog.onemid.net/blog/ds_binary_search_tree_intro/</guid>
-      <description>二元樹與二元搜尋樹系列教學文目錄 二元樹（Binary Tree）與二元搜尋樹（Binary Search Tree）中文差了兩個字（英文差了一個詞），但是在運作上；二元搜尋樹有著較為嚴格的定義；但為了用詞精確，在未來我們在說二元樹時，基本上可適用於二元搜尋樹上。
-簡單來說，假定我們沒有一筆資料是完全相同的情況下，若是該輸入值大於目前節點，就要往右子樹（Right Sub-tree）走；若是小於目前節點，就要往左子樹（Left Sub-tree）走；直到一個 NULL 節點方可插入新值。
-對於相等值的處理方法依照不同需求有不同方法；但原則上不影響後續的排序處理。</description>
-    </item>
-    
-    <item>
-      <title>二元樹的走訪 --- 二元樹與二元搜尋樹系列文章 08</title>
-      <link>https://blog.onemid.net/blog/ds_binary_tree_traversal/</link>
-      <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
-      
-      <guid>https://blog.onemid.net/blog/ds_binary_tree_traversal/</guid>
-      <description> 二元樹與二元搜尋樹系列教學文目錄 </description>
-    </item>
-    
-    <item>
-      <title>二元樹遞迴中序走訪 --- 二元樹與二元搜尋樹系列文章 10</title>
-      <link>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_inorder/</link>
-      <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
-      
-      <guid>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_inorder/</guid>
-      <description> 二元樹與二元搜尋樹系列教學文目錄 </description>
-    </item>
-    
-    <item>
-      <title>二元樹遞迴前序走訪 --- 二元樹與二元搜尋樹系列文章 09</title>
-      <link>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_preorder/</link>
-      <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
-      
-      <guid>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_preorder/</guid>
-      <description> 二元樹與二元搜尋樹系列教學文目錄 </description>
-    </item>
-    
-    <item>
-      <title>二元樹遞迴後序走訪 --- 二元樹與二元搜尋樹系列文章 11</title>
-      <link>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_postorder/</link>
-      <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
-      
-      <guid>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_postorder/</guid>
-      <description> 二元樹與二元搜尋樹系列教學文目錄 </description>
-    </item>
-    
-    <item>
-      <title>使用迴圈找到二元搜尋樹的 NULL 節點並插入新節點 --- 二元樹與二元搜尋樹系列文章 06</title>
-      <link>https://blog.onemid.net/blog/ds_binary_search_tree_searching_null_and_insert_node/</link>
-      <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
-      
-      <guid>https://blog.onemid.net/blog/ds_binary_search_tree_searching_null_and_insert_node/</guid>
-      <description>二元樹與二元搜尋樹系列教學文目錄 我們需要一個變數去紀錄前一代節點的記憶體位置，好讓我們可以存取左右子樹的記憶體位址並更新成我所需要的。
-有沒有感動到？有ㄛ</description>
-    </item>
-    
-    <item>
-      <title>利用迴圈找到二元搜尋樹的 NULL 位置 --- 二元樹與二元搜尋樹系列文章 05</title>
-      <link>https://blog.onemid.net/blog/ds_binary_search_tree_searching_null/</link>
-      <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
-      
-      <guid>https://blog.onemid.net/blog/ds_binary_search_tree_searching_null/</guid>
-      <description>二元樹與二元搜尋樹系列教學文目錄 原則上這個迴圈只能帶著我們在二元搜尋樹中找到 NULL 節點，但尚未能夠具備插入的功能。
-我們在以下用模擬的方法講述為何這種方式無法正常插入節點。
-在以下以及未來的圖說中，0x0通常指記憶體為 0 的位置，也就是俗稱的 NULL，為了簡化版面，記憶體位置有做稍微調整，並非真實情況。
-簡單來說，就算你知道是要插入在 0xc 的左子樹位置，但是電腦並未紀錄這個訊息；在上一格章節我們有提到我們需要一個 preNode 紀錄他的左右子樹記憶體位置，但我們這邊並沒有紀錄，所以不管再怎麼哭怎麼喊，你都沒辦法插入。</description>
-    </item>
-    
-    <item>
-      <title>利用遞迴方式插入節點至二元搜尋樹 --- 二元樹與二元搜尋樹系列文章 07</title>
-      <link>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_insert/</link>
-      <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
-      
-      <guid>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_insert/</guid>
-      <description> 二元樹與二元搜尋樹系列教學文目錄 【部分程式碼】遞迴方式插入節點 struct bstNode *insert (struct bstNode *node, int input) { if (node != NULL) { if (input &amp;gt;= node-&amp;gt;key) { node-&amp;gt;rnode = insert(node-&amp;gt;rnode, input); } else { node-&amp;gt;lnode = insert(node-&amp;gt;lnode, input); } } else { node = malloc(sizeof(struct bstNode)); node-&amp;gt;key = input; node-&amp;gt;lnode = NULL; node-&amp;gt;rnode = NULL; } return node; }  </description>
-    </item>
-    
-    <item>
-      <title>插入一個節點至二元樹 --- 二元樹與二元搜尋樹系列文章 04</title>
-      <link>https://blog.onemid.net/blog/ds_binary_tree_insert_node/</link>
-      <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
-      
-      <guid>https://blog.onemid.net/blog/ds_binary_tree_insert_node/</guid>
-      <description> 二元樹與二元搜尋樹系列教學文目錄 我們需要使用動態記憶體配置，例如：malloc，去配製一個節點空間；要值得注意的是，配置時使用的 sizeof 引數為 struct bstNode 而非 struct bstNode *，若是使用後者，會配置到一個指標大小，而非 struct bstNode 的大小。
-另外配置新節點時，除了寫入資料外，務必要將新節點的左右兩個節點指標位置重設為 NULL；在未來，我們有很多地方是需要使用 NULL 判斷是否已經達到葉節點（Leaf Node，也就是樹的尾巴）。
-【部分程式碼】新節點的配置與引用 struct bstNode *newNode; newNode = malloc(sizeof(struct bstNode)); preNode-&amp;gt;rnode = newNode; // 假設 preNode 是基於 struct bstNode 架構下的一個節點。 newNode-&amp;gt;lnode = NULL; newNode-&amp;gt;rnode = NULL;  </description>
-    </item>
-    
-    <item>
-      <title>二元樹基本架構 --- 二元樹與二元搜尋樹系列文章 01</title>
-      <link>https://blog.onemid.net/blog/ds_binary_tree_intro/</link>
-      <pubDate>Sat, 06 Apr 2019 23:53:22 +0800</pubDate>
-      
-      <guid>https://blog.onemid.net/blog/ds_binary_tree_intro/</guid>
-      <description>二元樹與二元搜尋樹系列教學文目錄 關於樹有親屬關係，每一層都是下一層的父母 (Parent Node)（要有連接關係）。
-Complete Binary Tree 中間所描述的「偏左」，意思即為在這一「層」當中，必須左填滿子樹後才能填到右邊。</description>
+      <description> 二元樹與二元搜尋樹系列教學文 二元樹基本架構 &amp;mdash; 二元樹與二元搜尋樹系列文章 01 二元搜尋樹的架構 &amp;mdash; 二元樹與二元搜尋樹系列文章 02 二元樹的節點架構 &amp;mdash; 二元樹與二元搜尋樹系列文章 03 利用迴圈找到二元搜尋樹的 NULL 位置 &amp;mdash; 二元樹與二元搜尋樹系列文章 05 使用迴圈找到二元搜尋樹的 NULL 節點並插入新節點 &amp;mdash; 二元樹與二元搜尋樹系列文章 06 二元樹的走訪 &amp;mdash; 二元樹與二元搜尋樹系列文章 08 二元樹遞迴中序走訪 &amp;mdash; 二元樹與二元搜尋樹系列文章 10 </description>
     </item>
     
     <item>
@@ -142,6 +33,115 @@ struct { ... } p1; /* 一堆程式碼 */ struct { ... } p2;  我們需要重複�
 struct p_type { ... }; struct p_type p1; struct p_type p2;  在 struct 後面加上 tag name，也就是那個 p_type，就可以不用重複打同樣的 struct 結構。
 這時，我們有第三種方式可以少打 struct 這個字，就是使用 typedef:
 typedef struct { ... } PType; PType p1; PType p2;  你會發現到 typedef 會將 struct {.</description>
+    </item>
+    
+    <item>
+      <title>二元樹遞迴後序走訪 --- 二元樹與二元搜尋樹系列文章 11</title>
+      <link>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_postorder/</link>
+      <pubDate>Sat, 06 Apr 2019 23:11:42 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_postorder/</guid>
+      <description> 二元樹與二元搜尋樹系列教學文目錄 </description>
+    </item>
+    
+    <item>
+      <title>二元樹遞迴中序走訪 --- 二元樹與二元搜尋樹系列文章 10</title>
+      <link>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_inorder/</link>
+      <pubDate>Sat, 06 Apr 2019 23:10:42 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_inorder/</guid>
+      <description> 二元樹與二元搜尋樹系列教學文目錄 </description>
+    </item>
+    
+    <item>
+      <title>二元樹遞迴前序走訪 --- 二元樹與二元搜尋樹系列文章 09</title>
+      <link>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_preorder/</link>
+      <pubDate>Sat, 06 Apr 2019 23:09:42 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_preorder/</guid>
+      <description> 二元樹與二元搜尋樹系列教學文目錄 </description>
+    </item>
+    
+    <item>
+      <title>二元樹的走訪 --- 二元樹與二元搜尋樹系列文章 08</title>
+      <link>https://blog.onemid.net/blog/ds_binary_tree_traversal/</link>
+      <pubDate>Sat, 06 Apr 2019 23:08:42 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/blog/ds_binary_tree_traversal/</guid>
+      <description> 二元樹與二元搜尋樹系列教學文目錄 </description>
+    </item>
+    
+    <item>
+      <title>利用遞迴方式插入節點至二元搜尋樹 --- 二元樹與二元搜尋樹系列文章 07</title>
+      <link>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_insert/</link>
+      <pubDate>Sat, 06 Apr 2019 23:07:42 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_insert/</guid>
+      <description> 二元樹與二元搜尋樹系列教學文目錄 【部分程式碼】遞迴方式插入節點 struct bstNode *insert (struct bstNode *node, int input) { if (node != NULL) { if (input &amp;gt;= node-&amp;gt;key) { node-&amp;gt;rnode = insert(node-&amp;gt;rnode, input); } else { node-&amp;gt;lnode = insert(node-&amp;gt;lnode, input); } } else { node = malloc(sizeof(struct bstNode)); node-&amp;gt;key = input; node-&amp;gt;lnode = NULL; node-&amp;gt;rnode = NULL; } return node; }  </description>
+    </item>
+    
+    <item>
+      <title>使用迴圈找到二元搜尋樹的 NULL 節點並插入新節點 --- 二元樹與二元搜尋樹系列文章 06</title>
+      <link>https://blog.onemid.net/blog/ds_binary_search_tree_searching_null_and_insert_node/</link>
+      <pubDate>Sat, 06 Apr 2019 23:06:42 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/blog/ds_binary_search_tree_searching_null_and_insert_node/</guid>
+      <description>二元樹與二元搜尋樹系列教學文目錄 我們需要一個變數去紀錄前一代節點的記憶體位置，好讓我們可以存取左右子樹的記憶體位址並更新成我所需要的。
+有沒有感動到？有ㄛ</description>
+    </item>
+    
+    <item>
+      <title>利用迴圈找到二元搜尋樹的 NULL 位置 --- 二元樹與二元搜尋樹系列文章 05</title>
+      <link>https://blog.onemid.net/blog/ds_binary_search_tree_searching_null/</link>
+      <pubDate>Sat, 06 Apr 2019 23:05:42 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/blog/ds_binary_search_tree_searching_null/</guid>
+      <description>二元樹與二元搜尋樹系列教學文目錄 原則上這個迴圈只能帶著我們在二元搜尋樹中找到 NULL 節點，但尚未能夠具備插入的功能。
+我們在以下用模擬的方法講述為何這種方式無法正常插入節點。
+在以下以及未來的圖說中，0x0通常指記憶體為 0 的位置，也就是俗稱的 NULL，為了簡化版面，記憶體位置有做稍微調整，並非真實情況。
+簡單來說，就算你知道是要插入在 0xc 的左子樹位置，但是電腦並未紀錄這個訊息；在上一格章節我們有提到我們需要一個 preNode 紀錄他的左右子樹記憶體位置，但我們這邊並沒有紀錄，所以不管再怎麼哭怎麼喊，你都沒辦法插入。</description>
+    </item>
+    
+    <item>
+      <title>插入一個節點至二元樹 --- 二元樹與二元搜尋樹系列文章 04</title>
+      <link>https://blog.onemid.net/blog/ds_binary_tree_insert_node/</link>
+      <pubDate>Sat, 06 Apr 2019 23:04:42 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/blog/ds_binary_tree_insert_node/</guid>
+      <description> 二元樹與二元搜尋樹系列教學文目錄 我們需要使用動態記憶體配置，例如：malloc，去配製一個節點空間；要值得注意的是，配置時使用的 sizeof 引數為 struct bstNode 而非 struct bstNode *，若是使用後者，會配置到一個指標大小，而非 struct bstNode 的大小。
+另外配置新節點時，除了寫入資料外，務必要將新節點的左右兩個節點指標位置重設為 NULL；在未來，我們有很多地方是需要使用 NULL 判斷是否已經達到葉節點（Leaf Node，也就是樹的尾巴）。
+【部分程式碼】新節點的配置與引用 struct bstNode *newNode; newNode = malloc(sizeof(struct bstNode)); preNode-&amp;gt;rnode = newNode; // 假設 preNode 是基於 struct bstNode 架構下的一個節點。 newNode-&amp;gt;lnode = NULL; newNode-&amp;gt;rnode = NULL;  </description>
+    </item>
+    
+    <item>
+      <title>二元樹的節點架構 --- 二元樹與二元搜尋樹系列文章 03</title>
+      <link>https://blog.onemid.net/blog/ds_binary_tree_node/</link>
+      <pubDate>Sat, 06 Apr 2019 23:03:54 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/blog/ds_binary_tree_node/</guid>
+      <description>二元樹與二元搜尋樹系列教學文目錄 在 C 中，我們原則上建立 struct 製造一個二元樹的節點架構：
+【部分程式碼】 二元樹的節點架構 struct bstNode { int data; struct bstNode *lnode; struct bstNode *rnode; }  原則上資料可以使用 int 或是 char 或是 float 等等內容；若是要建立二元搜尋樹（Binary Search Tree）則需要稍微確認比較大小的資料為何型態。</description>
+    </item>
+    
+    <item>
+      <title>二元搜尋樹的架構 --- 二元樹與二元搜尋樹系列文章 02</title>
+      <link>https://blog.onemid.net/blog/ds_binary_search_tree_intro/</link>
+      <pubDate>Sat, 06 Apr 2019 23:02:42 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/blog/ds_binary_search_tree_intro/</guid>
+      <description>二元樹與二元搜尋樹系列教學文目錄 二元樹（Binary Tree）與二元搜尋樹（Binary Search Tree）中文差了兩個字（英文差了一個詞），但是在運作上；二元搜尋樹有著較為嚴格的定義；但為了用詞精確，在未來我們在說二元樹時，基本上可適用於二元搜尋樹上。
+簡單來說，假定我們沒有一筆資料是完全相同的情況下，若是該輸入值大於目前節點，就要往右子樹（Right Sub-tree）走；若是小於目前節點，就要往左子樹（Left Sub-tree）走；直到一個 NULL 節點方可插入新值。
+對於相等值的處理方法依照不同需求有不同方法；但原則上不影響後續的排序處理。</description>
+    </item>
+    
+    <item>
+      <title>二元樹基本架構 --- 二元樹與二元搜尋樹系列文章 01</title>
+      <link>https://blog.onemid.net/blog/ds_binary_tree_intro/</link>
+      <pubDate>Fri, 05 Apr 2019 23:01:22 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/blog/ds_binary_tree_intro/</guid>
+      <description>二元樹與二元搜尋樹系列教學文目錄 關於樹有親屬關係，每一層都是下一層的父母 (Parent Node)（要有連接關係）。
+Complete Binary Tree 中間所描述的「偏左」，意思即為在這一「層」當中，必須左填滿子樹後才能填到右邊。</description>
     </item>
     
     <item>

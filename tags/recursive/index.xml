@@ -6,24 +6,24 @@
     <description>Recent content in recursive on Nothing to Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 06 Apr 2019 23:56:42 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 06 Apr 2019 23:11:42 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.onemid.net/tags/recursive/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>二元樹的走訪 --- 二元樹與二元搜尋樹系列文章 08</title>
-      <link>https://blog.onemid.net/blog/ds_binary_tree_traversal/</link>
-      <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
+      <title>二元樹遞迴後序走訪 --- 二元樹與二元搜尋樹系列文章 11</title>
+      <link>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_postorder/</link>
+      <pubDate>Sat, 06 Apr 2019 23:11:42 +0800</pubDate>
       
-      <guid>https://blog.onemid.net/blog/ds_binary_tree_traversal/</guid>
+      <guid>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_postorder/</guid>
       <description> 二元樹與二元搜尋樹系列教學文目錄 </description>
     </item>
     
     <item>
       <title>二元樹遞迴中序走訪 --- 二元樹與二元搜尋樹系列文章 10</title>
       <link>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_inorder/</link>
-      <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
+      <pubDate>Sat, 06 Apr 2019 23:10:42 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_inorder/</guid>
       <description> 二元樹與二元搜尋樹系列教學文目錄 </description>
@@ -32,25 +32,25 @@
     <item>
       <title>二元樹遞迴前序走訪 --- 二元樹與二元搜尋樹系列文章 09</title>
       <link>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_preorder/</link>
-      <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
+      <pubDate>Sat, 06 Apr 2019 23:09:42 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_preorder/</guid>
       <description> 二元樹與二元搜尋樹系列教學文目錄 </description>
     </item>
     
     <item>
-      <title>二元樹遞迴後序走訪 --- 二元樹與二元搜尋樹系列文章 11</title>
-      <link>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_postorder/</link>
-      <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
+      <title>二元樹的走訪 --- 二元樹與二元搜尋樹系列文章 08</title>
+      <link>https://blog.onemid.net/blog/ds_binary_tree_traversal/</link>
+      <pubDate>Sat, 06 Apr 2019 23:08:42 +0800</pubDate>
       
-      <guid>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_postorder/</guid>
+      <guid>https://blog.onemid.net/blog/ds_binary_tree_traversal/</guid>
       <description> 二元樹與二元搜尋樹系列教學文目錄 </description>
     </item>
     
     <item>
       <title>利用遞迴方式插入節點至二元搜尋樹 --- 二元樹與二元搜尋樹系列文章 07</title>
       <link>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_insert/</link>
-      <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
+      <pubDate>Sat, 06 Apr 2019 23:07:42 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_insert/</guid>
       <description> 二元樹與二元搜尋樹系列教學文目錄 【部分程式碼】遞迴方式插入節點 struct bstNode *insert (struct bstNode *node, int input) { if (node != NULL) { if (input &amp;gt;= node-&amp;gt;key) { node-&amp;gt;rnode = insert(node-&amp;gt;rnode, input); } else { node-&amp;gt;lnode = insert(node-&amp;gt;lnode, input); } } else { node = malloc(sizeof(struct bstNode)); node-&amp;gt;key = input; node-&amp;gt;lnode = NULL; node-&amp;gt;rnode = NULL; } return node; }  </description>

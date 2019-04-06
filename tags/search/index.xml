@@ -6,7 +6,7 @@
     <description>Recent content in search on Nothing to Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 06 Apr 2019 23:56:42 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 06 Apr 2019 23:06:42 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.onemid.net/tags/search/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>使用迴圈找到二元搜尋樹的 NULL 節點並插入新節點 --- 二元樹與二元搜尋樹系列文章 06</title>
       <link>https://blog.onemid.net/blog/ds_binary_search_tree_searching_null_and_insert_node/</link>
-      <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
+      <pubDate>Sat, 06 Apr 2019 23:06:42 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/ds_binary_search_tree_searching_null_and_insert_node/</guid>
       <description>二元樹與二元搜尋樹系列教學文目錄 我們需要一個變數去紀錄前一代節點的記憶體位置，好讓我們可以存取左右子樹的記憶體位址並更新成我所需要的。
@@ -24,7 +24,7 @@
     <item>
       <title>利用迴圈找到二元搜尋樹的 NULL 位置 --- 二元樹與二元搜尋樹系列文章 05</title>
       <link>https://blog.onemid.net/blog/ds_binary_search_tree_searching_null/</link>
-      <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
+      <pubDate>Sat, 06 Apr 2019 23:05:42 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/ds_binary_search_tree_searching_null/</guid>
       <description>二元樹與二元搜尋樹系列教學文目錄 原則上這個迴圈只能帶著我們在二元搜尋樹中找到 NULL 節點，但尚未能夠具備插入的功能。

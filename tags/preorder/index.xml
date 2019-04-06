@@ -6,7 +6,7 @@
     <description>Recent content in preorder on Nothing to Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 06 Apr 2019 23:56:42 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 06 Apr 2019 23:09:42 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.onemid.net/tags/preorder/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>二元樹遞迴前序走訪 --- 二元樹與二元搜尋樹系列文章 09</title>
       <link>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_preorder/</link>
-      <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
+      <pubDate>Sat, 06 Apr 2019 23:09:42 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_preorder/</guid>
       <description> 二元樹與二元搜尋樹系列教學文目錄 </description>
