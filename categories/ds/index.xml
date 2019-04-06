@@ -42,6 +42,42 @@
     </item>
     
     <item>
+      <title>二元樹的走訪 --- 二元樹與二元搜尋樹系列文章 08</title>
+      <link>https://blog.onemid.net/blog/ds_binary_tree_traversal/</link>
+      <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/blog/ds_binary_tree_traversal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>二元樹遞迴中序走訪 --- 二元樹與二元搜尋樹系列文章 10</title>
+      <link>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_inorder/</link>
+      <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_inorder/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>二元樹遞迴前序走訪 --- 二元樹與二元搜尋樹系列文章 09</title>
+      <link>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_preorder/</link>
+      <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_preorder/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>二元樹遞迴後序走訪 --- 二元樹與二元搜尋樹系列文章 11</title>
+      <link>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_postorder/</link>
+      <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_postorder/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>使用迴圈找到二元搜尋樹的 NULL 節點並插入新節點 --- 二元樹與二元搜尋樹系列文章 06</title>
       <link>https://blog.onemid.net/blog/ds_binary_search_tree_searching_null_and_insert_node/</link>
       <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
@@ -61,6 +97,15 @@
 我們在以下用模擬的方法講述為何這種方式無法正常插入節點。
 在以下以及未來的圖說中，0x0通常指記憶體為 0 的位置，也就是俗稱的 NULL，為了簡化版面，記憶體位置有做稍微調整，並非真實情況。
 簡單來說，就算你知道是要插入在 0xc 的左子樹位置，但是電腦並未紀錄這個訊息；在上一格章節我們有提到我們需要一個 preNode 紀錄他的左右子樹記憶體位置，但我們這邊並沒有紀錄，所以不管再怎麼哭怎麼喊，你都沒辦法插入。</description>
+    </item>
+    
+    <item>
+      <title>利用遞迴方式插入節點至二元搜尋樹 --- 二元樹與二元搜尋樹系列文章 07</title>
+      <link>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_insert/</link>
+      <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_insert/</guid>
+      <description> 【部分程式碼】遞迴方式插入節點 struct bstNode *insert (struct bstNode *node, int input) { if (node != NULL) { if (input &amp;gt;= node-&amp;gt;key) { node-&amp;gt;rnode = insert(node-&amp;gt;rnode, input); } else { node-&amp;gt;lnode = insert(node-&amp;gt;lnode, input); } } else { node = malloc(sizeof(struct bstNode)); node-&amp;gt;key = input; node-&amp;gt;lnode = NULL; node-&amp;gt;rnode = NULL; } return node; }  </description>
     </item>
     
     <item>

@@ -18,12 +18,37 @@
   </url>
   
   <url>
+    <loc>https://blog.onemid.net/blog/ds_binary_tree_traversal/</loc>
+    <lastmod>2019-04-06T23:56:42+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_inorder/</loc>
+    <lastmod>2019-04-06T23:56:42+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_preorder/</loc>
+    <lastmod>2019-04-06T23:56:42+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_postorder/</loc>
+    <lastmod>2019-04-06T23:56:42+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.onemid.net/blog/ds_binary_search_tree_searching_null_and_insert_node/</loc>
     <lastmod>2019-04-06T23:56:42+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.onemid.net/blog/ds_binary_search_tree_searching_null/</loc>
+    <lastmod>2019-04-06T23:56:42+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_insert/</loc>
     <lastmod>2019-04-06T23:56:42+08:00</lastmod>
   </url>
   
@@ -492,6 +517,12 @@
   </url>
   
   <url>
+    <loc>https://blog.onemid.net/tags/inorder/</loc>
+    <lastmod>2019-04-06T23:56:42+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.onemid.net/tags/insert/</loc>
     <lastmod>2019-04-06T23:56:42+08:00</lastmod>
     <priority>0</priority>
@@ -540,6 +571,24 @@
   </url>
   
   <url>
+    <loc>https://blog.onemid.net/tags/postorder/</loc>
+    <lastmod>2019-04-06T23:56:42+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.onemid.net/tags/preorder/</loc>
+    <lastmod>2019-04-06T23:56:42+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.onemid.net/tags/recursive/</loc>
+    <lastmod>2019-04-06T23:56:42+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.onemid.net/tags/search/</loc>
     <lastmod>2019-04-06T23:56:42+08:00</lastmod>
     <priority>0</priority>
@@ -554,6 +603,12 @@
   <url>
     <loc>https://blog.onemid.net/tags/tag/</loc>
     <lastmod>2019-04-06T23:36:22+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.onemid.net/tags/traversal/</loc>
+    <lastmod>2019-04-06T23:56:42+08:00</lastmod>
     <priority>0</priority>
   </url>
   

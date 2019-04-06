@@ -34,6 +34,15 @@
     </item>
     
     <item>
+      <title>利用遞迴方式插入節點至二元搜尋樹 --- 二元樹與二元搜尋樹系列文章 07</title>
+      <link>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_insert/</link>
+      <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_insert/</guid>
+      <description> 【部分程式碼】遞迴方式插入節點 struct bstNode *insert (struct bstNode *node, int input) { if (node != NULL) { if (input &amp;gt;= node-&amp;gt;key) { node-&amp;gt;rnode = insert(node-&amp;gt;rnode, input); } else { node-&amp;gt;lnode = insert(node-&amp;gt;lnode, input); } } else { node = malloc(sizeof(struct bstNode)); node-&amp;gt;key = input; node-&amp;gt;lnode = NULL; node-&amp;gt;rnode = NULL; } return node; }  </description>
+    </item>
+    
+    <item>
       <title>插入一個節點至二元樹 --- 二元樹與二元搜尋樹系列文章 04</title>
       <link>https://blog.onemid.net/blog/ds_binary_tree_insert_node/</link>
       <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>

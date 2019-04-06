@@ -31,25 +31,39 @@
     </item>
     
     <item>
-      <title>使用迴圈找到二元搜尋樹的 NULL 節點並插入新節點 --- 二元樹與二元搜尋樹系列文章 06</title>
-      <link>https://blog.onemid.net/blog/ds_binary_search_tree_searching_null_and_insert_node/</link>
+      <title>二元樹的走訪 --- 二元樹與二元搜尋樹系列文章 08</title>
+      <link>https://blog.onemid.net/blog/ds_binary_tree_traversal/</link>
       <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
       
-      <guid>https://blog.onemid.net/blog/ds_binary_search_tree_searching_null_and_insert_node/</guid>
-      <description>我們需要一個變數去紀錄前一代節點的記憶體位置，好讓我們可以存取左右子樹的記憶體位址並更新成我所需要的。
-有沒有感動到？有ㄛ</description>
+      <guid>https://blog.onemid.net/blog/ds_binary_tree_traversal/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>利用迴圈找到二元搜尋樹的 NULL 位置 --- 二元樹與二元搜尋樹系列文章 05</title>
-      <link>https://blog.onemid.net/blog/ds_binary_search_tree_searching_null/</link>
+      <title>二元樹遞迴中序走訪 --- 二元樹與二元搜尋樹系列文章 10</title>
+      <link>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_inorder/</link>
       <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
       
-      <guid>https://blog.onemid.net/blog/ds_binary_search_tree_searching_null/</guid>
-      <description>原則上這個迴圈只能帶著我們在二元搜尋樹中找到 NULL 節點，但尚未能夠具備插入的功能。
-我們在以下用模擬的方法講述為何這種方式無法正常插入節點。
-在以下以及未來的圖說中，0x0通常指記憶體為 0 的位置，也就是俗稱的 NULL，為了簡化版面，記憶體位置有做稍微調整，並非真實情況。
-簡單來說，就算你知道是要插入在 0xc 的左子樹位置，但是電腦並未紀錄這個訊息；在上一格章節我們有提到我們需要一個 preNode 紀錄他的左右子樹記憶體位置，但我們這邊並沒有紀錄，所以不管再怎麼哭怎麼喊，你都沒辦法插入。</description>
+      <guid>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_inorder/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>二元樹遞迴前序走訪 --- 二元樹與二元搜尋樹系列文章 09</title>
+      <link>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_preorder/</link>
+      <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_preorder/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>二元樹遞迴後序走訪 --- 二元樹與二元搜尋樹系列文章 11</title>
+      <link>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_postorder/</link>
+      <pubDate>Sat, 06 Apr 2019 23:56:42 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/blog/ds_binary_search_tree_recursive_traversal_postorder/</guid>
+      <description></description>
     </item>
     
     <item>
