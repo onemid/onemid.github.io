@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tag on Nothing to Do</title>
+    <link>https://blog.onemid.net/tags/tag/</link>
+    <description>Recent content in tag on Nothing to Do</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Sat, 06 Apr 2019 23:36:22 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.onemid.net/tags/tag/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>struct 與 typedef struct</title>
+      <link>https://blog.onemid.net/blog/struct_and_typedef_struct/</link>
+      <pubDate>Sat, 06 Apr 2019 23:36:22 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/blog/struct_and_typedef_struct/</guid>
+      <description>struct &amp;amp; typedef struct 基本上我們會這樣使用 struct
+struct { ... } p1, p2;  此時， p1,p2 這兩個變數是隸屬於 struct {...} 型態的變數。
+但是遇到以下需要分開 p1, p2 變數做宣告時，就必須得：
+struct { ... } p1; /* 一堆程式碼 */ struct { ... } p2;  我們需要重複打兩次 struct {...} 的內容，非常之冗；所以於是有了第二種方式：
+struct p_type { ... }; struct p_type p1; struct p_type p2;  在 struct 後面加上 tag name，也就是那個 p_type，就可以不用重複打同樣的 struct 結構。
+這時，我們有第三種方式可以少打 struct 這個字，就是使用 typedef:
+typedef struct { ... } PType; PType p1; PType p2;  你會發現到 typedef 會將 struct {.</description>
+    </item>
+    
+  </channel>
+</rss>

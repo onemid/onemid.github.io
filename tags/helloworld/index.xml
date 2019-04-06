@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HelloWorld on Nothing to Do</title>
+    <link>https://blog.onemid.net/tags/helloworld/</link>
+    <description>Recent content in HelloWorld on Nothing to Do</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Sun, 17 Mar 2019 14:58:40 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.onemid.net/tags/helloworld/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>C - 1.01 你的第一個程式</title>
+      <link>https://blog.onemid.net/blog/c_1_01/</link>
+      <pubDate>Sun, 17 Mar 2019 14:58:40 +0800</pubDate>
+      
+      <guid>https://blog.onemid.net/blog/c_1_01/</guid>
+      <description>1.01 你的第一個程式  本文章同步刊載於 https://learning.juice.codes/ 的 Programming in C 教材（須註冊登入），在 Juice 上你能直接執行這篇教學的範例程式碼，以及練習相關題目（系統會自動幫你改喲！）
+ 寫 C 語言其實是一件愉快的事，C 語言博大精深引人入勝，但並不代表它不好入門；在此，我們要建立屬於自己的第一支程式：
+給定一個範例，其範例將輸出 Hello, Juice! 這個句子（或稱「字串」）。
+實驗室 1 - 印出 Hello, Juice! #include &amp;lt;stdio.h&amp;gt; int main ( void ) { printf(&amp;quot;Hello, Juice!&amp;quot;); return 0; }  C 語法要件 在撰寫 C 程式的時候，都會有一個結構，不外乎就是：
+ 標頭檔（Header File）—— 在第 1 行 主函式（main Function）—— 在第 3 ~ 7 行  第 1 行：標頭檔（Header File） 在這個範例程式中，我們引用了 stdio.h 這個標頭檔，stdio.h 為「標準輸入/輸出函式庫標頭檔」（Standard Input/Output Header），許多廣泛的功能需要由這個標頭檔協助，否則會無法運作，其中 printf 就是一例。我們大致上可以把標頭檔看成一個圖書館的概念，你想要某個資料的時候，就跑去圖書館借，沒有圖書館，想要什麼東西也就無法實現了。</description>
+    </item>
+    
+  </channel>
+</rss>
