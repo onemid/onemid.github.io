@@ -17,7 +17,8 @@
       <pubDate>Sat, 06 Apr 2019 23:03:54 +0800</pubDate>
       
       <guid>https://blog.onemid.net/blog/ds_binary_tree_node/</guid>
-      <description>二元樹與二元搜尋樹系列教學文目錄 在 C 中，我們原則上建立 struct 製造一個二元樹的節點架構：
+      <description>###二元樹與二元搜尋樹系列教學文目錄
+在 C 中，我們原則上建立 struct 製造一個二元樹的節點架構：
 【部分程式碼】 二元樹的節點架構 struct bstNode { int data; struct bstNode *lnode; struct bstNode *rnode; }  原則上資料可以使用 int 或是 char 或是 float 等等內容；若是要建立二元搜尋樹（Binary Search Tree）則需要稍微確認比較大小的資料為何型態。</description>
     </item>
     
